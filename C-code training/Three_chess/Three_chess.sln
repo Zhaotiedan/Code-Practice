@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Three_chess", "Three_chess\Three_chess.vcxproj", "{23BEBB61-1668-4EAB-A532-D2C433A97720}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Debug|x64.ActiveCfg = Debug|x64
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Debug|x64.Build.0 = Debug|x64
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Debug|x86.ActiveCfg = Debug|Win32
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Debug|x86.Build.0 = Debug|Win32
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Release|x64.ActiveCfg = Release|x64
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Release|x64.Build.0 = Release|x64
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Release|x86.ActiveCfg = Release|Win32
+		{23BEBB61-1668-4EAB-A532-D2C433A97720}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {179ECF2F-163C-40F9-AB61-C9322FBAF409}
+	EndGlobalSection
+EndGlobal
