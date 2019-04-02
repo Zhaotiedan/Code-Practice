@@ -1,0 +1,19 @@
+The man-machine agansit:
+Scratchable latex，if you make the checkerboard's horizontal and diagonal lines into three firstly, you will be the winner.
+
+The specific requirements：
+1.The computer chooses a random position to play chess firstly.
+2.The player is supposed to express your choice by coordinates
+3.The board need to display the result for each move, and be updating all the time.
+4.When there is a winner, the game should be able to determine which side won and end the program in time.
+5.At the end of a game, the player need to make the choice of ending or continue the game.
+
+人机对战三子棋：
+九宫格，横竖或斜线先连成三个的为赢家
+
+具体要求：
+1.第一次为电脑先下，随机位置。
+2.玩家通过输入坐标表示要下的地方。
+3.每下一步棋盘要形成可视化界面，并不断更新。
+4.当有赢家产生时，游戏需要判断是哪一方赢了，并及时退出程序。
+5.一局游戏结束后，由玩家做出游戏结束或继续的选择。
