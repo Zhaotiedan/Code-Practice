@@ -7,22 +7,30 @@ int main()
 	int input = 0;
 	int quite = 0;
 	char result = 'N';
-	menu();
-	scanf("%d", &input);
-	while (!quite)
+	do
 	{
-		switch (input)
+		Menu();
+		scanf("%d", &input);
+
+
+		while (!quite)
 		{
-		case 1:
-			Game();
-			break;
-		case 0:
-			quite = 1;
-			break;
-		default:
-			printf("Plese enter 1 or 0!");
-			break;
+			switch (input)
+			{
+			case 1:
+				Game();
+				quite = 1;
+				break;
+			case 0:
+				quite = 1;
+				break;
+			default:
+				printf("Plese enter 1 or 0!");
+				break;
+			}
+
 		}
-	}
+	} while (input!=0);
+	
 	return 0;
 }

@@ -2,7 +2,7 @@
 
 #include "Three_chess.h"
 
-void menu()
+void Menu()
 {
 	printf("*****************************\n");
 	printf("***** choose 1 to play ******\n");
@@ -138,4 +138,5 @@ void Game()
 	default:
 		break;
 	}
+	
 }
