@@ -1,0 +1,19 @@
+﻿  main.c
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(12): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(17): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(18): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(22): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(23): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(28): warning C4013: “two”未定义；假设外部返回 int
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(52): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(57): error C2086: “float lmax2”: 重定义
+  d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(57): note: 参见“lmax2”的声明
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(60): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(64): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(65): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(69): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(70): warning C4244: “=”: 从“int”转换到“float”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(99): warning C4244: “return”: 从“float”转换到“int”，可能丢失数据
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(111): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“double”
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(113): warning C4133: “函数”: 从“float [100]”到“int *”的类型不兼容
+d:\github\daily code\c-code\some interesting projects\divide and conquer method\divide and conquer method\main.c(115): warning C4133: “函数”: 从“float [100]”到“int *”的类型不兼容

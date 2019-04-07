@@ -1,0 +1,16 @@
+﻿“Moneky eat peach.exe”(Win32): 已加载“D:\github\Daily code\C-code\Some interesting projects\Moneky eat peach\Debug\Moneky eat peach.exe”。已加载符号。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\ntdll.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\kernel32.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\KernelBase.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\vcruntime140d.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\ucrtbased.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\api-ms-win-core-localization-l1-2-0.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\api-ms-win-core-processthreads-l1-1-1.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\api-ms-win-core-file-l1-2-0.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\api-ms-win-core-timezone-l1-1-0.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\api-ms-win-core-file-l2-1-0.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\api-ms-win-core-synch-l1-2-0.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\apphelp.dll”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已加载“C:\Windows\SysWOW64\cmd.exe”。无法查找或打开 PDB 文件。
+“Moneky eat peach.exe”(Win32): 已卸载“C:\Windows\SysWOW64\cmd.exe”
+程序“[6364] Moneky eat peach.exe”已退出，返回值为 0 (0x0)。
