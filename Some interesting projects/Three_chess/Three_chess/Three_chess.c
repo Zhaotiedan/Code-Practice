@@ -8,6 +8,7 @@ void Menu()
 	printf("***** choose 1 to play ******\n");
 	printf("***** choose 0 to exist *****\n");
 	printf("I believe you will choose 1 !\n");
+	printf("Please input your choice:>");
 }
 
 void ComputerMove(char board[][COL], int row, int col)
@@ -78,7 +79,7 @@ char Judge(char board[][COL], int row, int col)
 	{
 		if (board[0][j] == board[1][j] && board[1][j] == board[2][j] && board[0][j] != ' ')
 		{
-			return board[i][0];
+			return board[0][j];
 		}
 	}
 	if (board[0][0] == board[1][1] && board[1][1] == board[2][2]&&board[0][0]!=' ')
@@ -109,6 +110,7 @@ void Game()
 	srand((unsigned long)time(NULL));
 	while (1)
 	{
+		system("cls");//每下一次棋实现一次清屏
 		ComputerMove(board, ROW, COL);
 		ShowBoard(board, ROW, COL);
 		result = Judge(board, ROW, COL);
