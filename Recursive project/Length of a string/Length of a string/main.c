@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<assert.h>
 
-//µİ¹é
+//é€’å½’
 int Strlen(const char *str)
 {
 	if (*str == '\0')
@@ -14,19 +14,19 @@ int Strlen(const char *str)
 }
 int main()
 {
-	char *arr = "abcd";
+	char *arr = "abcd";//char *arr ={'a','b','c','d'};
 	int result = 0;
 	result = Strlen(arr);
 	printf("%d", result);
 	system("pause");
 	return 0;
 }
-//·Çµİ¹é
+//éé€’å½’
 int Strlen(char *str)
 {
 	int count = 0;
-	assert(str != NULL);//¶ÏÑÔ  Óöµ½Ö¸Õë¾ÍÒª¼Ó  ÊÇÒ»¸öºê²»ÊÇº¯Êı Ö»ÔÚDebugÌõ¼şÏÂ¹ÜÓÃ
-	while (*str != '\0')//ÒòÎª×Ö·û´®ÒÔ\0½áÎ²
+	assert(str != NULL);//æ–­è¨€  é‡åˆ°æŒ‡é’ˆå°±è¦åŠ   æ˜¯ä¸€ä¸ªå®ä¸æ˜¯å‡½æ•° åªåœ¨Debugæ¡ä»¶ä¸‹ç®¡ç”¨
+	while (*str != '\0')//å› ä¸ºå­—ç¬¦ä¸²ä»¥\0ç»“å°¾
 	{
 		count++;
 		str++;
