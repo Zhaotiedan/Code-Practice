@@ -1,5 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
+//递归方式实现打印一个整数的每一位 
 #include<stdio.h>
 #include<stdlib.h>
 

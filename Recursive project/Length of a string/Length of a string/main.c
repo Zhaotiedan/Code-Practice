@@ -25,7 +25,7 @@ int main()
 int Strlen(char *str)
 {
 	int count = 0;
-	assert(str != NULL);//断言  遇到指针就要加  是一个宏不是函数 只在Debug条件下管用
+	assert(str != NULL);//断言  避免指针为空值 遇到指针就要加  是一个宏不是函数 只在Debug条件下管用
 	while (*str != '\0')//因为字符串以\0结尾
 	{
 		count++;
