@@ -3,7 +3,7 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-//�ݹ�
+//递归
 int Factorial(int n)
 {
 	if (n == 1)
@@ -22,7 +22,7 @@ int main()
 	return 0;
 }
 
-//�ǵݹ�
+//非递归
 int Factorial(int n)
 {
 	int i = 0;

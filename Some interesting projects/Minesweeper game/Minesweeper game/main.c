@@ -11,15 +11,17 @@ int main()
 		scanf("%d", &select);
 		switch (select)
 		{
-		case1:
+		case 1:
 			Game();
 			break;
-		case0:
+		case 0:
+			printf("OK,byebye!\n");
 			quit = 1;
 			break;
 		default:
+			printf("Error!input again!\n");
 			break;
 		}
 	}
-	return 0
+	return 0;
 }
