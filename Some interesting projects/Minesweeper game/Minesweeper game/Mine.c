@@ -85,8 +85,8 @@ void PlayGame(char show_board[][COL], char mine_board[][COL], int row, int col)
 			}
 			else
 			{
-				printf("Game over!you lose!\n");
-				ShowBoard(show_board, row, col);
+				ShowBoard(mine_board, row, col);
+				printf("Game over!you lose!:(\n");
 				break;
 			}
 		}
@@ -106,7 +106,7 @@ void Game()
 {
 	char show_board[ROW][COL];
 	char mine_board[ROW][COL];
-	memset(show_board, '?', sizeof(show_board));
+	memset(show_board, '*', sizeof(show_board));
 	memset(mine_board, '0', sizeof(mine_board));
 
 	SetMine(mine_board, ROW, COL);
