@@ -1,0 +1,9 @@
+Create guess_rand_number
+
+rand（）函数返回一个范围为0到MAX的随机数，在使用rand函数前要先用srand来种下随机数种子，srand函数原型void srand(unsigned seed)，
+如果你在第一次调用rand()之前没有调用srand()，系统会为你自动调用srand()，自己也可以给seed值，该值为随机数的初始值。
+而使用同种子相同的数调用 rand()会导致相同的随机数序列被生成。
+因此要用随时间可以改变的种子来生成随机数，即srand((unsigned)time(NULL))，使用系统定时/计数器的值作为随机种子。
+注意：若重复种种子，在短时间内一直赋随机数初值，导致随机数生成的值很接近甚至一样的，所以在调用使用了rand（）的函数时，srand函数不要放在该被调函数里要放在调用该函数的函数里。
+rand（），srand（）函数属于<stdlib.h>库函数。
+补充：若要生成（a，b）的一个随机数赋值给x：srand((unsigned)time(NULL))；x=rand()%(b-a+1)+a;
