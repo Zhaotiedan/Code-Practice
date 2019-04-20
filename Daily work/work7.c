@@ -109,3 +109,28 @@ int main()
 	return 0;
 }
 
+//拓展：不用if  for  比较两个数大小
+/*方法一：利用取平均值的方法，能求出大的数字或着小的数字*/
+#include<stdio.h>
+#include<stdlib.h>
+int Compare(int a, int b)
+{
+	return ((a + b) + abs(a - b)) / 2;//较小的数为（（a+b）-abs（a-b））/2;
+}
+int main()
+{
+	int a = 10;
+	int b = 20;
+	int result = Compare(a, b);
+	printf("%d", result);
+	system("pause");
+	return 0;
+}
+//方法二
+int fMax2(int a, int b)
+{
+    int larger = (a*(a/b) + b*(b/a))/(a/b + b/a);
+    //long smaller = (b*(a/b) + a*(b/a))/(a/b + b/a);
+    return larger;
+}
+
