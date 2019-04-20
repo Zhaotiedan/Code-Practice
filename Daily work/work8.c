@@ -122,8 +122,36 @@ void Triangle(int *(arr)[ROW], int row, int col)
 	{
 		for (j = 0; i < col; j++)
 		{
-			
+			if (j = 0 || i == j)
+			{
+				arr[i][j] = 1;
+			}
+			else
+			{
+				arr[i][j] = arr[i - 1][j] + arr[i - 1][j - 1];
+			}
 		}
 	}
+}
+void show(int(*arr)[ROW])
+{
+	int i = 0;
+	int j = 0;
+	for (i = 0; i < ROW; i++)
+	{
+		for (j = 0; j <= i; j++)
+		{
+			printf("-6d", arr[i][j]);
+		}
+		printf("\n");
+	}
+}
+int main()
+{
+	int arr[ROW][ROW] = { 0 };
+	Triangle(arr, ROW, ROW);
+	show(arr);
+	system("pause");
+	return 0;
 }
 
