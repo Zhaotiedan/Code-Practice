@@ -1,8 +1,8 @@
-//1.Ğ´Ò»¸öº¯Êı·µ»Ø²ÎÊı¶ş½øÖÆÖĞ 1 µÄ¸öÊı.±ÈÈç£º 15 0000 1111 4 ¸ö 1
+//1.å†™ä¸€ä¸ªå‡½æ•°è¿”å›å‚æ•°äºŒè¿›åˆ¶ä¸­ 1 çš„ä¸ªæ•°.æ¯”å¦‚ï¼š 15 0000 1111 4 ä¸ª 1
 #include<stdio.h>
 #include<stdlib.h>
 
-int count_one_bits1(unsigned int value)//´Ë·½·¨±ØĞëÒª¼Óunsigned °Ñ¸ºÊı±ä³ÉÎŞ·ûºÅÊı
+int count_one_bits1(unsigned int value)//æ­¤æ–¹æ³•å¿…é¡»è¦åŠ unsigned æŠŠè´Ÿæ•°å˜æˆæ— ç¬¦å·æ•°
 {
 	int count = 0;
 	while (value)
@@ -15,7 +15,7 @@ int count_one_bits1(unsigned int value)//´Ë·½·¨±ØĞëÒª¼Óunsigned °Ñ¸ºÊı±ä³ÉÎŞ·ûºÅ
 	}
 	return count;
 }
-int count_one_bits2(int value)//²»¼Óunsigned Ò²OK
+int count_one_bits2(int value)//ä¸åŠ unsigned ä¹ŸOK
 {
 	int count = 0;
 	int i = 0;
@@ -27,7 +27,7 @@ int count_one_bits2(int value)//²»¼Óunsigned Ò²OK
 	}
 	return count;
 }
-int count_one_bits3(unsigned int value)//´«ÈëÊı×Ö±ä³ÉÎŞ·ûºÅÊı
+int count_one_bits3(unsigned int value)//ä¼ å…¥æ•°å­—å˜æˆæ— ç¬¦å·æ•°
 {
 	int count = 0;
 	while (value)
@@ -48,21 +48,21 @@ int main()
 	return 0;
 }
 
-/*2.»ñÈ¡Ò»¸öÊı¶ş½øÖÆĞòÁĞÖĞËùÓĞµÄÅ¼ÊıÎ»ºÍÆæÊıÎ»£¬
-·Ö±ğÊä³ö¶ş½øÖÆĞòÁĞ¡£*/
+/*2.è·å–ä¸€ä¸ªæ•°äºŒè¿›åˆ¶åºåˆ—ä¸­æ‰€æœ‰çš„å¶æ•°ä½å’Œå¥‡æ•°ä½ï¼Œ
+åˆ†åˆ«è¾“å‡ºäºŒè¿›åˆ¶åºåˆ—ã€‚*/
 #include<stdio.h>
 #include<stdlib.h>
 
 void Function(int num)
 {
 	int i = 0;
-	printf("Å¼ÊıÎ»Îª£º");
+	printf("å¶æ•°ä½ä¸ºï¼š");
 	for (i = 31; i >= 1; i -= 2)
 	{
 		printf("%d", (num >> i) & 1);
 	}
 	printf("\n");
-	printf("ÆæÊıÎ»Îª£º");
+	printf("å¥‡æ•°ä½ä¸ºï¼š");
 	for (i = 30; i >= 0; i -= 2)
 	{
 		printf("%d", (num >> 1) & 1);
@@ -78,22 +78,22 @@ int main()
 	system("pause");
 	return 0;
 }
-/*3.±à³ÌÊµÏÖ£º
-Á½¸öint£¨32Î»£©ÕûÊımºÍnµÄ¶ş½øÖÆ±í´ïÖĞ£¬
-ÓĞ¶àÉÙ¸öÎ»(bit)²»Í¬£¿
-ÊäÈëÀı×Ó :
+/*3.ç¼–ç¨‹å®ç°ï¼š
+ä¸¤ä¸ªintï¼ˆ32ä½ï¼‰æ•´æ•°må’Œnçš„äºŒè¿›åˆ¶è¡¨è¾¾ä¸­ï¼Œ
+æœ‰å¤šå°‘ä¸ªä½(bit)ä¸åŒï¼Ÿ
+è¾“å…¥ä¾‹å­ :
 1999 2299
-Êä³öÀı×Ó : 7*/
+è¾“å‡ºä¾‹å­ : 7*/
 #include<stdio.h>
 #include<stdlib.h>
 
 int Different_bits(int a, int b)
 {
-	int tmp = a ^ b;//²»Ò»ÑùµÄ½øĞĞÒì»ò
+	int tmp = a ^ b;//ä¸¤ä¸ªæ•°ä¹‹é—´ä¸ä¸€æ ·çš„éƒ¨åˆ†å¯è¿›è¡Œå¼‚æˆ–å¾—åˆ°ï¼Œç›¸åŒéƒ¨åˆ†å¯ç”¨ä¸å¾—åˆ°
 	int count = 0;
 	while (tmp)
 	{
-		tmp = tmp & (tmp - 1);
+		tmp = tmp & (tmp - 1);//è½¬åŒ–ä¸ºæ±‚å¼‚æˆ–ç»“æœé‡Œ1çš„ä¸ªæ•°
 		count++;
 	}
 	return count;
