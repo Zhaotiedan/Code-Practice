@@ -9,10 +9,12 @@ void Menu()
 	printf("Please input your select here:>\n");
 }
 
-int GetIndex(int start, int end)
+static int GetIndex(int start, int end)//static修饰 代表该函数只能在本文件内部使用
 {
 	return rand() % (end - start + 1) + start;
 }
+
+//随机生成雷
 void SetMine(char mine_board[][COL], int row, int col)
 {
 	srand((unsigned long)time(NULL));
@@ -28,12 +30,14 @@ void SetMine(char mine_board[][COL], int row, int col)
 		}
 	}
 }
+//得到一个点周围雷的数量
 int GetMineNum(char mine_board[][COL], int i, int j)
 {
 	return mine_board[i-1][j-1]+mine_board[i-1][j]+ mine_board[i-1][j+1]+ \
 		mine_board[i][j-1]+ mine_board[i][j+1]+ \
 		mine_board[i+1][j-1]+mine_board[i+1][j]+ mine_board[i+1][j+1]-8*'0';//整型
 } 
+//显示雷盘
 void ShowBoard(char show_board[][COL], int row, int col)
 {
 	int i = 0;
