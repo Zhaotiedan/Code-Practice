@@ -67,7 +67,7 @@ int main()
 1 2 3
 4 5 6
 7 8 9*/
-//时间复杂度小于O(N) 是指不能将整个数组遍历
+//时间复杂度小于O(N) 是指不能将整个数组遍历 
 #include<stdio.h>
 #include<stdlib.h>
 #define ROW 3
