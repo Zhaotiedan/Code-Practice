@@ -1,17 +1,17 @@
-/* 1.ÊµÏÖÒ»¸öº¯Êı£¬¿ÉÒÔ×óĞı×Ö·û´®ÖĞµÄk¸ö×Ö·û¡£
-ABCD×óĞıÒ»¸ö×Ö·ûµÃµ½BCDA
-ABCD×óĞıÁ½¸ö×Ö·ûµÃµ½CDAB */
+/* 1.å®ç°ä¸€ä¸ªå‡½æ•°ï¼Œå¯ä»¥å·¦æ—‹å­—ç¬¦ä¸²ä¸­çš„kä¸ªå­—ç¬¦
+ABCDå·¦æ—‹ä¸€ä¸ªå­—ç¬¦å¾—åˆ°BCDA
+ABCDå·¦æ—‹ä¸¤ä¸ªå­—ç¬¦å¾—åˆ°CDAB */
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
 
 #include<string.h>
-//±©Á¦Ëã·¨
+//æš´åŠ›ç®—æ³•
 void left_move1(char *str, int k)
 {
 	if (k<0 || k>strlen(str))
 	{
-		printf("²»ºÏ·¨\n");
+		printf("ä¸åˆæ³•\n");
 		return;
 	}
 	while (k)
@@ -44,7 +44,7 @@ void Left_handed(char *arr, int k, int len)
 {
 	if (k<0 || k>strlen(arr))
 	{
-		printf("²»ºÏ·¨\n");
+		printf("ä¸åˆæ³•\n");
 		return 0;
 	}
 	int i = 0;
@@ -73,23 +73,23 @@ int main()
 	return 0;
 }
 
-/*ÅĞ¶ÏÒ»¸ö×Ö·û´®ÊÇ·ñÎªÁíÍâÒ»¸ö×Ö·û´®Ğı×ªÖ®ºóµÄ×Ö·û´®¡£
-ÀıÈç£º¸ø¶¨s1 =AABCDºÍs2 = BCDAA£¬·µ»Ø1
-¸ø¶¨s1=abcdºÍs2=ACBD£¬·µ»Ø0.
+/*åˆ¤æ–­ä¸€ä¸ªå­—ç¬¦ä¸²æ˜¯å¦ä¸ºå¦å¤–ä¸€ä¸ªå­—ç¬¦ä¸²æ—‹è½¬ä¹‹åçš„å­—ç¬¦ä¸²ã€‚
+ä¾‹å¦‚ï¼šç»™å®šs1 =AABCDå’Œs2 = BCDAAï¼Œè¿”å›1
+ç»™å®šs1=abcdå’Œs2=ACBDï¼Œè¿”å›0.
 
-AABCD×óĞıÒ»¸ö×Ö·ûµÃµ½ABCDA
-AABCD×óĞıÁ½¸ö×Ö·ûµÃµ½BCDAA
+AABCDå·¦æ—‹ä¸€ä¸ªå­—ç¬¦å¾—åˆ°ABCDA
+AABCDå·¦æ—‹ä¸¤ä¸ªå­—ç¬¦å¾—åˆ°BCDAA
 
-AABCDÓÒĞıÒ»¸ö×Ö·ûµÃµ½DAABC*/
+AABCDå³æ—‹ä¸€ä¸ªå­—ç¬¦å¾—åˆ°DAABC*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 
 #define N 10
-//strcat:£¨str1£¬str2£©°Ñstr2Æ´½Óµ½str1ºóÃæ
-//strncat£º(str1,str2,n)°Ñstr2µÄÇ°n¸öÆ´½Óµ½str1ºóÃæ
-//²éÕÒ×Ö·û´®strstr£¨str1£¬str2£©ÔÚstr1ÀïÃæ¿´ÄÜ·ñÕÒµ½str2
-//º¯ÊıÊµÏÖ
+//strcat:ï¼ˆstr1ï¼Œstr2ï¼‰æŠŠstr2æ‹¼æ¥åˆ°str1åé¢
+//strncatï¼š(str1,str2,n)æŠŠstr2çš„å‰nä¸ªæ‹¼æ¥åˆ°str1åé¢
+//æŸ¥æ‰¾å­—ç¬¦ä¸²strstrï¼ˆstr1ï¼Œstr2ï¼‰åœ¨str1é‡Œé¢çœ‹èƒ½å¦æ‰¾åˆ°str2
+//å‡½æ•°å®ç°
 void  Merge_string(char *arr)
 {
 	arr = strncat(arr, arr, strlen(arr));
@@ -106,7 +106,7 @@ int Judge_string(char *arr1, char *arr2)
 		return 0;
 }
 
-//Ëã·¨ÊµÏÖ
+//ç®—æ³•å®ç°
 void Merge_string(char *arr)
 {
 	int i = 0;
