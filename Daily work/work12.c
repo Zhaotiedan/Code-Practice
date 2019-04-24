@@ -68,3 +68,39 @@ int main()
 4 5 6 
 7 8 9*/
 //时间复杂度小于O(N) 是指不能将整个数组遍历
+#include<stdio.h>
+#include<stdlib.h>
+#define ROW 3
+int Find_number(int (*arr)[ROW],int row,int col,int n)
+{
+	int i, j;
+	for (i=0,j = 0; j < col; j++)
+	{
+		if (arr[i][j] == n)
+			return 1;
+	}
+	for (i = 1; i <row; i++)
+	{
+		j = row-1;
+		if (arr[i][j] == n)
+			return 1;
+	}
+	return 0;
+
+}
+int main()
+{
+	int arr[][3] = { 1,2,3,3,4,5,4,5,6 };
+	int result = 0;
+	int num = 0;
+	scanf("%d", &num);
+	result=Find_number(arr, ROW, ROW, num);
+	if (result)
+	{
+		printf("find it\n"）;
+	}
+	else
+		printf("can't find\n");
+	system("pause");
+	return 0;
+}
