@@ -68,6 +68,8 @@ int main()
 4 5 6
 7 8 9*/
 //时间复杂度小于O(N) 是指不能将整个数组遍历 
+
+//解法一
 #include<stdio.h>
 #include<stdlib.h>
 #define ROW 3
@@ -101,6 +103,52 @@ int main()
 	}
 	else
 			printf("can't find\n");
+	system("pause");
+	return 0;
+}
+
+//解法2（较好）
+#include<stdio.h>
+#include<stdlib.h>
+
+void Find_number(int arr[3][3], int *px, int *py, int key)//*px和*py代表行和列，找到后返回下标的值存放在里面
+{
+	int x = 0;
+	int y = *py - 1;//定位最右上角的数字
+	while ((x <= (*px - 1)) && (y >= 0))
+	{
+		if (arr[x][y] == key)
+		{
+			*px = x;
+			*py = y;
+			return;//结束函数
+		}
+		else if (arr[x][y] > key)
+		{
+			y--;
+		}
+		else //arr[x][y]<key
+		{
+			x++;
+		}
+	}
+	*px = -1;
+	*py = -1;
+}
+int main()
+{
+	int arr[][3] = { 1,2,3,4,5,6,7,8,9 };
+	int num = 0;
+	int x = 3;//行数为3
+	int y = 3;//列数为3
+	scanf("%d", &num);
+	Find_number(arr, &x, &y, num);//x和y传相应的地址
+	if (x != -1 && y != -1)
+	{
+		printf("find it,the location is %d,%d", x, y);
+	}
+	else
+		printf("can't find\n");
 	system("pause");
 	return 0;
 }
