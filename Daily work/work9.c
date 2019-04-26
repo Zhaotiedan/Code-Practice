@@ -80,7 +80,7 @@ int main()
 	return 0;
 }
 
-/*有一个字符数组的内容为:"student a am i", 
+/*4.有一个字符数组的内容为:"student a am i", 
 请你将数组的内容改为"i am a student". 
 要求： 
 不能使用库函数。 
