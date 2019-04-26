@@ -1,13 +1,13 @@
-/*1.��д������
+/*1.编写函数：
 unsigned int reverse_bit(unsigned int value);
-��������ķ���ֵ��value�Ķ�����λģʽ�����ҷ�ת���ֵ��
+这个函数的返回值是value的二进制位模式从左到右翻转后的值。
 
-�磺
-��32λ������25���ֵ�������и�λ��
+如：
+在32位机器上25这个值包含下列各位：
 00000000000000000000000000011001
-��ת�󣺣�2550136832��
+翻转后：（2550136832）
 10011000000000000000000000000000
-���������أ�
+程序结果返回：
 2550136832*/
 #include<stdio.h>
 #include<stdlib.h>
@@ -32,8 +32,8 @@ int main()
 	system("pause");
 	return 0;
 }
-/*2.��ʹ�ã�a+b��/2���ַ�ʽ������������ƽ��ֵ��*/
-//����һ ��ͼ�ɽ��
+/*2.不使用（a+b）/2这种方式，求两个数的平均值。*/
+//方法一 画图可解决
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -48,13 +48,13 @@ int main()
 	system("pause");
 	return 0;
 }
-//��򷨣�����ԭʼ��a+b��/2����a+b��=��a&b��*2+a^b,(a+b)/2=(a&b)+(a^b)>>1 
+//异或法：利用原始（a+b）/2，（a+b）=（a&b）*2+a^b,(a+b)/2=(a&b)+(a^b)>>1 
 
-//���ַ�������������CSDN
+//两种方法详情剖析见CSDN：https://blog.csdn.net/qq_42913794/article/details/89449344
 
-/*3.���ʵ�֣� 
-һ��������ֻ��һ�����ֳ�����һ�Ρ������������ֶ��ǳɶԳ��ֵġ� 
-���ҳ�������֡���ʹ��λ���㣩 
+/*3.编程实现： 
+一组数据中只有一个数字出现了一次。其他所有数字都是成对出现的。 
+请找出这个数字。（使用位运算） 
 */
 #include<stdio.h>
 #include<stdlib.h>
@@ -80,16 +80,16 @@ int main()
 	return 0;
 }
 
-/*��һ���ַ����������Ϊ:"student a am i", 
-���㽫��������ݸ�Ϊ"i am a student". 
-Ҫ�� 
-����ʹ�ÿ⺯���� 
-ֻ�ܿ������޸��ռ䣨�ռ�������ַ����ĳ����޹أ��� 
+/*有一个字符数组的内容为:"student a am i", 
+请你将数组的内容改为"i am a student". 
+要求： 
+不能使用库函数。 
+只能开辟有限个空间（空间个数和字符串的长度无关）。 
 
 student a am i 
 i ma a tneduts 
 i am a student*/
-//�Ƚ������ַ������ã��ٽ�������������
+//先将整个字符串逆置，再将单个单词逆置
 
 #include<stdio.h>
 #include<stdlib.h>
