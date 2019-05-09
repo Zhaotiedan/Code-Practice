@@ -45,3 +45,28 @@ int main()
 2.喝汽水，1瓶汽水1元，2个空瓶可以换一瓶汽水， 
 给20元，可以多少汽水。 
 编程实现。 
+#include<stdio.h>
+#include<stdlib.h>
+
+int Water_Number(int n)
+{
+	int num = n;
+	int sum = n;
+	int empty = n;
+	while (empty >= 2)
+	{
+		sum += empty/ 2;
+		empty = empty / 2 + empty % 2;
+	}
+	return sum;
+}
+int main()
+{
+	int money = 0;
+	int sum = 0;
+	scanf("%d", &money);
+	sum=Water_Number(money);
+	printf("%d", sum);
+	system("pause");
+	return 0;
+}
