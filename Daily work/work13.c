@@ -1,4 +1,4 @@
-/*1.实现strcpy*/
+/*1.瀹炵幇strcpy*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -26,7 +26,7 @@ int main()
 	return 0;
 }
 
-/*2.实现strcat*/
+/*2.瀹炵幇strcat*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -68,7 +68,7 @@ int main()
 	return 0;
 }
 
-/*3.实现strstr*/
+/*3.瀹炵幇strstr*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -114,7 +114,7 @@ int main()
 	return 0;
 }
 
-/*4.实现strchr*/
+/*4.瀹炵幇strchr*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -148,7 +148,7 @@ int main()
 	return 0;
 }
 
-/*5.实现strcmp*/
+/*5.瀹炵幇strcmp*/
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -206,7 +206,7 @@ int main()
 	return 0;
 }
 
-/*6.实现memcpy*/
+/*6.瀹炵幇memcpy*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -235,7 +235,7 @@ int main()
 	return 0;
 }
 
-/*7.实现memmove*/
+/*7.瀹炵幇memmove*/
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -263,3 +263,4 @@ int main()
 	system("pause");
 	return 0;
 }
+//
