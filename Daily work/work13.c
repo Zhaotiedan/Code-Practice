@@ -206,7 +206,7 @@ int main()
 	return 0;
 }
 
-/*6.实现memcpy*/
+/*6.实现memcpy /memcpy:内存拷贝函数 （void *dest，void *str，count）count是字节数！16—>考四个*/
 #include<stdio.h>
 #include<stdlib.h>
 
