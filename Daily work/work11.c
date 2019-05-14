@@ -7,7 +7,7 @@ ABCD左旋两个字符得到CDAB */
 
 #include<string.h>
 //暴力算法 函数
-void left_move1(char *str, int k)
+/*void left_move1(char *str, int k)
 {
 	if (k<0 || k>strlen(str))
 	{
@@ -26,7 +26,7 @@ void left_move1(char *str, int k)
 		*cur = tmp;
 		k--;
 	}
-}
+}*/
 
 //聪明算法 函数
 void Reverse(char *left, char *right)
@@ -68,7 +68,7 @@ int main()
 	scanf("%d", &k);
 	Left_handed(arr, k, len);
 
-	left_move1(arr, k);
+	/*left_move1(arr, k);*/
 
 	printf("%s", arr);
 	system("pause");
