@@ -235,7 +235,7 @@ int main()
 	return 0;
 }
 
-/*7.实现memmove*/
+/*7.实现memmove .*/
 #include<stdio.h>
 #include<stdlib.h>
 
