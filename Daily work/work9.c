@@ -76,7 +76,7 @@ int Find_Number(int *arr, int len)
 int main()
 {
 	int arr[] = { 1,2,3,4,3,2,1 };
-	int len = sizeof(arr) / sizeof(arr[0]);
+	int len = sizeof(arr) / sizeof(arr[0]);//不需要-1
 	int result = 0;
 	result = Find_Number(arr,len);
 	printf("%d\n", result);
