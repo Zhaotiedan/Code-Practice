@@ -9,6 +9,7 @@ unsigned int reverse_bit(unsigned int value);
 10011000000000000000000000000000
 程序结果返回：
 2550136832*/
+
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -32,7 +33,9 @@ int main()
 	system("pause");
 	return 0;
 }
+
 /*2.不使用（a+b）/2这种方式，求两个数的平均值。*/
+
 //方法一 画图可解决
 #include<stdio.h>
 #include<stdlib.h>
@@ -56,6 +59,7 @@ int main()
 一组数据中只有一个数字出现了一次。其他所有数字都是成对出现的。 
 请找出这个数字。（使用位运算） 
 */
+
 #include<stdio.h>
 #include<stdlib.h>
 int Find_Number(int *arr, int len)
