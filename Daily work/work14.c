@@ -1,4 +1,4 @@
-//1.ÊµÏÖstrncpy
+//1.å®ç°strncpy
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
@@ -24,12 +24,12 @@ int main()
 	char arr1[20] = "hello";
 	char arr2[] = "world!";
 	char *ret = My_strncpy(arr1, arr2, strlen(arr2) + 1);
-	printf("arr1±»¿½±´ºóÎª£º%s\n", ret);
+	printf("arr1è¢«æ‹·è´åä¸ºï¼š%s\n", ret);
 	system("pause");
 	return 0;
 }
 
-//2.ÊµÏÖstrncat
+//2.å®ç°strncatå‡½æ•°
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
@@ -58,12 +58,12 @@ int main()
 	char arr1[20] = "hello";
 	char arr2[] = "world!";
 	char *ret = My_strncat(arr1, arr2, sizeof(arr2));
-	printf("Æ´½ÓºóµÄ×Ö·û´®Îª£º%s\n", ret);
+	printf("æ‹¼æ¥åçš„å­—ç¬¦ä¸²ä¸ºï¼š%s\n", ret);
 	system("pause");
 	return 0;
 }
 
-//3.ÊµÏÖstrncmp
+//3.å®ç°strncmp
 #include<stdio.h>
 #include<stdlib.h>
 #include<assert.h>
@@ -86,7 +86,7 @@ int main()
 	int result = My_strncmp(arr1, arr2, sizeof(arr2));
 	if (result == 0)
 	{
-		printf("arr1Óëarr2ÏàÍ¬\n");
+		printf("arr1ä¸arr2ç›¸åŒ\n");
 	}
 	else if (result > 0)
 	{
