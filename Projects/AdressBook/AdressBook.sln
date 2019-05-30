@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AdressBook", "AdressBook\AdressBook.vcxproj", "{5C97D343-D215-45C2-8DE7-B32DC683448E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Debug|x64.ActiveCfg = Debug|x64
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Debug|x64.Build.0 = Debug|x64
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Debug|x86.ActiveCfg = Debug|Win32
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Debug|x86.Build.0 = Debug|Win32
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Release|x64.ActiveCfg = Release|x64
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Release|x64.Build.0 = Release|x64
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Release|x86.ActiveCfg = Release|Win32
+		{5C97D343-D215-45C2-8DE7-B32DC683448E}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {832B4716-7431-4C0A-B043-6AEFB2ECFBD5}
+	EndGlobalSection
+EndGlobal
