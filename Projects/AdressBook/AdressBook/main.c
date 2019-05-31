@@ -4,40 +4,47 @@
 
 int main()
 {
-	contact_t *ct;
-	InitAdressBook(&ct);//内存里面已经开辟5个空间
-
-	int quit = 0;
+	volatile int quit = 0;//volatile:保持内存的可见性 不能在寄存器改变
 	int select = 0;
+	contact_p ct_p;
+	InitPerson(&ct_p);//内存里面已经开辟5个空间
 	while (!quit)
 	{
 		Menu();
-		sacnf("%d", &select);
+		scanf("%d", &select);		
 		switch (select)
 		{
 		case 1:
-			AddAdressBook(ct);
+			AddPerson(&ct_p);
 			break;
 		case 2:
+			DelPerson(ct_p);
 			break;
 		case 3:
+			ModPerson(ct_p);
 			break;
 		case 4:
+			SearchPerson(ct_p);
 			break;
 		case 5:
+			SortPerson(ct_p);
 			break;
 		case 6:
+			ShowPerson(ct_p);
 			break;
 		case 7:
+			ClearPerson(ct_p);
 			break;
 		case 0:
+
+			printf("bye!\n");
+			quit = 1;
 			break;
 		default:
+			printf("Please Enter The Correct Number!\n");
 			break;
 		}
 	}
-
-	DestoryAdressBook(ct);
 	system("pause");
 	return 0;
 }

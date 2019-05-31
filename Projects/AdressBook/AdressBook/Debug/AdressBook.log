@@ -1,15 +1,2 @@
-﻿  AdressBook.c
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(5): error C2082: 形参“Menu”的重定义
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(5): error C2143: 语法错误: 缺少“;”(在“{”的前面)
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(16): warning C4047: “=”:“contact_t *”与“person_pp”的间接级别不同
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(20): warning C4098: “InitAdressBook”:“void”函数返回值
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(24): warning C4098: “InitAdressBook”:“void”函数返回值
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(35): warning C4477: “scanf”: 格式字符串“%d”需要类型“int *”的参数，但可变参数 1 拥有了类型“unsigned char *”
-  c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(35): note: 请考虑在格式字符串中使用“%hhd”
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\adressbook.c(40): error C2059: 语法错误:“]”
-  main.c
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\main.c(6): error C2085: “main”: 不在形参表中
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\main.c(6): error C2143: 语法错误: 缺少“;”(在“{”的前面)
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\main.c(15): warning C4013: “sacnf”未定义；假设外部返回 int
-c:\users\administrator\source\code\第二十次作业\adressbook\adressbook\main.c(42): warning C4098: “ModAdressBook”:“void”函数返回值
-  正在生成代码...
+﻿  main.c
+  AdressBook.vcxproj -> C:\Users\Administrator\source\code\第二十次作业\AdressBook\Debug\AdressBook.exe
