@@ -171,18 +171,3 @@ void ClearPerson(contact_p ct_p)
 	ct_p->size = 0;
 	printf("Clear Success!\n");
 }
-
-//void DestroyContact(contact_p ct_p)
-//{
-//	int top = ct_p->size;
-//	int i = 0;
-//	assert(ct_p);
-//	free(ct_p->list);
-//	for (i = 0; i < top; i++)
-//	{
-//		ct_p->list[i] = '0';
-//	}
-//	ct_p->cap = 0;
-//	ct_p->size = 0;
-//
-//}

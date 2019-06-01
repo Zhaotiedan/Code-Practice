@@ -36,7 +36,6 @@ int main()
 			ClearPerson(ct_p);
 			break;
 		case 0:
-
 			printf("bye!\n");
 			quit = 1;
 			break;
