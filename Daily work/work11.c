@@ -135,7 +135,7 @@ int Judge_string(char *arr1, char *arr2)
 		p++;
 	}
 	arr3[i] = '\0';
-	printf("%s", arr3);
+	//printf("%s\n", arr3);debug检查
 	for (j = 0; j < i; j++)
 		if (strcmp(arr3, arr2) == 0)
 			return 1;
