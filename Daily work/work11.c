@@ -122,25 +122,35 @@ int Judge_string(char *arr1, char *arr2)
 {
 	Merge_string(arr1);
 	char *p = arr1;
+	char *temp = NULL;
 	char arr3[6];
 	int i = 0;
 	int j = 0;
-	while (*p != *arr2)
+	while (p != NULL)
 	{
-		p++;
-	}
-	for (i = 0; i < 5; i++)
-	{
-		arr3[i] = *p;
-		p++;
-	}
-	arr3[i] = '\0';
-	//printf("%s\n", arr3);debug检查
-	for (j = 0; j < i; j++)
+		while (*p != *arr2)
+		{
+			p++;
+		}
+		temp = p;
+		for (i = 0; i < 5; i++)
+		{
+			arr3[i] = *p;
+			p++;
+		}
+		arr3[i] = '\0';
 		if (strcmp(arr3, arr2) == 0)
+		{
 			return 1;
+		}
 		else
-			return 0;
+		{
+			p = temp;
+			p++;
+		}
+	}
+	return 0;
+
 }
 int main()
 {
