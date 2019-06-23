@@ -171,3 +171,7 @@ void ClearPerson(contact_p ct_p)
 	ct_p->size = 0;
 	printf("Clear Success!\n");
 }
+void Save(contact_p ct_p)
+{
+
+}

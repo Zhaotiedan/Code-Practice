@@ -44,5 +44,7 @@ void SortPerson(contact_p ct_p);//根据姓名来排序，用q_sort
 
 void ClearPerson(contact_p ct_p);//清空通讯录
 
+void Save(contact_p ct_p);
+
 
 #endif

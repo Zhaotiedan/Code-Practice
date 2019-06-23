@@ -35,6 +35,9 @@ int main()
 		case 7:
 			ClearPerson(ct_p);
 			break;
+		case 8:
+			Save(ct_p);
+			break;
 		case 0:
 			printf("bye!\n");
 			quit = 1;
