@@ -211,7 +211,7 @@ void ClearPerson(contact_p ct_p)
 }
 void Save(contact_p ct_p)
 {
-	FILE*fp = fopen("CT_FILE", "wb");
+	FILE*fp = fopen(CT_FILE, "wb");
 	if (NULL == fp)
 	{
 		printf("fopen error!\n");
