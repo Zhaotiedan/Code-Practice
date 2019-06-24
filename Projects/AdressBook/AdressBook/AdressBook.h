@@ -14,6 +14,8 @@
 #define LIST_DEFAULT 2
 #define INC_SIZE 1
 
+#define CT_FILE "contact.bin"
+
 typedef struct person//人结构体
 {
 	char name[NAME_SIZE];
@@ -33,7 +35,7 @@ typedef struct contact//通讯录结构体
 void Menu();
 int FindPos(contact_p ct_p, char *name);
 
-void InitPerson(contact_pp ct_pp);
+void InitPersonDeafault(contact_pp ct_pp);
 void ShowPerson(contact_p ct_p);
 
 void AddPerson(contact_pp ct_pp);
@@ -44,7 +46,7 @@ void SortPerson(contact_p ct_p);//根据姓名来排序，用q_sort
 
 void ClearPerson(contact_p ct_p);//清空通讯录
 
-void Save(contact_p ct_p);
-
+void Save(contact_p ct_p);//将通讯录信息保存到文件
+int Load(contact_p ct_p);//将信息从文件中恢复出来
 
 #endif

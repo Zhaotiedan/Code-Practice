@@ -12,8 +12,46 @@ void Menu()
 	printf("************************\n");
 	printf("Please Select:> ");
 }
-
-void InitPerson(contact_pp ct_pp)
+int InitFile(contact_pp ct_pp,FILE*fp)
+{
+	contact_p ct_p = (contact_p)malloc(sizeof(contact_t));
+	if (ct_p)
+	{
+		fread(ct_p, sizeof(contact_t), 1, fp);//读头
+		int _cap = ct_p->cap;
+		int size = sizeof(contact_t) + ct_p->cap * sizeof(person_t);//总大小
+		contact_p p = (contact_p)realloc(ct_p, size);//扩展空间
+		if (p)
+		{
+			ct_p = p;
+			fread(ct_p->list, ct_p->cap * sizeof(person_t), 1, fp);//读数据
+			(*ct_pp) = ct_p;
+			return 1;
+		}
+		else
+		{
+			return 0;
+		}
+	}
+	else
+	{
+		return 0;
+	}
+}
+int Load(contact_pp ct_pp)
+{
+	FILE*fp = fopen(CT_FILE, "rb");
+	if (NULL == fp)
+	{
+		printf("Init contact defualt!\n");
+		InitPersonDeafault(ct_pp);
+		return 1;
+	}
+	int ret = InitFile(ct_pp, fp);
+	fclose(fp);
+	return ret;
+}
+void InitPersonDeafault(contact_pp ct_pp)
 {
 	*ct_pp = malloc(sizeof(contact_t) + sizeof(person_t)*LIST_DEFAULT);
 	if (NULL == (*ct_pp))
@@ -173,5 +211,14 @@ void ClearPerson(contact_p ct_p)
 }
 void Save(contact_p ct_p)
 {
+	FILE*fp = fopen("CT_FILE", "wb");
+	if (NULL == fp)
+	{
+		printf("fopen error!\n");
+		return;
+	}
+	int size = sizeof(contact_t) + (ct_p->cap) * sizeof(person_t);//通讯录的大小加上每一个人结构体的大小
+	fwrite(ct_p, size, 1, fp);
 
+	fclose(fp);
 }

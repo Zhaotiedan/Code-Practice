@@ -1,6 +1,5 @@
 ﻿  AdressBook.c
-d:\github\daily code\c-code\projects\adressbook\adressbook\adressbook.c(58): warning C4477: “scanf”: 格式字符串“%u”需要类型“unsigned int *”的参数，但可变参数 1 拥有了类型“unsigned char *”
-  d:\github\daily code\c-code\projects\adressbook\adressbook\adressbook.c(58): note: 请考虑在格式字符串中使用“%hhu”
-  main.c
-  正在生成代码...
+d:\github\daily code\c-code\projects\adressbook\adressbook\adressbook.c(42): warning C4028: 形参 1 与声明不同
+d:\github\daily code\c-code\projects\adressbook\adressbook\adressbook.c(96): warning C4477: “scanf”: 格式字符串“%u”需要类型“unsigned int *”的参数，但可变参数 1 拥有了类型“unsigned char *”
+  d:\github\daily code\c-code\projects\adressbook\adressbook\adressbook.c(96): note: 请考虑在格式字符串中使用“%hhu”
   AdressBook.vcxproj -> D:\github\Daily code\C-code\Projects\AdressBook\Debug\AdressBook.exe

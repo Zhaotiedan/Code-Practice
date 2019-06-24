@@ -7,7 +7,7 @@ int main()
 	volatile int quit = 0;//volatile:保持内存的可见性 不能在寄存器改变
 	int select = 0;
 	contact_p ct_p;
-	InitPerson(&ct_p);//内存里面已经开辟5个空间
+	Load(&ct_p);//内存里面已经开辟5个空间
 	while (!quit)
 	{
 		Menu();
@@ -35,10 +35,8 @@ int main()
 		case 7:
 			ClearPerson(ct_p);
 			break;
-		case 8:
-			Save(ct_p);
-			break;
 		case 0:
+			Save(ct_p);
 			printf("bye!\n");
 			quit = 1;
 			break;
