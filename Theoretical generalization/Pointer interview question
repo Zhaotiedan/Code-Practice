@@ -1,1 +1,86 @@
-1.
+1.函数指针：
+判断是否是函数相关的是有没有小括号（函数调用运算符）
+
+//标志符三大规则：必须有数字，字母，下划线组成
+不能有由数字开头
+不能和关键字重复
+
+和函数相关的三种语句：
+函数声明
+函数指针定义
+函数调用
+
+1.只有调用可以没有标识符,则没有标识符一定是函数调用。
+2.如果标识符的第一优先级不是*，那么就不是函数定义
+3.如果括号里是参数列表，则一定不是函数调用
+
+//函数指针是一个假指针，&和*都可省略。
+//因为：函数指针赋值真相:函数指针调用时使用虚拟地址，它后面的虚拟代码会加载到真实地址执行。
+
+2.习题：
+1.(*(void (*)() )0)();//void (*)()是一个函数指针。(void (*)() )0：将0地址强转为函数类型，放一个特定的函数地址。
+*(void (*)() )0：解引用，访问0地址访问特定函数。再通过()调用。
+
+2.void(*signal(int,void(*)(int)))(int);//参数类型和返回值类型相同。与小括号最亲，
+省去signal(int,void(*)(int))看本质：void(*)(int)与signal里面的类型一样;
+  简化：
+  typedef void (*FUNC)(int);//给void(*)(int)取了一个别名叫FUNC
+  //则上面的代码就可以直接写成:
+   FUNC signal(int FUCN);
+
+typedef int a：给int这个类型起别名，叫a。
+
+3.运用：
+int fuc(int i)
+{
+	printf("i=%d" i);
+}
+
+void(*signal(int,void(*)(int))(int)
+{
+	test(i);
+	return test;//返回值为这个函数
+}
+int main()
+{
+	signal(1,func)(2);//signal的返回值为func函数，所以调用完signal后，返回值为func函数，所以会再调用一次func传的参数为2。
+}
+
+输出结果为：i=1；i=2；
+
+//4.传值与传址
+void function1(int *pa, int b)
+{
+	*pa = b;
+}
+void function2(int **ppa, int *pb)
+{
+	*ppa = pb;
+}
+void function3(int ***pppa, int *pb)
+{
+	**pppa = pb;
+}
+int main()
+{
+	int a = 10;
+	int b = 5;
+	int *pa = &a;
+	int *pb = &b;
+	int **ppa = &pa;
+	int **ppb = &pb;
+	int ***pppa = &ppa;
+	//通过打印pa和b使a变成5
+	function1(pa,b);
+	printf("%d\n", *pa);
+	//通过ppa和pb改变a为5
+	function2(ppa,pb);
+	printf("%d\n", **ppa);
+	//通过pppa和pb改变a为5：
+	function3(&ppa,pb);
+	printf("%d", ***pppa);
+	system("pause");
+	return 0;
+}
+
+
