@@ -1,0 +1,26 @@
+
+不加名字的结构体：只能定义一个或几个变量
+struct {
+	int a;
+	int b;
+}point{0,0};
+
+//typedef：后面加正常定义，将定义的内容取一个别名。
+typedef struct{
+	int a;
+	int *pa;
+}TEST1;
+typedef struct{
+	int a;
+	int *pb;
+}TEST2;
+int main()
+{
+	int a=5;
+	TEST1 t1={6,&a};
+	TEST2 t2={8,&t1};
+	//问题：通过t2找到a的值
+	printf("%d",*(t2.pb->pa));//先通过.找到pb，再通过->找到pa，再解引用。
+	return 0;
+}
+//数组和结构体区别：结构体只是类型不一样的变量的集合
