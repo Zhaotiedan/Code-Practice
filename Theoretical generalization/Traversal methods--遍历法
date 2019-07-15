@@ -1,0 +1,7 @@
+1.数字遍历 for(i=a;i<=b;i++)  i完成了对[a,b]的遍历
+2.数组遍历 for(i=0;i<n;i++)  a[i]完成了对数组的遍历
+3.字符串遍历 for(i=0;i<str[i];i++)  str完成了对字符串str的遍历
+4.数位遍历 for(i=src;i;i/=10)  i%10 完成了对十进制数字src中每一位的遍历（进制类）
+for(i=src;i;i/=n)    i%n 完成了对n进制数字src中每一位的遍历
+5.链表遍历 for(cur=head;cur;cur=cur->next)  cur完成了对以head为头的链表的遍历  这是无头单链表 （最优）
+6.容器遍历 for（iter =v.begin();iter!=v.end();iter++) iter完成了对容器v的遍历
