@@ -1,0 +1,59 @@
+//迭代法：
+//凑数问题：tmp为变化量 得到每一次的数，sum为求和量得到每一次数到最后的和
+int get_value(int m, int n)
+{
+	int sum = 0;
+	int temp = 0;
+	while (n)
+	{
+		temp += temp * 10 + m;//核心
+		sum += temp;//核心
+		n--;
+	}
+	return sum;
+}
+int main()
+{
+	int m, n = 0;
+	int result = 0;
+	scanf("%d%d", &m, &n);
+	result=get_value(m, n);
+	printf("%d", result);
+	system("pause");
+	return 0;
+}
+
+
+//回文数问题：（迭代法)
+int main()
+{
+	int n = 12345;
+	int sum = 0;
+	int i = 0;
+	for (i = n; i; i / 10)//10指10进制
+	{
+		sum += sum * 10 + i % 10;//核心
+	}
+	printf("%d", sum);
+}
+//拓展m进制
+int main()
+{
+	int m, n = 0;
+	int i = 0;
+	int sum = 0;
+	scanf("数字为：%d进制为：%d", &m, &n);
+	for (i = m; i; i / n)
+	{
+		sum += sum * n + i % n;
+	}
+	if (sum == n)
+	{
+		printf("数字%d在%d进制下是回文数");
+	}
+	else
+	{
+		printf("数字%d在%d进制下不是回文数");
+	}
+	return 0;
+}
