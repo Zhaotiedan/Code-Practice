@@ -32,7 +32,7 @@ int main()
 int is_prime(int i)//试除法
 {
 	int j = 0;
-	for (j = 2; j < sqrt(i); j++)//标准写一个法：定义一个temp=sqrt(i)，老版本会每一次都重复计算这个值，这样可以杜绝编译器不同影响的效率问题
+	for (j = 2; j < sqrt(i); j++)//标准写一个法：定义一个temp=sqrt(i)，老版本会每一次都重复计算这个值，这样可以杜绝编译器不同影响的效率问题。
 	{
 		if (i%j == 0)
 			return 0;
