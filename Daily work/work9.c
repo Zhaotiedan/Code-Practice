@@ -93,7 +93,7 @@ int main()
 student a am i 
 i ma a tneduts 
 i am a student*/
-//先将整个字符串逆置，再将单个单词逆置
+//1.天然方法：先将整个字符串逆置，再将单个单词逆置
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -114,6 +114,8 @@ void Reverse_Swap(char *start,char *end)
 		end--;
 	}
 }
+
+
 void Reverse_Array(char *arr, int len)
 {
 	char *p = arr;
@@ -131,6 +133,23 @@ void Reverse_Array(char *arr, int len)
 		}
 	}
 }
+void Reverse_Array2(int *str)
+{
+	int i = 0;
+	char *start = str;
+	char *end;
+	for (i = 0; str[i]; i++)//字符串遍历
+	{
+		if (sttr[i] == ' ')
+		{
+			end = str + i;
+			Reverse_Swap(start, end);
+			start = end + 1;
+		}
+		Reverse_Swap(start, str + i);
+		Reverse_Swap(str, str + i);
+	}
+}
 int main()
 {
 	char arr[] = "student a am I";
@@ -144,3 +163,9 @@ int main()
 	system("pause");
 	return 0;
 }
+
+//2.库函数方法：
+char *tmp = str;
+char *res = (char *)malloc(strlen(str) + 1);
+memset(res, 0, strlen(str));
+while()
