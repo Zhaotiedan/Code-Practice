@@ -1,10 +1,13 @@
 ﻿#define _CRT_SECURE_NO_WARNINGS 1
+/*编写一个函数 reverse_string(char * string)（递归实现） 
+实现：将参数字符串中的字符反向排列。
+要求：不能使用C函数库中的字符串操作函数。*/
 
 #include<stdio.h>
 #include<stdlib.h>
 #include<string.h>
 #include<assert.h>
-
+//分为入递归和出递归
 void Reverse_string(char *str)
 {
 	int len = strlen(str);
@@ -13,7 +16,7 @@ void Reverse_string(char *str)
 	*(str+ len - 1) = '\0';
 	if (strlen(str + 1) > 1)
 	{
-		Reverse_string(str + 1);
+		Reverse_string(str + 1);//把尾巴重新定义
 	}
 	*(str + len - 1) = tmp;
 }
