@@ -5,16 +5,16 @@ int main()
 {
 	int a = 2;
 	int b = 3;
-	//low方法设中间值
+	//1.low方法设中间值
 	/*int tmp = 0;
 	tmp = a;
 	a = b;
 	b = tmp;*/
-	//第一次优化
+	//2.第一次优化
 	/*a = a + b;
 	b = a - b;
 	a = a - b;*/
-	//最终优化 异或
+	//3.最终优化 异或
 	a = a ^ b;
 	b = a ^ b;
 	a = a ^ b;
@@ -39,6 +39,15 @@ int main()
 		a = b;
 		b = k;
 	}
+	//遍历法
+	for (i = 1; i < small(a, b); i++)
+	{
+		if (a%i == 0 && b%i == 0)
+		{
+			max = i;
+		}
+	}
+	//最小公倍数：a*b/max
 	printf("最大公约数为%d\n", b);
 	system("pause");
 	return 0;

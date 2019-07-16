@@ -13,28 +13,33 @@ int main()
 	int j = 0;
 	int k = 0;
 	scanf("%d", &line);
-	//上半部分+最中间的部分
-	for (i = 0; i < line; i++)
+	//正金字塔：上半部分+最中间的部分
+	for (i = 1; i < =line; i++)
 	{
 
-		for (j = 0; j < line-1-i; j++)
+		for (j = 1; j < line-i; j++)
 		{
 			printf(" ");
 		}
-		for (k = 0; k <2*i+1; k++)
+		for (k = 1; k <2*i-1; k++)
 		{
 			printf("*");
 		}
 		printf("\n");
 	}
-	//下半部分
-	for (i = 0; i < line; i++)
+	/*for (i = 1; j < line + i; j++)
 	{
-		for (j = 0; j <=i; j++)
+		putchar(j < line - i ? ' ': '*');
+	}*/
+
+	//下半部分
+	for (i = line-1; i >0; i--)
+	{
+		for (j = 1; j < line - i; j++)
 		{
 			printf(" ");
 		}
-		for (k = 0; k < 2 * (line - i - 1)-1; k++)
+		for (k = 1; k < 2 * i - 1; k++)
 		{
 			printf("*");
 		}
@@ -76,6 +81,12 @@ int main()
 }
 
 //2.求0~999之间的水花数
+//在数论中，水仙花数（Narcissistic number）也称为自恋数、自幂数、阿姆斯壮数或阿姆斯特朗数（Armstrong number），是指一N位数，其各个数之N次方和等于该数。 
+//例如153、370、371及407就是三位数的水仙花数，其各个数之立方和等于该数：
+/*153 = 1 ^ 3 + 5 ^ 3 + 3 ^ 3。
+370 = 3 ^ 3 + 7 ^ 3 + 0 ^ 3。
+371 = 3 ^ 3 + 7 ^ 3 + 1 ^ 3。
+407 = 4 ^ 3 + 0 ^ 3 + 7 ^ 3。*/
 
 #include<stdio.h>
 #include<stdlib.h>
@@ -104,7 +115,7 @@ int main()
 	//判断几位数
 
 	int i = 0;
-	for (i = 1; i < 99999; i++)
+	for (i = 0; i < 99999; i++)//求0~9999之间的
 	{
 		int sum = 0;//sum不能放在外面，每一次计算完要归0
 		int tmp = i;//tmp也是
@@ -115,6 +126,14 @@ int main()
 			tmp /= 10;
 		}
 		tmp = i;
+
+		//判断几位数：
+		int modflag = 1;
+		if (i%modflag == 0)
+		{
+			count++;
+			modflag *= 10;
+		}
 		//求各位数的数字
 		while (tmp != 0)
 		{
@@ -130,8 +149,9 @@ int main()
 	return 0;
 }
 
-//3.求Sn=a+aa+aaa+aaaa+aaaaa的前5项之和
+//3.求Sn=a+aa+aaa+aaaa+aaaaa的前5项之和.例如：2+22+222+2222+22222 
 
+//公式：an=an-1*10+a
 #include<stdio.h>
 #include<stdlib.h>
 

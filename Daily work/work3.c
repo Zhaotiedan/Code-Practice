@@ -36,7 +36,7 @@ int main()
 	return 0;
 }
 
-//2.计算一串特殊分数的值
+//2.计算一串特殊分数的值.计算1/1-1/2+1/3-1/4+1/5 …… + 1/99 - 1/100 的值。
 
 /*方法1：设一个标志t为1和-1*/
 #include<stdio.h>
@@ -44,15 +44,15 @@ int main()
 
 int main()
 {
-	float i = 0.0;
-	float t = 1.0;
+	int i = 0;
+	int flag = 1;
 	double sum = 0.0;
 	for (i = 1; i <= 100; i++)
 	{
-		sum = sum + t / i;// t 和i为都不能为整型
-		t = -t;
+		sum = sum + flag * 1.0 / i;// t 和i为都不能为整型?错，flag可以为int和double，i不能为double
+		flag *= -1;
 	}
-	printf("%lf\n", sum);
+	printf("%.8lf\n", sum);//保留8位小数
 	system("pause");
 	return 0;
 }

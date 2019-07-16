@@ -1,0 +1,12 @@
+﻿  main.c
+d:\github\daily code\c-code\projects\time_t\time_t\main.c(89): error C2084: 函数“int main()”已有主体
+  d:\github\daily code\c-code\projects\time_t\time_t\main.c(75): note: 参见“main”的前一个定义
+d:\github\daily code\c-code\projects\time_t\time_t\main.c(93): warning C4552: ”/“: 未使用表达式结果
+d:\github\daily code\c-code\projects\time_t\time_t\main.c(106): warning C4552: ”/“: 未使用表达式结果
+d:\github\daily code\c-code\projects\time_t\time_t\main.c(112): warning C4473: “printf”: 没有为格式字符串传递足够的参数
+  d:\github\daily code\c-code\projects\time_t\time_t\main.c(112): note: 占位符和其参数预计 2 可变参数，但提供的却是 0 参数
+  d:\github\daily code\c-code\projects\time_t\time_t\main.c(112): note: 缺失的可变参数 1 为格式字符串“%d”所需
+d:\github\daily code\c-code\projects\time_t\time_t\main.c(116): warning C4473: “printf”: 没有为格式字符串传递足够的参数
+  d:\github\daily code\c-code\projects\time_t\time_t\main.c(116): note: 占位符和其参数预计 2 可变参数，但提供的却是 0 参数
+  d:\github\daily code\c-code\projects\time_t\time_t\main.c(116): note: 缺失的可变参数 1 为格式字符串“%d”所需
+d:\github\daily code\c-code\projects\time_t\time_t\main.c(152): warning C4244: “初始化”: 从“time_t”转换到“int”，可能丢失数据

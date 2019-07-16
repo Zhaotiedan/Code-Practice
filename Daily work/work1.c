@@ -32,7 +32,7 @@ int main()
 int is_prime(int i)//试除法
 {
 	int j = 0;
-	for (j = 2; j < i; j++)
+	for (j = 2; j < sqrt(i); j++)//标准写一个法：定义一个temp=sqrt(i)，老版本会每一次都重复计算这个值，这样可以杜绝编译器不同影响的效率问题
 	{
 		if (i%j == 0)
 			return 0;
@@ -52,7 +52,7 @@ int main()
 	system("pause");
 	return 0;
 }
-//2.判断1000~2000之间的闰年
+//2.判断1000~2000之间的闰年,判断题：先找一定成立的结果
 /*闰年：1.能被400整除。2.能被4整除但不能被100整除。二者满足一个即可*/
 
 #include<stdio.h>
@@ -95,7 +95,7 @@ int main()
 	return 0;
 }
 
-//3.打印乘法口诀表
+//3.打印乘法口诀表(打印表）
 #include<stdio.h>
 #include<stdlib.h>
 
@@ -109,7 +109,7 @@ int main()
 			q = i * j;
 			printf("%d*%d=%-2d   ", i, j, q);//-向左对齐
 		}
-		printf("\n");
+		printf("\n");//putchar('\n');
 	}
 	system("pause");
 	return 0;
