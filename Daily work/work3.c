@@ -4,7 +4,7 @@
 #include<stdlib.h>
 
 /*学会写函数
-void show(int arr[],int len) 数组名代表数组的首地址，用数组接收 int *arr也可以*/
+void show(int arr[],int len) 数组名代表数组的首地址，用数组接收 int *arr也可以。*/
 
 int main()
 {

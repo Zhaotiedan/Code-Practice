@@ -4,7 +4,7 @@
 #include<stdlib.h>
 #include<string.h>
 
-/*方法一：循环法
+/*方法一：循环法：
 详情步骤思路见CSDN博客*/
 int main()
 {
