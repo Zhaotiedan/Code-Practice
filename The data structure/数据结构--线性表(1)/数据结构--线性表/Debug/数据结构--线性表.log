@@ -1,0 +1,5 @@
+﻿  main.c
+c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h(37): fatal error C1070: 文件“c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h”中的 #if/#endif 对不匹配
+  seqlist.c
+c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h(37): fatal error C1070: 文件“c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h”中的 #if/#endif 对不匹配
+  正在生成代码...
