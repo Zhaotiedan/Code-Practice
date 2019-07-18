@@ -1,4 +1,3 @@
-
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #ifndef _SEQLIST_H_
@@ -19,7 +18,6 @@ typedef struct SeqList
 }SeqList;
 
 void SeqListInit(SeqList* psl, size_t capacity);
-
 void SeqListDestory(SeqList* psl);
 void CheckCapacity(SeqList* psl);//每进行一次操作都要进行判断
 void SeqListPushBack(SeqList* psl, SLDataType x);//尾插
@@ -31,6 +29,12 @@ void SeqListInsert(SeqList* psl, size_t pos, SLDataType x);
 void SeqListErase(SeqList* psl, size_t pos);//擦除数据
 void SeqListRemove(SeqList* psl, SLDataType x);//移除数据,移除所有值为x的元素 O(N)
 void SeqListModify(SeqList* psl, size_t pos, SLDataType x);//修改，把pos的值改成x O(1)
-void SeqListPrint(SeqList* psl);//O(N)void SeqListBubbleSort(SeqList* psl);int SeqListBinaryFind(SeqList* psl, SLDataType x);
+void SeqListPrint(SeqList* psl);//O(N)
 
-void SeqListRemoveAll1(SeqList* psl, SLDataType x);//时间复杂O(n) 空间复杂O(1)void SeqListRemoveAll2(SeqList* psl, SLDataType x);//时间复杂O(n)  空间复杂O(n)#endif
+void SeqListBubbleSort(SeqList* psl);
+int SeqListBinaryFind(SeqList* psl, SLDataType x);
+
+void SeqListRemoveAll1(SeqList* psl, SLDataType x);//时间复杂O(n) 空间复杂O(1)
+void SeqListRemoveAll2(SeqList* psl, SLDataType x);//时间复杂O(n)  空间复杂O(n)
+
+#endif//1!

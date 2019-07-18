@@ -1,5 +1,17 @@
 ﻿  main.c
-c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h(37): fatal error C1070: 文件“c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h”中的 #if/#endif 对不匹配
   seqlist.c
-c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h(37): fatal error C1070: 文件“c:\users\administrator\source\code\数据结构--线性表\数据结构--线性表\seqlist.h”中的 #if/#endif 对不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(8): warning C4047: “函数”:“size_t”与“SLDataType *”的间接级别不同
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(8): warning C4024: “calloc”: 形参和实参 1 的类型不同
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(54): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(64): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(78): warning C4018: “>=”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(89): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(104): warning C4018: “>=”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(114): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(122): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(124): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(163): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(168): warning C4018: “>=”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\数据结构--线性表(1)\数据结构--线性表\seqlist.c(181): warning C4018: “<”: 有符号/无符号不匹配
   正在生成代码...
+  数据结构--线性表.vcxproj -> D:\github\Daily code\C-code\The data structure\数据结构--线性表(1)\Debug\数据结构--线性表.exe

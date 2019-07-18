@@ -108,7 +108,17 @@ void SeqListModify(SeqList* psl, size_t pos, SLDataType x)//修改，把pos的值改成x
 	psl->array[pos] = x;
 	psl->size++;
 }
-void SeqListPrint(SeqList* psl){	int i = 0;	for (i = 0; i < psl->size; i++)	{		printf("%d", psl->array[i]);	}}void SeqListBubbleSort(SeqList* psl){	int i, j = 0;
+void SeqListPrint(SeqList* psl)
+{
+	int i = 0;
+	for (i = 0; i < psl->size; i++)
+	{
+		printf("%d", psl->array[i]);
+	}
+}
+void SeqListBubbleSort(SeqList* psl)
+{
+	int i, j = 0;
 	for (i = 0; i < psl->size; i++)
 	{
 		for (j = i+1; j < psl->size; j++)
@@ -121,7 +131,9 @@ void SeqListPrint(SeqList* psl){	int i = 0;	for (i = 0; i < psl->size; i++)	
 				psl->array[i] = tmp;
 			}
 		}
-	}}int SeqListBinaryFind(SeqList* psl, SLDataType x)
+	}
+}
+int SeqListBinaryFind(SeqList* psl, SLDataType x)
 {
 	int left = 0;
 	int right = psl->array[psl->size];
@@ -146,7 +158,7 @@ void SeqListPrint(SeqList* psl){	int i = 0;	for (i = 0; i < psl->size; i++)	
 // 本题要求：时间复杂度：O(N) 空间复杂度 O(1)
 void SeqListRemoveAll1(SeqList* psl, SLDataType x)//清楚所有值为x的数据，移位
 {
-	int gap;
+	int gap = 0;
 	int i = 0;
 	for (i = 0; i < psl->size - gap; i++)
 	{
