@@ -91,6 +91,31 @@ void SListRemove(SListNode** pphead, SLTDataType x)//只删一个
 		}
 	}
 }
+void SListRemoveall(SListNode** pphead, SLTDataType x)
+{
+	SListNode* tmp;
+	if (*pphead == NULL)
+	{
+		return;
+	}
+	while (*pphead&&(*pphead)->data == x)
+	{
+		SListPopFront(pphead);
+	}
+	for (tmp = *pphead; tmp->next; tmp = tmp->next)
+	{
+		if (tmp->next->data == x)
+		{
+			SListEraseAfter(tmp);
+		}
+		else
+		{
+			tmp = tmp->next;
+		}
+	}
+}
+
+//逆序单链表的两种方法
 void SListReverse1(SListNode** pphead)
 {
 	SListNode* head = *pphead;//每次循环中始终指向当前链表的头
@@ -124,6 +149,81 @@ void SListReverse2(SListNode** pphead)
 	*pphead = pre;//循环跳出时，cur和next都指向空，此时的头为pre
 }
 
+SListNode* getPublicPoint(SListNode* headA, SListNode* headB)//寻找单链表的相交节点
+{
+	int lenA = 0;
+	int lenB = 0;
+	int gap = 0;
+	int i = 0;
+	SListNode* cur;
+	SListNode* longerlist = headA;
+	SListNode* shortlist = headB;
+	for (cur = headA; cur; cur = cur->next)
+	{
+		lenA++;
+	}
+	for (cur = headB; cur; cur = cur->next)
+	{
+		lenB++;
+	}
+	gap = abs(lenA - lenB);
+	if (lenA < lenB)
+	{
+		longerlist = headB;
+		shortlist = headA;
+	}
+	for (; i < gap; i++)//右对齐
+	{
+		longerlist = longerlist->next;
+	}
+	for (; longerlist&&shortlist; longerlist = longerlist->next, shortlist = shortlist->next)
+	{
+		if (longerlist->data == shortlist->data)
+		{
+			return longerlist;
+		}
+	}
+	return NULL;
+}
+SListNode* JugdeCircle(SListNode* head)
+{
+	SListNode* fast = head;
+	SListNode* slow = head;
+	while (fast&&slow&&fast->next)//避免找不到fast的next的next
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == slow)//右对齐，找到相遇点，则说明有环
+		{
+			return fast;
+		}
+	}
+	return NULL;
+}
+
+SListNode* detectCircle(SListNode* head)
+{
+	//先判环,找两个节点，一个一次跳两次，一个一次跳一次
+	SListNode* fast = head;
+	SListNode* slow = head;
+	while (fast&&slow&&fast->next)//避免找不到fast的next的next
+	{
+		fast = fast->next->next;
+		slow = slow->next;
+		if (fast == slow)//找到相遇点，右对齐
+		{
+			break;
+		}
+	}
+	for (; fast&&fast->next; fast = fast->next,head = head->next)//两个节点中fast和head一起走，找到的公共节点就是环入口
+	{
+		if (fast->data == head->data)
+		{
+			return fast;
+		}
+	}
+	return NULL;
+}
 void SListPrint(SListNode* phead)
 {
 	SListNode* tmp;
