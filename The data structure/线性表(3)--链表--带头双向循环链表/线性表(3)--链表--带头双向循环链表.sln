@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "线性表(3)--链表--带头双向循环链表", "线性表(3)--链表--带头双向循环链表\线性表(3)--链表--带头双向循环链表.vcxproj", "{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Debug|x64.ActiveCfg = Debug|x64
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Debug|x64.Build.0 = Debug|x64
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Debug|x86.ActiveCfg = Debug|Win32
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Debug|x86.Build.0 = Debug|Win32
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Release|x64.ActiveCfg = Release|x64
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Release|x64.Build.0 = Release|x64
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Release|x86.ActiveCfg = Release|Win32
+		{A5FE2A2B-F01F-4E6A-9BF3-ACAACF2D5DCD}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {FA05A873-C66C-44AA-B512-FF8916FBFB5B}
+	EndGlobalSection
+EndGlobal
