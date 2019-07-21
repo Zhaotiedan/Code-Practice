@@ -1,13 +1,12 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-
 #include "seqlist.h"
 
 void SeqListInit(SeqList* psl, size_t capacity)
 {
-	psl->array = (SLDataType *)calloc(psl->array, psl->capacity * sizeof(SLDataType));
+	psl->array = (SLDataType *)calloc(capacity, sizeof(SLDataType));
 	psl->capacity = capacity;
-	int size = 0;
+	psl->size = 0;
 }
 void SeqListDestory(SeqList* psl)
 {
@@ -39,7 +38,7 @@ void SeqListPopBack(SeqList* psl)//Î²É¾size--¾Í¿É
 }
 void SeqListPushFront(SeqList* psl, SLDataType x)//Í·²å£¬ÎªÁË·ÀÖ¹¸²¸ÇĞèÒª´ÓºóÍùÇ°±éÀú£¬²åÍê¼ÇµÃsize++
 {
-	int i;
+	int i=0;
 	CheckCapacity(psl);
 	for (i = psl->size - 1; i >= 0; i--)
 	{
@@ -51,7 +50,7 @@ void SeqListPushFront(SeqList* psl, SLDataType x)//Í·²å£¬ÎªÁË·ÀÖ¹¸²¸ÇĞèÒª´ÓºóÍùÇ
 void SeqListPopFront(SeqList* psl)//Í·É¾£ºÕûÌåÏòÇ°Ç°ÒÆÒ»Î»¾Í¿É£¬É¾Íê¼ÇµÃsize--
 {
 	int i=0;
-	for (i = 0; i < psl->size; i++)
+	for (; i < psl->size; i++)
 	{
 		psl->array[i] = psl->array[i + 1];
 	}
@@ -100,23 +99,18 @@ void SeqListRemove(SeqList* psl, SLDataType x)//ÒÆ³ıÊı¾İ,É¾³ıÖµÎªxµÄÖµ
 }
 void SeqListModify(SeqList* psl, size_t pos, SLDataType x)//ĞŞ¸Ä£¬°ÑposµÄÖµ¸Ä³Éx
 {
-	int i = 0;
-	for (i = psl->size - 1; i >= pos; i--)
-	{
-		psl->array[i + 1] = psl->array[i];
-	}
 	psl->array[pos] = x;
-	psl->size++;
 }
 void SeqListPrint(SeqList* psl)
 {
 	int i = 0;
 	for (i = 0; i < psl->size; i++)
 	{
-		printf("%d", psl->array[i]);
+		printf("%d ", psl->array[i]);
 	}
+	printf("\n");
 }
-void SeqListBubbleSort(SeqList* psl)
+void SeqListBubbleSort(SeqList* psl)//Ã°ÅİÅÅĞò·¨
 {
 	int i, j = 0;
 	for (i = 0; i < psl->size; i++)
@@ -136,14 +130,14 @@ void SeqListBubbleSort(SeqList* psl)
 int SeqListBinaryFind(SeqList* psl, SLDataType x)
 {
 	int left = 0;
-	int right = psl->array[psl->size];
+	int right = psl->size-1;
 	int mid = 0;
 	while (left <= right)
 	{
 		mid = (left + right) / 2;
 		if (psl->array[mid] < x)
 		{
-			left = mid + 1;
+			left= mid + 1;
 		}
 		else if (psl->array[mid] > x)
 		{
@@ -160,23 +154,23 @@ void SeqListRemoveAll1(SeqList* psl, SLDataType x)//Çå³şËùÓĞÖµÎªxµÄÊı¾İ£¬ÒÆÎ»
 {
 	int gap = 0;
 	int i = 0;
-	for (i = 0; i < psl->size - gap; i++)
+
+	for (i = 0; i < psl->size; i++)
 	{
-		if (psl->array[i + gap] == x)
+		if (psl->array[i] == x)
 		{
 			gap++;
-			if ((gap + i) >= psl->capacity)
-			{
-				break;
-			}
 		}
-		psl->array[i] = psl->array[i + gap];
+		else
+		{
+			psl->array[i - gap] = psl->array[i];
+		}
 	}
-	psl->size = psl->size - gap;
+	psl->size -= gap;
 }
 void SeqListRemoveAll2(SeqList* psl, SLDataType x)//½«ËùÓĞ²»ÎªxµÄÖµ±£Áôµ½ÁíÍâÒ»¸öÊı×étmpÖĞ
 {
-	SLDataType * tmp= (SLDataType *)calloc(psl->capacity, psl->capacity * sizeof(SLDataType));
+	SLDataType * tmp= (SLDataType *)calloc(psl->capacity, sizeof(SLDataType));
 	int i, j = 0;
 	for (i = 0, j = 0; i < psl->size; i++)
 	{
@@ -185,8 +179,8 @@ void SeqListRemoveAll2(SeqList* psl, SLDataType x)//½«ËùÓĞ²»ÎªxµÄÖµ±£Áôµ½ÁíÍâÒ»¸
 			tmp[j] = psl->array[i];
 			j++;
 		}
-		free(psl->array);
-		psl->array = tmp;
-		psl->size = j;
 	}
+	free(psl->array);
+	psl->array = tmp;
+	psl->size = j;
 }

@@ -11,24 +11,43 @@ int main()
 
 	 SeqListPushBack(&test, 10);
 	 SeqListPushBack(&test, 9);
-	// SeqListPopBack(&test,);
-	// SeqListPushFront(SeqList* psl, SLDataType x);
-	// SeqListPopFront(SeqList* psl);
-	//SeqListFind(SeqList* psl, SLDataType x);
-	// SeqListInsert(SeqList* psl, size_t pos, SLDataType x);
-	// SeqListErase(SeqList* psl, size_t pos);//擦除数据
-	// SeqListRemove(SeqList* psl, SLDataType x);//移除数据,移除所有值为x的元素 O(N)
-	// SeqListModify(SeqList* psl, size_t pos, SLDataType x);//修改，把pos的值改成x O(1)
-	// SeqListPrint(SeqList* psl);//O(N)
+	 SeqListPushBack(&test, 8);
+	 SeqListPushBack(&test, 8);
+	 SeqListPushBack(&test, 8);
 
-	// SeqListBubbleSort(SeqList* psl);
-	//SeqListBinaryFind(SeqList* psl, SLDataType x);
-	//// 本题要求：时间复杂度：O(N) 空间复杂度 O(1)
-	//void SeqListRemoveAll1(SeqList* psl, SLDataType x);//O(n) 空间复杂O(1)
-	//void SeqListRemoveAll2(SeqList* psl, SLDataType x)//时间复杂O(n)  空间复杂O(n)
+	 SeqListPushBack(&test, 7);
+	 SeqListPushBack(&test, 6);
+
+
+	 SeqListPopBack(&test, 6);
+
+	 SeqListPushFront(&test, 6);
+	 SeqListPopFront(&test, 6);
+
+	 SLDataType ret1 = SeqListFind(&test, 10);
+	 printf("元素10的下标是：%d\n", ret1);
+
+	 SeqListInsert(&test, SeqListFind(&test,8), 15);
+	 SeqListPrint(&test);
+	 //SeqListErase(&test, SeqListFind(&test, 15));
+	 SeqListRemove(&test,15);
+	 SeqListPrint(&test);
+
+	 SeqListModify(&test, SeqListFind(&test, 8), 18);
+	 SeqListPrint(&test);
+
+	 SeqListBubbleSort(&test);
 
 	 SeqListPrint(&test);
-	//SeqListDestory(&test);
+	 SLDataType ret2 = SeqListBinaryFind(&test, 10);
+	 printf("10的下标是：%d\n", ret2);
+
+	 //SeqListRemoveAll1(&test, 8);
+	 SeqListRemoveAll2(&test, 8);
+	 SeqListPrint(&test);
+
+	 SeqListDestory(&test);
+	 SeqListPrint(&test);
 	system("pause");
 	return 0;
 }
