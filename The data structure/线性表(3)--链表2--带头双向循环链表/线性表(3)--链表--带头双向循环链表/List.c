@@ -1,6 +1,7 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include"List.h"
+
 void ListInit(List* plist)
 {
 	plist->_head = (ListNode *)malloc(sizeof(ListNode));//plist->_head相当于*pphead
@@ -109,14 +110,12 @@ List* ListMerger(List* plist1, List* plist2)//合并
 	{
 		if (cur1->_data > cur2->_data)//链表1当前的值大于链表2当前的值，则链表2的值插在链表1的值的前面
 		{
-			cur2 = cur2->_next;//先把cur2放到链表2的下一个节点
 			tmp1 = cur1->_prev;//备份，cur1->_prev会被修改
 			tmp2 = cur2->_next;//备份，cur2->_next会被修改
-			//cur2 = cur2->_next;//先把cur2放到链表2的下一个节点
 
 			//ListInsertFront(cur1, cur2->_data);//错误，这个会申请一个新节点插到cur1前面，而不是原来的节点
 
-			cur1->_prev = cur2;
+			cur1->_prev = cur2;	
 			cur2->_next = cur1;
 			tmp1->_next = cur2;
 			cur2->_prev = tmp1;/*让cur2插在cur1和tmp1(cur1的上一个节点）之间*/
@@ -142,6 +141,7 @@ List* ListMerger(List* plist1, List* plist2)//合并
 	//遍历结束list2到末尾时，则list2元素全进list1中了
 	free(plist2->_head);//释放list2仅剩的头部
 }
+
 void ListPrint(List* plist)
 {
 	//双链表的遍历头

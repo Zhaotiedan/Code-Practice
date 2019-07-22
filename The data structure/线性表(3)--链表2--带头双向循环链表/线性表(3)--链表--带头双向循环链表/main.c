@@ -10,6 +10,9 @@ int main()
 	List list3;
 
 	ListInit(&list);
+	ListInit(&list1);
+	ListInit(&list2);
+
 
 	ListPushBack(&list, 1);
 	ListPushBack(&list, 2);
@@ -29,7 +32,7 @@ int main()
 	ListInsertafter(ListFind(&list,3), 10);
 
 	ListErase(ListFind(&list, 3));
-	ListRemove(&list, 10);
+	//ListRemove(&list, 10);
 //2.去重：在一个排序的链表中，存在重复的结点，请删除该链表中重复的结点，重复的结点不保留，返回链表头指针。
 	ListDistinct(&list);
 	ListPrint(&list);
@@ -40,14 +43,16 @@ int main()
 	ListPushBack(&list1, 3);
 	ListPushBack(&list1, 4);
 	ListPushBack(&list1, 5);
+	ListPrint(&list1);
 
 	ListPushBack(&list2, 2);
 	ListPushBack(&list2, 4);
 	ListPushBack(&list2, 6);
 	ListPushBack(&list2, 7);
 	ListPushBack(&list2, 9);
-	//List* list3 = ListMerger(&list1, &list2);
-	ListPrint(&(*ListMerger(&list1,&list2)));
+	ListPrint(&list2);
+	
+	ListPrint(ListMerger(&list1,&list2));
 	system("pause");
 	return 0;
 }

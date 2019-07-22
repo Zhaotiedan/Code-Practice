@@ -1,2 +1,4 @@
-﻿  List.c
+﻿  main.c
+d:\github\daily code\c-code\the data structure\线性表(3)--链表2--带头双向循环链表\线性表(3)--链表--带头双向循环链表\main.c(29): warning C4020: “ListPopFront”: 实参太多
+d:\github\daily code\c-code\the data structure\线性表(3)--链表2--带头双向循环链表\线性表(3)--链表--带头双向循环链表\main.c(10): warning C4101: “list3”: 未引用的局部变量
   线性表(3)--链表--带头双向循环链表.vcxproj -> D:\github\Daily code\C-code\The data structure\线性表(3)--链表2--带头双向循环链表\Debug\线性表(3)--链表--带头双向循环链表.exe
