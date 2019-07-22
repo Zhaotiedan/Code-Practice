@@ -144,35 +144,10 @@
 
 //5.如何判断链表是否有环
 //找一个节点一次跳两次，一个跳一次。如果能相遇，则一定是环，跑到尽头，则没环
-//int main()
-//{
-//	SListNode *phead;
-//	SListNode *plast = NULL;
-//	SListInit(&phead);
-//
-//	SListPushFront(&phead, 1);
-//	plast = phead;
-//
-//	SListPushFront(&phead, 2);
-//	SListPushFront(&phead, 3);
-//	SListPushFront(&phead, 4);
-//
-//	plast->next = phead;
-//	SListNode * ret = JugdeCircle(phead);
-//	printf("%d\n", ret->data);
-//	system("pause");
-//	return 0;
-//}
-
-//6.给定一个链表，判断环，返回链表开始入环的第一个节点，无环返回NULL
-//如果头结点是环入口，一个节点一次跳两次，一次跳两次，则头结点是环入口
-//如果头结点不是环入口，则多余的部分到环入口的长度和相遇点到环入口的长度相同，让两个节点从头结点一快一慢开始走，找到相遇点，这就相当于完成了右对齐。
-//然后两个节点中fast和head一起走，找到的公共节点就是环入口
 int main()
 {
 	SListNode *phead;
-	SListNode *plast=NULL;
-
+	SListNode *plast = NULL;
 	SListInit(&phead);
 
 	SListPushFront(&phead, 1);
@@ -183,10 +158,35 @@ int main()
 	SListPushFront(&phead, 4);
 
 	plast->next = phead;
-
-	SListNode *ret = detectCircle(phead);
-	printf("%d", ret->data);
-	//SListPrint(phead);
+	SListNode * ret = JugdeCircle(phead);
+	printf("%d\n", ret->data);
 	system("pause");
 	return 0;
 }
+
+//6.给定一个链表，判断环，返回链表开始入环的第一个节点，无环返回NULL
+//如果头结点是环入口，一个节点一次跳两次，一次跳两次，则头结点是环入口
+//如果头结点不是环入口，则多余的部分到环入口的长度和相遇点到环入口的长度相同，让两个节点从头结点一快一慢开始走，找到相遇点，这就相当于完成了右对齐。
+//然后两个节点中fast和head一起走，找到的公共节点就是环入口
+//int main()
+//{
+//	SListNode *phead;
+//	SListNode *plast=NULL;
+//
+//	SListInit(&phead);
+//
+//	SListPushFront(&phead, 1);
+//	plast = phead;
+//
+//	SListPushFront(&phead, 2);
+//	SListPushFront(&phead, 3);
+//	SListPushFront(&phead, 4);
+//
+//	plast->next = phead;
+//
+//	SListNode *ret = detectCircle(phead);
+//	printf("%d", ret->data);
+//	SListPrint(phead);
+//	system("pause");
+//	return 0;
+//}
