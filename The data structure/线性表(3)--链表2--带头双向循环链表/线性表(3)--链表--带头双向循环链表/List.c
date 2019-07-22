@@ -122,6 +122,7 @@ List* ListMerger(List* plist1, List* plist2)//合并
 
 			cur2 = tmp2;//cur2找到它的下一个节点
 		}
+		//链表1当前的值小于链表2当前的值 cur1直接后移
 		else
 		{
 			cur1 = cur1->_next;
