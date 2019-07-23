@@ -23,6 +23,7 @@ void StackPush(Stack* ps, STDataType x);//入栈
 void StackPop(Stack* ps);//出栈
 STDataType StackTop(Stack* ps);//返回栈顶元素
 int StackEmpty(Stack* ps);//判空
-int StackSize(Stack* ps);
+int StackSize(Stack* ps);
+
 #endif // !_STACK_H_
 

@@ -17,6 +17,7 @@ int main()
 	printf("%d\n", StackTop(&mystack));
 	StackPop(&mystack);
 	printf("%d\n", StackTop(&mystack));
+
 	system("pause");
 	return 0;
 }
