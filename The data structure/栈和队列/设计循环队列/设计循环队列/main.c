@@ -6,6 +6,7 @@ int main()
 {
 	Queue que;
 	QueueInit(&que);
+
 	QueuePush(&que, 1);
 	QueuePush(&que, 2);
 	QueuePush(&que, 3);
@@ -33,6 +34,11 @@ int main()
 	printf("%d\n", QueueFront(&que));
 	
 	printf("%d\n", QueueBack(&que)); 
+
+	QueueDestory(&que);
+
+	printf("%d\n", QueueFront(&que));
+	printf("%d\n", QueueBack(&que));
 
 	system("pause");
 	return 0;

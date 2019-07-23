@@ -17,12 +17,12 @@ typedef struct Queue
 	size_t size;//实际上可以不要，但有能舒服一点
 }Queue;
 
-void QueueInit(Queue* pq);
+void QueueInit(Queue* pq);//初始化
 void QueueDestory(Queue* pq);
-void QueuePush(Queue* pq, QuDataType x);
-void QueuePop(Queue* pq);
+void QueuePush(Queue* pq, QuDataType x);//入队
+void QueuePop(Queue* pq);//出队
 
-QuDataType QueueFront(Queue* pq);
-QuDataType QueueBack(Queue* pq);
+QuDataType QueueFront(Queue* pq);//得到队首
+QuDataType QueueBack(Queue* pq);//得到队尾
 
 #endif // !_QUEUE_H_
