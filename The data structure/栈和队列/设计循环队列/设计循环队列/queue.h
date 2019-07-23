@@ -7,6 +7,7 @@
 #include<string.h>
 
 #define QueueMAX 5
+
 typedef int QuDataType;
 
 typedef struct Queue
