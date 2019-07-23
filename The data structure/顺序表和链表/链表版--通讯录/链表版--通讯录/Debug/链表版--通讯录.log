@@ -1,0 +1,14 @@
+﻿  seqlist.c
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(53): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(63): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(77): warning C4018: “>=”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(88): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(107): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(116): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(118): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(158): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\daily code\c-code\the data structure\线性表(1)--顺序表\数据结构--线性表\seqlist.c(175): warning C4018: “<”: 有符号/无符号不匹配
+  List.c
+  contact.c
+d:\github\daily code\c-code\the data structure\链表版--通讯录\链表版--通讯录\contact.c(17): error C2143: 语法错误: 缺少“;”(在“}”的前面)
+  正在生成代码...
