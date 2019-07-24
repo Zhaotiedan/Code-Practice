@@ -1,0 +1,7 @@
+﻿  BTree.c
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(30): warning C4716: “BinaryTreeSize”: 必须返回一个值
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(34): warning C4716: “BinaryTreeLeafSize”: 必须返回一个值
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(38): warning C4716: “BinaryTreeLevelKSize”: 必须返回一个值
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(42): warning C4716: “BinaryTreeFind”: 必须返回一个值
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(66): warning C4716: “BinaryTreeComplete”: 必须返回一个值
+  树的实现.vcxproj -> D:\github\Daily code\C-code\The data structure\树的实现\Debug\树的实现.exe
