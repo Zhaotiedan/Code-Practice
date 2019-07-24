@@ -1,2 +1,11 @@
-﻿  main.c
+﻿  Queue.c
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(51): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(51): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(61): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(61): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(63): warning C4047: “return”:“QUDataType”与“QUDataType *”的间接级别不同
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(69): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(69): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(71): warning C4033: “QueueBack”必须返回值
+d:\github\daily code\c-code\the data structure\栈和队列\队列的实现\队列的实现\queue.c(74): warning C4715: “QueueBack”: 不是所有的控件路径都返回值
   队列的实现.vcxproj -> D:\github\Daily code\C-code\The data structure\栈和队列\队列的实现\Debug\队列的实现.exe

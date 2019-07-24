@@ -48,7 +48,7 @@ void QueuePush(Queue* pq, QUDataType x)//入队--尾插
 }
 void QueuePop(Queue* pq)//出队--头删
 {
-	if (QueueEmpty == 0)
+	if (QueueEmpty(&pq) == 0)
 	{
 		return;
 	}
@@ -58,7 +58,7 @@ void QueuePop(Queue* pq)//出队--头删
 }
 QUDataType QueueFront(Queue* pq)//获得队头元素
 {
-	if (QueueEmpty == 0)
+	if (QueueEmpty(&pq) == 0)
 	{
 		return (QUDataType*)0;
 	}
@@ -66,7 +66,7 @@ QUDataType QueueFront(Queue* pq)//获得队头元素
 }
 QUDataType QueueBack(Queue* pq) // 获得队尾元素
 {
-	if (QueueEmpty == 0)
+	if (QueueEmpty(&pq) == 0)
 	{
 		return;
 	}
