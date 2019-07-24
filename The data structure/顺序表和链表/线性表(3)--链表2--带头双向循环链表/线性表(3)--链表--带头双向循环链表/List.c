@@ -34,7 +34,7 @@ void ListPopFront(List* plist)//头删
 	ListErase(plist->_head->_next);
 }
 
-ListNode* ListFind(List* plist, LTDataType x)// 在pos的前面进行插入
+ListNode* ListFind(List* plist, LTDataType x)// 找值为x的元素
 {
 	ListNode* cur;
 	for (cur = plist->_head->_next; cur != plist->_head; cur = cur->_next)
