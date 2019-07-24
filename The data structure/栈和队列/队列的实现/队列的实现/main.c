@@ -15,6 +15,15 @@ int main()
 	printf("%d\n", QueueFront(&myqueue));
 	printf("%d\n", QueueBack(&myqueue));
 
+	printf("\n");
+
+	QueuePop(&myqueue);
+	printf("%d\n", QueueFront(&myqueue));
+	QueuePop(&myqueue);
+	printf("%d\n", QueueFront(&myqueue));
+	QueuePop(&myqueue);
+	printf("%d\n", QueueFront(&myqueue));
+
 	system("pause");
 	return 0;
 }

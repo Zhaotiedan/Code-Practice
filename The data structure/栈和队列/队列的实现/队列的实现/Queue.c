@@ -4,8 +4,16 @@
 
 void QueueInit(Queue* pq)
 {
-	pq->_front = pq->_rear = (QueueNode*)malloc(sizeof(QueueNode));
-	pq->_front->_next = NULL;
+	pq->_front  = (QueueNode*)malloc(sizeof(QueueNode));
+	if (pq->_front == NULL)
+	{
+		return;
+	}
+	else
+	{
+		pq->_rear = pq->_front;
+		pq->_front->_next = NULL;
+	}
 }
 void QueueDestory(Queue* pq)
 {
@@ -21,9 +29,16 @@ void QueueDestory(Queue* pq)
 QueueNode* BuyQueueNode(QUDataType x)
 {
 	QueueNode *cur = (QueueNode*)malloc(sizeof(QueueNode));
-	cur->_data = x;
-	cur->_next = NULL;
-	return cur;
+	if (cur != NULL)
+	{
+		cur->_data = x;
+		cur->_next = NULL;
+		return cur;
+	}
+	else
+	{
+		return NULL;
+	}
 }
 void QueuePush(Queue* pq, QUDataType x)//入队--尾插
 {
@@ -47,7 +62,7 @@ QUDataType QueueFront(Queue* pq)//获得队头元素
 	{
 		return (QUDataType*)0;
 	}
-	return pq->_front->_data;
+	return pq->_front->_next->_data;
 }
 QUDataType QueueBack(Queue* pq) // 获得队尾元素
 {
