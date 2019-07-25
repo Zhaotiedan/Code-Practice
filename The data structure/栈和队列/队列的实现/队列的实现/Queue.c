@@ -43,8 +43,16 @@ QueueNode* BuyQueueNode(QUDataType x)
 void QueuePush(Queue* pq, QUDataType x)//入队--尾插
 {
 	QueueNode *tmp = BuyQueueNode(x);
-	pq->_rear->_next = tmp;
-	pq->_rear = tmp;
+	if (pq->_front->_next == NULL)
+	{
+		pq->_front->_next = tmp;
+		pq->_rear = tmp;
+	}
+	else
+	{
+		pq->_rear->_next = tmp;
+		pq->_rear = tmp;
+	}
 }
 void QueuePop(Queue* pq)//出队--头删
 {
@@ -53,8 +61,9 @@ void QueuePop(Queue* pq)//出队--头删
 		return;
 	}
 	QueueNode*tmp = pq->_front->_next;
-	free(pq->_front);
-	pq->_front = tmp;
+	pq->_front->_next = tmp->_next;
+	free(tmp);
+	tmp = NULL;
 }
 QUDataType QueueFront(Queue* pq)//获得队头元素
 {

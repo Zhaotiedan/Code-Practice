@@ -25,11 +25,11 @@ typedef struct Queue
 void QueueInit(Queue* pq);
 void QueueDestory(Queue* pq);
 QueueNode* BuyQueueNode(QUDataType x);
-void QueuePush(Queue* pq, QUDataType x);//入队
-void QueuePop(Queue* pq);//出队
-QUDataType QueueFront(Queue* pq);//获得队首元素
-QUDataType QueueBack(Queue* pq);//获得队尾元素
-int QueueEmpty(Queue* pq);//判空
+	void QueuePush(Queue* pq, QUDataType x);//入队
+	void QueuePop(Queue* pq);//出队
+	QUDataType QueueFront(Queue* pq);//获得队首元素
+	QUDataType QueueBack(Queue* pq);//获得队尾元素
+	int QueueEmpty(Queue* pq);//判空
 
 
 #endif // !_QUEUE_H_
