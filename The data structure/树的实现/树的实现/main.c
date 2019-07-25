@@ -4,8 +4,20 @@
 
 int main()
 {
-	BinaryTreeCreate("ABD##E#H##CF##G##");
+	BTNode* mytree = BinaryTreeCreate("ABD##E#H##CF##G##");
 
-	system("pasue");
+	printf("«∞–Ú\n");
+	BinaryTreePrevOrder(mytree);
+	printf("\n");
+	printf("÷––Ú\n");
+	BinaryTreeInOrder(mytree);
+	printf("\n");
+	printf("∫Û–Ú\n");
+	BinaryTreePostOrder(mytree);
+
+	printf("\n");
+	printf("≤„–Ú\n");
+	BinaryTreeLevelOrder(mytree);
+	system("pause");
 	return 0;
 }
