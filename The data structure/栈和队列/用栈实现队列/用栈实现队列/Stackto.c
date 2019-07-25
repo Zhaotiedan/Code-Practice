@@ -64,19 +64,22 @@ int StackSize(Stack* ps)//判满
 	}
 }
 
-void QueuePush(SQueue *ps, STDataType data)//入队
+void QueueInit(SQueue *ps)
 {
 	StackInit(&(ps->s1));
 	StackInit(&(ps->s2));
-
+}
+void QueuePush(SQueue *ps, STDataType data)//入队
+{
 	StackPush(&(ps->s1), data);
+
 }
 void QueuePop(SQueue *ps)//出队
 {
 	//栈p2为空,s1里还有元素时，,先把s1元素全压入s2,再把s2中元素出栈
-	if (StackEmpty(&(ps->s2)))
+	if (!StackEmpty(&(ps->s2)))
 	{
-		while (!StackEmpty(&(ps->s1)))
+		while (StackEmpty(&(ps->s1)))
 		{
 			StackPush(&(ps->s2), StackTop(&(ps->s1)));
 			StackPop(&(ps->s1));
@@ -95,9 +98,16 @@ STDataType QueueFront(SQueue *ps)//获得队首元素
 }
 STDataType QueueBack(SQueue *ps)//获得队尾元素
 {
-	if (StackEmpty(&(ps->s1)) == 0)
+	if (StackEmpty(&(ps->s2)) == 0)
 	{
 		return (STDataType*)0;
 	}
-	return StackTop(&(ps->s1));
+	else
+	{
+		while (ps->s2._top > 1)//注意要使用.访问s2里面的_top
+		{
+			StackPop(&(ps->s2));
+		}
+		return StackTop(&(ps->s2));
+	}
 }

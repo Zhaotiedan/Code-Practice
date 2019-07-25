@@ -1,8 +1,6 @@
 ﻿  Stackto.c
 d:\github\daily code\c-code\the data structure\栈和队列\用栈实现队列\用栈实现队列\stackto.c(29): warning C4047: “函数”:“Stack *”与“Stack **”的间接级别不同
 d:\github\daily code\c-code\the data structure\栈和队列\用栈实现队列\用栈实现队列\stackto.c(29): warning C4024: “StackEmpty”: 形参和实参 1 的类型不同
-d:\github\daily code\c-code\the data structure\栈和队列\用栈实现队列\用栈实现队列\stackto.c(92): warning C4047: “return”:“STDataType”与“STDataType *”的间接级别不同
-d:\github\daily code\c-code\the data structure\栈和队列\用栈实现队列\用栈实现队列\stackto.c(100): warning C4047: “return”:“STDataType”与“STDataType *”的间接级别不同
-  main.c
-  正在生成代码...
+d:\github\daily code\c-code\the data structure\栈和队列\用栈实现队列\用栈实现队列\stackto.c(95): warning C4047: “return”:“STDataType”与“STDataType *”的间接级别不同
+d:\github\daily code\c-code\the data structure\栈和队列\用栈实现队列\用栈实现队列\stackto.c(103): warning C4047: “return”:“STDataType”与“STDataType *”的间接级别不同
   用栈实现队列.vcxproj -> D:\github\Daily code\C-code\The data structure\栈和队列\用栈实现队列\Debug\用栈实现队列.exe

@@ -5,14 +5,15 @@
 int main()
 {
 	SQueue myqueue;
+	QueueInit(&myqueue);
 	QueuePush(&myqueue, 1);
 	QueuePush(&myqueue, 2);
 	QueuePush(&myqueue, 3);
 	QueuePush(&myqueue, 4);
 	QueuePush(&myqueue, 5);
 
-	printf("%d\n", QueueFront(&myqueue));
-	printf("%d\n", QueueBack(&myqueue));
+	/*printf("%d\n", QueueFront(&myqueue));
+	printf("%d\n", QueueBack(&myqueue));*/
 
 	QueuePop(&myqueue);
 	printf("%d\n", QueueFront(&myqueue));
