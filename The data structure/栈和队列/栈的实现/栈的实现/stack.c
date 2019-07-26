@@ -37,7 +37,7 @@ void StackPop(Stack* ps)//³öÕ»
 STDataType StackTop(Stack* ps)//·µ»ØÕ»¶¥ÔªËØ
 {
 	//ÅÐ¿Õ
-	if (StackEmpty)
+	if (StackEmpty(&ps))
 	{
 		return ps->_a[ps->_top - 1];
 	}

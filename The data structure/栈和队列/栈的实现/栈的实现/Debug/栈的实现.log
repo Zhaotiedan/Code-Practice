@@ -1,6 +1,6 @@
-﻿  main.c
-  stack.c
+﻿  stack.c
 d:\github\daily code\c-code\the data structure\栈和队列\栈的实现\栈的实现\stack.c(28): warning C4047: “函数”:“Stack *”与“Stack **”的间接级别不同
 d:\github\daily code\c-code\the data structure\栈和队列\栈的实现\栈的实现\stack.c(28): warning C4024: “StackEmpty”: 形参和实参 1 的类型不同
-  正在生成代码...
+d:\github\daily code\c-code\the data structure\栈和队列\栈的实现\栈的实现\stack.c(40): warning C4047: “函数”:“Stack *”与“Stack **”的间接级别不同
+d:\github\daily code\c-code\the data structure\栈和队列\栈的实现\栈的实现\stack.c(40): warning C4024: “StackEmpty”: 形参和实参 1 的类型不同
   栈的实现.vcxproj -> D:\github\Daily code\C-code\The data structure\栈和队列\栈的实现\Debug\栈的实现.exe
