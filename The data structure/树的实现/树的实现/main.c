@@ -18,6 +18,18 @@ int main()
 	printf("\n");
 	printf("≤„–Ú\n");
 	BinaryTreeLevelOrder(mytree);
+
+	printf("\n");
+	printf("«∞–Ú∑«µ›πÈ\n");
+	BinaryTreePrevOrderNonR(mytree);
+	printf("\n");
+	printf("÷––Ú∑«µ›πÈ\n");
+	BinaryTreeInOrderNonR(mytree);
+	printf("\n");
+	printf("∫Û–Ú∑«µ›πÈ\n");
+	BinaryTreePostOrderNonR(mytree);
+
 	system("pause");
+
 	return 0;
 }

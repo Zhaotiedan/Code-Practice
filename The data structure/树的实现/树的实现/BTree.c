@@ -50,6 +50,7 @@ void BinaryTreePrevOrder(BTNode* root)//前序
 		BinaryTreePrevOrder(root->_right);
 	}
 }
+
 void BinaryTreeInOrder(BTNode* root)//中序
 {
 	if (root != NULL)
@@ -95,22 +96,91 @@ void BinaryTreeLevelOrder(BTNode* root)
 	}
 	
 }
+
 // 判断二叉树是否是完全二叉树
 int BinaryTreeComplete(BTNode* root)
 {
 
 }
-void BinaryTreePrevOrderNonR(BTNode* root)
+void BinaryTreePrevOrderNonR(BTNode* root)//前序非递归
 {
+	//1.打印根节点。2.看是否有右子树，有就将右子树压栈，再看是否有左孩子，有则进入到左孩子。3.当没有左孩子时，cur重新遍历到栈顶元素的位置，出栈
+	Stack mystack;
+	Bdata cur = root;
+	StackInit(&mystack,50);
+	while (cur || !StackEmpty(&mystack))
+	{
+		putchar(cur->_data);
+		if (cur->_right)
+		{
+			StackPush(&mystack, cur->_right);
+		}
+		if (cur->_left)
+		{
+			cur = cur->_left;
+		}
+		else
+		{
+			cur = StackTop(&mystack);
+			StackPop(&mystack);
+		}
+	}
+}
+void BinaryTreeInOrderNonR(BTNode* root)//中序非递归
+{
+	//1.将自己压栈。2.看是否有左孩子，有进入左孩子，左孩子压栈，直到左孩子没有为止。3.打印栈顶，cur指向栈顶，出栈，进入右孩子
+	Stack mystack;
+	Bdata cur = root;
+	StackInit(&mystack,50);
+	while (cur || !StackEmpty(&mystack))//cur(正在遍历的节点)为空，栈为空(即将要遍历的节点)时跳出
+	{
+		for (; cur; cur = cur->_left)//把当前根和所有的左孩子压栈，一直到找不到左孩子为止
+		{
+
+			StackPush(&mystack, cur);
+		}
+
+		if (!StackEmpty(&mystack))//栈为空
+		{
+			//左孩子遍历完，第一个没有左孩子的节点就是第一个出栈的节点。
+			//当右孩子为空，栈里是下一个要访问的节点。不为空，就是以这个右子树为根的第一个没有左孩子的节点
+			cur = StackTop(&mystack);
+			putchar(cur->_data);
+			StackPop(&mystack);
+			cur = cur->_right;//左子树和根遍历结束，开始遍历右子树。根变为右子树。cur为空时，for循环不会进入
+		}
+	}
 
 }
-void BinaryTreeInOrderNonR(BTNode* root)
-{
 
-}
-void BinaryTreePostOrderNonR(BTNode* root)
+void BinaryTreePostOrderNonR(BTNode* root)//后序非递归
 {
+	Stack mystack;
+	Bdata cur = root;
+	StackInit(&mystack,50);
+	int tag[32] = { 0 };//tag的上限为树的层数
 
+	while (cur || !StackEmpty(&mystack))
+	{
+		for (; cur; cur=cur->_left)//类似中序，将左孩子入栈
+		{
+			StackPush(&mystack, cur);//size+1
+			tag[mystack.size] = 0;//左孩子遍历标签
+		}
+		while (!StackEmpty(&mystack) && tag[mystack.size] == 1)//左孩子还没遍历完成时不能进入循环
+			//确保了只有左右子树都遍历完成时，才进入这个while
+		{
+			cur = StackTop(&mystack);
+			putchar(cur->_data);
+			StackPop(&mystack);//pop一次size-1
+			cur = NULL;//循环可以正常跳出
+		}
+		if (!StackEmpty(&mystack))
+		{
+			tag[mystack.size] = 1;//证明左子树遍历完毕
+			cur = StackTop(&mystack)->_right;//进入右子树继续遍历
+		}
+	}
 }
 
 void QueueInit(Queue* pq)
@@ -184,4 +254,52 @@ int QueueEmpty(Queue* pq)//判空
 		return 0;
 	}
 	return 1;
+}
+
+void StackInit(Stack * ps, size_t capacity)
+{
+	ps->_a = (QUDataType *)calloc(capacity, sizeof(QUDataType));
+	ps->capacity = capacity;
+	ps->size = 0;
+}
+
+void StackPush(Stack* ps, STDataType  x) //入栈
+{
+	//判满
+	if (ps->size==ps->capacity)
+	{
+		ps->capacity *= 2;
+		ps->_a = (QUDataType *)realloc(ps->_a, ps->capacity * sizeof(QUDataType));
+	}
+	else
+	{
+		ps->_a[ps->size] = x;
+		ps->size++;
+	}
+
+}
+void StackPop(Stack* ps)//出栈
+{
+	//判空
+	if (ps->size==0)
+	{
+		return;
+	}
+	else
+	{
+		ps->size--;
+	}
+}
+STDataType StackTop(Stack* ps)//返回栈顶元素
+{
+	//判空
+	if (ps->size != 0)
+	{
+		return ps->_a[ps->size - 1];
+	}
+	return 0;
+}
+int StackEmpty(Stack* ps)//判空
+{
+	return ps->size == 0;
 }
