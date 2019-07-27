@@ -20,25 +20,18 @@ BTNode* BinaryTreeCreate(BTDataType* a)//还原树
 		return cur;
 	}
 }
-void BinaryTreeDestory(BTNode** root)
+void BinaryTreeDestory(BTNode* root)//本质为前序遍历
 {
-
-}
-int BinaryTreeSize(BTNode* root)
-{
-
-}
-int BinaryTreeLeafSize(BTNode* root)
-{
-
-}
-int BinaryTreeLevelKSize(BTNode* root, int k)
-{
-
-}
-BTNode* BinaryTreeFind(BTNode* root, BTDataType x)
-{
-
+	BTNode *left;
+	BTNode *right;
+	if (root)
+	{
+		left = root->_left;
+		right = root->_right;
+		free(root);
+		BinaryTreeDestory(left);
+		BinaryTreeDestory(right);
+	}
 }
 // 遍历
 void BinaryTreePrevOrder(BTNode* root)//前序
@@ -78,29 +71,84 @@ void BinaryTreeLevelOrder(BTNode* root)
 	QueueInit(&myqueue);
 	QueuePush(&myqueue, root);
 	
-	//获得根部节点，再找到左右孩子，判断是否为空，不空就压进去
+	//获得根部节点，打印。再找到左右孩子，判断是否为空，不空就压进去
 	while (QueueEmpty(&myqueue))
 	{
 		QueueNode *tmp = BuyQueueNode(QueueFront(&myqueue));
 		printf("%c", tmp->_data->_data);
-		if (tmp->_data->_left != NULL)
+		//QueuePop(&myqueue);
+		if (tmp->_data->_left)
 		{
 			QueuePush(&myqueue, tmp->_data->_left);
 		}
-		if (tmp->_data->_right != NULL)
+		if (tmp->_data->_right)
 		{
 			QueuePush(&myqueue, tmp->_data->_right);
 		}
 		//出队(出头)
 		QueuePop(&myqueue);
 	}
-	
+	/*Queue myqueue;
+	QueueInit(&myqueue);
+	QueuePush(&myqueue, root);
+	while (QueueEmpty(&myqueue))
+	{
+		Bdata cur = QueueFront(&myqueue);
+		printf("%c", cur->_data);
+		if (cur->_left)
+		{
+			QueuePush(&myqueue, cur->_left);
+		}
+		if (cur->_right)
+		{
+			QueuePush(&myqueue, cur->_right);
+		}
+		QueuePop(&myqueue);
+	}*/
 }
 
 // 判断二叉树是否是完全二叉树
 int BinaryTreeComplete(BTNode* root)
 {
-
+	//1.如果有右孩子，无左孩子，直接return
+	//2.一个节点右孩子为空，剩下的节点全是叶子节点，如果出现了非叶子节点，直接return
+	Queue myqueue;
+	QueueInit(&myqueue);
+	QueuePush(&myqueue, root);
+	int leaveflag = 0;
+	while (QueueEmpty(&myqueue))
+	{
+		QueueNode *tmp = BuyQueueNode(QueueFront(&myqueue));//tmp=QueueFront(&myqueue)
+		printf("%c", tmp->_data->_data);
+		QueuePop(&myqueue);
+		if (leaveflag)//判断2，遍历出队后队首元素的左孩子和右孩子
+		{
+			if (tmp->_data->_left || tmp->_data->_right)
+				return 0;
+			else
+			{
+				continue;
+			}
+		}
+		if (tmp->_data->_left&&tmp->_data->_right)//右在左在
+		{
+			QueuePush(&myqueue, tmp->_data->_left);
+			QueuePush(&myqueue, tmp->_data->_right);
+		}
+		else if (tmp->_data->_right && !(tmp->_data->_left))//右在左不在
+		{
+			return 0;
+		}
+		else//右不在,置标签
+		{
+			leaveflag = 1;
+			if (tmp->_data->_left)//左在
+			{
+				QueuePush(&myqueue, tmp->_data->_left);
+			}
+		}
+	}
+	return 1;
 }
 void BinaryTreePrevOrderNonR(BTNode* root)//前序非递归
 {
@@ -119,7 +167,7 @@ void BinaryTreePrevOrderNonR(BTNode* root)//前序非递归
 		{
 			cur = cur->_left;
 		}
-		else
+		else//左右皆空
 		{
 			cur = StackTop(&mystack);
 			StackPop(&mystack);
@@ -128,7 +176,7 @@ void BinaryTreePrevOrderNonR(BTNode* root)//前序非递归
 }
 void BinaryTreeInOrderNonR(BTNode* root)//中序非递归
 {
-	//1.将自己压栈。2.看是否有左孩子，有进入左孩子，左孩子压栈，直到左孩子没有为止。3.打印栈顶，cur指向栈顶，出栈，进入右孩子
+	//1.将自己压栈。2.看是否有左孩子，有进入左孩子，左孩子压栈，直到左孩子没有为止。3.没有右子树时，打印栈顶，cur指向栈顶，出栈，进入右孩子
 	Stack mystack;
 	Bdata cur = root;
 	StackInit(&mystack,50);
@@ -140,7 +188,7 @@ void BinaryTreeInOrderNonR(BTNode* root)//中序非递归
 			StackPush(&mystack, cur);
 		}
 
-		if (!StackEmpty(&mystack))//栈为空
+		if (!StackEmpty(&mystack))//栈不为空
 		{
 			//左孩子遍历完，第一个没有左孩子的节点就是第一个出栈的节点。
 			//当右孩子为空，栈里是下一个要访问的节点。不为空，就是以这个右子树为根的第一个没有左孩子的节点
@@ -155,6 +203,7 @@ void BinaryTreeInOrderNonR(BTNode* root)//中序非递归
 
 void BinaryTreePostOrderNonR(BTNode* root)//后序非递归
 {
+	//1.先访问左到底，左为空时，标记左边已经访问过。2.标记完，右有，遍历右，再打印。没有右，且标记过，直接打印。
 	Stack mystack;
 	Bdata cur = root;
 	StackInit(&mystack,50);
@@ -167,7 +216,7 @@ void BinaryTreePostOrderNonR(BTNode* root)//后序非递归
 			StackPush(&mystack, cur);//size+1
 			tag[mystack.size] = 0;//左孩子遍历标签
 		}
-		while (!StackEmpty(&mystack) && tag[mystack.size] == 1)//左孩子还没遍历完成时不能进入循环
+		while (!StackEmpty(&mystack) && tag[mystack.size] == 1)//左右子树都访问完成时
 			//确保了只有左右子树都遍历完成时，才进入这个while
 		{
 			cur = StackTop(&mystack);
@@ -177,7 +226,7 @@ void BinaryTreePostOrderNonR(BTNode* root)//后序非递归
 		}
 		if (!StackEmpty(&mystack))
 		{
-			tag[mystack.size] = 1;//证明左子树遍历完毕
+			tag[mystack.size] = 1;//证明左子树遍历完毕，根置1
 			cur = StackTop(&mystack)->_right;//进入右子树继续遍历
 		}
 	}
@@ -268,8 +317,8 @@ void StackPush(Stack* ps, STDataType  x) //入栈
 	//判满
 	if (ps->size==ps->capacity)
 	{
-		ps->capacity *= 2;
-		ps->_a = (QUDataType *)realloc(ps->_a, ps->capacity * sizeof(QUDataType));
+		ps->capacity *= 2;	
+		ps->_a = (STDataType*)realloc(ps->_a, ps->capacity * sizeof(STDataType));
 	}
 	else
 	{

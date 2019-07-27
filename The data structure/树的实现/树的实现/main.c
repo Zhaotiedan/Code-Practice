@@ -4,7 +4,7 @@
 
 int main()
 {
-	BTNode* mytree = BinaryTreeCreate("ABD##E#H##CF##G##");
+	BTNode* mytree = BinaryTreeCreate("ABD##E#H##CF##G##");//前序+#确定一棵唯一的二叉树
 
 	printf("前序\n");
 	BinaryTreePrevOrder(mytree);
@@ -29,6 +29,10 @@ int main()
 	printf("后序非递归\n");
 	BinaryTreePostOrderNonR(mytree);
 
+	printf("\n");
+	printf("判断是否是完全二叉树:\n");
+	int result= BinaryTreeComplete(mytree);
+	printf("%d", result);
 	system("pause");
 
 	return 0;

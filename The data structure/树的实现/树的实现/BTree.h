@@ -51,10 +51,6 @@ typedef struct Stack
 BTNode* BinaryTreeCreate(BTDataType* a);//不确定a是否是字符串,只要字符串正确，就一定能还原出来树结构，且自动退出
 
 void BinaryTreeDestory(BTNode** root);
-int BinaryTreeSize(BTNode* root);
-int BinaryTreeLeafSize(BTNode* root);
-int BinaryTreeLevelKSize(BTNode* root, int k);
-BTNode* BinaryTreeFind(BTNode* root, BTDataType x);
 
 // 遍历(递归遍历)
 void BinaryTreePrevOrder(BTNode* root);//前序

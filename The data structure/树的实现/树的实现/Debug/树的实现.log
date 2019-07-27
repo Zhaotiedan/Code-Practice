@@ -1,17 +1,12 @@
 ﻿  BTree.c
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(110): warning C4020: “StackInit”: 实参太多
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(134): warning C4020: “StackInit”: 实参太多
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(160): warning C4020: “StackInit”: 实参太多
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(229): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(229): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(244): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(244): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(260): warning C4029: 声明的形参表不同于定义
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(261): warning C4047: “=”:“STDataType *”与“QUDataType *”的间接级别不同
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(272): warning C4047: “=”:“STDataType *”与“QUDataType *”的间接级别不同
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(30): warning C4716: “BinaryTreeSize”: 必须返回一个值
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(34): warning C4716: “BinaryTreeLeafSize”: 必须返回一个值
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(38): warning C4716: “BinaryTreeLevelKSize”: 必须返回一个值
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(42): warning C4716: “BinaryTreeFind”: 必须返回一个值
-d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(104): warning C4716: “BinaryTreeComplete”: 必须返回一个值
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(24): warning C4028: 形参 1 与声明不同
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(158): warning C4020: “StackInit”: 实参太多
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(182): warning C4020: “StackInit”: 实参太多
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(209): warning C4020: “StackInit”: 实参太多
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(278): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(278): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(293): warning C4047: “函数”:“Queue *”与“Queue **”的间接级别不同
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(293): warning C4024: “QueueEmpty”: 形参和实参 1 的类型不同
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(309): warning C4029: 声明的形参表不同于定义
+d:\github\daily code\c-code\the data structure\树的实现\树的实现\btree.c(310): warning C4047: “=”:“STDataType *”与“QUDataType *”的间接级别不同
   树的实现.vcxproj -> D:\github\Daily code\C-code\The data structure\树的实现\Debug\树的实现.exe
