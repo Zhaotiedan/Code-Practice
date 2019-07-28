@@ -1,11 +1,11 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 #include"Slist.h"
 
-void SListInit(SListNode** pphead)
+void SListInit(SListNode **pphead)
 {
 	*pphead = NULL;
 }
-void SListDestory(SListNode** pphead)//¿³²±×Ó£¬²»Í£ÍùºóÉ¾¡£Í·É¾£¬¶çÍ·,²»ÄÜÏú»ÙÑ­»·Á´±í
+void SListDestory(SListNode **pphead)//¿³²±×Ó£¬²»Í£ÍùºóÉ¾¡£Í·É¾£¬¶çÍ·,²»ÄÜÏú»ÙÑ­»·Á´±í
 {
 	if (*pphead==NULL)
 	{
@@ -18,32 +18,32 @@ void SListDestory(SListNode** pphead)//¿³²±×Ó£¬²»Í£ÍùºóÉ¾¡£Í·É¾£¬¶çÍ·,²»ÄÜÏú»ÙÑ­
 	free(*pphead);
 	*pphead = NULL;
 }
-SListNode* BuySListNode(SLTDataType x)//×öÒ»¸öĞÂµÄ½Úµã
+SListNode *BuySListNode(SLTDataType x)//×öÒ»¸öĞÂµÄ½Úµã
 {
-	SListNode* tmp = (SListNode *)malloc(sizeof(SListNode));
+	SListNode *tmp = (SListNode *)malloc(sizeof(SListNode));
 	tmp->data = x;
 	tmp->next = NULL;
 	return tmp;
 }
-void SListPushFront(SListNode** pphead, SLTDataType x)//Í·²å
+void SListPushFront(SListNode **pphead, SLTDataType x)//Í·²å
 {
-	SListNode* tmp = BuySListNode(x);
+	SListNode *tmp = BuySListNode(x);
 	tmp->next = (*pphead);
 	(*pphead) = tmp;
 }
-void SListPopFront(SListNode** pphead)//Í·É¾--Í·²»ÄÜÎª¿Õ
+void SListPopFront(SListNode **pphead)//Í·É¾--Í·²»ÄÜÎª¿Õ
 {
 	if (*pphead == NULL)
 	{
 		return;
 	}
-	SListNode* tmp = (*pphead)->next;
+	SListNode *tmp = (*pphead)->next;
 	free(*pphead);
 	(*pphead) = tmp;
 }
-SListNode* SListFind(SListNode* phead, SLTDataType x)// ÕÒx
+SListNode *SListFind(SListNode *phead, SLTDataType x)// ÕÒx
 {
-	SListNode* tmp;
+	SListNode *tmp;
 	for (tmp = phead; tmp; tmp = tmp->next)
 	{
 		if (tmp->data == x)
@@ -54,15 +54,15 @@ SListNode* SListFind(SListNode* phead, SLTDataType x)// ÕÒx
 	return NULL;
 
 }
-void SListInsertAfter(SListNode* pos, SLTDataType x)// ÔÚposµÄºóÃæ½øĞĞ²åÈë
+void SListInsertAfter(SListNode *pos, SLTDataType x)// ÔÚposµÄºóÃæ½øĞĞ²åÈë
 {
-	SListNode* tmp = BuySListNode(x);
+	SListNode *tmp = BuySListNode(x);
 	tmp->next = pos->next;
 	pos->next = tmp;
 }
-void SListEraseAfter(SListNode* pos)//É¾³ıposºóÃæµÄ½Úµã£¬°ÑposµÄµØÖ·´«½øÀ´£¬¸Ä±äposÖ¸ÏòµÄ¿Õ¼ä
+void SListEraseAfter(SListNode *pos)//É¾³ıposºóÃæµÄ½Úµã£¬°ÑposµÄµØÖ·´«½øÀ´£¬¸Ä±äposÖ¸ÏòµÄ¿Õ¼ä
 {
-	SListNode* tmp = pos->next;
+	SListNode *tmp = pos->next;
 	if (tmp == NULL)
 	{
 		return;
@@ -70,9 +70,9 @@ void SListEraseAfter(SListNode* pos)//É¾³ıposºóÃæµÄ½Úµã£¬°ÑposµÄµØÖ·´«½øÀ´£¬¸Ä±ä
 	pos->next = tmp->next;
 	tmp = NULL;
 }
-void SListRemove(SListNode** pphead, SLTDataType x)//Ö»É¾Ò»¸ö
+void SListRemove(SListNode **pphead, SLTDataType x)//Ö»É¾Ò»¸ö
 {
-	SListNode* tmp;
+	SListNode *tmp;
 	if (*pphead == NULL)
 	{
 		return;
@@ -91,9 +91,9 @@ void SListRemove(SListNode** pphead, SLTDataType x)//Ö»É¾Ò»¸ö
 		}
 	}
 }
-void SListRemoveall(SListNode** pphead, SLTDataType x)
+void SListRemoveall(SListNode **pphead, SLTDataType x)
 {
-	SListNode* tmp;
+	SListNode *tmp;
 	if (*pphead == NULL)
 	{
 		return;
@@ -116,11 +116,11 @@ void SListRemoveall(SListNode** pphead, SLTDataType x)
 }
 
 //ÄæĞòµ¥Á´±íµÄÁ½ÖÖ·½·¨
-void SListReverse1(SListNode** pphead)
+void SListReverse1(SListNode **pphead)
 {
-	SListNode* head = *pphead;//Ã¿´ÎÑ­»·ÖĞÊ¼ÖÕÖ¸Ïòµ±Ç°Á´±íµÄÍ·
-	SListNode* tmp = head->next;//Ã¿´ÎÑ­»·ÖĞÊ¼ÖÕÖ¸Ïò±»É¾µÄ½Úµã
-	SListNode* oldhead = *pphead;//Ã¿´ÎÑ­»·ÖĞÊ¼ÖÕÖ¸Ïò±»É¾µÄÇ°Ò»¸ö½Úµã
+	SListNode *head = *pphead;//Ã¿´ÎÑ­»·ÖĞÊ¼ÖÕÖ¸Ïòµ±Ç°Á´±íµÄÍ·
+	SListNode *tmp = head->next;//Ã¿´ÎÑ­»·ÖĞÊ¼ÖÕÖ¸Ïò±»É¾µÄ½Úµã
+	SListNode *oldhead = *pphead;//Ã¿´ÎÑ­»·ÖĞÊ¼ÖÕÖ¸Ïò±»É¾µÄÇ°Ò»¸ö½Úµã
 
 	while (tmp)//tmpÎª¿Õ£¬´ú±íÄæĞò½áÊø¡£¾ÉÍ·³ÉĞÂÎ²
 	{
@@ -132,11 +132,11 @@ void SListReverse1(SListNode** pphead)
 	*pphead = head;
 }
 
-void SListReverse2(SListNode** pphead)
+void SListReverse2(SListNode **pphead)
 {
-	SListNode* pre = *pphead;//±»Ö´ĞĞ²Ù×÷µÄÇ°Ò»¸ö½Úµã
-	SListNode* cur= pre->next;//±»Ö´ĞĞ²Ù×÷µÄ½Úµã
-	SListNode* next = cur;//±»Ö´ĞĞ²Ù×÷µÄºóÒ»¸ö½Úµã,ÔİÊ±Ö¸ÔÚcur£¬ÔÚÑ­»·¿ªÊ¼µÄÊ±ºòÌø×ªµ½ÆäºóÒ»¸ö½Úµã
+	SListNode *pre = *pphead;//±»Ö´ĞĞ²Ù×÷µÄÇ°Ò»¸ö½Úµã
+	SListNode *cur= pre->next;//±»Ö´ĞĞ²Ù×÷µÄ½Úµã
+	SListNode *next = cur;//±»Ö´ĞĞ²Ù×÷µÄºóÒ»¸ö½Úµã,ÔİÊ±Ö¸ÔÚcur£¬ÔÚÑ­»·¿ªÊ¼µÄÊ±ºòÌø×ªµ½ÆäºóÒ»¸ö½Úµã
 
 	pre->next = NULL;//´ËÊ±µÄÍ·£¬½«»á³ÉÎªÎ²£¬ËùÒÔÒªÉèÖÃÎ²½Úµã 
 	while (next)
@@ -149,15 +149,15 @@ void SListReverse2(SListNode** pphead)
 	*pphead = pre;//Ñ­»·Ìø³öÊ±£¬curºÍnext¶¼Ö¸Ïò¿Õ£¬´ËÊ±µÄÍ·Îªpre
 }
 
-SListNode* getPublicPoint(SListNode* headA, SListNode* headB)//Ñ°ÕÒµ¥Á´±íµÄÏà½»½Úµã
+SListNode *getPublicPoint(SListNode *headA, SListNode *headB)//Ñ°ÕÒµ¥Á´±íµÄÏà½»½Úµã
 {
 	int lenA = 0;
 	int lenB = 0;
 	int gap = 0;
 	int i = 0;
-	SListNode* cur;
-	SListNode* longerlist = headA;
-	SListNode* shortlist = headB;
+	SListNode *cur;
+	SListNode *longerlist = headA;
+	SListNode *shortlist = headB;
 	for (cur = headA; cur; cur = cur->next)
 	{
 		lenA++;
@@ -185,10 +185,10 @@ SListNode* getPublicPoint(SListNode* headA, SListNode* headB)//Ñ°ÕÒµ¥Á´±íµÄÏà½»½
 	}
 	return NULL;
 }
-SListNode* JugdeCircle(SListNode* head)
+SListNode *JugdeCircle(SListNode *head)
 {
-	SListNode* fast = head;
-	SListNode* slow = head;
+	SListNode *fast = head;
+	SListNode *slow = head;
 	while (fast&&slow&&fast->next)//±ÜÃâÕÒ²»µ½fastµÄnextµÄnext
 	{
 		fast = fast->next->next;
@@ -201,11 +201,11 @@ SListNode* JugdeCircle(SListNode* head)
 	return NULL;
 }
 
-SListNode* detectCircle(SListNode* head)
+SListNode *detectCircle(SListNode *head)
 {
 	//ÏÈÅĞ»·,ÕÒÁ½¸ö½Úµã£¬Ò»¸öÒ»´ÎÌøÁ½´Î£¬Ò»¸öÒ»´ÎÌøÒ»´Î
-	SListNode* fast = head;
-	SListNode* slow = head;
+	SListNode *fast = head;
+	SListNode *slow = head;
 	while (fast&&slow&&fast->next)//±ÜÃâÕÒ²»µ½fastµÄnextµÄnext
 	{
 		fast = fast->next->next;
@@ -224,9 +224,9 @@ SListNode* detectCircle(SListNode* head)
 	}
 	return NULL;
 }
-void SListPrint(SListNode* phead)
+void SListPrint(SListNode *phead)
 {
-	SListNode* tmp;
+	SListNode *tmp;
 	for (tmp = phead; tmp; tmp = tmp->next)
 	{
 		printf("%d->", tmp->data);
