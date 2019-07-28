@@ -1,0 +1,10 @@
+﻿  main.c
+d:\github\daily code\c-code\the data structure\顺序表和链表\线性表(1)--顺序表\数据结构--线性表\main.c(22): warning C4020: “SeqListPopBack”: 实参太多
+d:\github\daily code\c-code\the data structure\顺序表和链表\线性表(1)--顺序表\数据结构--线性表\main.c(25): warning C4020: “SeqListPopFront”: 实参太多
+  seqlist.c
+d:\github\daily code\c-code\the data structure\顺序表和链表\线性表(1)--顺序表\数据结构--线性表\seqlist.c(43): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\github\daily code\c-code\the data structure\顺序表和链表\线性表(1)--顺序表\数据结构--线性表\seqlist.c(77): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\github\daily code\c-code\the data structure\顺序表和链表\线性表(1)--顺序表\数据结构--线性表\seqlist.c(88): warning C4267: “=”: 从“size_t”转换到“int”，可能丢失数据
+d:\github\daily code\c-code\the data structure\顺序表和链表\线性表(1)--顺序表\数据结构--线性表\seqlist.c(133): warning C4267: “初始化”: 从“size_t”转换到“int”，可能丢失数据
+  正在生成代码...
+  数据结构--线性表.vcxproj -> D:\github\Daily code\C-code\The data structure\顺序表和链表\线性表(1)--顺序表\x64\Debug\数据结构--线性表.exe

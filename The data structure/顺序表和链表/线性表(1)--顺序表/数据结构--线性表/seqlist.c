@@ -2,13 +2,13 @@
 
 #include "seqlist.h"
 
-void SeqListInit(SeqList* psl, size_t capacity)
+void SeqListInit(SeqList *psl, size_t capacity)
 {
 	psl->array = (SLDataType *)calloc(capacity, sizeof(SLDataType));
 	psl->capacity = capacity;
 	psl->size = 0;
 }
-void SeqListDestory(SeqList* psl)
+void SeqListDestory(SeqList *psl)
 {
 	if (psl)
 	{
@@ -18,25 +18,25 @@ void SeqListDestory(SeqList* psl)
 	psl->size = 0;
 	psl->capacity = 0;
 }
-void CheckCapacity(SeqList* psl)//Ã¿½øĞĞÒ»´Îpush²Ù×÷¶¼Òª½øĞĞÅĞ¶Ï,²éÂú£¬À©ÈİÒª¸ø±¶Êı
+void CheckCapacity(SeqList *psl)//Ã¿½øĞĞÒ»´Îpush²Ù×÷¶¼Òª½øĞĞÅĞ¶Ï,²éÂú£¬À©ÈİÒª¸ø±¶Êı
 {
 	if (psl->size >= psl->capacity)
 	{
 		psl->capacity *= 2;
-		psl->array = (SLDataType *)realloc(psl->array, psl->capacity * sizeof(SLDataType));
+		psl->array = (SLDataType *)realloc(psl->array, psl->capacity  *sizeof(SLDataType));
 	}
 }
-void SeqListPushBack(SeqList* psl, SLDataType x)//Î²²å
+void SeqListPushBack(SeqList *psl, SLDataType x)//Î²²å
 {
 	CheckCapacity(psl);
 	psl->array[psl->size] = x;
 	psl->size++;
 }
-void SeqListPopBack(SeqList* psl)//Î²É¾size--¾Í¿É
+void SeqListPopBack(SeqList *psl)//Î²É¾size--¾Í¿É
 {
 	psl->size--;
 }
-void SeqListPushFront(SeqList* psl, SLDataType x)//Í·²å£¬ÎªÁË·ÀÖ¹¸²¸ÇĞèÒª´ÓºóÍùÇ°±éÀú£¬²åÍê¼ÇµÃsize++
+void SeqListPushFront(SeqList *psl, SLDataType x)//Í·²å£¬ÎªÁË·ÀÖ¹¸²¸ÇĞèÒª´ÓºóÍùÇ°±éÀú£¬²åÍê¼ÇµÃsize++
 {
 	int i=0;
 	CheckCapacity(psl);
@@ -47,7 +47,7 @@ void SeqListPushFront(SeqList* psl, SLDataType x)//Í·²å£¬ÎªÁË·ÀÖ¹¸²¸ÇĞèÒª´ÓºóÍùÇ
 	psl->array[0] = x;
 	psl->size++;
 }
-void SeqListPopFront(SeqList* psl)//Í·É¾£ºÕûÌåÏòÇ°Ç°ÒÆÒ»Î»¾Í¿É£¬É¾Íê¼ÇµÃsize--
+void SeqListPopFront(SeqList *psl)//Í·É¾£ºÕûÌåÏòÇ°Ç°ÒÆÒ»Î»¾Í¿É£¬É¾Íê¼ÇµÃsize--
 {
 	int i=0;
 	for (; i < psl->size; i++)
@@ -57,7 +57,7 @@ void SeqListPopFront(SeqList* psl)//Í·É¾£ºÕûÌåÏòÇ°Ç°ÒÆÒ»Î»¾Í¿É£¬É¾Íê¼ÇµÃsize--
 	psl->size--;
 }
 
-int SeqListFind(SeqList* psl, SLDataType x)//ÕÒÖµÎªxµÄÔªËØµÄÏÂ±ê
+int SeqListFind(SeqList *psl, SLDataType x)//ÕÒÖµÎªxµÄÔªËØµÄÏÂ±ê
 {
 	int i = 0;
 	for (i = 0; i < psl->size; i++)
@@ -70,7 +70,7 @@ int SeqListFind(SeqList* psl, SLDataType x)//ÕÒÖµÎªxµÄÔªËØµÄÏÂ±ê
 	return i;
 }
 
-void SeqListInsert(SeqList* psl, size_t pos, SLDataType x)//ÔÚposµÄÎ»ÖÃ²åÈëx£¬´ÓposÎ»ÖÃÍùºóÒÆ£¬ÓëÍ·É¾ÏàÍ¬
+void SeqListInsert(SeqList *psl, size_t pos, SLDataType x)//ÔÚposµÄÎ»ÖÃ²åÈëx£¬´ÓposÎ»ÖÃÍùºóÒÆ£¬ÓëÍ·É¾ÏàÍ¬
 {
 	int i;
 	CheckCapacity(psl);
@@ -82,7 +82,7 @@ void SeqListInsert(SeqList* psl, size_t pos, SLDataType x)//ÔÚposµÄÎ»ÖÃ²åÈëx£¬´Ó
 	psl->size++;
 }
 
-void SeqListErase(SeqList* psl, size_t pos)//²Á³ıposÎ»ÖÃµÄÊı¾İ£¬ÓëÍ·É¾ÏàÍ¬
+void SeqListErase(SeqList *psl, size_t pos)//²Á³ıposÎ»ÖÃµÄÊı¾İ£¬ÓëÍ·É¾ÏàÍ¬
 {
 	int i = 0;
 	for (i = pos; i < psl->size; i++)
@@ -92,16 +92,16 @@ void SeqListErase(SeqList* psl, size_t pos)//²Á³ıposÎ»ÖÃµÄÊı¾İ£¬ÓëÍ·É¾ÏàÍ¬
 	psl->size--;
 }
 
-void SeqListRemove(SeqList* psl, SLDataType x)//ÒÆ³ıÊı¾İ,É¾³ıÖµÎªxµÄÖµ
+void SeqListRemove(SeqList *psl, SLDataType x)//ÒÆ³ıÊı¾İ,É¾³ıÖµÎªxµÄÖµ
 {
 	SeqListErase(psl, SeqListFind(psl, x));//ÒÆ³ıµÚÒ»¸öÖµÎªxµÄÔªËØ
 
 }
-void SeqListModify(SeqList* psl, size_t pos, SLDataType x)//ĞŞ¸Ä£¬°ÑposµÄÖµ¸Ä³Éx
+void SeqListModify(SeqList *psl, size_t pos, SLDataType x)//ĞŞ¸Ä£¬°ÑposµÄÖµ¸Ä³Éx
 {
 	psl->array[pos] = x;
 }
-void SeqListPrint(SeqList* psl)
+void SeqListPrint(SeqList *psl)
 {
 	int i = 0;
 	for (i = 0; i < psl->size; i++)
@@ -110,7 +110,7 @@ void SeqListPrint(SeqList* psl)
 	}
 	printf("\n");
 }
-void SeqListBubbleSort(SeqList* psl)//Ã°ÅİÅÅĞò·¨
+void SeqListBubbleSort(SeqList *psl)//Ã°ÅİÅÅĞò·¨
 {
 	int i, j = 0;
 	for (i = 0; i < psl->size; i++)
@@ -127,7 +127,7 @@ void SeqListBubbleSort(SeqList* psl)//Ã°ÅİÅÅĞò·¨
 		}
 	}
 }
-int SeqListBinaryFind(SeqList* psl, SLDataType x)
+int SeqListBinaryFind(SeqList *psl, SLDataType x)
 {
 	int left = 0;
 	int right = psl->size-1;
@@ -150,7 +150,7 @@ int SeqListBinaryFind(SeqList* psl, SLDataType x)
 	
 }
 // ±¾ÌâÒªÇó£ºÊ±¼ä¸´ÔÓ¶È£ºO(N) ¿Õ¼ä¸´ÔÓ¶È O(1)
-void SeqListRemoveAll1(SeqList* psl, SLDataType x)//Çå³şËùÓĞÖµÎªxµÄÊı¾İ£¬ÒÆÎ»
+void SeqListRemoveAll1(SeqList *psl, SLDataType x)//Çå³şËùÓĞÖµÎªxµÄÊı¾İ£¬ÒÆÎ»
 {
 	int gap = 0;
 	int i = 0;
@@ -168,9 +168,9 @@ void SeqListRemoveAll1(SeqList* psl, SLDataType x)//Çå³şËùÓĞÖµÎªxµÄÊı¾İ£¬ÒÆÎ»
 	}
 	psl->size -= gap;
 }
-void SeqListRemoveAll2(SeqList* psl, SLDataType x)//½«ËùÓĞ²»ÎªxµÄÖµ±£Áôµ½ÁíÍâÒ»¸öÊı×étmpÖĞ
+void SeqListRemoveAll2(SeqList *psl, SLDataType x)//½«ËùÓĞ²»ÎªxµÄÖµ±£Áôµ½ÁíÍâÒ»¸öÊı×étmpÖĞ
 {
-	SLDataType * tmp= (SLDataType *)calloc(psl->capacity, sizeof(SLDataType));
+	SLDataType  *tmp= (SLDataType *)calloc(psl->capacity, sizeof(SLDataType));
 	int i, j = 0;
 	for (i = 0, j = 0; i < psl->size; i++)
 	{
