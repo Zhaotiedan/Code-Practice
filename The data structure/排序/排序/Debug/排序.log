@@ -1,0 +1,26 @@
+﻿  main.c
+  sort.c
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(26): error C2059: 语法错误:“)”
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(42): error C2065: “mid”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(43): error C2065: “tmp”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(43): warning C4047: “函数”:“int *”与“int”的间接级别不同
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(43): warning C4024: “delMergeSort”: 形参和实参 2 的类型不同
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(43): error C2065: “mid”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(44): error C2065: “tmp”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(44): warning C4047: “函数”:“int *”与“int”的间接级别不同
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(44): warning C4024: “delMergeSort”: 形参和实参 2 的类型不同
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(44): error C2065: “mid”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(48): error C2065: “mid”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(50): error C2065: “mid”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(54): error C2065: “tmp”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(54): error C2109: 下标要求数组或指针类型
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(59): error C2065: “tmp”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(59): error C2109: 下标要求数组或指针类型
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(66): error C2065: “tmp”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(66): error C2109: 下标要求数组或指针类型
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(70): error C2065: “mid”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(72): error C2065: “tmp”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(72): error C2109: 下标要求数组或指针类型
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(77): error C2065: “tmp”: 未声明的标识符
+d:\github\daily code\c-code\the data structure\排序\排序\sort.c(77): error C2109: 下标要求数组或指针类型
+  正在生成代码...
