@@ -2,12 +2,21 @@
 
 #include"Heap.h"
 
+#define SWAP(a,b,tmp){\
+                  tmp=a;\
+                  a = b;\
+                  b = tmp\
+                     }
 void swap(HPDataType *a, HPDataType *b)
 {
 	int tmp;
 	tmp = *a;
 	*a = *b;
 	*b = tmp;
+}
+void swap2()//异或思想
+{
+
 }
 //向下调整算法：假设为大堆
 void HeapAdjust(Heap *hp, int n)//n为调整的下标

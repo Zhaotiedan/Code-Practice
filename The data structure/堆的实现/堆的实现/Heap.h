@@ -6,7 +6,8 @@
 #include<string.h>
 
 #define MAXSIZE 100
-typedef int HPDataType;
+typedef int HPDataType;
+
 typedef struct Heap
 {
 	HPDataType *_a;
