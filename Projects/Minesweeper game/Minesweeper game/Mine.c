@@ -79,7 +79,7 @@ void PlayGame(char show_board[][COL], char mine_board[][COL], int row, int col)
 		ShowBoard(show_board, row, col);
 		printf("Please enter your pos<x,y>");
 		scanf("%d%d", &i, &j);
-		if (i >= 1 && i < row - 2 && j >= 1 && j < col - 2)
+		if (i >= 1 && i <= row - 2 && j >= 1 && j <= col - 2)
 		{
 			if (mine_board[i][j] == '0')
 			{
