@@ -13,6 +13,9 @@ void swap(int *a, int *b)
 void delQsort(int *arr,int start,int end)
 {
 	int flag = 1;
+	int i = start;
+	int j = end;
+
 	while (start < end)
 	{
 		while (arr[start] > arr[end])
@@ -23,12 +26,16 @@ void delQsort(int *arr,int start,int end)
 		flag ? end-- : start++;
 
 	}
-	delQsort(arr,)
+	delQsort(arr, start, i - 1);
+	delQsort(arr, i, end);
+
 }
 void Qsort(int *arr, int n)
 {
 
 }
+
+
 //¹é²¢ÅÅĞò£ºnlogn
 void delMergeSort(int *arr,int *tmp,int start,int end)
 {
