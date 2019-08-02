@@ -1,6 +1,0 @@
-﻿  main.c
-d:\github\daily code\c-code\some interesting projects\horse scan question\horse scan question\main.c(19): warning C4013: “check”未定义；假设外部返回 int
-d:\github\daily code\c-code\some interesting projects\horse scan question\horse scan question\main.c(23): warning C4013: “output”未定义；假设外部返回 int
-d:\github\daily code\c-code\some interesting projects\horse scan question\horse scan question\main.c(37): error C2371: “output”: 重定义；不同的基类型
-d:\github\daily code\c-code\some interesting projects\horse scan question\horse scan question\main.c(41): warning C4474: printf: 格式字符串中传递的参数太多
-  d:\github\daily code\c-code\some interesting projects\horse scan question\horse scan question\main.c(41): note: 占位符和其参数预计 0 可变参数，但提供的却是 1 参数
