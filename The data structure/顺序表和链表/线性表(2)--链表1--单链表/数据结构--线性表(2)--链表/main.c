@@ -42,7 +42,7 @@
 //	return 0;
 //}
 
-////2.约瑟夫环测试
+////2.约瑟夫环测试 详见CSDN：https://mp.csdn.net/mdeditor#
 //int main()
 //{
 //	int i = 0;
