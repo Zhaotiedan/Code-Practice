@@ -115,7 +115,7 @@ void SListRemoveall(SListNode **pphead, SLTDataType x)
 	}
 }
 
-//逆序单链表的两种方法
+//逆序单链表的两种方法    方法剖析见CSND:https://blog.csdn.net/qq_42913794/article/details/97621521
 void SListReverse1(SListNode **pphead)
 {
 	SListNode *head = *pphead;//每次循环中始终指向当前链表的头
