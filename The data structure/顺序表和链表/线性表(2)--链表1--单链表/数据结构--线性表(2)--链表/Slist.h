@@ -37,4 +37,6 @@ void SListReverse2(SListNode **pphead);
 SListNode *getPublicPoint(SListNode *headA, SListNode *headB);//找公共节点
 SListNode *JugdeCircle(SListNode *head);//判断是否有环
 SListNode *detectCircle(SListNode *head);//找环的入口
+SListNode *FindK(SListNode *head, SLTDataType k);//找链表的倒数第k个节点
+
 #endif /*_SLIST_H_*/

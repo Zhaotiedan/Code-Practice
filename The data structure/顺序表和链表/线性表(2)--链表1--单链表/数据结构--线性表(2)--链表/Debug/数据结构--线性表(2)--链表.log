@@ -1,6 +1,2 @@
-﻿  Slist.c
-  main.c
-  正在生成代码...
-d:\github\daily code\c-code\the data structure\顺序表和链表\线性表(2)--链表1--单链表\数据结构--线性表(2)--链表\slist.c(233): warning C4716: “FindK”: 必须返回一个值
-  LINK : 没有找到 D:\github\Daily code\C-code\The data structure\顺序表和链表\线性表(2)--链表1--单链表\Debug\数据结构--线性表(2)--链表.exe 或上一个增量链接没有生成它；正在执行完全链接
+﻿  main.c
   数据结构--线性表(2)--链表.vcxproj -> D:\github\Daily code\C-code\The data structure\顺序表和链表\线性表(2)--链表1--单链表\Debug\数据结构--线性表(2)--链表.exe

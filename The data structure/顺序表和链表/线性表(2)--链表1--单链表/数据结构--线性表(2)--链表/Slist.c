@@ -227,10 +227,33 @@ SListNode *detectCircle(SListNode *head)
 	}
 	return NULL;
 }
-SListNode *FindK(SListNode *phead, SLTDataType k)
-{
 
+//找链表的倒数第k个节点
+SListNode *FindK(SListNode *head, SLTDataType k)
+{
+	if (head == NULL)
+	{
+		return;
+	}
+	SListNode *fast = NULL;
+	SListNode *slow = NULL;
+	while (k)
+	{
+		if (fast == NULL)
+		{
+			return;
+		}
+		fast = fast->next;
+		k--;
+	}
+	while (fast != NULL)
+	{
+		fast = fast->next;
+		slow = slow->next;
+	}
+	return slow;
 }
+
 void SListPrint(SListNode *phead)
 {
 	SListNode *tmp;
