@@ -192,6 +192,7 @@
 //	return 0;
 //}
 
+//7.找出链表的倒数第k个节点
 int main()
 {
 	SListNode *phead;
