@@ -149,6 +149,7 @@ void SListReverse2(SListNode **pphead)
 	*pphead = pre;//Ñ­»·Ìø³öÊ±£¬curºÍnext¶¼Ö¸Ïò¿Õ£¬´ËÊ±µÄÍ·Îªpre
 }
 
+//ÕÒÁ½¸öÁ´±íµÄ¹«¹²½Úµã
 SListNode *getPublicPoint(SListNode *headA, SListNode *headB)//Ñ°ÕÒµ¥Á´±íµÄÏà½»½Úµã
 {
 	int lenA = 0;
@@ -185,6 +186,8 @@ SListNode *getPublicPoint(SListNode *headA, SListNode *headB)//Ñ°ÕÒµ¥Á´±íµÄÏà½»½
 	}
 	return NULL;
 }
+
+//ÅĞ¶ÏÁ´±íÊÇ·ñÓĞ»·
 SListNode *JugdeCircle(SListNode *head)
 {
 	SListNode *fast = head;
@@ -223,6 +226,10 @@ SListNode *detectCircle(SListNode *head)
 		}
 	}
 	return NULL;
+}
+SListNode *FindK(SListNode *phead, SLTDataType k)
+{
+
 }
 void SListPrint(SListNode *phead)
 {
