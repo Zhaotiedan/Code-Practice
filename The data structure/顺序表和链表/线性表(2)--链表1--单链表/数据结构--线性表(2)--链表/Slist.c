@@ -235,8 +235,8 @@ SListNode *FindK(SListNode *head, SLTDataType k)
 	{
 		return;
 	}
-	SListNode *fast = NULL;
-	SListNode *slow = NULL;
+	SListNode *fast = head;
+	SListNode *slow = head;
 	while (k)
 	{
 		if (fast == NULL)
