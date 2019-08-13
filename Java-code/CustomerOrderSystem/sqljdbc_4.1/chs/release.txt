@@ -1,0 +1,104 @@
+版本信息
+Microsoft SQL Server JDBC 驱动程序 4.1
+2018 年 2 月
+
+
+简介
+------------
+此文件包含最新或其他重要信息，是 Microsoft JDBC 4.1 for SQL Server
+文档
+的补充。在安装 JDBC 驱动程序之前，应 
+通读此文件。
+
+你的反馈对我们非常重要，我们将努力
+及时响应你的反馈。有关
+使用 JDBC 驱动程序博客和在线论坛
+提供反馈的信息，请访问 Microsoft JDBC Driver 4.1 for SQL Server 页面，网址为
+http://msdn.microsoft.com/data/jdbc。
+
+
+安装
+------------
+install.txt 中提供了有关安装 JDBC 驱动程序的说明。
+请参阅该文件，了解如何在
+Windows 和 Unix 操作系统中安装 JDBC 驱动程序。
+
+支持的操作系统
+---------------------------
+Microsoft JDBC Driver 4.1 for SQL Server 支持以下操作系统：
+Linux、Unix、Windows Server 2008、
+Windows Vista Service Pack 1、Windows Server 2008 R2、Windows 7、Windows 8 和 Windows 8.1。
+
+上面的列表是某些受支持的操作系统的示例。
+JDBC 驱动程序可在任何支持
+使用 Java 虚拟机 (JVM) 的操作系统上工作。但只对 Sun Solaris、SUSE
+Linux 以及 Windows Vista Service Pack 1 或更高版本的操作系统进行了测试。
+
+版本内容
+----------------
+Microsoft JDBC Driver 4.1 for SQL Server 可执行 zip 或 tar 文件将在指定位置
+解压出以下文件，其目录
+相对于所选的安装目录：
+
+<安装目录>\sqljdbc_<版本>\<语言>\install.txt
+<安装目录>\sqljdbc_<版本>\<语言>\release.txt
+<安装目录>\sqljdbc_<版本>\<语言>\license.txt
+<安装目录>\sqljdbc_<版本>\<语言>\jre7\sqljdbc41.jar
+<安装目录>\sqljdbc_<版本>\<语言>\auth\x86\sqljdbc_auth.dll
+<安装目录>\sqljdbc_<版本>\<语言>\auth\x64\sqljdbc_auth.dll
+<安装目录>\sqljdbc_<版本>\<语言>\samples\<示例文件...>
+<安装目录>\sqljdbc_<版本>\<语言>\xa\xa_install.sql
+<安装目录>\sqljdbc_<版本>\<语言>\xa\x86\sqljdbc_xa.dll
+<安装目录>\sqljdbc_<版本>\<语言>\xa\x64\sqljdbc_xa.dll
+
+
+更改列表
+-----------
+
+从 4.1.8112.100 到 4.1.8112.200 的更改
+
+在编译器中进行了更改，以缓解 Spectre 和 Meltdown 相关漏洞。
+
+-----------------------------------------
+从 4.1.5605.100 到 4.1.8112.100 的更改
+
+修复了定向到 SQL DB 租户圈时的证书验证问题。
+
+修复了 LOGIN7 数据包不包含驱动程序版本号的问题。
+
+------------------------
+从 4.0 到 4.1 的更改：
+
+2828290 现在将请求进行重定向后会在 Login7 包中发送新的服务器名称
+
+3362720 除 JDK 6.0 和 5.0 外，JDBC 驱动程序还支持 Java 开发工具包 (JDK) 版本 7.0。它包含一个新的 jar 文件 sqljdbc41.jar，支持 JDK 7.0 并与 JDBC 4.0 API 兼容。
+
+
+已知问题
+------------
+下面是有关 Microsoft JDBC Driver 4.1 for SQL Server 的已知问题：
+
+1) SQL MERGE 语句的参数元数据限制
+
+PreparedStatement.getParameterMetadata() 在与参数化 MERGE 查询一起使用
+时引发 SQLException。
+
+
+2) JavaKerberos 和 IBM VM
+
+如果在 Windows 环境下运行，可能会需要在配置文件中指定 principalname 以便让 Java Kerberos 工作。例如：
+SQLJDBCDriver {
+com.ibm.security.auth.module.Krb5LoginModule required  useDefaultCcache=true credsType=initiator principal=principalname@principaldomain;
+};
+
+
+3) 与 SQL AZURE 的连接被断开
+
+连接到 SQL Azure 时，空闲连接在处于不活动状态一定时间后可能被某个 
+网络组件（如防火墙）终止。若要避免通过网络组件断开空闲连接，应在 
+加载驱动程序的操作系统上设置以下注册表设置（或其非 Windows 对等项）：
+           
+注册表设置                                                                                                                                       推荐值
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveTime                 30000      
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\KeepAliveInterval             1000
+HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Services\Tcpip\Parameters\TcpMaxDataRetransmission      10
