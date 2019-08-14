@@ -43,44 +43,44 @@
 //}
 
 ////2.约瑟夫环测试 详见CSDN：https://mp.csdn.net/mdeditor/98895581
-//int main()
-//{
-//	int i = 0;
-//	int n = 0;//数的数字
-//	int m = 0;//数数的人数
-//	SListNode* phead;
-//	SListNode* plast=NULL;
-//	SListNode* cur=NULL;
-//	scanf("%d %d", &n, &m);
-//	SListInit(&phead);
-//	//先把最大的数放进去
-//	SListPushFront(&phead, m);
-//	plast = phead;
-//
-//	//依次放入数，形成链表
-//	for (i = m - 1; i >=1; i--)
-//	{
-//		SListPushFront(&phead, i);
-//	}
-//	plast->next = phead;//形成一个环
-//
-//	cur = plast;//只有第一个跳的个数不一样，这样可以保证第一次的正确
-//
-//	for (; m > 1; m--)
-//	{
-//		for (i = 1; i < n; i++)	//数数，跳n-1后删
-//		{
-//			cur = cur->next;
-//			printf("%d号报%d\n", cur->data, i);
-//		}
-//		printf("%d号出圈\n", cur->next->data, i);
-//		SListEraseAfter(cur);
-//	}
-//	printf("%d号胜利\n", cur->data);
-//	free(cur);
-//	system("pause");
-//	return 0;
-//}
+int main()
+{
+	int i = 0;
+	int n = 0;//数的数字
+	int m = 0;//数数的人数
+	SListNode* phead;
+	SListNode* plast=NULL;
+	SListNode* cur=NULL;
+	scanf("%d %d", &m, &n);
+	SListInit(&phead);
+	//先把最大的数放进去
+	SListPushFront(&phead, m);
+	plast = phead;
+
+	//依次放入剩下的数，形成链表
+	for (i = m - 1; i >=1; i--)
+	{
+		SListPushFront(&phead, i);
+	}
+	plast->next = phead;//形成一个环
+
+	cur = plast;//只有第一个跳的个数不一样，这样可以保证第一次的正确
+
+	for (; m > 1; m--)
+	{
+		for (i = 1; i < n; i++)	//数数，跳n-1步后删
+		{
+			cur = cur->next;
+			printf("%d号报%d\n", cur->data, i);
+		}
+		printf("%d号出圈\n", cur->next->data, i);
+		SListEraseAfter(cur);
+	}
+	printf("%d号胜利\n", cur->data);
+	free(cur);
+	system("pause");
+	return 0;
+}
 
 
 //3.反转一个单链表
@@ -193,20 +193,20 @@
 //}
 
 //7.找出链表的倒数第k个节点
-int main()
-{
-	SListNode *phead;
-	SListInit(&phead);
-
-	SListPushFront(&phead, 2);
-	SListPushFront(&phead, 3);
-	SListPushFront(&phead, 4);
-	SListPrint(phead);
-	SLTDataType k = 0;
-	scanf("%d", &k);
-	SListNode *ret = FindK(phead, k);
-	printf("%d", ret->data);
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	SListNode *phead;
+//	SListInit(&phead);
+//
+//	SListPushFront(&phead, 2);
+//	SListPushFront(&phead, 3);
+//	SListPushFront(&phead, 4);
+//	SListPrint(phead);
+//	SLTDataType k = 0;
+//	scanf("%d", &k);
+//	SListNode *ret = FindK(phead, k);
+//	printf("%d", ret->data);
+//	system("pause");
+//	return 0;
+//}
 
