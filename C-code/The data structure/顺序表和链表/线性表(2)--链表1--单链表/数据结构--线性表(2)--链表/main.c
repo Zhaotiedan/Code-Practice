@@ -43,44 +43,44 @@
 //}
 
 ////2.约瑟夫环测试 详见CSDN：https://blog.csdn.net/qq_42913794/article/details/98895581
-int main()
-{
-	int i = 0;
-	int n = 0;//数的数字
-	int m = 0;//数数的人数
-	SListNode* phead;
-	SListNode* plast=NULL;
-	SListNode* cur=NULL;
-	scanf("%d %d", &m, &n);
-	SListInit(&phead);
-	//先把最大的数放进去
-	SListPushFront(&phead, m);
-	plast = phead;
-
-	//依次放入剩下的数，形成链表
-	for (i = m - 1; i >=1; i--)
-	{
-		SListPushFront(&phead, i);
-	}
-	plast->next = phead;//形成一个环
-
-	cur = plast;//只有第一个跳的个数不一样，这样可以保证第一次的正确
-
-	for (; m > 1; m--)
-	{
-		for (i = 1; i < n; i++)	//数n次数，跳n-1步后删
-		{
-			cur = cur->next;
-			printf("%d号报%d\n", cur->data, i);
-		}
-		printf("%d号出圈\n", cur->next->data, i);
-		SListEraseAfter(cur);
-	}
-	printf("%d号胜利\n", cur->data);
-	free(cur);
-	system("pause");
-	return 0;
-}
+//int main()
+//{
+//	int i = 0;
+//	int n = 0;//数的数字
+//	int m = 0;//数数的人数
+//	SListNode* phead;
+//	SListNode* plast=NULL;
+//	SListNode* cur=NULL;
+//	scanf("%d %d", &m, &n);
+//	SListInit(&phead);
+//	//先把最大的数放进去
+//	SListPushFront(&phead, m);
+//	plast = phead;
+//
+//	//依次放入剩下的数，形成链表
+//	for (i = m - 1; i >=1; i--)
+//	{
+//		SListPushFront(&phead, i);
+//	}
+//	plast->next = phead;//形成一个环
+//
+//	cur = plast;//只有第一个跳的个数不一样，这样可以保证第一次的正确
+//
+//	for (; m > 1; m--)
+//	{
+//		for (i = 1; i < n; i++)	//数n次数，跳n-1步后删
+//		{
+//			cur = cur->next;
+//			printf("%d号报%d\n", cur->data, i);
+//		}
+//		printf("%d号出圈\n", cur->next->data, i);
+//		SListEraseAfter(cur);
+//	}
+//	printf("%d号胜利\n", cur->data);
+//	free(cur);
+//	system("pause");
+//	return 0;
+//}
 
 
 //3.反转一个单链表
@@ -104,43 +104,43 @@ int main()
 //}
 
 //4.求两个单链表的第一个公共节点
-//右对齐，长的先走差值步，再一起遍历
-//int main()
-//{
-//	int i = 0;
-//	int j = 0;
-//	SListNode* phead1;
-//	SListNode* phead2;
-//	SListInit(&phead1);
-//	SListInit(&phead2);
-//
-//	SListPushFront(&phead1, 5);
-//	SListPushFront(&phead1, 4);
-//	SListPushFront(&phead1, 8);
-//	SListPushFront(&phead1, 1);
-//	SListPushFront(&phead1, 4);
-//
-//	SListPushFront(&phead2, 5);
-//	SListPushFront(&phead2, 4);
-//	SListPushFront(&phead2, 8);
-//	SListPushFront(&phead2, 1);
-//	SListPushFront(&phead2, 0);
-//	SListPushFront(&phead2, 5);
-//
-//
-//	SListNode* ret=getPublicPoint(phead1, phead2);
-//	if (ret==NULL)
-//	{
-//		printf("NULL\n");
-//	}
-//	else
-//	{
-//		printf("%d\n", ret->data);
-//	}
-//	system("pause");
-//
-//	return 0;
-//}
+//右对齐，长的先走差值步，再一起遍历    CSDN:https://blog.csdn.net/qq_42913794/article/details/99674797
+int main()
+{
+	int i = 0;
+	int j = 0;
+	SListNode* phead1;
+	SListNode* phead2;
+	SListInit(&phead1);
+	SListInit(&phead2);
+
+	SListPushFront(&phead1, 5);
+	SListPushFront(&phead1, 4);
+	SListPushFront(&phead1, 8);
+	SListPushFront(&phead1, 1);
+	SListPushFront(&phead1, 4);
+
+	SListPushFront(&phead2, 5);
+	SListPushFront(&phead2, 4);
+	SListPushFront(&phead2, 8);
+	SListPushFront(&phead2, 1);
+	SListPushFront(&phead2, 0);
+	SListPushFront(&phead2, 5);
+
+
+	SListNode* ret=getPublicPoint(phead1, phead2);
+	if (ret==NULL)
+	{
+		printf("NULL\n");
+	}
+	else
+	{
+		printf("%d\n", ret->data);
+	}
+	system("pause");
+
+	return 0;
+}
 
 //5.如何判断链表是否有环
 //找一个节点一次跳两次，一个跳一次。如果能相遇，则一定是环，跑到尽头，则没环
