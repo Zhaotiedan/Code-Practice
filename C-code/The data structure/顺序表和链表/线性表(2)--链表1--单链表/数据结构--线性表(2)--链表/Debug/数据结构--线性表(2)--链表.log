@@ -1,7 +1,2 @@
-﻿  Slist.c
-d:\github\daily code\code-code\c-code\the data structure\顺序表和链表\线性表(2)--链表1--单链表\数据结构--线性表(2)--链表\slist.c(237): warning C4033: “FindK”必须返回值
-d:\github\daily code\code-code\c-code\the data structure\顺序表和链表\线性表(2)--链表1--单链表\数据结构--线性表(2)--链表\slist.c(245): warning C4033: “FindK”必须返回值
-  main.c
-  正在生成代码...
-d:\github\daily code\code-code\c-code\the data structure\顺序表和链表\线性表(2)--链表1--单链表\数据结构--线性表(2)--链表\slist.c(256): warning C4715: “FindK”: 不是所有的控件路径都返回值
+﻿  main.c
   数据结构--线性表(2)--链表.vcxproj -> D:\github\Daily code\Code-code\C-code\The data structure\顺序表和链表\线性表(2)--链表1--单链表\Debug\数据结构--线性表(2)--链表.exe

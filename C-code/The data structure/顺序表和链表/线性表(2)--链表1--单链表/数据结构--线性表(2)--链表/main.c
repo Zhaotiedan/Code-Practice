@@ -104,7 +104,7 @@
 //}
 
 //4.求两个单链表的第一个公共节点
-//右对齐，长的先走差值步，再一起遍历    CSDN:https://blog.csdn.net/qq_42913794/article/details/99674797
+//右对齐，长的先走差值步，再一起遍历    CSDN详解博客:https://blog.csdn.net/qq_42913794/article/details/99674797
 int main()
 {
 	int i = 0;
