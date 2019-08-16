@@ -42,7 +42,7 @@
 //	return 0;
 //}
 
-////2.约瑟夫环测试 详见CSDN：https://mp.csdn.net/mdeditor/98895581
+////2.约瑟夫环测试 详见CSDN：https://blog.csdn.net/qq_42913794/article/details/98895581
 int main()
 {
 	int i = 0;
@@ -68,7 +68,7 @@ int main()
 
 	for (; m > 1; m--)
 	{
-		for (i = 1; i < n; i++)	//数数，跳n-1步后删
+		for (i = 1; i < n; i++)	//数n次数，跳n-1步后删
 		{
 			cur = cur->next;
 			printf("%d号报%d\n", cur->data, i);
