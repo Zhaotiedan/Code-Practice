@@ -1,5 +1,6 @@
 # C-code 
 ## Daliywork:work1-wok15.
+### work1:
 ## projects：
 ### Easy projects--01字串、阶乘计算、关机程序、猴子吃桃、字母图形、找数组里出现一次和两次的数字、空格转%20问题
 ### Medium projects：扫雷、三子棋、通讯录.
