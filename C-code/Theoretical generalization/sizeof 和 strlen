@@ -1,0 +1,21 @@
+void fun(char str_arg[2])
+{
+	int m = sizeof(str_arg);//数组传参降维,str_arg为指针，大小为4
+	int n = strlen(str_arg);//数组长度 5
+	printf("%d\n", m);
+	printf("%d", n);
+
+}
+int main()
+{
+	char str[] = "hello";
+	fun(str);
+  int k=sizeof(str);//没有传参，未降维，求数组长度，为6
+	return 0;
+}
+
+sizeof和strlen()都可以用来统计字符串所占用的大小，二者的区别为：
+strlen必须以char *作为参数，且必须以'\0'结尾；而sizeof()可以用于其他类型；
+对字符串进行sizeof操作的时候，会把字符串的结束符“\0”计算进去；
+strlen统计字符串中字符的长度，不包括结尾的'\0'；
+数组做sizeof的参数不退化，作为函数参数传递的时候，退化为指针。
