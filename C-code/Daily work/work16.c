@@ -1,3 +1,4 @@
+//1.
 char *myString()
 {
 	char buffer[6] = { 0 };
@@ -12,6 +13,20 @@ int main()
 {
 	char * buffer = myString();
 	printf("%s\n", buffer);//结果为烫烫烫的随机值，因为buffer为局部数组，函数结束后会被收回
+	system("pause");
+	return 0;
+}
+
+//2.
+int main()
+{
+	char a[1000];
+	int i;
+	for (i = 0; i < 1000; i++)
+	{
+		a[i] = (char)(-1 - i);
+	}
+	printf("%d\n", strlen(a));//255
 	system("pause");
 	return 0;
 }
