@@ -1,6 +1,6 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
-#include"Slist.h"
+#include "Slist.h"
 //1、函数测试
 //int main()
 //{
@@ -105,7 +105,7 @@
 
 //4.求两个单链表的第一个公共节点
 //右对齐，长的先走差值步，再一起遍历    CSDN详解博客:https://blog.csdn.net/qq_42913794/article/details/99674797
-int main()
+/*int main()
 {
 	int i = 0;
 	int j = 0;
@@ -140,29 +140,29 @@ int main()
 	system("pause");
 
 	return 0;
-}
+}*/
 
 //5.如何判断链表是否有环
 //找一个指针一次跳两次，一个跳一次。如果能相遇，则一定是环，跑到尽头，则没环
-//int main()
-//{
-//	SListNode *phead;
-//	SListNode *plast = NULL;
-//	SListInit(&phead);
-//
-//	SListPushFront(&phead, 1);
-//	plast = phead;
-//
-//	SListPushFront(&phead, 2);
-//	SListPushFront(&phead, 3);
-//	SListPushFront(&phead, 4);
-//
-//	plast->next = phead;
-//	SListNode * ret = JugdeCircle(phead);
-//	printf("%d\n", ret->data);
-//	system("pause");
-//	return 0;
-//}
+int main()
+{
+	SListNode *phead;
+	SListNode *plast = NULL;
+	SListInit(&phead);
+
+	SListPushFront(&phead, 1);
+	plast = phead;
+
+	SListPushFront(&phead, 2);
+	SListPushFront(&phead, 3);
+	SListPushFront(&phead, 4);
+
+	plast->next = phead;
+	SListNode * ret = JugdeCircle(phead);
+	printf("%d\n", ret->data);
+	system("pause");
+	return 0;
+}
 
 //6.给定一个链表，判断环，返回链表开始入环的第一个节点，无环返回NULL
 //如果头结点是环入口，一个节点一次跳两步，一次跳一步，则头结点是环入口
