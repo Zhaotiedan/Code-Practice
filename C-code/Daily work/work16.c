@@ -30,3 +30,14 @@ int main()
 	system("pause");
 	return 0;
 }
+
+//3.
+int main()
+{
+	const int i = 0;
+	int *j = (int *)&i;
+	*j = 1;
+	printf("%d,%d", i, *j);//1,1
+	system("pause");
+	return 0;
+}
