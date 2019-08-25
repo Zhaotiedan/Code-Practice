@@ -76,3 +76,49 @@ int main()
 	system("pause");
 	return 0;
 }
+
+//3.在字符串中找出第一个只出现一次的字符 输入abaccdef 输出b
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int FindFirst(char *arr, int len)
+{
+	int i, j, k;
+	int str[50];
+	for (i = 0; i < len; i++)
+	{
+		k = 0;
+		for (j = 0; j < len; j++)
+		{
+			if (arr[i] == arr[j])
+			{
+				k++;
+			}
+		}
+		str[i] = k;
+	}
+	for (i = 0; i < len; i++)
+	{
+		if (str[i] == 1)
+		{
+			return i;
+		}
+	}
+	return 0;
+}
+int main()
+{
+	char arr[] = "abaccdeff";
+	int num = FindFirst(arr, strlen(arr));
+	if (num)
+	{
+		printf("%c", arr[num]);
+	}
+	else
+	{
+		printf("NULL");
+	}
+	system("pause");
+	return 0;
+}
