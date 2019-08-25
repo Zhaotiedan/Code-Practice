@@ -107,10 +107,48 @@ int FindFirst(char *arr, int len)
 	}
 	return 0;
 }
+
 int main()
 {
 	char arr[] = "abaccdeff";
 	int num = FindFirst(arr, strlen(arr));
+	if (num)
+	{
+		printf("%c", arr[num]);
+	}
+	else
+	{
+		printf("NULL");
+	}
+	system("pause");
+	return 0;
+}
+
+//4.在字符串中找到第一次重复出现的字符 输入qywyer23tdd 输出y
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
+int Find_reNumber(char *arr, int len)
+{
+	int i, j;
+	for (i = 0; i < len; i++)
+	{
+		for (j = i+1; j < len; j++)
+		{
+			if (arr[i] == arr[j])
+			{
+				return i;
+			}
+		}
+	}
+	return 0;
+}
+
+int main()
+{
+	char arr[] = "qywyer23tdd";
+	int num = Find_reNumber(arr, strlen(arr));
 	if (num)
 	{
 		printf("%c", arr[num]);
