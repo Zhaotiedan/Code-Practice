@@ -5,7 +5,8 @@
 #include<stdlib.h>
 #include<string>
 
-void DelWords(char *arr1, char *arr2,int len1,int len2)
+//Êý×é
+void DelWords1(char *arr1, char *arr2,int len1,int len2)
 {
 	int i, j, k = 0;
 	for (j = 0; j < len2; j++)
@@ -20,6 +21,30 @@ void DelWords(char *arr1, char *arr2,int len1,int len2)
 				}
 			}
 		}
+	}
+}
+//Ö¸Õë
+void DelWords2(char *arr1, char *arr2)
+{
+	char *p = arr1;
+	char *q = arr2;
+	char *str = arr1;
+	while (q != '\0')
+	{
+		while (p != '\0')
+		{
+			if (*p == *q)
+			{
+				str = p;
+				while (str != '\0')
+				{
+					*str = *(str + 1);
+					str++;
+				}
+			}
+			p++;
+		}
+		q++;
 	}
 }
 int main()
