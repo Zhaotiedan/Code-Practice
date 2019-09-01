@@ -41,3 +41,13 @@ int main()
 	system("pause");
 	return 0;
 }
+//4.
+int main()
+{
+	unsigned int a = 0xFFFFFFF7;
+	unsigned char i = (unsigned char)a;
+	char *b = (char *)&a;
+	printf("%08x,%08x", i, *b);
+	system("pause");
+	return 0;
+}
