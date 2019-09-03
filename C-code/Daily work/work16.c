@@ -51,3 +51,12 @@ int main()
 	system("pause");
 	return 0;
 }
+//5.
+int main()
+{
+	char *str = "abcde";
+	str += 2;
+	printf("%lu\n", str);//´òÓ¡cµÄµØÖ·
+	system("pause");
+	return 0;
+}
