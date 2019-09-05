@@ -27,13 +27,14 @@ void SeqListPopFront(SeqList *psl);
 int SeqListFind(SeqList *psl, SLDataType x);
 void SeqListInsert(SeqList *psl, size_t pos, SLDataType x);
 void SeqListErase(SeqList *psl, size_t pos);//擦除数据
-void SeqListRemove(SeqList *psl, SLDataType x);//移除数据,移除所有值为x的元素 O(N)
+void SeqListRemove(SeqList *psl, SLDataType x);//移除数据,移除第一个为x的节点 O(N)
 void SeqListModify(SeqList *psl, size_t pos, SLDataType x);//修改，把pos的值改成x O(1)
 void SeqListPrint(SeqList *psl);//O(N)
 
 void SeqListBubbleSort(SeqList *psl);
 int SeqListBinaryFind(SeqList *psl, SLDataType x);
 
+//删除所有值为x的节点
 void SeqListRemoveAll1(SeqList *psl, SLDataType x);//时间复杂O(n) 空间复杂O(1)
 void SeqListRemoveAll2(SeqList *psl, SLDataType x);//时间复杂O(n)  空间复杂O(n)
 
