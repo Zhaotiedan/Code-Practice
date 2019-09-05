@@ -1,6 +1,6 @@
 # C-code 
-## Daliywork:work1-wok16.
+## Daliywork:work1-wok16.日常代码练习，暑假练习16
 ## projects：一些中小型程序代码
-## The data structure：
+## The data structure：数据结构
 
 ## Theoretical generalization 理论知识详解
