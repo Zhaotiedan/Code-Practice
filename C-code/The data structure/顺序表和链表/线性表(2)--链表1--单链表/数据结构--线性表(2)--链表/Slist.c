@@ -221,7 +221,7 @@ SListNode *detectCircle(SListNode *head)
 	}
 	for (; fast&&fast->next; fast = fast->next,head = head->next)//两个节点中fast和head一起走，找到的公共节点就是环入口
 	{
-		if (fast->data == head->data)
+		if (fast == head)
 		{
 			return fast;
 		}
