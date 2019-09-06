@@ -3,4 +3,4 @@
 ## projects：一些中小型程序代码
 ## The data structure：数据结构
 
-## Theoretical generalization 理论知识详解
+## Theoretical generalization 理论知识详解/
