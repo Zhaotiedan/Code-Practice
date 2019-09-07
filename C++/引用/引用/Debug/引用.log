@@ -1,3 +1,3 @@
 ﻿  main.cpp
-d:\github\daily code\code-code\c++\引用\引用\main.cpp(38): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
+d:\github\daily code\code-code\c++\引用\引用\main.cpp(39): warning C4244: “初始化”: 从“double”转换到“const int”，可能丢失数据
   引用.vcxproj -> D:\github\Daily code\Code-code\C++\引用\Debug\引用.exe
