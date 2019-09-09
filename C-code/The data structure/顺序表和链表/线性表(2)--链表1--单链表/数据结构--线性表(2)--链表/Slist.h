@@ -23,8 +23,8 @@ void SListDestory(SListNode **pphead);
 SListNode *BuySListNode(SLTDataType x);//做一个新的节点
 void SListPushFront(SListNode **phead, SLTDataType x);//头插
 void SListPopFront(SListNode **phead);//头删
-SListNode *SListFind(SListNode *phead, SLTDataType x);// 在pos的后面进行插入
-void SListInsertAfter(SListNode *pos, SLTDataType x);// 在pos的前面进行插入
+SListNode *SListFind(SListNode *phead, SLTDataType x);//找值为x的节点
+void SListInsertAfter(SListNode *pos, SLTDataType x);// 在pos的后面进行插入
 void SListEraseAfter(SListNode *pos);
 void SListRemove(SListNode **phead, SLTDataType x);
 void SListRemoveall(SListNode **phead, SLTDataType x);
