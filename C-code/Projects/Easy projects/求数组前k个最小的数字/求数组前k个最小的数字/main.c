@@ -4,7 +4,7 @@
 #include<stdlib.h>
 
 
-//快排思想找到任意k大的数字位置
+//快排思想,将第一个数字设定为key，比他大的放右边比他小的放左边，记录第一次运动结束后key的位置。找到任意k大的数字位置
 int  qort(int *arr, int left, int right)
 {
 	int key = arr[left];
@@ -23,7 +23,7 @@ int  qort(int *arr, int left, int right)
 	}
 	return left;
 }
-//比较left这个位置与k-1位置
+//比较记录的这个位置与k-1位置
 void PreKNum(int *arr, int len,int k)
 {
 	int left = 0;
