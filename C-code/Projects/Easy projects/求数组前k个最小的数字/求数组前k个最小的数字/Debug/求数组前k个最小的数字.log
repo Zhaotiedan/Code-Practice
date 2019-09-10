@@ -1,2 +1,3 @@
 ﻿  main.c
-  求数组前k个最小的数字.vcxproj -> D:\github\Daily code\C-code\Projects\Easy projects\求数组前k个最小的数字\Debug\求数组前k个最小的数字.exe
+d:\github\daily code\code-code\c-code\projects\easy projects\求数组前k个最小的数字\求数组前k个最小的数字\main.c(55): warning C4552: ”-“: 未使用表达式结果
+  求数组前k个最小的数字.vcxproj -> D:\github\Daily code\Code-code\C-code\Projects\Easy projects\求数组前k个最小的数字\Debug\求数组前k个最小的数字.exe
