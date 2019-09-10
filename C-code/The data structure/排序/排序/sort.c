@@ -30,11 +30,33 @@ void delQsort(int *arr,int start,int end)
 	delQsort(arr, i, end);
 
 }
-void Qsort(int *arr, int n)
+
+void qsort(int *arr, int start, int end)
 {
-
+	if (start > end)
+	{
+		return;
+	}
+	int key = arr[start];
+	int left = start;
+	int right = end;
+	while (left < right)
+	{
+		while (left < right&&arr[right] >= key)
+		{
+			right--;
+		}
+		arr[left] = arr[right];
+		while (left < right&&arr[left] <= key)
+		{
+			left++;
+		}
+		arr[right] = arr[left];
+	}
+	arr[left] = key;
+	qsort(arr, start, left - 1);
+	qsort(arr, left + 1, end);
 }
-
 
 //¹é²¢ÅÅĞò£ºnlogn
 void delMergeSort(int *arr,int *tmp,int start,int end)
