@@ -160,3 +160,60 @@ int main()
 	system("pause");
 	return 0;
 }
+//5.求数组中出现次数超过数组一半长度的数字，如{1,2,3,2,2,2,5,4,2};
+void qsort(int *arr, int start, int end)
+{
+	int key = arr[start];
+	int left = start;
+	int right = end;
+	while (left < right)
+	{
+		while (left < right&&arr[right] >= key)
+		{
+			right--;
+		}
+		arr[left] = arr[right];
+		while (left < right&&arr[left] <= key)
+		{
+			left++;
+		}
+		arr[right] = arr[left];
+	}
+	arr[left] = key;
+	qsort(arr, start, left - 1);
+	qsort(arr, left + 1, end);
+}
+int MoreThanHalfNum(int *arr, int len)
+{
+	int left = 0;
+	int right = len - 1;
+	qsort(arr, left, right);
+	int mid = arr[len / 2 - 1];
+	int i = 0;
+	int count = 0;
+	for (; i < len - 1; i++)
+	{
+		if (arr[i] == mid)
+		{
+			count++;
+		}
+		if (count > len / 2)
+		{
+			return mid;
+		}
+	}
+	return 0;
+
+}
+int main()
+{
+	char arr[] = { 1,3,6,10,2,18,2,2,2,2, };
+	int len = sizeof(arr) / sizeof(arr[0]);
+	int ret = MoreThanHalfNum(arr, len);
+	if (ret)
+	{
+		printf("%d", ret);
+	}
+	system("pause");
+	return 0;
+}
