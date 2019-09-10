@@ -23,35 +23,12 @@ void DelWords1(char *arr1, char *arr2,int len1,int len2)
 		}
 	}
 }
-//÷∏’Î
-void DelWords2(char *arr1, char *arr2)
-{
-	char *p = arr1;
-	char *q = arr2;
-	char *str = arr1;
-	while (q != '\0')
-	{
-		while (p != '\0')
-		{
-			if (*p == *q)
-			{
-				str = p;
-				while (str != '\0')
-				{
-					*str = *(str + 1);
-					str++;
-				}
-			}
-			p++;
-		}
-		q++;
-	}
-}
+
 int main()
 {
 	char arr1[] = "They are students.";
 	char arr2[] = "aeiou";
-	DelWords(arr1, arr2, strlen(arr1), strlen(arr2));
+	DelWords1(arr1, arr2, strlen(arr1), strlen(arr2));
 	printf("%s", arr1);
 	system("pause");
 	return 0;
