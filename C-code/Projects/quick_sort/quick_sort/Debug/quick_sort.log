@@ -1,2 +1,8 @@
 ﻿  main.c
-  quick_sort.vcxproj -> D:\github\Daily code\C-code\Projects\quick_sort\Debug\quick_sort.exe
+d:\github\daily code\code-code\c-code\projects\quick_sort\quick_sort\main.c(39): warning C4028: 形参 2 与声明不同
+d:\github\daily code\code-code\c-code\projects\quick_sort\quick_sort\main.c(39): warning C4028: 形参 3 与声明不同
+d:\github\daily code\code-code\c-code\projects\quick_sort\quick_sort\main.c(39): warning C4029: 声明的形参表不同于定义
+d:\github\daily code\code-code\c-code\projects\quick_sort\quick_sort\main.c(39): warning C4273: “qsort”: dll 链接不一致
+  d:\windows kits\10\include\10.0.17763.0\ucrt\corecrt_search.h(56): note: 参见“qsort”的前一个定义
+    正在创建库 D:\github\Daily code\Code-code\C-code\Projects\quick_sort\Debug\quick_sort.lib 和对象 D:\github\Daily code\Code-code\C-code\Projects\quick_sort\Debug\quick_sort.exp
+  quick_sort.vcxproj -> D:\github\Daily code\Code-code\C-code\Projects\quick_sort\Debug\quick_sort.exe

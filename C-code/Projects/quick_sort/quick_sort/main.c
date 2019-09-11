@@ -3,36 +3,69 @@
 #include<stdio.h>
 #include<stdlib.h>
 
-void quick_sort(int arr[], int left, int right)
+//void quick_sort(int arr[], int left, int right)
+//{
+//	if (left < right)
+//	{
+//		int l, r, k;
+//		l = left;
+//		r = right;
+//		k = arr[l];
+//		while (l < r)
+//		{
+//			while(l<r&&arr[r]>k)
+//			{
+//				r--;
+//			}
+//			if (l < r)
+//			{
+//				arr[l++] = arr[r];
+//			}
+//			while (l < r&&arr[l]<k)
+//			{
+//				l++;
+//			}
+//			if (l < r)
+//			{
+//				arr[r--] = arr[l];
+//			}
+//		}
+//		arr[l] = k;
+//		quick_sort(arr,left,l-1);
+//		quick_sort(arr, l+1, right);
+//	}
+//}
+void qsort(int *arr, int start, int end)
 {
-	if (left < right)
+	if (start < end)
 	{
-		int l, r, k;
-		l = left;
-		r = right;
-		k = arr[l];
-		while (l < r)
+		int left = start;
+		int right = end;
+		int key = arr[left];
+		while (left < right)
 		{
-			while(l<r&&arr[r]>k)
+			while (left < right&&arr[right] > key)
 			{
-				r--;
+				right--;
 			}
-			if (l < r)
+			if (left < right)
 			{
-				arr[l++] = arr[r];
+				arr[left] = arr[right];
+				left++;
 			}
-			while (l < r&&arr[l]<k)
+			while (left < right&&arr[left] < key)
 			{
-				l++;
+				left++;
 			}
-			if (l < r)
+			if (left < right)
 			{
-				arr[r--] = arr[l];
+				arr[right] = arr[left];
+				right--;
 			}
 		}
-		arr[l] = k;
-		quick_sort(arr,left,l-1);
-		quick_sort(arr, l+1, right);
+		arr[left] = key;
+		qsort(arr, start, left - 1);
+		qsort(arr, left + 1, end);
 	}
 }
 int main()
@@ -48,7 +81,7 @@ int main()
 		printf("%d  ", arr[i]);
 	}
 	printf("\n");
-	quick_sort(arr, 0, right);
+	qsort(arr, 0, right);
 	printf("after sort:");
 	for (i = 0; i < 6; i++)
 	{
