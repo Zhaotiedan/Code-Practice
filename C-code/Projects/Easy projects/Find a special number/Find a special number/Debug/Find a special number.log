@@ -1,2 +1,10 @@
 ﻿  main.c
-  Find a special number.vcxproj -> D:\github\Daily code\Code-code\C-code\Projects\Easy projects\Find a special number\Debug\Find a special number.exe
+d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(69): error C2084: 函数“int main()”已有主体
+  d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(18): note: 参见“main”的前一个定义
+d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(165): warning C4028: 形参 2 与声明不同
+d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(165): warning C4028: 形参 3 与声明不同
+d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(165): warning C4029: 声明的形参表不同于定义
+d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(165): warning C4273: “qsort”: dll 链接不一致
+  d:\windows kits\10\include\10.0.17763.0\ucrt\corecrt_search.h(56): note: 参见“qsort”的前一个定义
+d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(191): warning C4477: “printf”: 格式字符串“%s”需要类型“char *”的参数，但可变参数 1 拥有了类型“int *”
+d:\github\daily code\code-code\c-code\projects\easy projects\find a special number\find a special number\main.c(213): warning C4133: “函数”: 从“char [10]”到“int *”的类型不兼容

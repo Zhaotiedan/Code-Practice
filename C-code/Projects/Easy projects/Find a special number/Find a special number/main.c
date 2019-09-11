@@ -161,43 +161,61 @@ int main()
 	return 0;
 }
 //5.求数组中出现次数超过数组一半长度的数字，如{1,2,3,2,2,2,5,4,2};
+#include<stdio.h>
+#include<stdlib.h>
+#include<string.h>
+
 void qsort(int *arr, int start, int end)
 {
-	int key = arr[start];
-	int left = start;
-	int right = end;
-	while (left < right)
+	if (start < end)
 	{
-		while (left < right&&arr[right] >= key)
+		int left = start;
+		int right = end;
+		int key = arr[left];
+		while (left < right)
 		{
-			right--;
+			while (left < right&&arr[right] > key)
+			{
+				right--;
+			}
+			if (left < right)
+			{
+				arr[left] = arr[right];
+				left++;
+			}
+			while (left < right&&arr[left] < key)
+			{
+				left++;
+			}
+			if (left < right)
+			{
+				arr[right] = arr[left];
+				right--;
+			}
 		}
-		arr[left] = arr[right];
-		while (left < right&&arr[left] <= key)
-		{
-			left++;
-		}
-		arr[right] = arr[left];
+		arr[left] = key;
+		qsort(arr, start, left - 1);
+		qsort(arr, left + 1, end);
 	}
-	arr[left] = key;
-	qsort(arr, start, left - 1);
-	qsort(arr, left + 1, end);
 }
-int MoreThanHalfNum(int *arr, int len)
+int MoreThanHalfNum(int *arr, int len, int left, int right)
 {
-	int left = 0;
-	int right = len - 1;
 	qsort(arr, left, right);
+	/*int k = 0;
+	for (k = 0; k < len; k++)
+	{
+		printf("%d  ", arr[k]);
+	}*/
 	int mid = arr[len / 2 - 1];
 	int i = 0;
 	int count = 0;
-	for (; i < len - 1; i++)
+	for (; i < len; i++)
 	{
 		if (arr[i] == mid)
 		{
 			count++;
 		}
-		if (count > len / 2)
+		if (count >= len / 2)
 		{
 			return mid;
 		}
@@ -207,9 +225,11 @@ int MoreThanHalfNum(int *arr, int len)
 }
 int main()
 {
-	char arr[] = { 1,3,6,10,2,18,2,2,2,2, };
+	int arr[] = { 1,3,6,10,2,18,2,2,2,2, };
 	int len = sizeof(arr) / sizeof(arr[0]);
-	int ret = MoreThanHalfNum(arr, len);
+	int left = 0;
+	int right = len - 1;
+	int ret = MoreThanHalfNum(arr, len, left, right);
 	if (ret)
 	{
 		printf("%d", ret);
