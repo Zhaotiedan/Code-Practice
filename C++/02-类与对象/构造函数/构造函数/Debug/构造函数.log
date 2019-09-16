@@ -1,0 +1,3 @@
+﻿  main.cpp
+d:\github\daily code\code-code\c++\02-类与对象\构造函数\构造函数\main.cpp(30): error C2535: “Date::Date(int,int,int)”: 已经定义或声明成员函数
+  d:\github\daily code\code-code\c++\02-类与对象\构造函数\构造函数\main.cpp(22): note: 参见“Date::Date”的声明
