@@ -120,7 +120,7 @@ using namespace std;
 //	{}
 //	void Print2()
 //	{
-//		cout << _aobj << " " << _ref << " " << _n << endl;
+//		cout << _aobj._a << " " << _ref << " " << _n << endl;
 //	}
 //private:
 //	A _aobj;//类类型成员
