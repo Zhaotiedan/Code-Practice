@@ -53,6 +53,10 @@ ostream& operator<<(ostream& _cout, const Date& d)
 	return _cout;
 }
 
+
+//ÓÑÔªÀà
+//friend class Date;
+
 int main()
 {
 	Date d1(1900, 1, 1);
