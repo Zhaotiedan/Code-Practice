@@ -1,3 +1,21 @@
+strlen()是函数，可以计算字符串的长度，以'\0'为字符串结束标志返回的长度大小不包含'\0'.
+
+sizeof()是运算符，是分配的数组实际所占的内存空间大小，不受里面存储内容影响。由于在编译时计算，因此sizeof不能用来返回动态分配的内存空间的大小。
+具体而言，当参数分别如下时，sizeof返回的值含义如下：
+数组-编译时分配的数组空间大小
+指针-存储该指针所用的空间大小
+类型-该类型所占的空间的大小
+对象-对象的实际占用空间大小
+函数-函数返回类型所占空间的大
+
+
+sizeof和strlen()都可以用来统计字符串所占用的大小，二者的区别为：
+
+strlen必须以char *作为参数，且必须以'\0'结尾；而sizeof()可以用于其他类型；
+对字符串进行sizeof操作的时候，会把字符串的结束符“\0”计算进去；
+strlen统计字符串中字符的长度，不包括结尾的'\0'；
+数组做sizeof的参数不退化，作为函数参数传递的时候，退化为指针。
+
 void fun(char str_arg[2])
 {
 	int m = sizeof(str_arg);//数组传参降维,str_arg为指针，大小为4
@@ -10,12 +28,21 @@ int main()
 {
 	char str[] = "hello";
 	fun(str);
-  int k=sizeof(str);//没有传参，未降维，求数组长度，为6
+        int k=sizeof(str);//没有传参，未降维，求数组长度，为6
 	return 0;
 }
+int main()
+{
+        int num1[10] = { 1,2,3,4 };
+	char char2[] = "abcd";
+	char* pchar3 = "abcd";
+	int * ptr1 = (int*)malloc(sizeof(int) * 4);
+	int * ptr2 = (int*)calloc(2, sizeof(int));
 
-sizeof和strlen()都可以用来统计字符串所占用的大小，二者的区别为：
-strlen必须以char *作为参数，且必须以'\0'结尾；而sizeof()可以用于其他类型；
-对字符串进行sizeof操作的时候，会把字符串的结束符“\0”计算进去；
-strlen统计字符串中字符的长度，不包括结尾的'\0'；
-数组做sizeof的参数不退化，作为函数参数传递的时候，退化为指针。
+	printf("%d\n", sizeof(num1));//40
+	printf("%d\n", sizeof(char2));//5
+	printf("%d\n", strlen(char2));//4
+	printf("%d\n", sizeof(pchar3));//8?
+	printf("%d\n", strlen(pchar3));//4
+	printf("d\n", sizeof(ptr1));//8?
+}
