@@ -3,8 +3,85 @@
 #include<iostream>
 using namespace std;
 
+// 1.new/delete操作内置类型
+//申请和释放单个内存，用new和delete操作符，申请和释放连续的空间，用new[]和delete[]操作符
+void Test1()
+{
+	int* p1 = new int;//动态申请1个int类型的空间
+	int* p2 = new int(10);//动态申请1个int类型的空间,并初始化为10
+	int* p3 = new int[10];//动态申请10个int类型的空间(类型为int[10])
+	int* p4 = new int[10]{ 1,2,3,4,5,6,7,8,9,0 };//动态申请10个int类型的空间。并初始化为{1~0}
+
+	delete p1;
+	delete p2;
+	delete[] p3;
+	delete[] p4;
+}
+// 2.如果new和delete没有匹配使用，产生后果?
+//结论：如果申请的是内置类型的空间，不会产生任何后果
+void Test2()
+{
+	int* p1 = new int;
+	int* p2 = new int[10];
+	int* p3 = new int[10];
+	delete[] p1;
+	delete p2;
+	free(p3);
+
+	//...
+}
+
+//3.new/delete操作自定义类型
+//new会调用构造函数 delete会调用析构函数，而malloc和free不会
+class Test
+{
+public:
+	Test()
+		:_data(10)
+		,_p(new int)
+	{
+		cout << "Test():" << this << endl;
+	}
+	~Test()
+	{
+		delete _p;
+		cout << "~Test():" << this << endl;
+	}
+private:
+	int _data;
+	int* _p;
+};
+void Test3()
+{
+	Test* p1 = new Test;//申请单个Test类型的对象
+	delete p1;
+	cout << endl;
+	Test* p2 = new Test[10];//申请10个Test类型的对象
+	delete[] p2;
+
+	Test* p3 = (Test*)malloc(sizeof(Test)); //申请单个Test类型的空间
+	free(p3);
+	Test* p4 = (Test*)malloc(sizeof(Test) * 10);//申请10个Test类型的空间
+	free(p4);
+}
+
+//4.如果new和delete没有匹配使用，产生后果?
+//
+void Test4()
+{
+	Test* p1 = new Test;
+	free(p1);
+
+	Test* p2 = new Test[10];
+	delete p2;//报错
+}
 int main()
 {
+	Test1();
+	Test2();
+	Test3();
+	Test4();
+
 	system("pause");
 	return 0;
 }
