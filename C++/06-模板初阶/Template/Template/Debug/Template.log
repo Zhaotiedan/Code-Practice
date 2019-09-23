@@ -1,0 +1,7 @@
+﻿  main.cpp
+d:\github\daily code\code-code\c++\06-模板初阶\template\template\main.cpp(37): warning C4244: “参数”: 从“double”转换到“T”，可能丢失数据
+          with
+          [
+              T=int
+          ]
+  Template.vcxproj -> D:\github\Daily code\Code-code\C++\06-模板初阶\Template\Debug\Template.exe
