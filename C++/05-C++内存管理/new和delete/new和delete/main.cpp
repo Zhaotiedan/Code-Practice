@@ -3,6 +3,10 @@
 #include<iostream>
 using namespace std;
 
+
+//博客详解：https://blog.csdn.net/qq_42913794/article/details/101179179
+
+
 // 1.new/delete操作内置类型
 //申请和释放单个内存，用new和delete操作符，申请和释放连续的空间，用new[]和delete[]操作符
 void Test1()
@@ -93,14 +97,20 @@ void operator delete(void* p, const char* filename, const char* funName, size_t 
 	free(p);
 }
 
-#define new new(__FILE__, __FUNCDNAME__, __LINE__)
+//#define new new(__FILE__, __FUNCDNAME__, __LINE__)
 void Test5()
 {
-	int* p = new int;
+	int* p = new int;	
 	delete p;
 }
 
-
+//6.定位new表达式(placement-new)
+void Test6()
+{
+	// p1现在指向的只不过是与Test对象相同大小的一段空间，还不能算是一个对象，因为构造函数没有执行
+	Test* p1 = (Test*)malloc(sizeof(Test));
+	new(p1) Test; //如果Test类的构造函数有参数时，此处需要传参
+}
 int main()
 {
 	Test1();
