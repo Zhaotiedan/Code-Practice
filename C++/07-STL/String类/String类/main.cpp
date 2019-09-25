@@ -95,10 +95,16 @@ void Test2()
 	cout << s2.size() << endl;//20
 	cout << s2.capacity() << endl;//47
 
+	s2.resize(6);
+	s2.reserve(15);
+	cout << s2.size() << endl;//6
+	cout << s2.capacity() << endl;//15
+
   //总结： 
 //newcapacity > oldcapacity(string类旧空间大小)：空间增多--->容量改变(最终容量大小 >= newCapacity，vs下大约以1.5的倍率增长)
-// newcapacity < oldcapacity(string类旧空间大小)：空间缩小，不影响容量
-//reserve最多只改变容量大小，不会改变有效元素个数
+//newcapacity < oldcapacity(string类旧空间大小)：空间缩小，当size大于capacity初始容量(15),不影响容量,当size小于15时，空间缩小至<=15时，capacity才会变成15
+//reserve最多只改变容量大小，不会改变有效元素个数
+
 }
 
 //3. 利用reserve提高插入数据的效率，避免增容带来的开销
@@ -187,10 +193,11 @@ void Test4()
 }
 
 //5.string类对象的修改操作
+//5.1 push_back、append、operator+=、c_str
 void Test5()
 {
 	string s;
-	s.push_back('z');//在s后面插入一个字符z
+	s.push_back('z');//在s后面插入一个字符zl
 	s.append("ss");//在s后面追加一个字符ss
 	s += 'n';//在s后面追加一个字符n
 	s += "b!";//在s后面加一个字符串"b！"
@@ -202,7 +209,60 @@ void Test5()
 	s2.append(3,'!');
 	cout << s2 << endl;
 	cout << s2.c_str() << endl;//以C语言的方式打印字符串
+	cout << atoi(s2.c_str()) << endl;//atoi--函数 把字符串转换成整型数
+}
+//5.2 find+npos, rfind, substr,erase
+void Test6()
+{
+	//find+npos 从前往后找
 
+	string s1("I love C++!");
+	//查找一个字符，返回下标
+	size_t pos = s1.find('C');
+	if (pos != string::npos)//string 类将 npos 定义为保证大于任何有效下标的值
+	{
+		cout << 'C' << " is in s1 " << pos << endl;
+	}
+	else
+	{
+		cout << "not in" << endl;
+	}
+	//查找一个字符串，返回首元素下标
+	size_t pos2 = s1.find("love");
+	if (pos2 != string::npos)
+	{
+		cout << "love" << " is in s1 " << pos2 << endl;
+	}
+	else
+	{
+		cout << "not in" << endl;
+	}
+
+
+	//rfind从后往前找,substr从pos往后截取n个字符并返回,不定义n时遍历到字符串结尾
+
+	//获取文件的后缀名
+	string s2("main.cpp");
+	size_t pos3 = s2.rfind('.') + 1;
+	cout << s2.substr(pos3) << endl;
+	cout << s2.substr(pos3, s2.size() - pos3) << endl;
+	//取出一个网站的域名
+	string s3("http://www.cplusplus.com/reference/string/string/find/");
+	cout << s3 << endl;
+	size_t start = s3.find("://");
+	if (start == string::npos)
+	{
+		cout << " not in" << endl;
+	}
+	start += 3;
+	size_t end = s3.find('/', start);
+	cout << s3.substr(start, end - start) << endl;
+
+	//erase 擦除
+	//删除 s3的协议前缀
+	size_t pos4 = s3.find("://");
+	s3.erase(0, pos4 + 3);
+	cout << s3 << endl;
 }
 
 int main()
@@ -214,6 +274,7 @@ int main()
 	Test3();
 	Test4();
 	Test5();
+	Test6();
 
 	system("pause");
 	return 0;
