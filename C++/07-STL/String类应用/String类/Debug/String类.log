@@ -1,2 +1,3 @@
 ﻿  main.cpp
-  String类.vcxproj -> D:\github\Daily code\Code-code\C++\07-STL\String类\Debug\String类.exe
+d:\github\daily code\code-code\c++\07-stl\string类应用\string类\main.cpp(338): warning C4018: “<”: 有符号/无符号不匹配
+  String类.vcxproj -> D:\github\Daily code\Code-code\C++\07-STL\String类应用\Debug\String类.exe

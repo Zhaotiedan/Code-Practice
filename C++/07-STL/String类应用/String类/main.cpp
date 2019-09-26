@@ -208,8 +208,8 @@ void Test5()
 	s2 += s3;
 	s2.append(3,'!');
 	cout << s2 << endl;
-	cout << s2.c_str() << endl;//以C语言的方式打印字符串
-	cout << atoi(s2.c_str()) << endl;//atoi--函数 把字符串转换成整型数
+	cout << s2.c_str() << endl;//以C语言的方式打印字符串 返回值为const char*
+	cout << atoi(s2.c_str()) << endl;//atoi--函数 把字符串转换成整型数 int atoi(const char *nptr)
 }
 //5.2 find+npos, rfind, substr,erase
 void Test6()
@@ -265,6 +265,150 @@ void Test6()
 	cout << s3 << endl;
 }
 
+//6.string类的非成员函数 operator+，operator>>, operator<<, getline, relational operators
+
+
+//7.一些题目
+//7.1 翻转字符串
+void ReverseString1(string& s)
+{
+	//指针
+	char* begin = (char*)s.c_str();
+	char* end = begin + s.size() - 1;
+	while (begin < end)
+	{
+		swap(*begin, *end);
+		begin++;
+		end -- ;
+	}
+}
+void ReverseString2(string& s)
+{
+	//库函数
+	reverse(s.begin(), s.end());
+}
+//类封装--下标
+class Solution
+{
+public:
+	string ReverseString3(string& s)
+	{
+		size_t begin = 0;
+		size_t end = s.size() - 1;
+		while (begin < end)
+		{
+			swap(s[begin], s[end]);
+			begin++;
+			end--;
+		}
+		return s;
+	}
+};
+void Test7()
+{
+	string s("programing every day");
+	//ReverseString1(s);
+	//ReverseString2(s);
+
+	Solution s1;
+	cout << s1.ReverseString3(s) << endl;
+
+	//cout << s << endl;
+}
+
+//7.2找字符串中第一个只出现一次的字符
+class Way
+{
+public:
+	char FindFirUp(string& s)
+	{
+		//先统计每个数字出现的次数
+		int count[256] = { 0 };
+
+		/*for (int i = 0; i < s.size(); i++)
+		{
+			count[s[i]]++;
+		}*/
+		for (auto e : s)
+		{
+			count[e]++;
+		}
+
+		//再找出第一个出现次数为1 的字符
+		for (int i = 0; i < s.size(); i++)
+		{
+			if (1 == count[s[i]])
+			{
+				return s[i];
+			}
+		}
+		return -1;
+	}
+};
+void Test8()
+{
+	string s("apple");
+	Way w;
+	cout << w.FindFirUp(s) << endl;
+}
+
+//7.3 求字符串里面最后一个单词的长度
+void Test9()
+{
+	string s;
+	getline(cin, s);// 不能使用cin>>line,因为会它遇到空格就结束了
+	size_t pos = s.rfind(' ');
+	cout << s.size() - pos - 1 << endl;
+
+}
+//7.4 两个字符串相加
+class Slove
+{
+public:
+	string addStrings(string num1, string num2) {
+		int LSize = num1.size();
+		int RSize = num2.size();
+		if (LSize < RSize)
+		{
+			num1.swap(num2);
+			swap(LSize, RSize);
+		}
+
+		// 保存结果
+		string strRet(LSize + 1, '0');
+
+		// 999    111          0133
+		//  88     22
+		char offset = 0;
+		for (int LIdx = num1.size() - 1, RIdx = num2.size() - 1; LIdx >= 0; LIdx--, RIdx--)
+		{
+			char cRet = num1[LIdx] - '0';
+
+			if (RIdx >= 0)
+			{
+				cRet += num2[RIdx] - '0';
+			}
+
+			cRet += offset;
+			offset = 0;
+			if (cRet >= 10)
+			{
+				offset = 1;
+				cRet -= 10;
+			}
+
+			strRet[LIdx + 1] += cRet;
+		}
+
+		if (offset == 1)
+			strRet[0] += 1;
+		else
+			strRet.erase(strRet.begin());
+
+		return strRet;
+	}
+};
+
 int main()
 {
 	Test1();
@@ -275,6 +419,9 @@ int main()
 	Test4();
 	Test5();
 	Test6();
+	Test7();
+	Test8();
+	Test9();
 
 	system("pause");
 	return 0;
