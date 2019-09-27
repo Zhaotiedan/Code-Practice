@@ -362,52 +362,69 @@ void Test9()
 
 }
 //7.4 两个字符串相加
-class Slove
+class Method
 {
 public:
-	string addStrings(string num1, string num2) {
-		int LSize = num1.size();
-		int RSize = num2.size();
-		if (LSize < RSize)
+	string Add(string s1, string s2)
+	{
+		size_t str1 = s1.size() - 1;
+		size_t str2 = s2.size() - 1;
+		int value1, value2, next = 0;
+		int valuest = 0;
+		string result;
+		while (str1 >= 0 || str2 >= 0) 
 		{
-			num1.swap(num2);
-			swap(LSize, RSize);
+			if (str1 >= 0)
+			{
+				value1 = s1[str1] - '0';
+				str1--;
+			}
+			else
+			{
+				value1 = 0;
+			}
+			if (str2 >= 0)
+			{
+				value2 = s2[str2] - '0';
+				str2--;
+			}
+			else
+			{
+				value2 = 0;
+			}
+			valuest = value1 + value2 + next;
+			if (valuest > 9)
+			{
+				next = 1;
+				valuest -= 10;
+			}
+			else
+			{
+				next = 0;
+			}
+			result += (valuest + '0');	
 		}
-
-		// 保存结果
-		string strRet(LSize + 1, '0');
-
-		// 999    111          0133
-		//  88     22
-		char offset = 0;
-		for (int LIdx = num1.size() - 1, RIdx = num2.size() - 1; LIdx >= 0; LIdx--, RIdx--)
+		if (next == 1)
 		{
-			char cRet = num1[LIdx] - '0';
-
-			if (RIdx >= 0)
-			{
-				cRet += num2[RIdx] - '0';
-			}
-
-			cRet += offset;
-			offset = 0;
-			if (cRet >= 10)
-			{
-				offset = 1;
-				cRet -= 10;
-			}
-
-			strRet[LIdx + 1] += cRet;
+			result += '1';
 		}
-
-		if (offset == 1)
-			strRet[0] += 1;
-		else
-			strRet.erase(strRet.begin());
-
-		return strRet;
+		reverse(result.begin(), result.end());
+		return result;
 	}
+
 };
+void Test10()
+{
+	string s1("1234");
+	string s2("234");
+	string s3("9999");
+
+	Method m;
+	cout << "s1+s2:" << m.Add(s1, s2) << endl;
+	//cout << "s1+s3:" << m.Add(s1, s3) << endl;
+	//cout << "s2+s3:" << m.Add(s2, s3) << endl;
+
+}
 
 int main()
 {
@@ -421,7 +438,8 @@ int main()
 	Test6();
 	Test7();
 	Test8();
-	Test9();
+	//Test9();
+	Test10();
 
 	system("pause");
 	return 0;
