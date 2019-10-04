@@ -3,6 +3,9 @@
 #include<iostream>
 using namespace std;
 
+
+//1.¹¹Ôìº¯Êı
+
 int main()
 {
 	return 0;
