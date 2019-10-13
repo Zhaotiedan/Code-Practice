@@ -27,6 +27,14 @@ public:
 		_endofstorage = _finish;
 	}
 	//销毁
+	~vector()
+	{
+		if (_start)
+		{
+			delete[] _start;
+			_start = _finish = _endofstorage = nullptr;
+		}
+	}
 private:
 	T* _start;//起始指针
 	T* _finish;//终止指针  求size
