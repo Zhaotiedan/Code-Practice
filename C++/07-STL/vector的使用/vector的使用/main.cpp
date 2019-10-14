@@ -156,7 +156,13 @@ void Test5()
 
 	//1.使用find查找3所在位置的iterator
 	auto pos = find(v1.begin(), v1.end(), 3);
-	//2.删除pos位置的数据，导致pos迭代器失效。	v1.erase(pos);	//cout << *pos << endl;//非法访问	//同理，在pos前插入数据，也会导致迭代器失效，如Tset4里的例子	//insert，push_back,会导致增容，而pos还指向原来的空间，但是增容会开辟新空间，释放原来空间	//resize，reserve，assgin
+	//2.删除pos位置的数据，导致pos迭代器失效。
+	v1.erase(pos);
+	//cout << *pos << endl;//非法访问
+
+	//同理，在pos前插入数据，也会导致迭代器失效，如Tset4里的例子
+	//insert，push_back,会导致增容，而pos还指向原来的空间，但是增容会开辟新空间，释放原来空间
+	//resize，reserve，assgin
 
 
 	//解决方式：给迭代器重新赋值
