@@ -3,6 +3,7 @@
 #include<iostream>
 using namespace std;
 
+/* 一.深拷贝和浅拷贝*/
 
 //1.浅拷贝的string类
 class String1
@@ -189,6 +190,10 @@ void Test3()
 }
 
 //4.写时拷贝
+
+
+
+/*string类的模拟实现*/
 
 int main()
 {
