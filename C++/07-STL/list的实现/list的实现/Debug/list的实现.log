@@ -1,55 +1,15 @@
 ﻿  main.cpp
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(170): error C2672: “end”: 未找到匹配的重载函数
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(170): error C2780: “_Ty *std::end(_Ty (&)[_Size]) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1544): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(170): error C2780: “unknown-type std::end(const _Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1530): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(170): error C2780: “unknown-type std::end(_Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1524): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(170): error C2780: “const _Elem *std::end(std::initializer_list<_Elem>) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\initializer_list(69): note: 参见“std::end”的声明
-  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(170): note: “end”: 函数声明必须可用，因为所有参数都不依赖于模板参数
-  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(216): note: 参见对正在编译的 类 模板 实例化 "List::list<T>" 的引用
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(174): error C2672: “end”: 未找到匹配的重载函数
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(216): error C2780: “_Ty *std::end(_Ty (&)[_Size]) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1544): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(216): error C2780: “unknown-type std::end(const _Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1530): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(216): error C2780: “unknown-type std::end(_Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1524): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(216): error C2780: “const _Elem *std::end(std::initializer_list<_Elem>) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\initializer_list(69): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(174): error C2780: “_Ty *std::end(_Ty (&)[_Size]) noexcept”: 应输入 1 个参数，却提供了 0 个
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(174): error C2780: “unknown-type std::end(const _Container &)”: 应输入 1 个参数，却提供了 0 个
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(174): error C2780: “unknown-type std::end(_Container &)”: 应输入 1 个参数，却提供了 0 个
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(174): error C2780: “const _Elem *std::end(std::initializer_list<_Elem>) noexcept”: 应输入 1 个参数，却提供了 0 个
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(175): error C2672: “end”: 未找到匹配的重载函数
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(175): error C2780: “_Ty *std::end(_Ty (&)[_Size]) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1544): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(175): error C2780: “unknown-type std::end(const _Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1530): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(175): error C2780: “unknown-type std::end(_Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1524): note: 参见“std::end”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(175): error C2780: “const _Elem *std::end(std::initializer_list<_Elem>) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\initializer_list(69): note: 参见“std::end”的声明
-  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(175): note: “end”: 函数声明必须可用，因为所有参数都不依赖于模板参数
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(179): error C2672: “begin”: 未找到匹配的重载函数
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(179): error C2780: “_Ty *std::begin(_Ty (&)[_Size]) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1537): note: 参见“std::begin”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(179): error C2780: “unknown-type std::begin(const _Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1518): note: 参见“std::begin”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(179): error C2780: “unknown-type std::begin(_Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1512): note: 参见“std::begin”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(179): error C2780: “const _Elem *std::begin(std::initializer_list<_Elem>) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\initializer_list(62): note: 参见“std::begin”的声明
-  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(179): note: “begin”: 函数声明必须可用，因为所有参数都不依赖于模板参数
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(183): error C2672: “begin”: 未找到匹配的重载函数
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(183): error C2780: “_Ty *std::begin(_Ty (&)[_Size]) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1537): note: 参见“std::begin”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(183): error C2780: “unknown-type std::begin(const _Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1518): note: 参见“std::begin”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(183): error C2780: “unknown-type std::begin(_Container &)”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\xutility(1512): note: 参见“std::begin”的声明
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(183): error C2780: “const _Elem *std::begin(std::initializer_list<_Elem>) noexcept”: 应输入 1 个参数，却提供了 0 个
-  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\initializer_list(62): note: 参见“std::begin”的声明
-  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(183): note: “begin”: 函数声明必须可用，因为所有参数都不依赖于模板参数
+d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(382): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
+d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(102): warning C4018: “<”: 有符号/无符号不匹配
+  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(99): note: 编译 类 模板 成员函数 "List::list<int>::list(int,const T &)" 时
+          with
+          [
+              T=int
+          ]
+  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(318): note: 参见对正在编译的函数 模板 实例化“List::list<int>::list(int,const T &)”的引用
+          with
+          [
+              T=int
+          ]
+  d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(318): note: 参见对正在编译的 类 模板 实例化 "List::list<int>" 的引用
+  list的实现.vcxproj -> D:\github\Daily code\Code-code\C++\07-STL\list的实现\Debug\list的实现.exe
