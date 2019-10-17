@@ -10,5 +10,6 @@ int main()
 				for (d = 0; d <= 1; d++)
 					for (e = 0; e <= 1; e++)
 						printf("%d%d%d%d%d\n", a, b, c, d, e);
+	system("pause");
 	return 0;
 }
