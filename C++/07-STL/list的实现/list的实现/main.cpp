@@ -379,7 +379,7 @@ void Test4()
 	Print(l);
 
 	l.clear();
-	if (l.empty());
+	if (l.empty())
 	cout << "clear over" << endl;
 }
 

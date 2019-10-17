@@ -1,5 +1,4 @@
 ﻿  main.cpp
-d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(382): warning C4390: “;”: 找到空的受控语句；这是否是有意的?
 d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(102): warning C4018: “<”: 有符号/无符号不匹配
   d:\github\daily code\code-code\c++\07-stl\list的实现\list的实现\main.cpp(99): note: 编译 类 模板 成员函数 "List::list<int>::list(int,const T &)" 时
           with
