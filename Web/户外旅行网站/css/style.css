@@ -1,0 +1,1340 @@
+html,
+body {
+padding: 0;
+margin: 0;
+background: #fff;
+letter-spacing: 1px;
+font-family: 'Roboto', sans-serif;
+}
+html {
+scroll-behavior: smooth;
+}
+body a {
+outline: none;
+transition: 0.5s all;
+-webkit-transition: 0.5s all;
+-moz-transition: 0.5s all;
+-o-transition: 0.5s all;
+-ms-transition: 0.5s all;
+text-decoration: none;
+}
+body a:hover {
+text-decoration: none;
+}
+body a:focus,
+a:hover {
+text-decoration: none;
+}
+input[type="button"],
+input[type="submit"] {
+transition: 0.5s all;
+-webkit-transition: 0.5s all;
+-moz-transition: 0.5s all;
+-o-transition: 0.5s all;
+-ms-transition: 0.5s all;
+letter-spacing: 1px;
+font-family: 'Roboto', sans-serif;
+}
+select,input[type="email"],input[type="text"],input[type=password],
+input[type="button"],input[type="submit"],textarea,span{
+font-family: 'Roboto', sans-serif;
+transition:0.5s all;
+-webkit-transition:0.5s all;
+-moz-transition:0.5s all;
+-o-transition:0.5s all;
+-ms-transition:0.5s all;
+letter-spacing: 1px;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+margin: 0;
+padding: 0;
+font-family: 'Raleway', sans-serif;
+letter-spacing: 1px;
+}
+p {
+margin: 0;
+padding: 0;
+letter-spacing: 1px;
+font-family: 'Roboto', sans-serif;
+}
+ul {
+margin: 0;
+padding: 0;
+list-style-type: none;
+}
+ul li {
+    display: inline-block;
+}
+/*-- //Reset-Code --*/
+h3.title {
+    font-size: 22px;
+    color: #000;
+    letter-spacing: 0px;
+    font-weight: 400;
+    text-transform: capitalize;
+	font-family: 'Lobster', cursive;
+}
+.title-w3ls-text h6 {
+    font-size: 33px;
+    color: #ffc107;
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 35px;
+}
+h3.clr{color:#fff;}
+.ser-text-wthree h4{
+    font-size: 25px;
+    color:#01d07e;
+    text-transform: capitalize;
+}
+.adventure-tour-wthree h4, .discount-txt h6 {
+    font-size: 20px;
+    color: #ffc107;
+    font-weight: 600;
+}
+.ser-text-wthree p,.about-right-grid p,.left-grid-tour p,.blog-two-two p,.blog-wthree-list p,.blog-date-time ul li a,.discount-txt p{
+    font-size: 14px;
+    color:#545252;
+    letter-spacing: 1px;
+	line-height: 24px;
+}
+.blog-wthree-list p, .blog-date-time ul li a {
+    color: #a0a0a0;
+}
+.view-buttn a:hover,.rating-start ul li span:hover,.button-arrow a:hover,.subscribe-butn:hover,.sent-butnn:hover{opacity:0.8;}
+/* navigation */
+
+
+/* CSS Document */
+
+.toggle-2,
+.toggle,
+[id^=drop] {
+  display: none;
+}
+
+
+/* Giving a background-color to the nav container. */
+
+nav {
+  margin: 0;
+  padding: 0;
+}
+#logo a {
+    float: left;
+    display: initial;
+    font-weight: 400;
+    font-size: 35px;
+    letter-spacing: 1px;
+    color: #fff;
+	font-family: 'Lobster', cursive;
+}
+/* Since we'll have the "ul li" "float:left"
+* we need to add a clear after the container. */
+
+nav:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+
+/* Removing padding, margin and "list-style" from the "ul",
+* and adding "position:reltive" */
+
+nav ul {
+  float: right;
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  position: relative;
+}
+
+
+/* Positioning the navigation items inline */
+
+nav ul li {
+  margin: 0px;
+  display: inline-block;
+  float: left;
+}
+/* Styling the links */
+nav ul li a {
+    color: #fff;
+    text-transform: capitalize;
+    font-weight: 400;
+    font-size: 13px;
+    letter-spacing: 2px;
+    padding: 8px 21px;
+    border-radius: 50px;
+    display: inline-block;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+nav ul li ul li:hover {
+  background: #f8f9fa;
+}
+
+.menu li .drop-text:hover {
+  color: #000;
+  border: none;
+}
+/* Background color change on Hover */
+/*.menu li.active a,.menu li a:hover{border-bottom: 1px solid #d4d4d4;}*/
+.menu li a:hover {
+  opacity: 0.8;
+  color:#fff;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  -moz-transition: 0.5s all;
+  -o-transition: 0.5s all;
+  -ms-transition: 0.5s all;
+}
+/* Hide Dropdowns by Default
+* and giving it a position of absolute */
+
+nav ul ul {
+  display: none;
+  position: absolute;
+  top: 33px;
+  background: #000;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: -1px 1px 5px black;
+}
+
+
+/* Display Dropdowns on Hover */
+
+nav ul li:hover>ul {
+  display: inherit;
+}
+
+
+/* Fisrt Tier Dropdown */
+
+nav ul ul li {
+  width: 170px;
+  float: none;
+  display: list-item;
+  position: relative;
+}
+
+nav ul ul li a {
+  color: #fff;
+  padding: 5px 10px;
+  display: block;
+  background: transparent;
+}
+
+
+/* Second, Third and more Tiers	
+* We move the 2nd and 3rd etc tier dropdowns to the left
+* by the amount of the width of the first tier.
+*/
+
+nav ul ul ul li {
+  position: relative;
+  top: -60px;
+  /* has to be the same number as the "width" of "nav ul ul li" */
+  left: 170px;
+}
+
+
+/* Change ' +' in order to change the Dropdown symbol */
+
+li>a:only-child:after {
+  content: '';
+}
+
+a.reqe-button {
+  border: 2px solid rgba(255, 255, 255, 0.35);
+  border-radius: 4px;
+}
+
+
+/* Media Queries
+--------------------------------------------- */
+
+@media(max-width: 800px) {
+  nav a {
+    font-size: 13px;
+  }
+}
+
+@media all and (max-width: 767px) {
+  #logo {
+    display: block;
+    padding: 0;
+    width: 100%;
+    text-align: center;
+    float: none;
+	
+  }
+  nav {
+    margin: 0;
+  }
+  /* Hide the navigation menu by default */
+  /* Also hide the  */
+  .toggle+a,
+  .menu {
+    display: none;
+  }
+  /* Stylinf the toggle lable */
+  .toggle {
+    display: block;
+    padding: 6px 17px;
+    font-size: 14px;
+    text-decoration: none;
+    border: none;
+    float: right;
+    background-color:#01d07e;
+    color: #fff;
+    border-radius: 50px;
+    cursor: pointer;
+  }
+  .menu .toggle {
+    float: none;
+    text-align: center;
+    margin: auto;
+    max-width: 138px;
+    padding: 10px 18px;
+    font-weight: normal;
+    font-size: 15px;
+    letter-spacing: 1px;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+  }
+  .menu .toggle:hover {
+    color: #fff;
+    opacity: .8;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+  }
+  .toggle:hover {
+    color: #000;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+  }
+  label.toggle.toogle-2 {
+    background: transparent;
+    text-transform: capitalize;
+    font-size: 14px;
+    color: #fff;
+  }
+  /* Display Dropdown when clicked on Parent Lable */
+[id^=drop]:checked+ul {
+    display: block;
+    background: #000;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+    z-index: 999;
+}
+  /* Change menu item's width to 100% */
+ nav ul li {
+    display: block;
+    width: 100%;
+    padding:2px 0;
+  }
+  nav ul ul .toggle,
+  nav ul ul a {
+    padding: 0 40px;
+  }
+  nav ul ul ul a {
+    padding: 0 80px;
+  }
+  nav a:hover,
+  nav ul ul ul a {
+    background-color: transparent;
+  }
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    padding: 14px 20px;
+    color: #FFF;
+    font-size: 15px;
+  }
+  /* 
+nav ul li ul li .toggle,
+nav ul ul a {
+background-color: #212121;
+} */
+  /* Hide Dropdowns by Default */
+  nav ul ul {
+    float: none;
+    position: static;
+    color: #ffffff;
+    /* has to be the same number as the "line-height" of "nav a" */
+  }
+  /* Hide menus on hover */
+  nav ul ul li:hover>ul,
+  nav ul li:hover>ul {
+    display: none;
+  }
+  /* Fisrt Tier Dropdown */
+  nav ul ul li {
+    display: block;
+    width: 100%;
+    padding: 0;
+  }
+  nav ul ul ul li {
+    position: static;
+    /* has to be the same number as the "width" of "nav ul ul li" */
+  }
+  nav a {
+    color: #000;
+    font-size: 15px;
+  }
+  .menu li.active a,
+  .menu li a:hover {
+    background: transparent;
+  }
+}
+
+@media all and (max-width: 568px) {
+  nav a,
+  .menu .toggle,
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    font-size: 14px;
+  }
+}
+
+@media all and (max-width: 320px) {
+  nav a,
+  .menu .toggle,
+  nav ul li ul li .toggle,
+  nav ul ul a,
+  nav ul ul ul a {
+    font-size: 13px;
+  }
+}
+/*-- dropdown --*/
+/* headder */
+/*-- banner-- */
+.headder-top {
+    position: absolute;
+    width: 100%;
+    padding: 1em 2em;
+}
+.main-banner {
+    padding-top: 17em;
+}
+.banner-left-side{
+    background: url(../images/b1.jpg);
+    background-repeat: no-repeat;
+    background-position: center;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    min-height:800px;
+	}
+.banner-right-txt h4 {
+    color: #01d07e;
+    font-size: 3em;
+    font-weight: 500;
+    text-transform: capitalize;
+    letter-spacing: 2px;
+    text-shadow: 3px 1px 11px #adadad94;
+}
+.banner-position-main {
+position:relative;
+    border: 6px solid #ffc107;
+    width: 493px;
+    height: 241px;
+    z-index: 1;
+}
+.banner-right-txt {
+    position: absolute;
+    bottom: -70px;
+    width: 100%;
+    left: 25%;
+    background: rgba(245, 245, 245, 0.92);
+    padding: 2em 1.5em;
+}
+.banner-right-txt h5 {
+    font-size: 30px;
+    color: #000;
+    letter-spacing: 2px;
+}
+/*--// banner-- */
+/*--about--*/
+.abut-img-two img {
+    box-shadow: -2px -2px 5px #7b7b7b;
+}
+/*--// about-- */
+.store-info {
+    background: url(../images/b3.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+}
+.adventure-tour-wthree {
+    border: #fff solid 2px;
+    border-radius: 50%;
+    width: 174px;
+    height: 174px;
+    padding: 3em 1em;
+	margin: 0px auto;
+}
+.adventure-tour-wthree span {
+    font-size: 40px;
+    color: #fff;
+    line-height: 13px;
+}
+/*--service--*/
+.grid-wthree-service span {
+    font-size: 26px;
+    color: #000;
+}
+.grid-wthree-service {
+    background: rgb(255, 255, 255);
+    padding: 2em 1.5em;
+    box-shadow: 0px 0px 9px #b7b7b7;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+.grid-wthree-service:hover {
+    background: #efefef;
+}
+/*--//service--*/
+/*--some-text --*/
+
+.right-position-two {
+    border: 5px solid#01d07e;
+    width: 46%;
+    height: 54%;
+    position: absolute;
+    top: 41px;
+    left: -39%;
+}
+.left-grid-tour h2,.blog-two-two h4 a,.blog-wthree-list h4 a{
+    font-size: 30px;
+    letter-spacing: 2px;
+    font-weight: bold;
+    color:#01d07e;
+}
+/*--//some-text --*/
+/* --gallery --*/
+.gallery-img-grid img{padding:10px;}
+/* popup */
+.popup-effect {
+  position:fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.7);
+  transition: opacity 0ms;
+  visibility: hidden;
+  opacity: 0;
+  z-index: 99;
+}
+
+.popup-effect:target {
+  visibility: visible;
+  opacity: 1;
+}
+
+.popup {
+  background: #fff;
+  border-radius: 4px;
+  max-width: 430px;
+  position: relative;
+  margin: 3em auto;
+  padding: 3em 2em;
+  z-index: 999;
+  text-align: center;
+}
+
+.popup .close {
+  position: absolute;
+  top: 5px;
+  right: 15px;
+  transition: all 200ms;
+  font-size: 30px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #000;
+}
+
+.popup .close:hover {
+  color: #686de0;
+}
+/* //popup */
+/* --//gallery --*/
+/* blog */
+.left-grid-tour,.blog-two-two {
+    background:#eaeaea;
+}
+.text-information{background: url(../images/ab4.jpg) no-repeat bottom}
+.blog-img-one {
+background: url(../images/b4.jpg) no-repeat bottom;
+	}
+.blog-img-two{background: url(../images/g6.jpg) no-repeat bottom;}
+.blog-img-one,.blog-img-two,.text-information{
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+	min-height:400px;
+}
+
+.blog-wthree-list,.left-grid-tour{  
+  padding: 6em 7em 5em;}
+
+.view-buttn a {
+    font-size: 15px;
+    color: #ffffff;
+    text-decoration: none;
+    text-transform: capitalize;
+    display: inline-block;
+    letter-spacing: 1px;
+    outline: none;
+    font-weight: 400;
+    border-radius: 0px;
+    background-color: #313131;
+    padding: 8px 15px;
+    border: none;
+}
+/*--//blog--*/
+/*--discount-tour-- */
+.discount-adventure-one{background: url(../images/d1.jpg) no-repeat bottom;}
+.discount-adventure-two{background: url(../images/d2.jpg) no-repeat bottom;}
+.discount-adventure-three {background: url(../images/d3.jpg) no-repeat bottom;}
+.discount-adventure-four{background: url(../images/d4.jpg) no-repeat bottom;}
+.discount-adventure-one,.discount-adventure-two,.discount-adventure-three ,.discount-adventure-four {
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+    min-height: 182px;
+    padding: 2em 1em;
+}
+.button-arrow a {
+    font-size: 14px;
+    color: #28a745;
+	padding:0px;
+	}
+.discount-txt {
+    padding: 20px 0px;
+    background:transparent;
+}
+.rating-start ul li span {
+    font-size: 14px;
+    color: #ffc107;
+    font-weight: bold;
+}
+.price-rate h6 {
+    font-size: 17px;
+    color:#000;
+}
+/*--// discount-tour-- */
+/*--Newsletter--*/
+.subscribe{
+    background: url(../images/b4.jpg) no-repeat center;
+    background-size: cover;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -ms-background-size: cover;
+}
+.subscribe-butn {
+    color: #fff;
+    border: none;
+    padding: 12px 50px;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 0px;
+    background:#01d07e;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+    transition: 0.5s all;
+    cursor: pointer;
+}
+.newsletter-footers {
+    width: 50%;
+    margin: 0px auto;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.34901960784313724);
+}
+.newsletter-footers input[type="email"] {
+    width: 65%;
+    display: inline-block;
+    font-size: 14px;
+    color: #000;
+    padding: .9em 1em;
+    outline: none;
+    border: none;
+    /* border-bottom: 2px solid #28a745; */
+    border-radius: 0px;
+    outline: none;
+    background: #f9f9f9;
+}
+/*--//Newsletter--*/
+/*--map-- */
+.address_mail_footer_grids iframe {
+    width: 100%;
+    height: 22em;
+    border: none;
+}
+/*--//map-- */
+/*--contact--*/
+.contact-forms input, .contact-forms textarea {
+    font-size: 14px;
+    color: #000;
+    padding: .9em 1em;
+    outline: none;
+    border: none;
+    border: 1px solid #1f211f;
+    border-radius: 0px;
+    outline: none;
+    background: transparent;
+}
+.contact-forms textarea {
+    resize: none;
+    height:11em;
+}
+.sent-butnn {
+    font-size: 16px;
+	width:100%;
+    font-weight: 600;
+    letter-spacing: 2px;
+    background:#01d07e;
+    padding: 7px 20px;
+    border-radius: 0px;
+    margin-top: 10px;
+    color: #fff;
+    transition: 0.5s all;
+    -webkit-transition: 0.5s all;
+    -moz-transition: 0.5s all;
+    -o-transition: 0.5s all;
+    -ms-transition: 0.5s all;
+}
+/*--//contact--*/
+
+/*--footer-- */
+.footer-w3layouts-bottem {
+    background: #313131;
+}
+.footer-top p span {
+    font-size: 16px;
+    color: #fff;
+}
+.footer-top p, .footer-top p a {
+    font-size: 13px;
+    line-height: 25px;
+    color: #bbbbbb;
+}
+.social-icons ul li{
+width: 30px;
+    text-align: center;
+    height: 30px;
+    border-radius: 50px;
+    margin: 0px 2px;
+}
+.social-icons ul li.facebook {background:#0078d7;}
+.social-icons ul li.twitter{background:#1da1f2;}
+.social-icons ul li.rss{background:#f26522;}
+.social-icons ul li a span{
+  color: #fff;
+  font-size:13px;
+    line-height: 30px;
+  transition: 0.5s all;
+  -webkit-transition: 0.5s all;
+  transition: 0.5s all;
+  -moz-transition: 0.5s all;
+}
+.bottem-wthree-footer p {
+    font-size: 14px;
+    color: #fff;
+    letter-spacing: 2px;
+}
+.bottem-wthree-footer p a {
+    color: #ff5e00;
+    font-size: 14px;
+}
+.bottem-wthree-footer p a:hover{color: #fff;}
+a.move-top span {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+}
+.bottem-wthree-footer{
+    background: #000;
+}
+/*--//footer-- */
+/*--responsive--*/
+@media(max-width:1920px){
+	
+}
+@media(max-width:1680px){
+	
+}
+@media(max-width:1600px){
+	
+}
+@media(max-width:1440px){
+.banner-left-side {
+    min-height: 680px;
+}	
+.banner-position-main {
+    width: 442px;
+    height: 214px;
+}
+.banner-right-txt h4 {
+    font-size: 2.5em
+}
+.main-banner {
+    padding-top: 13em;
+}
+.banner-right-txt h5 {
+    font-size: 28px;
+	}
+.title-w3ls-text h6 {
+    font-size: 31px;
+	}
+.adventure-tour-wthree {
+    width: 164px;
+    height: 159px;
+}
+.blog-wthree-list, .left-grid-tour {
+    padding: 5em 6em 5em;
+}
+.newsletter-footers {
+    width: 52%;
+}
+}
+@media(max-width:1366px){
+#logo a {
+    font-size: 32px;
+}	
+.banner-right-txt {
+    padding: 1.8em 1.2em;
+}
+.adventure-tour-wthree span {
+    font-size: 37px;
+	}
+.grid-wthree-service {
+    padding: 1.7em 1.5em;
+	}
+.left-grid-tour h2, .blog-two-two h4 a, .blog-wthree-list h4 a {
+    font-size: 28px;
+}
+nav ul li a {
+    padding: 8px 19px;
+}
+}
+@media(max-width:1280px){
+.banner-right-txt h5 {
+    font-size: 26px;
+}
+.adventure-tour-wthree h4, .discount-txt h6 {
+    font-size: 18px;
+}
+.ser-text-wthree h4 {
+    font-size: 23px;
+}
+.grid-wthree-service span {
+    font-size: 24px;
+}
+.blog-wthree-list, .left-grid-tour {
+    padding: 5em 5em 4em;
+}
+.view-buttn a {
+    font-size: 14px;
+    padding: 8px 13px;
+}	
+.price-rate h6 {
+    font-size: 16px;
+	}
+.newsletter-footers {
+    padding: 18px;
+}
+.newsletter-footers input[type="email"] {
+    padding: .8em .8em;
+}
+.address_mail_footer_grids iframe {
+    height: 21em;
+}
+}
+@media(max-width:1080px){
+.banner-left-side {
+    min-height: 640px;
+}
+.headder-top {
+    padding: 1em 1.5em;
+}
+.banner-right-txt h4 {
+    font-size: 2.3em;
+}
+.main-banner {
+    padding-top: 12em;
+}
+.banner-position-main {
+    width: 430px;
+    height: 204px;
+}
+.title-w3ls-text h6 {
+    font-size: 29px;
+}
+.adventure-tour-wthree {
+    width: 149px;
+    height: 149px;
+}
+.adventure-tour-wthree span {
+    font-size: 34px;
+}	
+}
+@media(max-width:1050px){
+	.left-grid-tour h2, .blog-two-two h4 a, .blog-wthree-list h4 a {
+    font-size: 27px;
+}
+.blog-img-one, .blog-img-two, .text-information {
+    min-height: 324px;
+}
+.newsletter-footers {
+    width: 59%;
+}
+.subscribe-butn {
+    padding: 9px 50px;
+	}
+.contact-forms textarea {
+    height: 10em;
+}
+.contact-forms input, .contact-forms textarea {
+padding: .8em 1em;
+	}
+}
+@media(max-width:1024px){
+.banner-right-txt h5 {
+    font-size: 25px;
+}
+.adventure-tour-wthree span {
+    font-size: 31px;
+    line-height: 10px;
+}
+.title-w3ls-text h6 {
+    font-size: 27px;
+}
+.grid-wthree-service {
+    padding: 1.5em 1.3em;
+}
+.blog-wthree-list, .left-grid-tour {
+    padding: 4em 4em 4em;
+}
+
+}
+@media(max-width:991px){
+.contact-form {
+    margin-top: 21px;
+}
+.right-position-two {
+    width: 31%;
+    height: 54%;
+    top: -77px;
+    left: 6%;
+}
+.newsletter-footers {
+    width: 79%;
+}
+.address_mail_footer_grids iframe {
+    height: 16em;
+}
+.sent-butnn {
+    font-size: 15px;
+	}
+.footer-top p span {
+    font-size: 15px;}
+.banner-left-side {
+    min-height: 600px;
+}
+.main-banner {
+    padding-top: 11em;
+}
+}
+@media(max-width:900px){
+.adventure-tour-wthree {
+    width: 142px;
+    height: 142px;
+}
+.banner-right-txt h4 {
+    font-size: 2.1em;
+}
+.banner-right-txt {
+    padding: 1.5em 1.2em;
+}	
+.banner-right-txt {
+    bottom: -55px;
+    left: 22%;
+	}
+.left-grid-tour h2, .blog-two-two h4 a, .blog-wthree-list h4 a {
+    font-size: 25px;
+}
+
+}
+@media(max-width:800px){
+.adventure-tour-wthree h4, .discount-txt h6 {
+    font-size: 17px;
+}	
+.ser-text-wthree h4 {
+    font-size: 21px;
+}
+h3.title {
+font-size: 20px;
+	}
+.price-rate h6 {
+    font-size: 15px;
+}
+.subscribe-butn {
+    font-size: 15px;
+	}
+.social-icons ul li {
+    width: 28px;
+    height: 28px;
+}
+nav ul li a {
+    padding: 8px 14px;
+}
+.right-position-two {
+    width: 38%;
+    height: 50%;
+}
+}
+@media(max-width:768px){
+nav ul li a {
+    letter-spacing: 1px;
+}
+.blog-wthree-list{
+    padding: 3em 2em 3em;
+}	
+.left-grid-tour h2, .blog-two-two h4 a, .blog-wthree-list h4 a {
+    letter-spacing: 1px;
+	}
+.newsletter-footers input[type="email"] {
+    padding: .7em .8em;
+}
+.banner-left-side {
+    min-height: 586px;
+}
+.headder-top {
+    padding:1em 1.2em;
+}
+}
+@media(max-width:767px){
+.banner-left-side {
+    min-height: 562px;
+}	
+.ser-text-wthree h4 {
+    font-size: 19px;
+}
+.grid-wthree-service span {
+    font-size: 22px;
+}
+.grid-wthree-service {
+    padding: 1.3em 1.2em;
+}
+.banner-right-txt h5 {
+    font-size: 24px;
+    letter-spacing: 1px;
+}
+.subscribe-butn {
+    padding: 9px 30px;
+}
+.newsletter-footers {
+    width: 82%;
+}
+#logo a {
+
+line-height: 22px;
+	}
+}
+@media(max-width:736px){
+.banner-position-main {
+    width: 425px;
+    height: 187px;
+}
+#logo a {
+    font-size: 30px;
+}
+.banner-right-txt h4 {
+    font-size: 2em;
+}
+.newsletter-footers {
+    width: 82%;
+}
+.address_mail_footer_grids iframe {
+    height: 14em;
+}
+.right-position-two {
+    width: 40%;
+}
+}
+@media(max-width:667px){
+.blog-wthree-list, .left-grid-tour {
+    padding: 3em 3em 3em;
+}
+.title-w3ls-text h6 {
+    font-size: 26px;
+}
+.subscribe-butn {
+    font-size: 14px;
+}
+.newsletter-footers input[type="email"] {
+    padding: .6em .8em;
+}
+.contact-forms textarea {
+    height: 9em;
+}
+.right-position-two {
+    width: 45%;
+    height: 48%;
+}
+.blog-img-one, .blog-img-two, .text-information {
+    min-height: 279px;
+}
+}
+@media(max-width:640px){
+	.sent-butnn {
+    font-size: 14px;
+}
+.banner-right-txt {
+    padding: 1.3em 1.2em;
+}
+.banner-right-txt h4 {
+    font-size: 1.8em;
+}
+.adventure-tour-wthree {
+    padding: 2.5em 1em;
+    width: 132px;
+    height: 132px;
+}
+.adventure-tour-wthree span {
+    font-size: 26px
+	}
+}
+@media(max-width:600px){
+#logo a {
+    font-size: 28px;
+}
+.banner-left-side {
+    min-height: 522px;
+}
+.main-banner {
+    padding-top: 10em;
+}
+.banner-position-main {
+    width: 412px;
+    height: 176px;
+}
+.banner-right-txt h5 {
+    font-size: 22px;
+}	
+.right-position-two {
+    width: 48%;
+	}
+}
+@media(max-width:568px){
+
+.booking-choose,.gallery-img-grid,.adventure-trip-grids {
+    width: 50%;
+}	
+.grid-wthree-service {
+    padding: 1.1em 1.1em;
+}
+.grid-wthree-service span {
+    font-size: 20px;
+}
+.left-grid-tour h2, .blog-two-two h4 a, .blog-wthree-list h4 a {
+    font-size: 23px;
+}
+.abut-img-two {
+    text-align: center;
+}
+.price-rate {
+    margin-top: 15px;
+}
+}
+@media(max-width:480px){
+.banner-position-main {
+    width: 371px;
+    height: 160px;
+}
+.main-banner {
+    padding-top: 9.5em;
+}
+.banner-left-side {
+    min-height: 485px;
+}
+.banner-right-txt {
+    left: 15%;
+}
+.newsletter-footers {
+    width: 93%;
+}
+.address_mail_footer_grids iframe {
+    height: 12em;
+}
+.contact-forms input, .contact-forms textarea {
+    padding: .7em 1em;
+}
+.right-position-two {
+    width: 55%;
+    height: 39%;
+	top: -69px;
+}
+}
+@media(max-width:440px){
+.banner-right-txt {
+    left: 8%;
+}
+.adventure-tour-wthree {
+    padding: 2.5em 1em;
+    width: 128px;
+    height: 128px;
+}
+.adventure-tour-wthree span {
+    font-size: 24px;
+}
+.adventure-tour-wthree h4, .discount-txt h6 {
+    font-size: 16px;
+}
+.blog-wthree-list, .left-grid-tour {
+    padding: 2.5em 2.5em 2.5em;
+}
+.right-position-two {
+    width: 64%;
+	}
+.blog-img-one, .blog-img-two, .text-information {
+    min-height: 227px;
+}
+}
+@media(max-width:414px){
+.banner-right-txt {
+    left: 0%;
+}	
+.banner-right-txt h4 {
+    font-size: 1.6em;
+    letter-spacing: 1px;
+}
+ .gallery-img-grid, .adventure-trip-grids {
+    width:100%;
+}
+.newsletter-footers {
+    width: 100%;
+}
+.newsletter-footers input[type="email"] {
+    width: 61%;
+	}
+.right-position-two {
+    width: 55%;
+    height: 33%;
+    top: -67px;
+}	
+.bottem-wthree-footer p {
+    letter-spacing: 1px;
+}
+}
+@media(max-width:384px){
+.banner-position-main {
+    width: 339px;
+}
+.banner-left-side {
+    min-height: 449px;
+}
+.main-banner {
+    padding-top: 8.5em;
+}
+.banner-position-main {
+    height: 155px;
+}	
+.adventure-tour-wthree {
+    padding: 2.2em .7em;
+    width: 123px;
+    height: 123px;
+}
+.newsletter-footers input[type="email"] {
+    width: 100%;
+    margin-bottom: 20px;
+}
+.right-position-two {
+    width: 55%;
+    height: 33%;
+    top: -67px;
+}
+}
+@media(max-width:375px){
+.banner-position-main {
+    width: 328px;
+}
+.banner-right-txt h5 {
+    font-size: 20px;
+}
+h3.title {
+    font-size: 19px;
+}
+.blog-wthree-list, .left-grid-tour {
+    padding: 2.5em 2em 2.5em;
+}	
+.address_mail_footer_grids iframe {
+    height: 10em;
+}
+.right-position-two {
+    width: 72%;
+	}
+}
+@media(max-width:320px){
+	.banner-position-main {
+    width: 276px;
+}
+.banner-right-txt {
+    padding: 1.1em 1em;
+}
+.banner-right-txt h4 {
+    font-size: 1.5em;
+    letter-spacing: 1px;
+}
+.grid-wthree-service {
+    padding: 1em 1em;
+}
+.contact-forms textarea {
+    height: 8em;
+}
+.contact-forms input, .contact-forms textarea {
+    padding: .6em 1em;
+}
+.right-position-two {
+    width: 79%;
+	height: 28%;
+}
+}
+/*--//responsive--*/
