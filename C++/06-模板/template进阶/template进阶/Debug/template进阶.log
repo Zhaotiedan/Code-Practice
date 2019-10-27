@@ -1,0 +1,23 @@
+﻿  main.cpp
+d:\github\code-practice\c++\06-模板\template进阶\template进阶\main.cpp(74): error C2678: 二进制“==”: 没有找到接受“T”类型的左操作数的运算符(或没有可接受的转换)
+          with
+          [
+              T=Date
+          ]
+  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\system_error(284): note: 可能是“bool std::operator ==(const std::error_condition &,const std::error_condition &) noexcept”
+  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\system_error(278): note: 或    “bool std::operator ==(const std::error_condition &,const std::error_code &) noexcept”
+  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\system_error(272): note: 或    “bool std::operator ==(const std::error_code &,const std::error_condition &) noexcept”
+  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\system_error(266): note: 或    “bool std::operator ==(const std::error_code &,const std::error_code &) noexcept”
+  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\exception(331): note: 或    “bool std::operator ==(const std::exception_ptr &,std::nullptr_t) noexcept”
+  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\exception(326): note: 或    “bool std::operator ==(std::nullptr_t,const std::exception_ptr &) noexcept”
+  d:\visual stodio 2017\vc\tools\msvc\14.16.27023\include\exception(321): note: 或    “bool std::operator ==(const std::exception_ptr &,const std::exception_ptr &) noexcept”
+  d:\github\code-practice\c++\06-模板\template进阶\template进阶\main.cpp(74): note: 尝试匹配参数列表“(T, T)”时
+          with
+          [
+              T=Date
+          ]
+  d:\github\code-practice\c++\06-模板\template进阶\template进阶\main.cpp(124): note: 参见对正在编译的函数 模板 实例化“bool IsEqual<Date>(T &,T &)”的引用
+          with
+          [
+              T=Date
+          ]
