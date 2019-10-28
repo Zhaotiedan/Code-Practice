@@ -125,12 +125,93 @@ void Test2()
 }
 
 //2.2 类模板特化
+//2.2.1.全特化:是将模板参数类表中所有的参数都确定化。
+template<class T1,class T2>
+class Data
+{
+public:
+	Data()
+	{
+		cout << "Date<T1,T2>" << endl;
+	}
+private:
+	T1 _d1;
+	T2 _d2;
+};
 
+template<>
+class Data<int, char>
+{
+public:
+	Data()
+	{
+		cout << "Date<int,char>" << endl;
+	}
+private:
+	int _d1;
+	char _d2;
+};
+//2.2.2.偏特化 :部分特化--->将模板参数列表中部分参数类型化
+template <class T1>
+class Data<T1,double>
+{
+public:
+	Data()
+	{
+		cout << "Data<T1,int>" << endl;
+	}
+private:
+	T1 _d1;
+	double _d2;
+};
+//2.2.2 偏特化：参数更进一步的限制
+//  1.两个参数偏特化为指针类型
+template <class T1, class T2>
+class Data<T1*,T2*>
+{
+public:
+	Data()
+	{
+		cout << "Data<T1*,T2*>" << endl;
+	}
+private:
+	T1* _d1;
+	T2* _d2;
+};
+// 2.两个参数偏特化为引用类型
+template<class T1, class T2>
+class Data<T1&,T2&>
+{
+public:
+	Data(const T1& d1,const T2& d2)
+		:_d1(d1)
+		,_d2(d2)
+	{
+		cout << "Data<T1&,T2&>" << endl;
+
+	}
+private:
+	const T1& _d1;
+	const T2& _d2;
+};
+void Test3()
+{
+	//全特化
+	Data<int, int>d1;
+	Data<int, char>d2;
+
+	//偏特化
+	Data<double, double>d3;
+
+	Data<int*, int*>d4;
+	Data<int&, int&>d5(1,2);
+}
 
 int main()
 {
 	Test1();
 	Test2();
+	Test3();
 
 	system("pause");
 	return 0;
