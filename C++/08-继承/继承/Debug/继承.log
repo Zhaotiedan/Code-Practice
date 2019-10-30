@@ -1,0 +1,6 @@
+﻿  main.cpp
+d:\github\code-practice\c++\08-继承\继承\main.cpp(88): warning C4552: ”-“: 未使用表达式结果
+d:\github\code-practice\c++\08-继承\继承\main.cpp(154): warning C4552: ”-“: 未使用表达式结果
+d:\github\code-practice\c++\08-继承\继承\main.cpp(215): warning C4552: ”-“: 未使用表达式结果
+d:\github\code-practice\c++\08-继承\继承\main.cpp(233): warning C4101: “d”: 未引用的局部变量
+  继承.vcxproj -> D:\github\Code-Practice\C++\08-继承\Debug\继承.exe
