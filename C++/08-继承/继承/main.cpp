@@ -343,6 +343,49 @@ void Test5()
 	cout << bp->_a << endl;
 }
 
+/*5.继承中的作用域*/
+//1. 在继承体系中基类和派生类都有独立的作用域。所以同名函数就不会重载
+//2. 子类和父类中有同名成员，子类成员将屏蔽父类对同名成员的直接访问，这种情况叫隐藏，也叫重定义。（在子类成员函数中，可以使用 基类::基类成员 显示访问）
+//3. 需要注意的是如果是成员函数的隐藏，只需要函数名相同就构成隐藏。
+//4. 注意在实际中在继承体系里面最好不要定义同名的成员。
+
+//同名隐藏
+//基类
+class Q
+{
+public:
+	void Set(char q)
+	{
+		_q = q;
+	}
+//protected:
+public:
+	char _q;
+};
+//派生类
+class W :public Q
+{
+public:
+	void Set(int q, int w) 
+	{
+		_q = q;
+	}
+//protected:
+public:
+	int _q;
+};
+
+void Test6()
+{
+	cout <<"sizeof(W)"<< sizeof(W) << endl;
+	W w;
+	w._q = 'a';//同名隐藏，直接访问派生类的元素
+	w.Q::_q = 'b';//想访问基类元素，加上命名空间即可
+	cout << w._q << endl;
+	cout << w.Q::_q << endl;
+}
+
+/*6.4.派生类的默认成员函数*/
 
 int main()
 {
@@ -352,6 +395,7 @@ int main()
 	Test3();
 	Test4();
 	Test5();
+	Test6();
 
 	system("pause");
 	return 0;
