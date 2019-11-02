@@ -593,26 +593,68 @@ void Test10()
 }
 
 //3.派生类和基类构造函数和析构函数的调用次序
-class Base10
+class Base11
 {
 public:
-	Base10(int b)
+	Base11(int b)
 		:_b(b)
 	{
 		cout << "Base10::Base10(int)" << endl;
 	}
-	~Base10()
+	~Base11()
 	{
 		cout << "Base10::~Base10()" << endl;
 	}
 public:
 	int _b;
 };
-class Derived10
+class Derived11 :public Base11
 {
 public:
+	Derived11(int b, int d)
+		: Base11(b)
+		, _d(d)
+	{
+		cout << "Derived::Derived(int,int)" << endl;
+	}
 
+	~Derived11()
+	{
+		cout << "Derived::~Derived()" << endl;
+		// call Base::~Base();
+	}
+public:
+	int _d;
 };
+
+void Test11()
+{
+	Derived11 d(10, 20);
+}
+// 1. 运行结束打印结果
+	   /*
+	   函数体的执行次序：先调基类构造--->派生类构造--->派生类析构--->基类析构
+		  Base::Base(int)
+		  Derived::Derived(int,int)
+		  Derived::~Derived()
+		  Base::~Base()
+	   */
+	   // 2. 构造和析构的调用次序
+	   /*
+			 构造次序：
+			   派生类构造函数()
+				  : 基类构造函数（）
+			   {}
+
+			   析构次序：
+			   派生类析构函数()
+			   {
+				  // 释放派生类资源
+
+				  // 编译器在派生类析构函数最后一条有效语句后插了一条汇编代码
+				  call 基类析构函数;
+			   }
+	   */
 int main()
 {
 	Test();
@@ -626,6 +668,7 @@ int main()
 	Test8();
 	Test9();
 	Test10();
+	Test11();
 
 	system("pause");
 	return 0;
