@@ -610,6 +610,7 @@ public:
 };
 class Derived10
 {
+public:
 
 };
 int main()
