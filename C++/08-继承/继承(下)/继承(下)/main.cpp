@@ -157,6 +157,7 @@ void Test3()
 }
 #endif
 
+
 class B
 {
 public:
@@ -183,11 +184,12 @@ public:
 
 void Test4()
 {
-	cout << sizeof(D) << endl;
+	cout << sizeof(D) << endl;//20
 
 	D d;
 	//d._b = 1;  // 菱形继承缺陷：会存在二义性问题
 
+    //解决方式一：通过作用域访问
 	d.C1::_b = 1;
 	d._c1 = 2;
 
@@ -196,7 +198,38 @@ void Test4()
 
 	d._d = 5;
 }
-// 菱形虚拟继承
+
+//解决方式二： 菱形虚拟继承
+//class B
+//{
+//public:
+//	int _b;
+//};
+//
+//class C1 : virtual public B
+//{
+//public:
+//	int _c1;
+//};
+//
+//class C2 : virtual public B
+//{
+//public:
+//	int _c2;
+//};
+//
+//class D : public C1, public C2
+//{
+//public:
+//	int _d;
+//};
+//
+//void Test5()
+//{
+//	cout << sizeof(D) << endl;
+//	D d;
+//	
+//}
 
 int main()
 {
@@ -205,6 +238,7 @@ int main()
 	TestPerson();
 	//Test3();
 	Test4();
+	//Test5();
 
 	system("pause");
 	return 0;
