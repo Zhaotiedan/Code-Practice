@@ -1,20 +1,21 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 
+
+//CSDN：https://blog.csdn.net/qq_42913794/article/details/102988878
 #include<iostream>
 using namespace std;
 
 
-// 设计一个类不能被继承
+// 设计一个类不能被继承,但是可以在类外定义对象
 // C++98
 
 //方法：构造函数私有化，派生类调不到基类的构造函数，就无法继承
 class Base1
 {
-	//要在类外定义对象，但是因为基类构造函数访问权限是private，所以定义一个内部成员来访问基类私有的构造函数
 public:
-	//要在类外定义对象使用此方法前必须要有一个Base1类型的对象，所以在该方法前加一个static
-	static Base1 GetObject(int b)
+	//要在类外定义对象，但是因为基类构造函数访问权限是private，所以定义一个内部成员来访问基类私有的构造函数
+	static Base1 GetObject(int b)//按理说要在类外定义对象使用此方法前必须要有一个Base1类型的对象，所以在该方法前加一个static
 	{
 		return Base1(b);
 	}
@@ -28,7 +29,7 @@ public:
 };
 void Test1()
 {
-	//要在类外定义对象
+	//类外定义对象
 	Base1 b(Base1::GetObject(10));
 	cout << b._b << endl;
 }
