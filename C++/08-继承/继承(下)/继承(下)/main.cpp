@@ -157,7 +157,7 @@ void Test3()
 }
 #endif
 
-
+#if 0
 class B
 {
 public:
@@ -189,7 +189,7 @@ void Test4()
 	D d;
 	//d._b = 1;  // 菱形继承缺陷：会存在二义性问题
 
-    //解决方式一：通过作用域访问
+    //解决方式一：通过作用域访问，但会有数据冗余
 	d.C1::_b = 1;
 	d._c1 = 2;
 
@@ -198,47 +198,59 @@ void Test4()
 
 	d._d = 5;
 }
+#endif
 
 //解决方式二： 菱形虚拟继承
-//class B
-//{
-//public:
-//	int _b;
-//};
-//
-//class C1 : virtual public B
-//{
-//public:
-//	int _c1;
-//};
-//
-//class C2 : virtual public B
-//{
-//public:
-//	int _c2;
-//};
-//
-//class D : public C1, public C2
-//{
-//public:
-//	int _d;
-//};
-//
-//void Test5()
-//{
-//	cout << sizeof(D) << endl;
-//	D d;
-//	
-//}
+class B
+{
+public:
+	int _b;
+};
 
+class C1 : virtual public B
+{
+public:
+	int _c1;
+};
+
+class C2 : virtual public B
+{
+public:
+	int _c2;
+};
+
+class D : public C1, public C2
+{
+public:
+	int _d;
+};
+
+void Test5()
+{
+	cout << sizeof(D) << endl;//24
+	D d;//调用构造函数构造该对象时就生成了两个虚基表指针
+	d._c1 = 10;
+	d._c2 = 20;
+	d._b = 30;
+	d._d = 40;
+	cout << d._b << endl;
+	cout << d._c1 << endl;
+	cout << d._c2 << endl;
+	cout << d._d << endl;
+}
+/*虚继承后：发现对象中多4个字节。
+原因：在虚拟继承里，编译器给派生类默认生成的构造函数，该函数会给对象的前四个字节填充数据
+放置的就是虚基表指针*/
 int main()
 {
 	Test1();
 	//Test2();
 	TestPerson();
-	//Test3();
+#if 0
+	Test3();
 	Test4();
-	//Test5();
+#endif
+	Test5();
 
 	system("pause");
 	return 0;
