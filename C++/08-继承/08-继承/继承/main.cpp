@@ -1,5 +1,8 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
+
+
+//CSDN:https://blog.csdn.net/qq_42913794/article/details/102987333
 #include<iostream>
 using namespace std;
 
@@ -334,8 +337,8 @@ void Test5()
 	A& aa = b;
 	cout << aa._a << endl;
 
-	//4.基类对象不能赋值给派生类
 	//B* bp = &a;  报错
+	//4.基类对象不能赋值给派生类
 	//b = a;
 
 	//5.基类的指针可以通过强制类型转换赋值给派生类的指针,但注意：这种情况转换时虽然可以，但是会存在越界访问的问题
