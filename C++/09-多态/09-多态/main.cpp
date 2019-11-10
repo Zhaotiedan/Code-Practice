@@ -102,7 +102,7 @@ void Test1()
 }
 
 #if 0
-/*函数重写的两个例外*/
+/*3.函数重写的两个例外*/
 
 //1.协变：基类中虚函数返回基类的引用(指针)，派生类中虚函数返回派生类的引用(指针)  注意，只要是返回基类所返回的基类类型就可以
 class A
@@ -207,7 +207,8 @@ void Test2()
 #endif
 
 
-//2.析构函数重写
+//4..析构函数重写:如果基类的析构函数为虚函数，此时派生类析构函数只要定义，无论是否加virtual关键字，
+//都与基类的析构函数构成重写
 class Base
 {
 public:
@@ -216,7 +217,7 @@ public:
 	{
 		cout << "Base::Base()" << endl;
 	}
-	~Base()
+	virtual ~Base()
 	{
 		cout << "Base::~Base()" << endl;
 	}
@@ -247,6 +248,9 @@ void TestDestroy()
 	Base* pb = new Derived(10);
 	delete pb;
 }
+
+/*5. C++11 override 和 final*/
+
 int main()
 {
 	Test1();
