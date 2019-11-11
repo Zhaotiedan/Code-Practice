@@ -243,13 +243,39 @@ public:
 protected:
 	int* _p;
 };
+//只有派生类Derived的析构函数重写了Base的析构函数，下面的delete对象调用析构函数，
+//才能构成多态，才能保证pb1和pb2指向的对象正确的调用析构函数。
 void TestDestroy()
 {
-	Base* pb = new Derived(10);
-	delete pb;
+	Base* pb1 = new Base(10);
+	Base* pb2 = new Derived(10);
+
+	delete pb1;
+	delete pb2;
+
 }
 
 /*5. C++11 override 和 final*/
+//1. final：修饰虚函数，表示该虚函数不能再被继承
+class Base1
+{
+public:
+	virtual void TestBase1()
+	{
+		cout << "TestBase1()" << endl;
+	}
+
+	int _b;
+};
+class Derived2 :public Base1
+{
+public:
+	virtual void TestBase1()
+	{
+		cout << "Base1::TestBase1()" << endl;
+	}
+
+};
 
 int main()
 {
