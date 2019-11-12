@@ -101,10 +101,11 @@ void Test1()
 	TestBuyTicket(so);
 }
 
-#if 0
+
 /*3.函数重写的两个例外*/
 
-//1.协变：基类中虚函数返回基类的引用(指针)，派生类中虚函数返回派生类的引用(指针)  注意，只要是返回基类所返回的基类类型就可以
+//1.协变：基类中虚函数返回基类的引用(指针)，派生类中虚函数返回派生类的引用(指针)  
+//注意，只要是返回基类所返回的基类类型就可以
 class A
 {};
 class B :public A
@@ -204,40 +205,40 @@ void Test2()
 	TestVirtualFunc(&d);
 }
 
-#endif
+
 
 
 //4..析构函数重写:如果基类的析构函数为虚函数，此时派生类析构函数只要定义，无论是否加virtual关键字，
 //都与基类的析构函数构成重写
-class Base
+class Base1
 {
 public:
-	Base(int b)
+	Base1(int b)
 		:_b(b)
 	{
-		cout << "Base::Base()" << endl;
+		cout << "Base1::Base1()" << endl;
 	}
-	virtual ~Base()
+	virtual ~Base1()
 	{
-		cout << "Base::~Base()" << endl;
+		cout << "Base1::~Base1()" << endl;
 	}
 protected:
 	int _b;
 };
-class Derived : public Base
+class Derived1 : public Base1
 {
 public:
-	Derived(int b)
-		: Base(b)
+	Derived1(int b)
+		: Base1(b)
 		, _p(new int[10])
 	{
-		cout << "Derived::Derived(int)" << endl;
+		cout << "Derived1::Derived1(int)" << endl;
 	}
 
-	~Derived()
+	~Derived1()
 	{
 		delete[] _p;
-		cout << "Derived::~Derived()" << endl;
+		cout << "Derived1::~Derived1()" << endl;
 	}
 
 protected:
@@ -247,8 +248,8 @@ protected:
 //才能构成多态，才能保证pb1和pb2指向的对象正确的调用析构函数。
 void TestDestroy()
 {
-	Base* pb1 = new Base(10);
-	Base* pb2 = new Derived(10);
+	Base1* pb1 = new Base1(10);
+	Base1* pb2 = new Derived1(10);
 
 	delete pb1;
 	delete pb2;
@@ -257,31 +258,314 @@ void TestDestroy()
 
 /*5. C++11 override 和 final*/
 //1. final：修饰虚函数，表示该虚函数不能再被继承
-class Base1
+//注意，C++98里不可使用
+#if 0
+class Base2
 {
 public:
-	virtual void TestBase1()
+	virtual void TestBase1()final
 	{
-		cout << "TestBase1()" << endl;
+		cout << "Base2::TestBase1()" << endl;
 	}
 
 	int _b;
 };
-class Derived2 :public Base1
+class Derived2 :public Base2
 {
 public:
 	virtual void TestBase1()
 	{
-		cout << "Base1::TestBase1()" << endl;
+		cout << "Derived2::TestBase1()" << endl;
 	}
 
 };
+#endif
+
+//2. override: 修饰派生类虚函数
+//检测该虚函数是否重写了基类某个虚函数，如果没有重写编译报错
+class Base2
+{
+public:
+	virtual void TestBase1()
+	{
+		cout << "Base2::TestBase1()" << endl;
+	}
+
+	int _b;
+};
+class Derived2 :public Base2
+{
+public:
+	virtual void TestBase1()override
+	{}
+};
+void TestOverVirtualFun(Base2* pb)
+{
+	pb->TestBase1();
+}
+void Test3()
+{
+	Base2 b;
+	b.TestBase1();
+	Derived2 d;
+	d.TestBase1();
+	TestOverVirtualFun(&b);
+	TestOverVirtualFun(&d);
+}
+
+/*6.抽象类*/
+//在虚函数的后面写上 = 0 ，则这个函数为纯虚函数。
+//包含纯虚函数的类叫做抽象类（也叫接口类），抽象类不能定义对象，但可以定义指针(引用)
+//派生类继承后也不能实例化出对象，只有重写纯虚函数，派生类才能实例化出对象。
+//纯虚函数规范了派生类必须重写，另外纯虚函数更体现接口继承
+class Place
+{
+	virtual void Describe() = 0;
+};
+
+class BeiJing :public Place
+{
+public:
+	void Describe()
+	{
+		cout << "TianAnMen" << endl;
+	}
+};
+
+class ShangHai :public Place
+{
+public:
+	void Describe()
+	{
+		cout << "DongFangMIingZhu" << endl;
+	}
+};
+
+void Test4()
+{
+	BeiJing bei;
+	bei.Describe();
+	BeiJing* pbei = new BeiJing;
+	pbei->Describe();
+
+	/*Place* ppbei = new BeiJing;
+	ppbei->Describe();  报错*/
+
+	ShangHai sh;
+	sh.Describe();
+	ShangHai* psh = new ShangHai;
+	psh->Describe();
+
+	/*Place* ppsh = new ShangHai;
+	ppsh->Describe(); 报错*/
+}
+
+/*7.多态的原理*/
+
+/*7.1基类和派生类虚函数表的构建过程*/
+
+//1.看包含虚函数的类的大小是多少
+class Base3
+{
+public:
+	virtual void Test1()
+	{
+		cout << "Base3::Test1()" << endl;
+	}
+	virtual void Test2()
+	{
+		cout << "Base3::Test2()" << endl;
+	}
+	int _b;
+};
+void Test5()
+{
+	cout << sizeof(Base3) << endl;//8
+}
+//结论：//如果一个类中包含有虚函数，类大小会多四个字节
+//如果类没有显式定义构造函数，编译器会给该类生成一个默认的构造函数，作用：将虚表指针放在对象的前四个字节里
+//如果类显式定义了构造函数，编译器会对用户提供的构造函数进行改写：将虚表指针放在前4个字节里
+
+
+class Base4
+{
+public:
+	virtual void Test1()
+	{
+		cout << "Base4::Test1()" << endl;
+	}
+	virtual void Test2()
+	{
+		cout << "Base4::Test2()" << endl;
+	}
+	virtual void Test3()
+	{
+		cout << "Base4::Test3()" << endl;
+	}
+	int _b;
+};
+//结论：基类虚表构建过程：将虚函数按照其在类中的声明次序依次增加到虚表中
+//证明：监视查看虚函数表就ok
+
+class Derived4 :public Base4
+{
+public:
+	virtual void Test5()
+	{
+		cout << "Derived::Test5()" << endl;
+	}
+
+	virtual void Test1()
+	{
+		cout << "Derived::Test1()" << endl;
+	}
+
+	virtual void Test3()
+	{
+		cout << "Derived::Test3()" << endl;
+	}
+
+	virtual void Test4()
+	{
+		cout << "Derived::Test4()" << endl;
+	}
+
+	int _d;
+};
+//子类虚表构建过程：
+//1.将基类虚表中的内容拷贝一份放到子类虚表中
+//2.如果派生类重写了基类某个虚函数，派生类用自己的虚函数地址替换相同偏移量地址的基类虚函数入口地址
+//3.如果派生类新增加的虚函数，则按照它们的声明次序一一添加到虚表的后面
+
+//证明：由于通过监视窗口不能直接看到派生类新增加的虚函数 
+//解决方法：通过记录虚函数表的地址，在内存窗口中查看。
+/*发现一共占了五个4字节空间，通过对比，发现前三个依次与基类的虚函数地址相匹配，
+那么，现在就需要验证后两个地址是不是派生类新增加的虚函数的。*/
+//验证方法一：调用一次派生类新增加的虚函数，调试转到反汇编，看call指令的函数地址是否与那后两个虚函数地址匹配。
+//验证法二：调用该虚函数
+  //调用步骤：1.从对象前4个字节中获取表格地址vfptr
+            //2.从vfptr指向的空间中获取函数的入口地址
+            //3.可以调用该函数
+
+#include<string>
+typedef void(*PVFT)();//定义一个函数指针
+
+void PrintTable(Base4& b,const string& information)
+{
+	cout << information << endl;
+	PVFT* pVFT = (PVFT*)(*(int*)&b);
+	while (*pVFT)
+	{
+		(*pVFT)();//通过函数指针调用该函数
+		pVFT++;
+	}
+	cout << endl;
+}
+
+void Test6()
+{
+	Base4 b1;
+	Base4 b2; //通过在内存中检测b1和b2前4个字节内容：两个对象前4个字节完全相同，所以同一个类不同对象，在底层共享一张虚表
+	b1._b = 1;
+	Derived4 d;
+	d._d = 1;
+
+	//验证法一：
+	d.Test5();
+	d.Test4();
+
+	//验证法二：
+	PrintTable(b1, "Base4 :VFT table");
+	PrintTable(d, "Derived4 :VFT table");
+}
+
+/*7.2虚函数的调用原理*/
+class Base5
+{
+public:
+	virtual void Test1()
+	{
+		cout << "Base5::Test1()" << endl;
+	}
+	virtual void Test2()
+	{
+		cout << "Base5::Test2()" << endl;
+	}
+	virtual void Test3()
+	{
+		cout << "Base5::Test3()" << endl;
+	}
+	void Test4()
+	{
+		cout << "Base5::Test4()" << endl;
+	}
+	int _b;
+};
+
+class Derived5 :public Base4
+{
+public:
+	virtual void Test1()
+	{
+		cout << "Derived5::Test1()" << endl;
+	}
+	virtual void Test2()
+	{
+		cout << "Derived5::Test2()" << endl;
+	}
+	virtual void Test3()
+	{
+		cout << "Derived5::Test3()" << endl;
+	}
+	int _d;
+};
+
+// 虚函数的调用：通过基类的指针或者引用调用虚函数
+void TestVritual(Base5* pb)
+{
+	pb->Test1();
+	pb->Test2();
+	pb->Test3();
+	pb->Test4();
+}
+void Test7()
+{
+	Base5 b;
+	Derived5 d;
+	TestVritual(&b);
+	TestVritual((Base5*)&d);
+}
+
+
+/*7.3多继承中虚函数表的构建过程*/
+
 
 int main()
 {
+	cout << "Test1()" << endl;
 	Test1();
-	//Test2();
+	cout << endl;
+	cout << "Test2()" << endl;
+	Test2();
+	cout << endl;
+	cout << "TestDestroy()" << endl;
 	TestDestroy();
+	cout << endl;
+	cout << "Test3()" << endl;
+	Test3();
+	cout << endl;
+	cout << "Test4()" << endl;
+	Test4();
+	cout << endl;
+	cout << "Test5()" << endl;
+	Test5();
+	cout << endl;
+	cout << "Test6()" << endl;
+	Test6();
+	cout << endl;
+	cout << "Test7()" << endl;
+	Test7();
+	cout << endl;
 
 	system("pause");
 	return 0;
