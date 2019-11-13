@@ -3,44 +3,39 @@
 #include<iostream>
 using namespace std;
 #include<vector>
-#include<time.h>
-
-bool Jugde(int number)
+void Jugde(int number, int* max, int* min)
 {
-	vector<int> v(number*2);
+	vector<int> v(number * 2);
 	v[0] = 0;
 	v[1] = 1;
 	if (number == 1 || number == 0)
 	{
-		return true;
+		*max = number;
+		*min = number;
+		return;
 	}
-	for (int i = 2; i < 2*number; i++)
+	for (int i = 2; i < 2 * number; i++)
 	{
 		v[i] = v[i - 1] + v[i - 2];
-		if (v[i] == number)
+		if (v[i] >= number)
 		{
-			return true;
+			*max = v[i];
+			*min = v[i - 1];
+			break;
 		}
 	}
-	return false;
 }
 int main()
 {
-int number = 0;
+	int number = 0;
 	cin >> number;
 	int count1 = 0;
 	int count2 = 0;
-	int temp = number;
-	while (!Jugde(number))
-	{
-		number++;
-		count1++;
-	}
-	while (!Jugde(temp))
-	{
-		temp--;
-		count2++;
-	}
+	int max = 0;
+	int min = 0;
+	Jugde(number, &max, &min);
+	count1 = max - number;
+	count2 = number - min;
 	if (count1 < count2)
 	{
 		cout << count1 << endl;
