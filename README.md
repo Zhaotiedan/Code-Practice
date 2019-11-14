@@ -1,4 +1,4 @@
 # Code-Practic
 
 
-all langrage
+all language and all practice
