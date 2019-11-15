@@ -1,3 +1,3 @@
 ﻿  main.cpp
-d:\github\code-practice\c++\习题练习\n乘m棋盘走法\n乘m棋盘走法\main.cpp(28): warning C4715: “GetFun”: 不是所有的控件路径都返回值
+d:\github\code-practice\c++\习题练习\n乘m棋盘走法\n乘m棋盘走法\main.cpp(30): warning C4715: “GetFun”: 不是所有的控件路径都返回值
   n乘m棋盘走法.vcxproj -> D:\github\Code-Practice\C++\习题练习\n乘m棋盘走法\Debug\n乘m棋盘走法.exe
