@@ -1,0 +1,5 @@
+﻿  main.cpp
+d:\github\code-practice\c++\习题练习\找最近公共祖先\找最近公共祖先\main.cpp(43): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\code-practice\c++\习题练习\找最近公共祖先\找最近公共祖先\main.cpp(45): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\code-practice\c++\习题练习\找最近公共祖先\找最近公共祖先\main.cpp(54): warning C4715: “LCA::getLCA”: 不是所有的控件路径都返回值
+  找最近公共祖先.vcxproj -> D:\github\Code-Practice\C++\习题练习\找最近公共祖先\Debug\找最近公共祖先.exe
