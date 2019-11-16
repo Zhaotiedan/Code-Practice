@@ -185,7 +185,7 @@ void Test5()
 	{
 		if (*it % 2 == 0)
 		{
-			it = v2.erase(it);//erase会返回当前删除位置的下一个位置
+			it = v2.erase(it);//erase会返回当前替补上删除位置元素的下一个位置
 		}
 		it++;
 	}
