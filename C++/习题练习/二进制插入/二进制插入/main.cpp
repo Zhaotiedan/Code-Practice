@@ -16,7 +16,7 @@ using namespace std;
 
 int GetBinInsert(int n, int m, int j, int i)
 {
-	m <<= j;
+	m <<= j;//先让插入的数字右移，对齐要插入的位置
 	return n | m;
 }
 int main()
