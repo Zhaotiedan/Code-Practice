@@ -538,7 +538,104 @@ void Test7()
 
 
 /*7.3多继承中虚函数表的构建过程*/
+//1.与单继承中派生类虚表的构建过程相同
+//2.对于派生类新增加的函数，按照其声明次序增加到第一个虚表最后
 
+//验证
+#if 0
+class B1
+{
+public:
+	virtual void TestFunc1()
+	{
+		cout << "B1::TestFunc1()" << endl;
+	}
+
+	virtual void TestFunc2()
+	{
+		cout << "B1::TestFunc2()" << endl;
+	}
+	int _b1;
+};
+
+// 8
+class B2
+{
+public:
+	virtual void TestFunc3()
+	{
+		cout << "B2::TestFunc3()" << endl;
+	}
+
+	virtual void TestFunc4()
+	{
+		cout << "B2::TestFunc4()" << endl;
+	}
+	int _b2;
+};
+
+// 20   24
+class D : public B1, public B2
+{
+public:
+	virtual void TestFunc1()
+	{
+		cout << "D::TestFunc1()" << endl;
+	}
+
+	virtual void TestFunc4()
+	{
+		cout << "D::TestFunc4()" << endl;
+	}
+
+	virtual void TestFunc5()
+	{
+		cout << "D::TestFunc5()" << endl;
+	}
+
+	int _d;
+};
+
+
+typedef void(*PVFT)();
+
+void PrintVFT1(B1& b, const string& str)
+{
+	cout << "D重写B1基类的虚表" << endl;
+	PVFT* pVFT = (PVFT*)(*(int*)&b);
+	while (*pVFT)
+	{
+		(*pVFT)();
+		++pVFT;
+	}
+	cout << endl;
+}
+
+void PrintVFT2(B2& b, const string& str)
+{
+	cout << str << endl;
+	PVFT* pVFT = (PVFT*)(*(int*)&b);
+	while (*pVFT)
+	{
+		(*pVFT)();
+		++pVFT;
+	}
+	cout << endl;
+}
+
+void Test8()
+{
+	cout << sizeof(D) << endl;
+
+	D d;
+	d._b1 = 1;
+	d._b2 = 2;
+	d._d = 3;
+
+	PrintVFT1(d, "D重写B1基类的虚表");
+	PrintVFT2(d, "D重写B2基类的虚表");
+}
+#endif
 
 int main()
 {
