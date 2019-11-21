@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\github\code-practice\c++\习题练习\幸运的袋子\幸运的袋子\main.cpp(10): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\code-practice\c++\习题练习\幸运的袋子\幸运的袋子\main.cpp(35): warning C4018: “<”: 有符号/无符号不匹配
+  幸运的袋子.vcxproj -> D:\github\Code-Practice\C++\习题练习\幸运的袋子\Debug\幸运的袋子.exe
