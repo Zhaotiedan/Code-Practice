@@ -18,6 +18,9 @@
 1 1 1
 输出
 2*/
+
+
+//动态规划
 #include <iostream>
 #include <string>
 #include <vector>
