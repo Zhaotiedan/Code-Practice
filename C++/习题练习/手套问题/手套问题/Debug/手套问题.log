@@ -1,0 +1,4 @@
+﻿  main.cpp
+d:\github\code-practice\c++\习题练习\手套问题\手套问题\main.cpp(42): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\code-practice\c++\习题练习\手套问题\手套问题\main.cpp(47): warning C4018: “<”: 有符号/无符号不匹配
+  手套问题.vcxproj -> D:\github\Code-Practice\C++\习题练习\手套问题\Debug\手套问题.exe
