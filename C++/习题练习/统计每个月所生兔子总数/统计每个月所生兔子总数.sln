@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "统计每个月所生兔子总数", "统计每个月所生兔子总数\统计每个月所生兔子总数.vcxproj", "{F6795915-5BA7-4232-A2A6-EEDB20FFF778}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Debug|x64.ActiveCfg = Debug|x64
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Debug|x64.Build.0 = Debug|x64
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Debug|x86.ActiveCfg = Debug|Win32
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Debug|x86.Build.0 = Debug|Win32
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Release|x64.ActiveCfg = Release|x64
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Release|x64.Build.0 = Release|x64
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Release|x86.ActiveCfg = Release|Win32
+		{F6795915-5BA7-4232-A2A6-EEDB20FFF778}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {0E26F304-E63E-4082-9AAF-49ABE62F18D0}
+	EndGlobalSection
+EndGlobal
