@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.421
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "11-智能指针", "11-智能指针\11-智能指针.vcxproj", "{3DD27B01-6959-4434-891A-24EC9B2EA297}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+		Debug|x86 = Debug|x86
+		Release|x64 = Release|x64
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Debug|x64.ActiveCfg = Debug|x64
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Debug|x64.Build.0 = Debug|x64
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Debug|x86.ActiveCfg = Debug|Win32
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Debug|x86.Build.0 = Debug|Win32
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Release|x64.ActiveCfg = Release|x64
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Release|x64.Build.0 = Release|x64
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Release|x86.ActiveCfg = Release|Win32
+		{3DD27B01-6959-4434-891A-24EC9B2EA297}.Release|x86.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {AB6E6F9B-7D9A-4E4E-AE8B-073FEDFDD210}
+	EndGlobalSection
+EndGlobal
