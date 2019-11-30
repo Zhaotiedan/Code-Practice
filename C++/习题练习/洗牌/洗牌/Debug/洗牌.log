@@ -1,0 +1,5 @@
+﻿  main.cpp
+d:\github\code-practice\c++\习题练习\洗牌\洗牌\main.cpp(35): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\code-practice\c++\习题练习\洗牌\洗牌\main.cpp(40): warning C4018: “<”: 有符号/无符号不匹配
+d:\github\code-practice\c++\习题练习\洗牌\洗牌\main.cpp(66): warning C4018: “<”: 有符号/无符号不匹配
+  洗牌.vcxproj -> D:\github\Code-Practice\C++\习题练习\洗牌\Debug\洗牌.exe
