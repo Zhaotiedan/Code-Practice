@@ -16,7 +16,7 @@ class Solution {
 public:
 	int MoreThanHalfNum_Solution(vector<int> numbers) {
 		int midlength = numbers.size() / 2;
-		vector<int> count(numbers.size()*2);
+		vector<int> count(numbers.size()*2);//可直接给数字，最少给10000的空间，不然会越界
 		for (int i = 0; i < numbers.size(); i++)
 		{
 			count[numbers[i]]++;
