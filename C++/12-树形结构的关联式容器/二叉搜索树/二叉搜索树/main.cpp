@@ -12,6 +12,16 @@ void TestBSTree()
 	}
 	//1.中序遍历，看是否是有序序列
 	tree.Inorder();
+	cout << endl;
+
+	//2.测删除
+	tree.Delete(3);
+	tree.Inorder();
+	cout << endl;
+
+	//3.最左和最右元素
+	cout << tree.MostLeft()->_data << endl;
+	cout << tree.MostRight()->_data << endl;
 }
 int main()
 {

@@ -121,8 +121,143 @@ public:
 			return false;
 		}
 
+		//非空树
+		//1.查找位置
+		Node* pcur = _proot;
+		Node* parent = nullptr;
+		while (pcur)
+		{
+			if (pcur->_data == data)
+			{
+				break;
+			}
+			else if (pcur->_data > data)
+			{
+				parent = pcur;
+				pcur = pcur->_pleft;
+			}
+			else
+			{
+				parent = pcur;
+				pcur = pcur->_pright;
+			}
+		}
+		if (pcur == nullptr)
+			return false;
+
+		//2.删除节点
+		//有种情况：
+		/*a.删除节点无孩子节点且无左孩子
+		  b.删除节点无右孩子
+		  c.删除节点左右孩子都有
+		*/
+		//a.删除节点无孩子节点且无左孩子
+		Node* pdelNode = pcur;
+		if (nullptr == pcur->_pleft)
+		{
+			//根节点
+			if (nullptr == parent)
+			{
+				_proot = parent->_pright;
+			}
+			//非根节点
+			else
+			{
+				//删除节点是父节点的左节点
+				if (pcur == parent->_pleft)
+				{
+					parent->_pleft = pcur->_pright;
+				}
+				//删除节点是父节点的右节点
+				else
+				{
+					parent->_pright = pcur->_pright;
+				}
+			}
+		}
+		//b.删除节点无右孩子,只有左孩子
+		else if (nullptr == pcur->_pright)
+		{
+			//根节点
+			if (nullptr == parent)
+			{
+				parent = parent->_pleft;
+			}
+			//非根节点
+			else
+			{
+				//删除节点是父节点的左节点
+				if (pcur == parent->_pleft)
+				{
+					parent->_pleft = pcur->_pleft;
+				}
+				//删除节点是父节点的右节点
+				else
+				{
+					parent->_pright = pcur->_pleft;
+				}
+			}
+		}
+		//c.删除节点左右孩子都有
+		//在pCur的左子树中找一个替代节点-->一定是左子树中最大的节点(最右侧节点)
+		//或者右子树，最小，最左侧
+		//将替代节点中的内容赋值给待删除节点，然后删除替代节点
+		else
+		{
+			Node* pdel = pcur->_pleft;
+			parent = pcur;
+			while (pdel->_pright)
+			{
+				parent = pdel;
+				pdel = pdel->_pright;
+			}
+			pcur->_data = pdel->_data;
+
+			//删除替代节点
+			//替代节点是父节点的左节点
+			if (parent->_pleft == pdel)
+			{
+				parent->_pleft = pdel->_pleft;
+			}
+			//替代节点是父节点的右节点
+			else
+			{
+				parent->_pright = pdel->_pleft;
+			}
+			pdelNode = pdel;
+		}
+		delete pdelNode;
+		return true;
 	}
 
+	//找最左元素
+	Node* MostLeft()
+	{
+		if (nullptr == _proot)
+		{
+			return nullptr;
+		}
+		Node* pcur = _proot;
+		while (pcur->_pleft)
+		{
+			pcur = pcur->_pleft;
+		}
+		return pcur;
+	}
+	//找最右元素
+	Node* MostRight()
+	{
+		if (nullptr == _proot)
+		{
+			return nullptr;
+		}
+		Node* pcur = _proot;
+		while (pcur->_pright)
+		{
+			pcur = pcur->_pright;
+		}
+		return pcur;
+	}
 	//中序遍历
 	void Inorder()//将该接口封装，保护代码
 	{
@@ -141,3 +276,88 @@ private:
 private:
 	Node* _proot;//根节点
 };
+
+
+//二叉搜索树应用
+//k模型：检测某个单词是否拼写正确，树节点的值域是正确单词，用单词在树中查找，找到则正确，找不到则错误
+//k-v模型：文件中包含了多个ip地址 ，知道每个ip地址出现的次数  <ip，次数>
+template<class K, class V>
+struct BSTNode
+{
+	BSTNode(const K& key, const V& value)
+		: _pLeft(nullptr)
+		, _pRight(nullptr)
+		, _key(key)
+		, _value(value)
+	{}
+
+	BSTNode<T>* _pLeft;
+	BSTNode<T>* _pRight;
+	K _key;
+	V _value;
+};
+
+template<class K, class V>
+class BSTree
+{
+	typedef BSTNode<K, V> Node;
+
+public:
+	BSTree()
+		: _pRoot(nullptr)
+	{}
+
+	// 
+	Node* Find(const K& key)
+	{
+		Node* pCur = _pRoot;
+		while (pCur)
+		{
+			if (key == pCur->_key)
+				return pCur;
+			else if (key < pCur->_key)
+				pCur = pCur->_pLeft;
+			else
+				pCur = pCur->_pRight;
+		}
+
+		return nullptr;
+	}
+
+	bool Insert(const K& key, const V& value)
+	{
+		if (nullptr == _pRoot)
+		{
+			_pRoot = new Node(key, value);
+			return true;
+		}
+
+		Node* pCur = _pRoot;
+		Node* pParent = nullptr;
+		while (pCur)
+		{
+			pParent = pCur;
+			if (key < pCur->_key)
+				pCur = pCur->_pLeft;
+			else if (key > pCur->_key)
+				pCur = pCur->_pRight;
+			else
+				return true;
+		}
+
+		pCur = new Node(key, value);
+		if (key < pParent->_key)
+			pParent->_pLeft = pCur;
+		else
+			pParent->_pRight = pCur;
+
+		return true;
+	}
+private:
+	Node* _pRoot;
+};
+
+
+//二叉搜索树缺陷：查找时间复杂度O(N),
+//如果在构造二叉搜索树期间，数据序列有序或者接近有序：则退化为单支数
+//如果二叉搜索树退化为单支树，则该树会失去平衡
