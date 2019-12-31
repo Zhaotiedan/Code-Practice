@@ -13,12 +13,11 @@
 #include<queue>
 using namespace std;
 
-
 //节点结构体
 template<class T>
 struct HuffmanTreeNode
 {
-	HuffmanTreeNode(const const T& data())
+	HuffmanTreeNode(const const T& data=T())
 		:_data(data)
 		,_pLeft(nullptr)
 		,_pRight(nullptr)
@@ -29,6 +28,17 @@ struct HuffmanTreeNode
 	T _data;//节点权值
 };
 
+//优先级队列默认是大堆,但是我们需要的是小根堆，现在需要新定义一个比较方式构建小堆
+template<class T>
+class Less
+{
+	typedef HuffmanTreeNode<T> Node;
+public:
+	bool operator()(const Node* pLeft, const Node* pRight)
+	{
+		return pLeft->_data > pRight->_data;
+	}
+};
 //哈夫曼树类
 template<class T>
 class HuffmanTree
@@ -44,6 +54,8 @@ public:
 	{
 		CreateHuffmanTree(vdata);
 	}
+
+
 	~HuffmanTree()
 	{
 		_DestroyTree(_pRoot);
@@ -51,21 +63,22 @@ public:
 	//创建哈弗曼树
 	void CreateHuffmanTree(const vector<T>& vdata)
 	{
-		//1.构件森林:将每个节点放入到优先级队列中（按堆的方式，已经自动排序）,放节点的地址
-		priority_queue<Node*> q;
+		//1.构建森林:将每个节点放入到优先级队列中（按堆的方式，已经自动排序）,放节点的地址
+		//priority_queue<Node*> q;
+		priority_queue<Node*, vector<Node*>, Less<T>> q;
 		for (auto e : vdata)
 		{
 			q.push(new Node(e));
 		}
 
-		//2.当森林中超过两个树
-		while (q.size() > 2)
+		//2.当森林中有两颗或超过两个树
+		while (q.size() > 1)
 		{
 			//取两颗较小的树
 			Node* pLeft = q.top();
 			q.pop();
 			Node* pRight = q.top();
-			q.top();
+			q.pop();
 			//得到新节点
 			Node* pParent = new Node(pLeft->_data + pRight->_data);
 			pParent->_pLeft = pLeft;
@@ -98,5 +111,6 @@ void TestHuffmanTree()
 	vector<int> v{ 3,1,7,5 };
 	HuffmanTree<int> t;
 	t.CreateHuffmanTree(v);
-	// 上面可写成 HuffmanTree<int> t(v);
+	// 上面可写成
+	/*HuffmanTree<int> t(v);*/
 }
