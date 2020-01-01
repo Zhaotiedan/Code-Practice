@@ -1,15 +1,4 @@
 ﻿  FileCompressHuff.cpp
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuffman.h(26): error C2143: 语法错误: 缺少“;”(在“<”的前面)
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuffman.h(26): error C4430: 缺少类型说明符 - 假定为 int。注意: C++ 不支持默认 int
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuffman.h(26): error C2238: 意外的标记位于“;”之前
 d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\huffmantree.h(20): warning C4114: 多次使用同一类型限定符
-  d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\huffmantree.h(29): note: 参见对正在编译的 类 模板 实例化 "HuffmanTreeNode<T>" 的引用
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuff.cpp(10): error C2065: “_fileInfo”: 未声明的标识符
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuff.cpp(14): error C2065: “_fileInfo”: 未声明的标识符
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuff.cpp(15): error C2065: “_fileInfo”: 未声明的标识符
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuff.cpp(40): error C2065: “_fileInfo”: 未声明的标识符
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\filecompresshuff.cpp(45): error C2065: “_fileInfo”: 未声明的标识符
-  main.cpp
-d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\huffmantree.h(20): warning C4114: 多次使用同一类型限定符
-  d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\huffmantree.h(29): note: 参见对正在编译的 类 模板 实例化 "HuffmanTreeNode<T>" 的引用
-  正在生成代码...
+  d:\github\code-practice\c++\项目\文件的压缩\文件的压缩\huffmantree.h(30): note: 参见对正在编译的 类 模板 实例化 "HuffmanTreeNode<T>" 的引用
+  文件的压缩.vcxproj -> D:\github\Code-Practice\C++\项目\文件的压缩\Debug\文件的压缩.exe

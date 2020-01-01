@@ -21,6 +21,7 @@ struct HuffmanTreeNode
 		:_data(data)
 		,_pLeft(nullptr)
 		,_pRight(nullptr)
+		,_pParent(nullptr)
 	{}
 	HuffmanTreeNode<T>* _pLeft;
 	HuffmanTreeNode<T>* _pRight;
@@ -30,7 +31,7 @@ struct HuffmanTreeNode
 
 //优先级队列默认是大堆,但是我们需要的是小根堆，现在需要新定义一个比较方式构建小堆
 template<class T>
-class Less
+class CompareLess
 {
 	typedef HuffmanTreeNode<T> Node;
 public:
@@ -50,24 +51,27 @@ public:
 		:_pRoot(nullptr)
 	{}
 
-	HuffmanTree(const vector<T>& vdata)
+	HuffmanTree(const vector<T>& vdata,const T& unused)
 	{
-		CreateHuffmanTree(vdata);
+		CreateHuffmanTree(vdata,unused);
 	}
-
 
 	~HuffmanTree()
 	{
 		_DestroyTree(_pRoot);
 	}
 	//创建哈弗曼树
-	void CreateHuffmanTree(const vector<T>& vdata)
+	void CreateHuffmanTree(const vector<T>& vdata,const T& unused)//unused是无效的权值
 	{
 		//1.构建森林:将每个节点放入到优先级队列中（按堆的方式，已经自动排序）,放节点的地址
 		//priority_queue<Node*> q;
-		priority_queue<Node*, vector<Node*>, Less<T>> q;
+		priority_queue<Node*, vector<Node*>, CompareLess<T>> q;
 		for (auto e : vdata)
 		{
+			if (e == unused)//过滤出现次数为0的字符
+			{
+				continue;
+			}
 			q.push(new Node(e));
 		}
 
@@ -80,9 +84,13 @@ public:
 			Node* pRight = q.top();
 			q.pop();
 			//得到新节点
-			Node* pParent = new Node(pLeft->_data + pRight->_data);
+			Node* pParent = new Node(pLeft->_data + pRight->_data);//此处的data是结构体类型  需要重载+
 			pParent->_pLeft = pLeft;
 			pParent->_pRight = pRight;
+
+			pLeft->_pParent = pParent;
+			pRight->_pParent = pParent;
+
 			//将该新树加入森林
 			q.push(pParent);
 		}
@@ -106,11 +114,11 @@ private:
 	Node* _pRoot;
 };
 
-void TestHuffmanTree()
-{
-	vector<int> v{ 3,1,7,5 };
-	HuffmanTree<int> t;
-	t.CreateHuffmanTree(v);
-	// 上面可写成
-	/*HuffmanTree<int> t(v);*/
-}
+//void TestHuffmanTree()
+//{
+//	vector<int> v{ 3,1,7,5 };
+//	HuffmanTree<int> t;
+//	t.CreateHuffmanTree(v);
+//	// 上面可写成
+//	/*HuffmanTree<int> t(v);*/
+//}

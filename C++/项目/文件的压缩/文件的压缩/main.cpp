@@ -14,7 +14,7 @@ int main()
 {
 	//TestHuffmanTree();
 	FileCompressHuff fc;
-	fc.CompressFile("1.txt");
-	return 0;
+	fc.CompressFile("test.txt");
 	system("pause");
+	return 0;
 }
