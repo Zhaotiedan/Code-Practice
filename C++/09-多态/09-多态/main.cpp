@@ -2,6 +2,7 @@
 
 
 //https://blog.csdn.net/qq_42913794/article/details/103040839  ---多态总结(上)
+//https://editor.csdn.net/md?articleId=103793230 --多态总结(下)
 #include<iostream>
 using namespace std;
 #include<string>
