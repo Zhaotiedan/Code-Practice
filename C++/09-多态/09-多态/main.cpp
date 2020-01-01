@@ -1,8 +1,9 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
+
+//https://blog.csdn.net/qq_42913794/article/details/103040839  ---多态总结(上)
 #include<iostream>
 using namespace std;
-
 #include<string>
 
 /*1.多态的概念*/
@@ -322,7 +323,7 @@ class Place
 {
 	virtual void Describe() = 0;
 };
-
+`
 class BeiJing :public Place
 {
 public:
