@@ -324,7 +324,7 @@ class Place
 {
 	virtual void Describe() = 0;
 };
-`
+
 class BeiJing :public Place
 {
 public:
