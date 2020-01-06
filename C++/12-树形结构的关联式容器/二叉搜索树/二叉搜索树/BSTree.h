@@ -282,35 +282,35 @@ private:
 //k模型：检测某个单词是否拼写正确，树节点的值域是正确单词，用单词在树中查找，找到则正确，找不到则错误
 //k-v模型：文件中包含了多个ip地址 ，知道每个ip地址出现的次数  <ip，次数>
 template<class K, class V>
-struct BSTNode
+struct BSTNode1
 {
-	BSTNode(const K& key, const V& value)
+	BSTNode1(const K& key, const V& value)
 		: _pLeft(nullptr)
 		, _pRight(nullptr)
 		, _key(key)
 		, _value(value)
 	{}
 
-	BSTNode<T>* _pLeft;
-	BSTNode<T>* _pRight;
+	BSTNode1<T>* _pLeft;
+	BSTNode1<T>* _pRight;
 	K _key;
 	V _value;
 };
 
 template<class K, class V>
-class BSTree
+class BSTree1
 {
-	typedef BSTNode<K, V> Node;
+	typedef BSTNode1<K, V> Node1;
 
 public:
-	BSTree()
+	BSTree1()
 		: _pRoot(nullptr)
 	{}
 
-	// 
-	Node* Find(const K& key)
+	// 查找
+	Node1* Find(const K& key)
 	{
-		Node* pCur = _pRoot;
+		Node1* pCur = _pRoot;
 		while (pCur)
 		{
 			if (key == pCur->_key)
@@ -324,16 +324,17 @@ public:
 		return nullptr;
 	}
 
+	//插入
 	bool Insert(const K& key, const V& value)
 	{
 		if (nullptr == _pRoot)
 		{
-			_pRoot = new Node(key, value);
+			_pRoot = new Node1(key, value);
 			return true;
 		}
 
-		Node* pCur = _pRoot;
-		Node* pParent = nullptr;
+		Node1* pCur = _pRoot;
+		Node1* pParent = nullptr;
 		while (pCur)
 		{
 			pParent = pCur;
@@ -345,7 +346,7 @@ public:
 				return true;
 		}
 
-		pCur = new Node(key, value);
+		pCur = new Node1(key, value);
 		if (key < pParent->_key)
 			pParent->_pLeft = pCur;
 		else
@@ -354,7 +355,7 @@ public:
 		return true;
 	}
 private:
-	Node* _pRoot;
+	Node1* _pRoot;
 };
 
 
