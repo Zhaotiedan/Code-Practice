@@ -65,3 +65,5 @@
 * 1.模拟实现strncpy
 * 2.模拟实现strncat
 * 3.模拟实现strncmp
+### work15
+* 1.Z字形规律
