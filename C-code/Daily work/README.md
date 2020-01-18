@@ -61,3 +61,7 @@
 * 4.模拟实现strchr
 * 5.模拟实现strcmp
 * 6.模拟实现memcpy
+### work14
+* 1.模拟实现strncpy
+* 2.模拟实现strncat
+* 3.模拟实现strncmp
