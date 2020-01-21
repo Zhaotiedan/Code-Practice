@@ -1,4 +1,4 @@
 # Code-Practic
 
 
-all languages and all code practice.
+all languages I have learned and all code practice.
