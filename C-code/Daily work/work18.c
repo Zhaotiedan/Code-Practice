@@ -43,8 +43,8 @@ public:
     }
 };
 
-//remove和erase搭配用法：remove负责将所有非val的元素放到vector的首部，值为val的元素放到vector的尾部，返回新的end()值（相当于val部分的begin）。
-                      //erase负责将尾部去除。
+/*remove和erase搭配用法：remove负责将所有非val的元素放到vector的首部，值为val的元素放到vector的尾部，返回新的end()值（相当于val部分的begin）。
+                      //erase负责将尾部去除。*/
 class Solution {
 public:
     int removeElement(vector<int>& nums, int val) {
@@ -52,3 +52,7 @@ public:
         return nums.size();
     }
 };
+
+//4.
+在一般系统中,设float x[8];假设数组x开始于内存1000单元,则x[2]的存储始于(     )
+首先要明白这里的1000是16进制的，要知道x[2]存储起始，就得知道x[2]距离x[0]间有多少个元素就行了，
