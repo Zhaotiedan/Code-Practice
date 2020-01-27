@@ -12,7 +12,7 @@ char *myString()
 int main()
 {
 	char * buffer = myString();
-	printf("%s\n", buffer);//½á¹ûÎªÌÌÌÌÌÌµÄËæ»úÖµ£¬ÒòÎªbufferÎª¾Ö²¿Êı×é£¬º¯Êı½áÊøºó»á±»ÊÕ»Ø
+	printf("%s\n", buffer);//ç»“æœä¸ºçƒ«çƒ«çƒ«çš„éšæœºå€¼ï¼Œå› ä¸ºbufferä¸ºå±€éƒ¨æ•°ç»„ï¼Œå‡½æ•°ç»“æŸåä¼šè¢«æ”¶å›
 	system("pause");
 	return 0;
 }
@@ -56,7 +56,29 @@ int main()
 {
 	char *str = "abcde";
 	str += 2;
-	printf("%lu\n", str);//´òÓ¡cµÄµØÖ·
+	printf("%lu\n", str);//æ‰“å°cçš„åœ°å€
 	system("pause");
 	return 0;
+}
+
+//6.
+int main()
+{
+	int x, y, z;
+	x = 1;
+	y = 1;
+	z = x++, y++, ++y;
+	printf("%d,%d,%d\n", x, y, z);
+	//x=2  y=3  z=1 èµ‹å€¼è¿ç®—ç¬¦ä¼˜å…ˆçº§é«˜äºé€—å·è¡¨è¾¾å¼ï¼Œæ‰€ä»¥å…ˆç®—
+	//(z=x++),y++,++y
+}
+
+//7.
+int main()
+{
+	int i = 10;
+	int j = 10, k = 3;
+	k *= i + j;
+	printf("%d\n", k);
+	//  k=3  +ä¼˜å…ˆçº§é«˜äº*=
 }
