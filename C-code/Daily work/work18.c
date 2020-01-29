@@ -46,7 +46,7 @@ public:
     void merge(vector<int>& nums1, int m, vector<int>& nums2, int n) {
         if(nums1.size()>=m+n)
         {
-            nums1.erase(nums1.begin()+m,nums1.end());
+            nums1.erase(nums1.begin()+m,nums1.end());//注意不能将所有0都删除
             for(int i=0;i<nums2.size();i++)
             {
                 nums1.push_back(nums2[i]);
