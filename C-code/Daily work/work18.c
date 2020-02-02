@@ -98,3 +98,27 @@ public:
 //leetcode 127
 给定一个整数数组，判断是否存在重复元素。
 如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。
+
+//1.个人暴力解法 可能超时
+#include <algorithm>
+class Solution {
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        if(nums.size()==1)
+        {
+            return false;
+        }
+        int val=0;
+        for(int i=0;i<nums.size();i++)
+        {
+            val=nums[i];
+            if(find(nums.begin()+i+1,nums.end(),val)!=nums.end())
+            {
+                return true;
+            }
+        }
+        return false;
+    }
+};
+
+//2.将nums进行排序然后判断相邻是否有相同元素
