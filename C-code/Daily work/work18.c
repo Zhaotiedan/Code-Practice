@@ -122,3 +122,20 @@ public:
 };
 
 //2.将nums进行排序然后判断相邻是否有相同元素
+class Solution {
+    static bool cmp(const int &a,const int &b)
+    {
+        return a<b;
+    }
+public:
+    bool containsDuplicate(vector<int>& nums) {
+        if(nums.size()<=1) return false;
+        sort(nums.begin(),nums.end(),cmp);
+        for(int i=0;i<nums.size()-1;i++)
+        {
+            if(nums[i]==nums[i+1])
+                return true;
+        }
+        return false;
+    }
+};
