@@ -159,3 +159,32 @@ public:
 输出：true
 解释：长按名字中的字符并不是必要的。
 
+class Solution {
+public:
+	bool isLongPressedName(string name, string typed) {
+		auto it1 = name.begin();
+		auto it2 = typed.begin();
+		while (it1 != name.end() && it2 != typed.end() && (*it1 == *it2))
+		{
+			char temp = *it1;
+			it1++;
+			it2++;
+			while (it1 != name.end() && it2 != typed.end() && *it2 == temp && *it1 != temp)
+			{
+				it2++;
+			}
+			if (it1 != name.end() && it2 != typed.end() && *it1 == temp && *it2 != temp )
+			{
+				return false;
+			}
+		}
+		if (it1 != name.end())
+		{
+			if (*it1 != *it2)
+			{
+				return false;
+			}
+		}
+		return true;
+	}
+};
