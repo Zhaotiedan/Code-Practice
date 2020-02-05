@@ -219,3 +219,25 @@ public:
 示例 2：
 输入："a-bC-dEf-ghIj"
 输出："j-Ih-gfE-dCba"
+
+#include<algorithm>
+class Solution {
+public:
+    string reverseOnlyLetters(string S) {
+        vector<char> v(S.size());
+        for(int i=0;i<s.size();i++)
+        {
+            if(S[i]<65&&S[i]>90&&S[i]<97&&S[i]>122)
+            {
+                v[i]=S[i];
+                S.erase(remove(S.begin(),S.begin()+i,S[]),S.end());
+            }
+        }
+        sort(begin(),s.end());
+        for(int j=0;i<v.size();j++)
+        {
+            S.insert(i,v[i]);
+        }
+        return S;
+    }
+};
