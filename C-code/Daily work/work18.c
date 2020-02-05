@@ -225,18 +225,18 @@ class Solution {
 public:
     string reverseOnlyLetters(string S) {
         vector<char> v(S.size());
-        for(int i=0;i<s.size();i++)
+        for(int i=0;i<S.size();i++)
         {
             if(S[i]<65&&S[i]>90&&S[i]<97&&S[i]>122)
             {
                 v[i]=S[i];
-                S.erase(remove(S.begin(),S.begin()+i,S[]),S.end());
+                S.erase(remove(S.begin(),S.begin()+i,S[i]),S.end());
             }
         }
-        sort(begin(),s.end());
-        for(int j=0;i<v.size();j++)
+        sort(S.begin(),S.end());
+        for(int j=0;j<v.size();j++)
         {
-            S.insert(i,v[i]);
+            S.insert(j,1,v[j]);
         }
         return S;
     }
