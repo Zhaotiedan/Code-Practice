@@ -223,21 +223,36 @@ public:
 #include<algorithm>
 class Solution {
 public:
-    string reverseOnlyLetters(string S) {
-        vector<char> v(S.size());
-        for(int i=0;i<S.size();i++)
-        {
-            if(S[i]<65&&S[i]>90&&S[i]<97&&S[i]>122)
-            {
-                v[i]=S[i];
-                S.erase(remove(S.begin(),S.begin()+i,S[i]),S.end());
-            }
-        }
-        sort(S.begin(),S.end());
-        for(int j=0;j<v.size();j++)
-        {
-            S.insert(j,1,v[j]);
-        }
-        return S;
-    }
+	string reverseOnlyLetters(string S) {
+		vector<char> v(S.size());
+		for (int i = 0; i < S.size(); i++)
+		{
+			if (S[i] < 65 || (S[i] > 90 && S[i] < 97) || S[i]>122)
+			{
+				v[i] = S[i];
+			}
+		}
+		auto it = S.begin();
+		while(it != S.end())
+		{
+			if (*it < 65 || (*it > 90 && *it < 97) || *it>122)
+			{
+				it = S.erase(it);
+			}
+			else
+			{
+				it++;
+			}
+		}
+		reverse(S.begin(), S.end());
+		S.reserve(v.size());
+		for (int j = 0; j < v.size(); j++)
+		{
+			if (v[j])
+			{
+				S.insert(j, 1, v[j]);
+			}
+		}
+		return S;
+	}
 };
