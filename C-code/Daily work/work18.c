@@ -220,10 +220,12 @@ public:
 输入："a-bC-dEf-ghIj"
 输出："j-Ih-gfE-dCba"
 
+//法1：先记录每个符号的位置、然后将这些符号删除、然后将S逆置、最后再将符号按位置放进去
 #include<algorithm>
 class Solution {
 public:
 	string reverseOnlyLetters(string S) {
+		//1.记录符号的位置
 		vector<char> v(S.size());
 		for (int i = 0; i < S.size(); i++)
 		{
@@ -232,6 +234,7 @@ public:
 				v[i] = S[i];
 			}
 		}
+		//2.删除符号
 		auto it = S.begin();
 		while(it != S.end())
 		{
@@ -244,7 +247,9 @@ public:
 				it++;
 			}
 		}
+		//3.逆置字符串
 		reverse(S.begin(), S.end());
+		//4.将符号放入字符串
 		S.reserve(v.size());
 		for (int j = 0; j < v.size(); j++)
 		{
