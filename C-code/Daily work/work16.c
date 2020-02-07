@@ -111,3 +111,14 @@ r=(char*)q;
 printf("%s\n",r);
 }y
 输出efgh，long占四个字节，q++就到了e
+
+//12.
+#
+include <stdio.h>
+int main()
+{
+char str[]="ABCD", *p=str;
+printf("%d\n", *(p+4));
+return 0;
+};
+输出 0
