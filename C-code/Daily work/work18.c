@@ -264,3 +264,52 @@ public:
 
 //LeetCode905 按奇偶排序树组
 给定一个非负整数数组 A，返回一个数组，在该数组中， A 的所有偶数元素之后跟着所有奇数元素。
+//常规法
+class Solution {
+public:
+	vector<int> sortArrayByParity(vector<int>& A) {
+		if (A.size() == 1)
+		{
+			return A;
+		}
+		int i = 0;
+		int j = A.size() - 1;
+		while(i < j )
+		{
+			if ((A[i] % 2 != 0 && A[j] % 2 == 0))
+			{
+				swap(A[i], A[j]);
+				i++;
+				j--;
+			}
+			else if (A[i] % 2 == 0 && A[j] % 2 == 0)
+			{
+				i++;
+			}
+			else if (A[i] % 2 != 0 && A[j] % 2 != 0)
+			{
+				j--;
+			}
+			else
+			{
+				i++;
+				j--;
+			}
+		}
+		return A;
+	}
+};
+
+//五行代码法：(但时间和空间复杂不如第一个)
+class Solution {
+public:
+    vector<int> sortArrayByParity(vector<int>& A) {
+        for(int i=0,j=0;j<A.size();++j){
+            if(A[j]%2==0)
+            {
+                swap(A[i++],A[j]);//swap(A[i],A[j]);  i++;
+            }
+	}
+	return A;
+    }
+};
