@@ -98,3 +98,16 @@ DOS中扩展名为.BAK的文件称为  备份文件。
 *优先级最高，先算n*n=4 此时n=2
 +=和-=是同级，从右往左，n=n-4=-2 此时n=-2
 最后+=  =n+n=-2-2=-4 
+
+//11.
+i
+nt main()
+{
+char *p="abcdefgh",*r;
+long *q;
+q=(long*)p;
+q++;
+r=(char*)q;
+printf("%s\n",r);
+}y
+输出efgh，long占四个字节，q++就到了e
