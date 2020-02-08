@@ -313,3 +313,6 @@ public:
 	return A;
     }
 };
+
+//7.leetcode724
+给定一个整数类型的数组 nums，请编写一个能够返回数组“中心索引”的方法。 https://leetcode-cn.com/problems/find-pivot-index/
