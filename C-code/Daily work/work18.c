@@ -95,6 +95,26 @@ public:
     }
 };
 
+  int i=m-1;
+  int j=n-1;
+  int p=nums1.size()-1;
+  while (i>=0&&j>=0){
+      if(nums1[i]>nums2[j]){
+          nums1[p]=nums1[i];
+          i--;
+          p--;
+      }else {
+          nums1[p]=nums2[j];
+          j--;
+          p--;
+      }
+  }
+  while (j>=0){
+      nums1[p]=nums2[j];
+      p--;
+      j--;
+  }
+
 //4.leetcode 127
 给定一个整数数组，判断是否存在重复元素。
 如果任何值在数组中出现至少两次，函数返回 true。如果数组中每个元素都不相同，则返回 false。
