@@ -39,11 +39,11 @@ public:
 			//(1)状态为exist，且当前位置数值与插入元素数值相同，直接返回
 			if (_vtable[hashAddr]._state == EMPTY && _vtable[hashAddr]._data == data)
 			{
-				return;
+				return false;
 			}
 			//(2)状态为delete或为exist，则都线性探测，依次往后遍历查找，知道找到empty的位置为止
 			hashAddr++;
-			if (hashAddr == _table.capacity())//地址下标走到末尾
+			if (hashAddr == _vtable.capacity())//地址下标走到末尾
 			{
 				hashAddr = 0;
 			}
@@ -92,7 +92,7 @@ public:
 	}
 
 	//求当前元素个数
-	size_t GetSize()cosnt;
+	size_t GetSize()const
 	{
 		return _size;
 	}
@@ -114,6 +114,51 @@ void TestHashTable()
 	for (int i = 0; i < v.size(); i++)
 	{
 		ht.Insert(v[i]);
+	}
+	cout << ht.GetSize() << endl;
+
+
+	ht.Insert(87);
+	ht.Insert(77);
+	cout << ht.GetSize() << endl;
+
+
+	if (ht.Find(87) != -1)
+	{
+		cout << "87 in" << endl;
+	}
+	else
+	{
+		cout << "87 not in" << endl;
+	}
+
+	cout << "before erase 67" << endl;
+	if (ht.Find(67) != -1)
+	{
+		cout << "67 in" << endl;
+	}
+	else
+	{
+		cout << "67 not in" << endl;
+	}
+	ht.Erase(67);
+	cout << "after erase 67" << endl;
+	if (ht.Find(67) != -1)
+	{
+		cout << "67 in" << endl;
+	}
+	else
+	{
+		cout << "67 not in" << endl;
+	}
+	//看看87还在不在
+	if (ht.Find(87) != -1)
+	{
+		cout << "87 in" << endl;
+	}
+	else
+	{
+		cout << "87 not in" << endl;
 	}
 }
 
