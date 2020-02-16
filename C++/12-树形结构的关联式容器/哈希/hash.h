@@ -1,6 +1,6 @@
 #pragma once
 
-#include<iosteam>
+#include<iostream>
 #include<vector>
 using namespace std;
 
@@ -21,6 +21,7 @@ struct Elem
 template<class T>
 class HashTable
 {
+public:
 	HashTable(size_t capacity=10)
 		: _size(0)
 	{
@@ -60,16 +61,16 @@ class HashTable
 		//a.通过哈希函数计算元素在哈希表中的位置
 		size_t hashAddr = HashFunc(data);
 		//b.如果当前状态不为empty：
-		while (_table[hashAddr]._state != EMPTY)
+		while (_vtable[hashAddr]._state != EMPTY)
 		{
 			//(1)如果状态为EXIST且元素相同，返回当前下标
-			if (_table[hashAddr]._state == EXIST && _table[hashAddr]._data == data)
+			if (_vtable[hashAddr]._state == EXIST && _vtable[hashAddr]._data == data)
 			{
 				return hashAddr;
 			}
 			//(2)如果状态为EEXIST且data不同 或者 状态为DELETE，继续往后探测
 			hashAddr++;
-			if (hashAddr == _table.capacity())//走到末尾
+			if (hashAddr == _vtable.capacity())//走到末尾
 			{
 				hashAddr = 0;
 			}
@@ -83,7 +84,7 @@ class HashTable
 		size_t pos = HashFunc(data);
 		if (pos != -1)
 		{
-			_table[pos]._state = DELETE;
+			_vtable[pos]._state = DELETE;
 			_size--;
 			return true;
 		}
