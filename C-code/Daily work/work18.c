@@ -348,5 +348,37 @@ nums = [1, 7, 3, 6, 5, 6]
 
 //法一：递归法，一个左值初始为0，一个右值初值为数组和（除去第一个元素），一个每次加一个元素，一个每次减一个元素，直到相等就return
 
-
+class Solution {
+public:
+	int Get(vector<int> v, int i, int sum1, int sum2)
+	{
+		if (sum1 == sum2)
+		{
+			return i;
+		}
+        if(i+1==v.size())
+        {
+            return -1;
+        }
+		return Get(v, i+1, sum1 + v[i], sum2 - v[i + 1]);
+	}
+	int pivotIndex(vector<int>& nums) {
+		if (nums.size() == 0)
+		{
+			return -1;
+		}
+		if (nums.size() <= 2)
+		{
+			return -1;
+		}
+		int sum1 = 0;
+		int sum2 = 0;
+		int result = 0;
+		for (int i = 1; i < nums.size(); i++)
+		{
+			sum2 += nums[i];
+		}
+		return Get(nums, result, sum1, sum2);
+	}
+};
 
