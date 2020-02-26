@@ -1,21 +1,21 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 
-//https://blog.csdn.net/qq_42913794/article/details/103040839  ---¶àÌ¬×Ü½á(ÉÏ)
-//https://editor.csdn.net/md?articleId=103793230 --¶àÌ¬×Ü½á(ÏÂ)
+//https://blog.csdn.net/qq_42913794/article/details/103040839  ---å¤šæ€æ€»ç»“(ä¸Š)
+//https://editor.csdn.net/md?articleId=103793230 --å¤šæ€æ€»ç»“(ä¸‹)
 #include<iostream>
 using namespace std;
 #include<string>
 
-/*1.¶àÌ¬µÄ¸ÅÄî*/
-//È¥Íê³ÉÄ³¸öÐÐÎª£¬µ±²»Í¬µÄ¶ÔÏóÈ¥Íê³ÉÊ±»á²úÉú³ö²»Í¬µÄÐÎÌ¬
-//Í¨¹ý¼Ì³ÐÍ¬Ò»¸ö»ùÀà£¬²úÉúÁËÏà¹ØµÄ²»Í¬µÄÅÉÉúÀà£¬Óë»ùÀàÖÐÍ¬ÃûµÄ³ÉÔ±º¯ÊýÔÚ²»Í¬µÄÅÉÉúÀàÖÐ»áÓÐ²»Í¬µÄÊµÏÖ£¬Ò²¾ÍÊÇËµ£ºÒ»¸ö½Ó¿Ú¡¢¶àÖÖ·½·¨¡£
+/*1.å¤šæ€çš„æ¦‚å¿µ*/
+//åŽ»å®ŒæˆæŸä¸ªè¡Œä¸ºï¼Œå½“ä¸åŒçš„å¯¹è±¡åŽ»å®Œæˆæ—¶ä¼šäº§ç”Ÿå‡ºä¸åŒçš„å½¢æ€
+//é€šè¿‡ç»§æ‰¿åŒä¸€ä¸ªåŸºç±»ï¼Œäº§ç”Ÿäº†ç›¸å…³çš„ä¸åŒçš„æ´¾ç”Ÿç±»ï¼Œä¸ŽåŸºç±»ä¸­åŒåçš„æˆå‘˜å‡½æ•°åœ¨ä¸åŒçš„æ´¾ç”Ÿç±»ä¸­ä¼šæœ‰ä¸åŒçš„å®žçŽ°ï¼Œä¹Ÿå°±æ˜¯è¯´ï¼šä¸€ä¸ªæŽ¥å£ã€å¤šç§æ–¹æ³•ã€‚
 
-/*2.¶àÌ¬µÄÒýÈë*/
+/*2.å¤šæ€çš„å¼•å…¥*/
 
-//ÈýÖÖ²»Í¬Çé¿öµÄÂôÆ±£¬Ò»¸öÂôÆ±·½·¨£¬¶ÔÓ¦²»Í¬ÈËÈºµÄ²»Í¬Ó¦¶Ô·½Ê½
+//ä¸‰ç§ä¸åŒæƒ…å†µçš„å–ç¥¨ï¼Œä¸€ä¸ªå–ç¥¨æ–¹æ³•ï¼Œå¯¹åº”ä¸åŒäººç¾¤çš„ä¸åŒåº”å¯¹æ–¹å¼
 
-//ÆÕÍ¨ÈË
+//æ™®é€šäºº
 class Person
 {
 public:
@@ -24,9 +24,9 @@ public:
 		,_gender(gender)
 		,_age(age)
 	{}
-	virtual void BuyTicket()//virtualµÄ¼ÓÈë
+	virtual void BuyTicket()//virtualçš„åŠ å…¥
 	{
-		cout << "È«¼ÛÆ±" << endl;
+		cout << "å…¨ä»·ç¥¨" << endl;
 	}
 protected:
 	string _name;
@@ -34,7 +34,7 @@ protected:
 	int _age;
 };
 
-//Ñ§Éú
+//å­¦ç”Ÿ
 class Student :public Person
 {
 public:
@@ -42,15 +42,15 @@ public:
 		:Person(name,gender,age)
 		,_number(number)
 	{}
-	virtual void BuyTicket()//virtualµÄ¼ÓÈë,ÅÉÉúÀà²»+virtual¹Ø¼ü×ÖÊ±£¬Ò²¿ÉÒÔ¹¹³ÉÖØÐ´³É¹¦£¬µ«Ð´·¨²»¹æ·¶
+	virtual void BuyTicket()//virtualçš„åŠ å…¥,æ´¾ç”Ÿç±»ä¸+virtualå…³é”®å­—æ—¶ï¼Œä¹Ÿå¯ä»¥æž„æˆé‡å†™æˆåŠŸï¼Œä½†å†™æ³•ä¸è§„èŒƒ
 	{
-		cout << "°ë¼ÛÆ±" << endl;
+		cout << "åŠä»·ç¥¨" << endl;
 	}
 private:
-	int _number;//Ñ§ºÅ
+	int _number;//å­¦å·
 };
 
-//¾üÈË
+//å†›äºº
 class Soilder :public Person
 {
 public:
@@ -58,9 +58,9 @@ public:
 		:Person(name, gender, age)
 		,_hornor(hornor)
 	{}
-	virtual void BuyTicket()//virtualµÄ¼ÓÈë
+	virtual void BuyTicket()//virtualçš„åŠ å…¥
 	{
-		cout << "Ãâ·ÑÆ±" << endl;
+		cout << "å…è´¹ç¥¨" << endl;
 	}
 private:
 	string _hornor;
@@ -71,7 +71,7 @@ void TestBuyTicket(Person& p)
 	p.BuyTicket();
 }
 
-//½â¾ö·½·¨Ò»£º¶¨ÒåÈý¸öÃæÏò²»Í¬ÈËÈºÊ±Ê¹ÓÃµÄ²»Í¬·½·¨£¬µ«Ì«¸´ÔÓ£¬ËùÒÔÒýÈëÁË¶àÌ¬
+//è§£å†³æ–¹æ³•ä¸€ï¼šå®šä¹‰ä¸‰ä¸ªé¢å‘ä¸åŒäººç¾¤æ—¶ä½¿ç”¨çš„ä¸åŒæ–¹æ³•ï¼Œä½†å¤ªå¤æ‚ï¼Œæ‰€ä»¥å¼•å…¥äº†å¤šæ€
 /*
 void TestBuyTicket(Person& p)
 {
@@ -90,13 +90,13 @@ void TestBuyTicket(Soilder& p)
 */
 void Test1()
 {
-	Person p("°×Áì", "ÄÐ", 36);
-	Student st("ÎäÒàæ­", "Å®", 17, 001);
-	Soilder so("Õ½ÀÇ", "ÄÐ", 30, "Ò»µÈ¹¦");
+	Person p("ç™½é¢†", "ç”·", 36);
+	Student st("æ­¦äº¦å§", "å¥³", 17, 001);
+	Soilder so("æˆ˜ç‹¼", "ç”·", 30, "ä¸€ç­‰åŠŸ");
 
 	/*p.BuyTicket();
 	st.BuyTicket();
-	so.BuyTicket();   Ö±½Óµ÷£¬¿ÉÒÔÊµÏÖ£¬µ«Ã»ÓÐÒâÒå£¬²»´æÔÚÒ»¸ö½Ó¿ÚµÄ¸ÅÄî*/
+	so.BuyTicket();   ç›´æŽ¥è°ƒï¼Œå¯ä»¥å®žçŽ°ï¼Œä½†æ²¡æœ‰æ„ä¹‰ï¼Œä¸å­˜åœ¨ä¸€ä¸ªæŽ¥å£çš„æ¦‚å¿µ*/
 
 	TestBuyTicket(p);
 	TestBuyTicket(st);
@@ -104,10 +104,10 @@ void Test1()
 }
 
 
-/*3.º¯ÊýÖØÐ´µÄÁ½¸öÀýÍâ*/
+/*3.å‡½æ•°é‡å†™çš„ä¸¤ä¸ªä¾‹å¤–*/
 
-//1.Ð­±ä£º»ùÀàÖÐÐéº¯Êý·µ»Ø»ùÀàµÄÒýÓÃ(Ö¸Õë)£¬ÅÉÉúÀàÖÐÐéº¯Êý·µ»ØÅÉÉúÀàµÄÒýÓÃ(Ö¸Õë)  
-//×¢Òâ£¬Ö»ÒªÊÇ·µ»Ø»ùÀàËù·µ»ØµÄ»ùÀàÀàÐÍ¾Í¿ÉÒÔ
+//1.åå˜ï¼šåŸºç±»ä¸­è™šå‡½æ•°è¿”å›žåŸºç±»çš„å¼•ç”¨(æŒ‡é’ˆ)ï¼Œæ´¾ç”Ÿç±»ä¸­è™šå‡½æ•°è¿”å›žæ´¾ç”Ÿç±»çš„å¼•ç”¨(æŒ‡é’ˆ)  
+//æ³¨æ„ï¼Œåªè¦æ˜¯è¿”å›žåŸºç±»æ‰€è¿”å›žçš„åŸºç±»ç±»åž‹å°±å¯ä»¥
 class A
 {};
 class B :public A
@@ -121,12 +121,12 @@ public:
 		cout << "Base::TestFunc1()" << endl;
 	}
 
-	virtual void TestFunc2(int)//²ÎÊýÁÐ±í
+	virtual void TestFunc2(int)//å‚æ•°åˆ—è¡¨
 	{
 		cout << "Base::TestFunc2()" << endl;
 	}
 
-	void TestFunc3()//ÎÞvirtual
+	void TestFunc3()//æ— virtual
 	{
 		cout << "Base::TestFunc3()" << endl;
 	}
@@ -142,7 +142,7 @@ public:
 		return this;
 	}
 
-	//·µ»ØµÄÊÇA »ùÀà ÀàÐÍ
+	//è¿”å›žçš„æ˜¯A åŸºç±» ç±»åž‹
 	virtual A& TestFunc6(A& a)
 	{
 		cout << "Base::TestFunc6()" << endl;
@@ -189,8 +189,8 @@ public:
 void TestVirtualFunc(Base* pb)
 {
 	pb->TestFunc1();
-	pb->TestFunc2(10);//²ÎÊýÁÐ±í¶¼²»Í¬
-	pb->TestFunc3();//ÎÞvirtual
+	pb->TestFunc2(10);//å‚æ•°åˆ—è¡¨éƒ½ä¸åŒ
+	pb->TestFunc3();//æ— virtual
 	pb->TestFunc4();
 	pb->TestFunc5();
 
@@ -210,8 +210,8 @@ void Test2()
 
 
 
-//4..Îö¹¹º¯ÊýÖØÐ´:Èç¹û»ùÀàµÄÎö¹¹º¯ÊýÎªÐéº¯Êý£¬´ËÊ±ÅÉÉúÀàÎö¹¹º¯ÊýÖ»Òª¶¨Òå£¬ÎÞÂÛÊÇ·ñ¼Óvirtual¹Ø¼ü×Ö£¬
-//¶¼Óë»ùÀàµÄÎö¹¹º¯Êý¹¹³ÉÖØÐ´
+//4..æžæž„å‡½æ•°é‡å†™:å¦‚æžœåŸºç±»çš„æžæž„å‡½æ•°ä¸ºè™šå‡½æ•°ï¼Œæ­¤æ—¶æ´¾ç”Ÿç±»æžæž„å‡½æ•°åªè¦å®šä¹‰ï¼Œæ— è®ºæ˜¯å¦åŠ virtualå…³é”®å­—ï¼Œ
+//éƒ½ä¸ŽåŸºç±»çš„æžæž„å‡½æ•°æž„æˆé‡å†™
 class Base1
 {
 public:
@@ -246,8 +246,8 @@ public:
 protected:
 	int* _p;
 };
-//Ö»ÓÐÅÉÉúÀàDerivedµÄÎö¹¹º¯ÊýÖØÐ´ÁËBaseµÄÎö¹¹º¯Êý£¬ÏÂÃæµÄdelete¶ÔÏóµ÷ÓÃÎö¹¹º¯Êý£¬
-//²ÅÄÜ¹¹³É¶àÌ¬£¬²ÅÄÜ±£Ö¤pb1ºÍpb2Ö¸ÏòµÄ¶ÔÏóÕýÈ·µÄµ÷ÓÃÎö¹¹º¯Êý¡£
+//åªæœ‰æ´¾ç”Ÿç±»Derivedçš„æžæž„å‡½æ•°é‡å†™äº†Baseçš„æžæž„å‡½æ•°ï¼Œä¸‹é¢çš„deleteå¯¹è±¡è°ƒç”¨æžæž„å‡½æ•°ï¼Œ
+//æ‰èƒ½æž„æˆå¤šæ€ï¼Œæ‰èƒ½ä¿è¯pb1å’Œpb2æŒ‡å‘çš„å¯¹è±¡æ­£ç¡®çš„è°ƒç”¨æžæž„å‡½æ•°ã€‚
 void TestDestroy()
 {
 	Base1* pb1 = new Base1(10);
@@ -258,9 +258,9 @@ void TestDestroy()
 
 }
 
-/*5. C++11 override ºÍ final*/
-//1. final£ºÐÞÊÎÐéº¯Êý£¬±íÊ¾¸ÃÐéº¯Êý²»ÄÜÔÙ±»¼Ì³Ð
-//×¢Òâ£¬C++98Àï²»¿ÉÊ¹ÓÃ
+/*5. C++11 override å’Œ final*/
+//1. finalï¼šä¿®é¥°è™šå‡½æ•°ï¼Œè¡¨ç¤ºè¯¥è™šå‡½æ•°ä¸èƒ½å†è¢«ç»§æ‰¿
+//æ³¨æ„ï¼ŒC++98é‡Œä¸å¯ä½¿ç”¨
 #if 0
 class Base2
 {
@@ -283,8 +283,8 @@ public:
 };
 #endif
 
-//2. override: ÐÞÊÎÅÉÉúÀàÐéº¯Êý
-//¼ì²â¸ÃÐéº¯ÊýÊÇ·ñÖØÐ´ÁË»ùÀàÄ³¸öÐéº¯Êý£¬Èç¹ûÃ»ÓÐÖØÐ´±àÒë±¨´í
+//2. override: ä¿®é¥°æ´¾ç”Ÿç±»è™šå‡½æ•°
+//æ£€æµ‹è¯¥è™šå‡½æ•°æ˜¯å¦é‡å†™äº†åŸºç±»æŸä¸ªè™šå‡½æ•°ï¼Œå¦‚æžœæ²¡æœ‰é‡å†™ç¼–è¯‘æŠ¥é”™
 class Base2
 {
 public:
@@ -315,11 +315,11 @@ void Test3()
 	TestOverVirtualFun(&d);
 }
 
-/*6.³éÏóÀà*/
-//ÔÚÐéº¯ÊýµÄºóÃæÐ´ÉÏ = 0 £¬ÔòÕâ¸öº¯ÊýÎª´¿Ðéº¯Êý¡£
-//°üº¬´¿Ðéº¯ÊýµÄÀà½Ð×ö³éÏóÀà£¨Ò²½Ð½Ó¿ÚÀà£©£¬³éÏóÀà²»ÄÜ¶¨Òå¶ÔÏó£¬µ«¿ÉÒÔ¶¨ÒåÖ¸Õë(ÒýÓÃ)
-//ÅÉÉúÀà¼Ì³ÐºóÒ²²»ÄÜÊµÀý»¯³ö¶ÔÏó£¬Ö»ÓÐÖØÐ´´¿Ðéº¯Êý£¬ÅÉÉúÀà²ÅÄÜÊµÀý»¯³ö¶ÔÏó¡£
-//´¿Ðéº¯Êý¹æ·¶ÁËÅÉÉúÀà±ØÐëÖØÐ´£¬ÁíÍâ´¿Ðéº¯Êý¸üÌåÏÖ½Ó¿Ú¼Ì³Ð
+/*6.æŠ½è±¡ç±»*/
+//åœ¨è™šå‡½æ•°çš„åŽé¢å†™ä¸Š = 0 ï¼Œåˆ™è¿™ä¸ªå‡½æ•°ä¸ºçº¯è™šå‡½æ•°ã€‚
+//åŒ…å«çº¯è™šå‡½æ•°çš„ç±»å«åšæŠ½è±¡ç±»ï¼ˆä¹Ÿå«æŽ¥å£ç±»ï¼‰ï¼ŒæŠ½è±¡ç±»ä¸èƒ½å®šä¹‰å¯¹è±¡ï¼Œä½†å¯ä»¥å®šä¹‰æŒ‡é’ˆ(å¼•ç”¨)
+//æ´¾ç”Ÿç±»ç»§æ‰¿åŽä¹Ÿä¸èƒ½å®žä¾‹åŒ–å‡ºå¯¹è±¡ï¼Œåªæœ‰é‡å†™çº¯è™šå‡½æ•°ï¼Œæ´¾ç”Ÿç±»æ‰èƒ½å®žä¾‹åŒ–å‡ºå¯¹è±¡ã€‚
+//çº¯è™šå‡½æ•°è§„èŒƒäº†æ´¾ç”Ÿç±»å¿…é¡»é‡å†™ï¼Œå¦å¤–çº¯è™šå‡½æ•°æ›´ä½“çŽ°æŽ¥å£ç»§æ‰¿
 class Place
 {
 	virtual void Describe() = 0;
@@ -351,7 +351,7 @@ void Test4()
 	pbei->Describe();
 
 	/*Place* ppbei = new BeiJing;
-	ppbei->Describe();  ±¨´í*/
+	ppbei->Describe();  æŠ¥é”™*/
 
 	ShangHai sh;
 	sh.Describe();
@@ -359,14 +359,14 @@ void Test4()
 	psh->Describe();
 
 	/*Place* ppsh = new ShangHai;
-	ppsh->Describe(); ±¨´í*/
+	ppsh->Describe(); æŠ¥é”™*/
 }
 
-/*7.¶àÌ¬µÄÔ­Àí*/
+/*7.å¤šæ€çš„åŽŸç†*/
 
-/*7.1»ùÀàºÍÅÉÉúÀàÐéº¯Êý±íµÄ¹¹½¨¹ý³Ì*/
+/*7.1åŸºç±»å’Œæ´¾ç”Ÿç±»è™šå‡½æ•°è¡¨çš„æž„å»ºè¿‡ç¨‹*/
 
-//1.¿´°üº¬Ðéº¯ÊýµÄÀàµÄ´óÐ¡ÊÇ¶àÉÙ
+//1.çœ‹åŒ…å«è™šå‡½æ•°çš„ç±»çš„å¤§å°æ˜¯å¤šå°‘
 class Base3
 {
 public:
@@ -384,9 +384,9 @@ void Test5()
 {
 	cout << sizeof(Base3) << endl;//8
 }
-//½áÂÛ£º//Èç¹ûÒ»¸öÀàÖÐ°üº¬ÓÐÐéº¯Êý£¬Àà´óÐ¡»á¶àËÄ¸ö×Ö½Ú
-//Èç¹ûÀàÃ»ÓÐÏÔÊ½¶¨Òå¹¹Ôìº¯Êý£¬±àÒëÆ÷»á¸ø¸ÃÀàÉú³ÉÒ»¸öÄ¬ÈÏµÄ¹¹Ôìº¯Êý£¬×÷ÓÃ£º½«Ðé±íÖ¸Õë·ÅÔÚ¶ÔÏóµÄÇ°ËÄ¸ö×Ö½ÚÀï
-//Èç¹ûÀàÏÔÊ½¶¨ÒåÁË¹¹Ôìº¯Êý£¬±àÒëÆ÷»á¶ÔÓÃ»§Ìá¹©µÄ¹¹Ôìº¯Êý½øÐÐ¸ÄÐ´£º½«Ðé±íÖ¸Õë·ÅÔÚÇ°4¸ö×Ö½ÚÀï
+//ç»“è®ºï¼š//å¦‚æžœä¸€ä¸ªç±»ä¸­åŒ…å«æœ‰è™šå‡½æ•°ï¼Œç±»å¤§å°ä¼šå¤šå››ä¸ªå­—èŠ‚
+//å¦‚æžœç±»æ²¡æœ‰æ˜¾å¼å®šä¹‰æž„é€ å‡½æ•°ï¼Œç¼–è¯‘å™¨ä¼šç»™è¯¥ç±»ç”Ÿæˆä¸€ä¸ªé»˜è®¤çš„æž„é€ å‡½æ•°ï¼Œä½œç”¨ï¼šå°†è™šè¡¨æŒ‡é’ˆæ”¾åœ¨å¯¹è±¡çš„å‰å››ä¸ªå­—èŠ‚é‡Œ
+//å¦‚æžœç±»æ˜¾å¼å®šä¹‰äº†æž„é€ å‡½æ•°ï¼Œç¼–è¯‘å™¨ä¼šå¯¹ç”¨æˆ·æä¾›çš„æž„é€ å‡½æ•°è¿›è¡Œæ”¹å†™ï¼šå°†è™šè¡¨æŒ‡é’ˆæ”¾åœ¨å‰4ä¸ªå­—èŠ‚é‡Œ
 
 
 class Base4
@@ -406,8 +406,8 @@ public:
 	}
 	int _b;
 };
-//½áÂÛ£º»ùÀàÐé±í¹¹½¨¹ý³Ì£º½«Ðéº¯Êý°´ÕÕÆäÔÚÀàÖÐµÄÉùÃ÷´ÎÐòÒÀ´ÎÔö¼Óµ½Ðé±íÖÐ
-//Ö¤Ã÷£º¼àÊÓ²é¿´Ðéº¯Êý±í¾Íok
+//ç»“è®ºï¼šåŸºç±»è™šè¡¨æž„å»ºè¿‡ç¨‹ï¼šå°†è™šå‡½æ•°æŒ‰ç…§å…¶åœ¨ç±»ä¸­çš„å£°æ˜Žæ¬¡åºä¾æ¬¡å¢žåŠ åˆ°è™šè¡¨ä¸­
+//è¯æ˜Žï¼šç›‘è§†æŸ¥çœ‹è™šå‡½æ•°è¡¨å°±ok
 
 class Derived4 :public Base4
 {
@@ -434,23 +434,23 @@ public:
 
 	int _d;
 };
-//×ÓÀàÐé±í¹¹½¨¹ý³Ì£º
-//1.½«»ùÀàÐé±íÖÐµÄÄÚÈÝ¿½±´Ò»·Ý·Åµ½×ÓÀàÐé±íÖÐ
-//2.Èç¹ûÅÉÉúÀàÖØÐ´ÁË»ùÀàÄ³¸öÐéº¯Êý£¬ÅÉÉúÀàÓÃ×Ô¼ºµÄÐéº¯ÊýµØÖ·Ìæ»»ÏàÍ¬Æ«ÒÆÁ¿µØÖ·µÄ»ùÀàÐéº¯ÊýÈë¿ÚµØÖ·
-//3.Èç¹ûÅÉÉúÀàÐÂÔö¼ÓµÄÐéº¯Êý£¬Ôò°´ÕÕËüÃÇµÄÉùÃ÷´ÎÐòÒ»Ò»Ìí¼Óµ½Ðé±íµÄºóÃæ
+//å­ç±»è™šè¡¨æž„å»ºè¿‡ç¨‹ï¼š
+//1.å°†åŸºç±»è™šè¡¨ä¸­çš„å†…å®¹æ‹·è´ä¸€ä»½æ”¾åˆ°å­ç±»è™šè¡¨ä¸­
+//2.å¦‚æžœæ´¾ç”Ÿç±»é‡å†™äº†åŸºç±»æŸä¸ªè™šå‡½æ•°ï¼Œæ´¾ç”Ÿç±»ç”¨è‡ªå·±çš„è™šå‡½æ•°åœ°å€æ›¿æ¢ç›¸åŒåç§»é‡åœ°å€çš„åŸºç±»è™šå‡½æ•°å…¥å£åœ°å€
+//3.å¦‚æžœæ´¾ç”Ÿç±»æ–°å¢žåŠ çš„è™šå‡½æ•°ï¼Œåˆ™æŒ‰ç…§å®ƒä»¬çš„å£°æ˜Žæ¬¡åºä¸€ä¸€æ·»åŠ åˆ°è™šè¡¨çš„åŽé¢
 
-//Ö¤Ã÷£ºÓÉÓÚÍ¨¹ý¼àÊÓ´°¿Ú²»ÄÜÖ±½Ó¿´µ½ÅÉÉúÀàÐÂÔö¼ÓµÄÐéº¯Êý 
-//½â¾ö·½·¨£ºÍ¨¹ý¼ÇÂ¼Ðéº¯Êý±íµÄµØÖ·£¬ÔÚÄÚ´æ´°¿ÚÖÐ²é¿´¡£
-/*·¢ÏÖÒ»¹²Õ¼ÁËÎå¸ö4×Ö½Ú¿Õ¼ä£¬Í¨¹ý¶Ô±È£¬·¢ÏÖÇ°Èý¸öÒÀ´ÎÓë»ùÀàµÄÐéº¯ÊýµØÖ·ÏàÆ¥Åä£¬
-ÄÇÃ´£¬ÏÖÔÚ¾ÍÐèÒªÑéÖ¤ºóÁ½¸öµØÖ·ÊÇ²»ÊÇÅÉÉúÀàÐÂÔö¼ÓµÄÐéº¯ÊýµÄ¡£*/
-//ÑéÖ¤·½·¨Ò»£ºµ÷ÓÃÒ»´ÎÅÉÉúÀàÐÂÔö¼ÓµÄÐéº¯Êý£¬µ÷ÊÔ×ªµ½·´»ã±à£¬¿´callÖ¸ÁîµÄº¯ÊýµØÖ·ÊÇ·ñÓëÄÇºóÁ½¸öÐéº¯ÊýµØÖ·Æ¥Åä¡£
-//ÑéÖ¤·¨¶þ£ºµ÷ÓÃ¸ÃÐéº¯Êý
-  //µ÷ÓÃ²½Öè£º1.´Ó¶ÔÏóÇ°4¸ö×Ö½ÚÖÐ»ñÈ¡±í¸ñµØÖ·vfptr
-            //2.´ÓvfptrÖ¸ÏòµÄ¿Õ¼äÖÐ»ñÈ¡º¯ÊýµÄÈë¿ÚµØÖ·
-            //3.¿ÉÒÔµ÷ÓÃ¸Ãº¯Êý
+//è¯æ˜Žï¼šç”±äºŽé€šè¿‡ç›‘è§†çª—å£ä¸èƒ½ç›´æŽ¥çœ‹åˆ°æ´¾ç”Ÿç±»æ–°å¢žåŠ çš„è™šå‡½æ•° 
+//è§£å†³æ–¹æ³•ï¼šé€šè¿‡è®°å½•è™šå‡½æ•°è¡¨çš„åœ°å€ï¼Œåœ¨å†…å­˜çª—å£ä¸­æŸ¥çœ‹ã€‚
+/*å‘çŽ°ä¸€å…±å äº†äº”ä¸ª4å­—èŠ‚ç©ºé—´ï¼Œé€šè¿‡å¯¹æ¯”ï¼Œå‘çŽ°å‰ä¸‰ä¸ªä¾æ¬¡ä¸ŽåŸºç±»çš„è™šå‡½æ•°åœ°å€ç›¸åŒ¹é…ï¼Œ
+é‚£ä¹ˆï¼ŒçŽ°åœ¨å°±éœ€è¦éªŒè¯åŽä¸¤ä¸ªåœ°å€æ˜¯ä¸æ˜¯æ´¾ç”Ÿç±»æ–°å¢žåŠ çš„è™šå‡½æ•°çš„ã€‚*/
+//éªŒè¯æ–¹æ³•ä¸€ï¼šåˆ›å»ºä¸€ä¸ªç±»å¯¹è±¡ï¼Œé€šè¿‡è¯¥å¯¹è±¡è°ƒç”¨ä¸€æ¬¡æ´¾ç”Ÿç±»æ–°å¢žåŠ çš„è™šå‡½æ•°ï¼Œè°ƒè¯•è½¬åˆ°åæ±‡ç¼–ï¼Œçœ‹callæŒ‡ä»¤çš„å‡½æ•°åœ°å€æ˜¯å¦ä¸Žé‚£åŽä¸¤ä¸ªè™šå‡½æ•°åœ°å€åŒ¹é…ã€‚
+//éªŒè¯æ³•äºŒï¼šè°ƒç”¨è¯¥è™šå‡½æ•°
+  //è°ƒç”¨æ­¥éª¤ï¼š1.ä»Žå¯¹è±¡å‰4ä¸ªå­—èŠ‚ä¸­èŽ·å–è¡¨æ ¼åœ°å€vfptr
+            //2.ä»ŽvfptræŒ‡å‘çš„ç©ºé—´ä¸­èŽ·å–è™šå‡½æ•°çš„å…¥å£åœ°å€
+            //3.å¯ä»¥è°ƒç”¨è¯¥å‡½æ•°
 
 #include<string>
-typedef void(*PVFT)();//¶¨ÒåÒ»¸öº¯ÊýÖ¸Õë
+typedef void(*PVFT)();//å®šä¹‰ä¸€ä¸ªå‡½æ•°æŒ‡é’ˆ
 
 void PrintTable(Base4& b,const string& information)
 {
@@ -458,7 +458,7 @@ void PrintTable(Base4& b,const string& information)
 	PVFT* pVFT = (PVFT*)(*(int*)&b);
 	while (*pVFT)
 	{
-		(*pVFT)();//Í¨¹ýº¯ÊýÖ¸Õëµ÷ÓÃ¸Ãº¯Êý
+		(*pVFT)();//é€šè¿‡å‡½æ•°æŒ‡é’ˆè°ƒç”¨è¯¥å‡½æ•°
 		pVFT++;
 	}
 	cout << endl;
@@ -467,21 +467,21 @@ void PrintTable(Base4& b,const string& information)
 void Test6()
 {
 	Base4 b1;
-	Base4 b2; //Í¨¹ýÔÚÄÚ´æÖÐ¼ì²âb1ºÍb2Ç°4¸ö×Ö½ÚÄÚÈÝ£ºÁ½¸ö¶ÔÏóÇ°4¸ö×Ö½ÚÍêÈ«ÏàÍ¬£¬ËùÒÔÍ¬Ò»¸öÀà²»Í¬¶ÔÏó£¬ÔÚµ×²ã¹²ÏíÒ»ÕÅÐé±í
+	Base4 b2; //é€šè¿‡åœ¨å†…å­˜ä¸­æ£€æµ‹b1å’Œb2å‰4ä¸ªå­—èŠ‚å†…å®¹ï¼šä¸¤ä¸ªå¯¹è±¡å‰4ä¸ªå­—èŠ‚å®Œå…¨ç›¸åŒï¼Œæ‰€ä»¥åŒä¸€ä¸ªç±»ä¸åŒå¯¹è±¡ï¼Œåœ¨åº•å±‚å…±äº«ä¸€å¼ è™šè¡¨
 	b1._b = 1;
 	Derived4 d;
 	d._d = 1;
 
-	//ÑéÖ¤·¨Ò»£º
+	//éªŒè¯æ³•ä¸€ï¼š
 	d.Test5();
 	d.Test4();
 
-	//ÑéÖ¤·¨¶þ£º
+	//éªŒè¯æ³•äºŒï¼š
 	PrintTable(b1, "Base4 :VFT table");
 	PrintTable(d, "Derived4 :VFT table");
 }
 
-/*7.2Ðéº¯ÊýµÄµ÷ÓÃÔ­Àí*/
+/*7.2è™šå‡½æ•°çš„è°ƒç”¨åŽŸç†*/
 class Base5
 {
 public:
@@ -522,7 +522,7 @@ public:
 	int _d;
 };
 
-// Ðéº¯ÊýµÄµ÷ÓÃ£ºÍ¨¹ý»ùÀàµÄÖ¸Õë»òÕßÒýÓÃµ÷ÓÃÐéº¯Êý
+// è™šå‡½æ•°çš„è°ƒç”¨ï¼šé€šè¿‡åŸºç±»çš„æŒ‡é’ˆæˆ–è€…å¼•ç”¨è°ƒç”¨è™šå‡½æ•°
 void TestVritual(Base5* pb)
 {
 	pb->Test1();
@@ -539,11 +539,11 @@ void Test7()
 }
 
 
-/*7.3¶à¼Ì³ÐÖÐÐéº¯Êý±íµÄ¹¹½¨¹ý³Ì*/
-//1.Óëµ¥¼Ì³ÐÖÐÅÉÉúÀàÐé±íµÄ¹¹½¨¹ý³ÌÏàÍ¬
-//2.¶ÔÓÚÅÉÉúÀàÐÂÔö¼ÓµÄº¯Êý£¬°´ÕÕÆäÉùÃ÷´ÎÐòÔö¼Óµ½µÚÒ»¸öÐé±í×îºó
+/*7.3å¤šç»§æ‰¿ä¸­è™šå‡½æ•°è¡¨çš„æž„å»ºè¿‡ç¨‹*/
+//1.ä¸Žå•ç»§æ‰¿ä¸­æ´¾ç”Ÿç±»è™šè¡¨çš„æž„å»ºè¿‡ç¨‹ç›¸åŒ
+//2.å¯¹äºŽæ´¾ç”Ÿç±»æ–°å¢žåŠ çš„å‡½æ•°ï¼ŒæŒ‰ç…§å…¶å£°æ˜Žæ¬¡åºå¢žåŠ åˆ°ç¬¬ä¸€ä¸ªè™šè¡¨æœ€åŽ
 
-//ÑéÖ¤
+//éªŒè¯
 #if 0
 class B1
 {
@@ -603,7 +603,7 @@ typedef void(*PVFT)();
 
 void PrintVFT1(B1& b, const string& str)
 {
-	cout << "DÖØÐ´B1»ùÀàµÄÐé±í" << endl;
+	cout << "Dé‡å†™B1åŸºç±»çš„è™šè¡¨" << endl;
 	PVFT* pVFT = (PVFT*)(*(int*)&b);
 	while (*pVFT)
 	{
@@ -634,8 +634,8 @@ void Test8()
 	d._b2 = 2;
 	d._d = 3;
 
-	PrintVFT1(d, "DÖØÐ´B1»ùÀàµÄÐé±í");
-	PrintVFT2(d, "DÖØÐ´B2»ùÀàµÄÐé±í");
+	PrintVFT1(d, "Dé‡å†™B1åŸºç±»çš„è™šè¡¨");
+	PrintVFT2(d, "Dé‡å†™B2åŸºç±»çš„è™šè¡¨");
 }
 #endif
 
