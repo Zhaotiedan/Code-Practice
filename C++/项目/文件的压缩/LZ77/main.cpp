@@ -39,10 +39,10 @@ MIN_MATCH_LEN=3;  MAX_MATCH_LEN=258;
 		head[hashAddr]=pos;
    哈希表的查找匹配过程：
                首先：计算哈希地址
-	       第一次匹配：matchAddr=head[hashAddr];不一定是最长匹配，匹配继续
-	       第二次匹配：matchAddr=prev[matchAddr];不一定是最长匹配，匹配继续
-	       第三次匹配：matchAddr=prev[matchAddr];不一定是最长匹配，匹配继续
-	       第四次匹配：matchAddr=prev[matchAddr]==0;说明已经没有相同哈希地址字符串，匹配结束
+	       第一次匹配：matchAddr=head[hashAddr]; 不一定是最长匹配，匹配继续
+	       第二次匹配：matchAddr=prev[matchAddr]; 不一定是最长匹配，匹配继续
+	       第三次匹配：matchAddr=prev[matchAddr]; 不一定是最长匹配，匹配继续
+	       第四次匹配：matchAddr=prev[matchAddr]==0; 说明已经没有相同哈希地址字符串，匹配结束
 
 
    (1)如果当前字符在缓冲区未找到，
