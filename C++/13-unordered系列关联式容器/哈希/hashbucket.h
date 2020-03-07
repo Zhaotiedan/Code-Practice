@@ -15,7 +15,6 @@ public:
 		:_pNext(nullptr)
 		,_data(data)
 	{}
-private:
 	HashNode<T>* _pNext;
 	T _data;
 };
@@ -61,10 +60,11 @@ public:
 	HashBucket(size_t capacity = 10)
 		:_size(0)
 	{
-		_vtable.resize(GetNextPrime(10));	
+		_vtable.resize(10/*GetNextPrime(10)*/);	
 
 	}
-
+        
+        //插入
 	bool Insert(const T& data)
 	{
 		//1.计算桶号
@@ -87,6 +87,7 @@ public:
 		return true;
 	}
 
+        //删除
 	bool Erase(const T& data)
 	{
 		//1.计算桶号
@@ -117,6 +118,7 @@ public:
 			}
 			else
 			{
+				pre = pcur;
 				pcur = pcur->_pNext;
 			}
 		}
@@ -155,12 +157,22 @@ public:
 		return _size == 0;
 	}
 
-	void Print()
+	void PrintHashBucket()
 	{
-
+		for (int bucketNum = 0; bucketNum < _vtable.capacity(); bucketNum++)
+		{
+			Node* pcur = _vtable[bucketNum];
+			cout << "table[" << bucketNum << "]:";
+			while (pcur)
+			{
+				cout << pcur->_data << "-->";
+				pcur = pcur->_pNext;
+			}
+			cout << "NULL" << endl;
+		}
 	}
 private:
-	size_t HashFunc(const T& data)
+	size_t HashFunc(const T& data)const
 	{
 		return DF()(data) % _vtable.capacity();
 	}
@@ -168,3 +180,33 @@ private:
 	vector<Node*> _vtable;//链表中存储的是节点的地址
 	size_t _size;//有效元素个数
 };
+
+void TestHashBucket()
+{
+	HashBucket<int> hb;
+	vector<int> v{ 1,4,7,9,6,5 };
+	for (auto e : v)
+	{
+		hb.Insert(e);
+	}
+	cout <<"hb.size:"<< hb.Size() << endl;//6
+	hb.PrintHashBucket();
+
+	hb.Insert(44);
+	hb.Insert(54);
+	cout << "hb.size:" << hb.Size() << endl;//8
+	hb.PrintHashBucket();
+
+	hb.Erase(44);
+	if (hb.Find(44))
+	{
+		cout << "44 is in HashBucket" << endl;
+	}
+	else
+	{
+		cout << "44 is not in HashBucket" << endl;
+	}
+	cout << "hb.size:" << hb.Size() << endl;//7
+	hb.PrintHashBucket();
+
+}
