@@ -61,21 +61,27 @@
 (1)通过哈希函数计算当前桶号
 (2)在桶号所在链表中寻找值为data的节点
     a.如果找到，删除
-	b.找不到，继续往后找，直到末尾
+    b.找不到，继续往后找，直到末尾
 
 3.查找
 (1)通过哈希函数计算当前桶号
 (2)在桶号所在链表中寻找值为data的节点
     a.如果找到，返回
-	b.找不到，继续往后找，直到末尾
+    b.找不到，继续往后找，直到末尾
+
+问题：
+1.什么时候扩容
+2.怎么扩容
+3.改造哈希表封装unordered系列关联式容器 map和set
 */
 
-#include "hashtable.h"
-
+//#include "hashtable.h"
+#include "hashbucket.h"
 int main()
 {
-	TestHashTable1();
-	TestHashTable2();
+	/*TestHashTable1();
+	TestHashTable2();*/
+	TestHashBucket();
 	system("pause");
 	return 0;
 }
