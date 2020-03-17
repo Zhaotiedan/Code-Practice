@@ -1,5 +1,5 @@
 #define _CRT_SECURE_NO_WARNINGS 1
-/*¸ø¶¨Ò»¸öÊ®½øÖÆÊýM£¬ÒÔ¼°ÐèÒª×ª»»µÄ½øÖÆÊýN¡£½«Ê®½øÖÆÊýM×ª»¯ÎªN½øÖÆÊý*/
+/*ç»™å®šä¸€ä¸ªåè¿›åˆ¶æ•°Mï¼Œä»¥åŠéœ€è¦è½¬æ¢çš„è¿›åˆ¶æ•°Nã€‚å°†åè¿›åˆ¶æ•°Mè½¬åŒ–ä¸ºNè¿›åˆ¶æ•°*/
 
 
 #include<iostream>
