@@ -16,7 +16,7 @@
 71
 4435274  */
 
-方法：
+方法1：
 先将十六进制数转换成二进制数，再由二进制数转换成八进制。
 #define _CRT_SECURE_NO_WARNINGS 1
 
@@ -107,6 +107,19 @@ int main()
 		cout << endl;
 
 	}
+	system("pause");
+	return 0;
+}
+
+方法2：用c++11里面的进制输出方法
+#include <iostream>
+#include <iomanip>
+using namespace std;
+int main() {
+	int x;
+	cout << "input hex data " << endl;
+	cin >> hex >> x; // 这个方法输入的数处理为16进制
+	cout << oct << x << endl; // 这个方法输出的数处理为8进制
 	system("pause");
 	return 0;
 }
