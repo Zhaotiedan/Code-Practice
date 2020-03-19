@@ -138,7 +138,7 @@ int main()
 		res[i] = temp % 10;
 		num = temp / 10;
 	}
-	if (num)
+	if (num)//注意最后一位可能会进位1
 	{
 		res.insert(res.begin(), 1);
 	}
