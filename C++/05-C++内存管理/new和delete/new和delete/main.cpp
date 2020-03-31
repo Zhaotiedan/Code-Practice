@@ -6,7 +6,6 @@ using namespace std;
 
 //博客详解：https://blog.csdn.net/qq_42913794/article/details/101179179
 
-
 // 1.new/delete操作内置类型
 //申请和释放单个内存，用new和delete操作符，申请和释放连续的空间，用new[]和delete[]操作符
 void Test1()
