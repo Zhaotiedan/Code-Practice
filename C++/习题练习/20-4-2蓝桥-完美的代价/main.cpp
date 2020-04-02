@@ -18,6 +18,7 @@ mamad
 样例输出
 3
 
+//20%
 #include<iostream>
 using namespace std;
 #include<string>
