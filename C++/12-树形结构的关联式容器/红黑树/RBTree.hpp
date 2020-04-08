@@ -10,7 +10,7 @@ enum Color
 template<class T>
 struct RBTreeNode
 {
-	RBtreeNode(const T& data = T(), Color color = RED)//节点颜色默认给成红色会对树的影响较小
+	RBTreeNode(const T& data = T(), Color color = RED)//节点颜色默认给成红色会对树的影响较小
 		:_pLeft(nullptr)
 		,_pRight(nullptr)
 		,_pParent(nullptr)
@@ -18,9 +18,9 @@ struct RBTreeNode
 		,_color(color)
 	{}
 
-	RBtreeNode* _pLeft;
-	RBtreeNode* _pRight;
-	RBtreeNode* _pParent;
+	RBTreeNode* _pLeft;
+	RBTreeNode* _pRight;
+	RBTreeNode* _pParent;
 	T _data;
 	Color _color;
 };
@@ -84,11 +84,11 @@ public:
 		pCur = new Node(data);
 		if (data < pParent->_data)
 		{
-			pParent->_pLeft = _pCur;
+			pParent->_pLeft = pCur;
 		}
 		else
 		{
-			pParent->_pRight = _pCur;
+			pParent->_pRight = pCur;
 		}
 		//更新pCur双亲
 		pCur->_pParent = pParent;
