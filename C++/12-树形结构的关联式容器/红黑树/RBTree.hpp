@@ -41,6 +41,7 @@ public:
 		_pHead = new Node;
 		_pHead->_pLeft = _pHead;
 		_pHead->_pRight = _pHead;
+		_size = 0;
 	}
 
 	//插入：1.按照二叉搜索树的方式插入  2.检测是否违反红黑树的性质
@@ -115,14 +116,82 @@ public:
 	二.p为g的右子树
 	    将树翻转180度即可
 		*/
-		if (RED == pParent->_color)
-		{	
 
+		//p为g的左子树
+		while ((pCur != _pHead) && (RED == pParent->_color))
+		{	
+			Node* grandFather = pParent->_pParent;
+			if (pParent == grandFather->_pLeft)//p为g的左子树
+			{
+				//正常三种情况
+
+				Node* uncle = grandFather->_pRight;
+
+				//情况1.叔叔节点存在且为红
+				if (uncle&&uncle->_color == RED)
+				{
+					//p和u设置为黑，g设置为红
+					pParent->_color = BALCK;
+					uncle->_color = BALACK;
+					grandFather->_color = RED;
+
+					//继续向上调整
+					pCur = grandFather;
+					pParent = pCur->_pParent;
+				}
+
+				//情况2和3，先处理情况3
+				else
+				{
+					//叔叔节点不存在 || 叔叔节点为黑色  cur是p的右孩子
+					if (pCur == pParent->_pRight)
+					{
+						//左单旋，调整为情况2
+						RotateLeft(pParent);
+						Swap(pParent, pCur);
+					}
+				}
+				//双亲p和祖父g进行颜色交换，对以祖父g为根的树进行右单旋
+				grandFather->_color = RED;
+				grandFather->_color = BLACK;
+				RotateRight(grandFather);
+			}
+
+			//p为g的右子树
+			else
+			{
+				//正常情况法反三种
+				Node* uncle = grandFather->_pLeft;
+				if (uncle->_color == RED)
+				{
+					pParent->_color = BLACK;
+					uncle->_color = BALCK;
+					grandFather->_color = RED;
+
+					pCur = grandFather;
+					pParent = pCur->_pParent;
+				}
+				else
+				{
+					//情况2，3的反情况
+					if (pCur == pParent->_pRight)
+					{
+						//左单旋，调整为情况2
+						RotateRight(pParent);
+						Swap(pParent, pCur);
+					}
+					grandFather->_color = RED;
+					grandFather->_color = BLACK;
+					RotateLeft(grandFather);
+				}
+			}
 		}	
 
 		//更新_pHead的左右指针域
+		pRoot->_color = BLACK;
 		_pHead->_pLeft = LeftMost();
 		_pHead->_pRight = RightMost();
+		_size++;
 		return true;
 	}
 private:
@@ -164,10 +233,81 @@ private:
 		}
 	}
 
+	//左单旋
+	void RotateLeft(Node* pParent)
+	{
+		Node* pSubR = pParent->_pRight;
+		Node* pSubRL = pSubR->_pLeft;
+
+		pParent->_pRight = pSubRL;
+		if (pSubRL)
+		{
+			pSubRL->_pParent = pParent;
+		}
+		pSubR->_pLeft = pParent;
+		Node* pPParent = pParent->_pParent;
+		pParent->_pParent = pSubR;
+		pSubR->_pParent = _pPParent;
+
+		if (pPParent == _pHead)//pPParent是根节点
+		{
+			_pHead->_pParent = pSubR;
+		}
+		else//pPParent不是根节点
+		{
+			if (pParent == pPParent->_pLeft)
+			{
+				pPParent->_pLeft = pSubR;
+			}
+			else
+			{
+				pPParent->_pRight = pSubR;
+			}
+		}
+
+	}
+
+	//右单旋
+	void RotateRight(Node* pParent)
+	{
+		Node* pSubL = pParent->_pLeft;
+		Node* pSubLR = pSubL->_pRight;
+		pParent->_Left = pSubL;
+		if (pSubLR)
+		{
+			pSubLR->_pParent = pParent;
+		}
+		pSubL->_pRight = pParent;
+		Node* pPParent = pParent->_pParent;
+		pSubL->_pParent = pPParent;
+		pParent->_pParent = pSubL;
+		if (pPParent == _pHead)
+		{
+			_pHead->_pParent = pSubL;
+		}
+		else
+		{
+			if (pParent == pPParent->_pLeft)
+			{
+				pPParent->_pLeft = pSubL;
+			}
+			else
+			{
+				pPParent->_pRight = pSubL;
+			}
+		}
+	}
+
 	Node*& getRoot()
 	{
 		return _pHead->_pParent;
 	}
 
 	Node* _pHead;
+	size_t _size;
 };
+
+void TestRBtree()
+{
+	//int arr[]={}
+}
