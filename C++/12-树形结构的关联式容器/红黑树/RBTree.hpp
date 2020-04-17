@@ -1,5 +1,7 @@
 #pragma once
 
+#include<iostream>
+using namespace std;
 //颜色类型
 enum Color
 {
@@ -45,7 +47,7 @@ public:
 	}
 
 	//插入：1.按照二叉搜索树的方式插入  2.检测是否违反红黑树的性质
-	bool Insert(const T& data)
+	bool Insert(const T& data)	
 	{
 		Node*& pRoot = getRoot();
 		//空树
@@ -120,7 +122,7 @@ public:
 		//p为g的左子树
 		while ((pCur != _pHead) && (RED == pParent->_color))
 		{	
-			Node* grandFather = pParent->_pParent;
+			Node* grandFather = pParent->_pParent;//注意 grandFather不可能变成头结点，才能用这个循环条件
 			if (pParent == grandFather->_pLeft)//p为g的左子树
 			{
 				//正常三种情况
@@ -131,8 +133,8 @@ public:
 				if (uncle&&uncle->_color == RED)
 				{
 					//p和u设置为黑，g设置为红
-					pParent->_color = BALCK;
-					uncle->_color = BALACK;
+					pParent->_color = BLACK;
+					uncle->_color = BLACK;
 					grandFather->_color = RED;
 
 					//继续向上调整
@@ -148,12 +150,12 @@ public:
 					{
 						//左单旋，调整为情况2
 						RotateLeft(pParent);
-						Swap(pParent, pCur);
+						swap(pParent, pCur);
 					}
 				}
 				//双亲p和祖父g进行颜色交换，对以祖父g为根的树进行右单旋
 				grandFather->_color = RED;
-				grandFather->_color = BLACK;
+				pParent->_color = BLACK;
 				RotateRight(grandFather);
 			}
 
@@ -165,7 +167,7 @@ public:
 				if (uncle->_color == RED)
 				{
 					pParent->_color = BLACK;
-					uncle->_color = BALCK;
+					uncle->_color = BLACK;
 					grandFather->_color = RED;
 
 					pCur = grandFather;
@@ -178,10 +180,10 @@ public:
 					{
 						//左单旋，调整为情况2
 						RotateRight(pParent);
-						Swap(pParent, pCur);
+						swap(pParent, pCur);
 					}
 					grandFather->_color = RED;
-					grandFather->_color = BLACK;
+					pParent->_color = BLACK;
 					RotateLeft(grandFather);
 				}
 			}
@@ -193,6 +195,41 @@ public:
 		_pHead->_pRight = RightMost();
 		_size++;
 		return true;
+	}
+
+	//检测红黑树合法
+	bool JudgeRBtree()
+	{
+		Node* pRoot = getRoot();
+		//空树也是红黑树
+		if (nullptr == pRoot)
+		{
+			return true;
+		}
+		//树非空
+		else
+		{
+			if (BLACK != pRoot->_color)
+			{
+				cout << "根节点不是黑色，违反性质2" << endl;
+				return false;
+			}
+			
+			//验证性质4：每个路径中黑色节点个数相同
+			//先统计一条路径中黑色节点的个数（左侧路径）
+			size_t Bcount = 0;
+			Node* pCur = pRoot;
+			while (pCur)
+			{
+				if (pCur->_color == BLACK)
+				{
+					Bcount++;
+				}
+				pCur = pCur->_pLeft;
+			}
+			size_t path = 0;
+			return _Judge3and4(pRoot, path, Bcount);
+		}
 	}
 private:
 	//找树中最左侧节点
@@ -247,7 +284,7 @@ private:
 		pSubR->_pLeft = pParent;
 		Node* pPParent = pParent->_pParent;
 		pParent->_pParent = pSubR;
-		pSubR->_pParent = _pPParent;
+		pSubR->_pParent = pPParent;
 
 		if (pPParent == _pHead)//pPParent是根节点
 		{
@@ -272,7 +309,7 @@ private:
 	{
 		Node* pSubL = pParent->_pLeft;
 		Node* pSubLR = pSubL->_pRight;
-		pParent->_Left = pSubL;
+		pParent->_pLeft = pSubL;
 		if (pSubLR)
 		{
 			pSubLR->_pParent = pParent;
@@ -303,11 +340,46 @@ private:
 		return _pHead->_pParent;
 	}
 
+	bool _Judge3and4(Node* pRoot,size_t path,size_t Bcount)
+	{
+		if (nullptr == pRoot)
+		{
+			return true;
+		}
+		if (BLACK == pRoot->_color)
+		{
+			path++;
+		}
+
+		Node* pParent = pRoot->_pParent;
+		if (pParent != _pHead && RED == pParent->_color&&RED == pRoot->_color)
+		{
+			cout << "有在一起的红色节点，违反性质3" << endl;
+			return false;
+		}
+		
+		if (nullptr == pRoot->_pLeft&&nullptr == pRoot->_pRight)//走到尽头
+		{
+			if (path != Bcount)
+			{
+				cout << "每条路径中黑色节点不一致，违反性质3" << endl;
+				return false;
+			}
+			return _Judge3and4(pRoot->_pLeft, path, Bcount) && _Judge3and4(pRoot->_pRight, path, Bcount);
+		}
+	}
+
 	Node* _pHead;
 	size_t _size;
 };
 
 void TestRBtree()
 {
-	//int arr[]={}
+	int arr[] = { 5,3,4,1,7,8,2,6,0,9 };
+	RBTree<int> t;
+	for (auto e : arr)
+	{
+		t.Insert(e);
+	}
+	t.JudgeRBtree();
 }
