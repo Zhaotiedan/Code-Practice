@@ -52,7 +52,7 @@ int main()
 			{
 				for (int k = 0; k < n; k++)
 				{
-					temp[i][j] += arr[i][k] * arr2[k][j];
+					temp[i][j] += arr[i][k] * arr2[k][j];//一个行不变，一个列不变，依次相乘
 				}
 			}
 		}
@@ -66,7 +66,7 @@ int main()
 		}
 		m--;
 	}
-	//0次幂
+	//0次幂  对称矩阵
 	if (m == 0)
 	{
 		for (int i = 0; i < n; i++)
