@@ -3,7 +3,6 @@
 #include<iostream>
 using namespace std;
 
-
 //博客详解：https://blog.csdn.net/qq_42913794/article/details/101179179
 
 // 1.new/delete操作内置类型
