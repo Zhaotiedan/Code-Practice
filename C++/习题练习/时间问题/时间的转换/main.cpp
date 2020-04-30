@@ -16,3 +16,35 @@
 */
 
 //方法一：
+#include<iostream>
+using namespace std;
+
+int main()
+{
+	int t = 0;
+	int h = 0, m = 0, t1 = 0;
+	cin >> t;
+	if (t == 0)
+	{
+		cout << "0:0:0";
+	}
+	else if (t >= 3600)
+	{
+		h = t / 3600;
+		m = (t - (3600 * h)) / 60;
+		t1 = t - (3600 * h) - (m * 60);
+		cout << h << ":" << m << ":" << t1;
+	}
+	else if (t < 3600 && t >= 60)
+	{
+		m = t / 60;
+		t1 = t - m * 60;
+		cout << 0 << ":" << m << ":" << t1;
+	}
+	else
+	{
+		cout << 0 << ":" << 0 << ":" << t;
+	}
+	system("pause");
+	return 0;
+}
