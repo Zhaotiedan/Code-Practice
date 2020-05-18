@@ -13,3 +13,64 @@
 输出样例：
 yi san wu
 
+
+#include<iostream>
+using namespace std;
+#include<string>
+#include<sstream>
+
+int main()
+{
+	string s;//输入的数字串
+	int sum = 0;
+	string res;//读出的数字串
+	cin >> s;
+	for (int i = 0; i < s.size(); i++)
+	{
+		sum += s[i] - '0';
+	}
+	res = to_string(sum);//整型数字转换为字符串方法，注意头文件
+	for (int i = 0; i < res.size(); i++)
+	{
+		switch (res[i])
+		{
+		case '0':
+			cout << "ling";//注意零的拼音是ling不是lin
+			break;
+		case '1':
+			cout << "yi";
+			break;
+		case '2':
+			cout << "er";
+			break;
+		case '3':
+			cout << "san";
+			break;
+		case '4':
+			cout << "si";
+			break;
+		case '5':
+			cout << "wu";
+			break;
+		case '6':
+			cout << "liu";
+			break;
+		case '7':
+			cout << "qi";
+			break;
+		case '8':
+			cout << "ba";
+			break;
+		case '9':
+			cout << "jiu";
+			break;
+		default:
+			break;
+		}
+		if (i != res.size() - 1)
+		{
+			cout << " ";
+		}
+	}
+	return 0;
+}
