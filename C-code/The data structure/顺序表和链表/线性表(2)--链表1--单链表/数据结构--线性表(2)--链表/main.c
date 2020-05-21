@@ -1,13 +1,13 @@
 #define _CRT_SECURE_NO_WARNINGS 1
 
 #include "Slist.h"
-//1����������
+//1、函数测试
 //int main()
 //{
 //	SListNode *phead=NULL;
 //	int value = 0;
 //
-//	SListInit(&phead);//��ͷָ�����������ֻ��������õ�������ָ������ݣ�����ΪNULL
+//	SListInit(&phead);//讲头指针这个变量（只是里面放置的是它所指向的内容）设置为NULL
 //
 //
 //	SListPushFront(&phead, 6);
@@ -42,48 +42,48 @@
 //	return 0;
 //}
 
-////2.Լɪ�򻷲��� ���CSDN��https://blog.csdn.net/qq_42913794/article/details/98895581
+////2.约瑟夫环测试 详见CSDN：https://blog.csdn.net/qq_42913794/article/details/98895581
 //int main()
 //{
 //	int i = 0;
-//	int n = 0;//��������
-//	int m = 0;//����������
+//	int n = 0;//数的数字
+//	int m = 0;//数数的人数
 //	SListNode* phead;
 //	SListNode* plast=NULL;
 //	SListNode* cur=NULL;
 //	scanf("%d %d", &m, &n);
 //	SListInit(&phead);
-//	//�Ȱ��������Ž�ȥ
+//	//先把最大的数放进去
 //	SListPushFront(&phead, m);
 //	plast = phead;
 //
-//	//���η���ʣ�µ������γ�����
+//	//依次放入剩下的数，形成链表
 //	for (i = m - 1; i >=1; i--)
 //	{
 //		SListPushFront(&phead, i);
 //	}
-//	plast->next = phead;//�γ�һ����
+//	plast->next = phead;//形成一个环
 //
-//	cur = plast;//ֻ�е�һ�����ĸ�����һ�����������Ա�֤��һ�ε���ȷ
+//	cur = plast;//只有第一个跳的个数不一样，这样可以保证第一次的正确
 //
 //	for (; m > 1; m--)
 //	{
-//		for (i = 1; i < n; i++)	//��n��������n-1����ɾ
+//		for (i = 1; i < n; i++)	//数n次数，跳n-1步后删
 //		{
 //			cur = cur->next;
-//			printf("%d�ű�%d\n", cur->data, i);
+//			printf("%d号报%d\n", cur->data, i);
 //		}
-//		printf("%d�ų�Ȧ\n", cur->next->data, i);
+//		printf("%d号出圈\n", cur->next->data, i);
 //		SListEraseAfter(cur);
 //	}
-//	printf("%d��ʤ��\n", cur->data);
+//	printf("%d号胜利\n", cur->data);
 //	free(cur);
 //	system("pause");
 //	return 0;
 //}
 
 
-//3.��תһ��������
+//3.反转一个单链表
 //int main()
 //{
 //	SListNode *phead = NULL;
@@ -103,8 +103,8 @@
 //	return 0;
 //}
 
-//4.�������������ĵ�һ�������ڵ�
-//�Ҷ��룬�������߲�ֵ������һ�����    CSDN��ⲩ��:https://blog.csdn.net/qq_42913794/article/details/99674797
+//4.求两个单链表的第一个公共节点
+//右对齐，长的先走差值步，再一起遍历    CSDN详解博客:https://blog.csdn.net/qq_42913794/article/details/99674797
 /*int main()
 {
 	int i = 0;
@@ -142,8 +142,8 @@
 	return 0;
 }*/
 
-//5.����ж������Ƿ��л�  CSDN:https://blog.csdn.net/qq_42913794/article/details/100058628
-//��һ��ָ��һ�������Σ�һ����һ�Ρ��������������һ���ǻ����ܵ���ͷ����û��
+//5.如何判断链表是否有环  CSDN:https://blog.csdn.net/qq_42913794/article/details/100058628
+//找一个指针一次跳两次，一个跳一次。如果能相遇，则一定是环，跑到尽头，则没环
 //int main()
 //{
 //	SListNode *phead;
@@ -164,11 +164,11 @@
 //	return 0;
 //}
 
-//6.����һ���������жϻ�������������ʼ�뻷�ĵ�һ���ڵ㣬�޻�����NULL
-//���ͷ����ǻ���ڣ�һ���ڵ�һ����������һ����һ������ͷ����ǻ����
-//���ͷ��㲻�ǻ���ڣ������Ĳ��ֵ�����ڵĳ��Ⱥ������㵽����ڵĳ�����ͬ��
-//�����������ڵ��ͷ���һ��һ����ʼ�ߣ��ҵ������㣬����൱��������Ҷ��롣
-//Ȼ�������ڵ���fast��headһ���ߣ��ҵ��Ĺ����ڵ���ǻ����
+//6.给定一个链表，判断环，返回链表开始入环的第一个节点，无环返回NULL  CSDN blog： https://blog.csdn.net/qq_42913794/article/details/100562468
+//如果头结点是环入口，一个节点一次跳两步，一次跳一步，则头结点是环入口
+//如果头结点不是环入口，则多余的部分到环入口的长度和相遇点到环入口的长度相同，
+//所以让两个节点从头结点一快一慢开始走，找到相遇点，这就相当于完成了右对齐。
+//然后两个节点中fast和head一起走，找到的公共节点就是环入口
 int main()
 {
 	SListNode *phead;
@@ -192,7 +192,7 @@ int main()
 	return 0;
 }
 
-//7.�ҳ������ĵ�����k���ڵ�
+//7.找出链表的倒数第k个节点
 //int main()
 //{
 //	SListNode *phead;
