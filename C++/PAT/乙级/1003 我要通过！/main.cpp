@@ -32,3 +32,61 @@ NO
 NO
 NO
 NO
+
+#include<iostream>
+using namespace std;
+#include<string>
+
+bool Judge(string s)
+{
+    int countP=0;//P的个数
+    int countT=0;//T的个数
+    int lp,lt=0;//P和T的位置
+    for(int i=0;i<s.size();i++)
+    {
+        if(s[i]!='P' && s[i]!='A'&& s[i]!='T')
+        {
+            return false;
+        }
+        else if(s[i]=='P')
+        {
+            lp=i;
+            countP++;
+        }
+        else if(s[i]=='T')
+        {
+            lt=i;
+            countT++;
+        }
+    }
+        
+        //满足P前面的A的个数和P与T之间的A的个数相乘的积等于T后面的A的个数，也要求T在P后面，而且要包含一个T和一个P；
+        if ((lt - 1 - lp) >= 1 && (lp*(lt - lp - 1) == (s.size() - lt - 1)) && countP == 1 && countT == 1)
+        {
+            return true;
+        }
+        else
+        {
+            return false;
+        }
+}
+int main()
+{
+    int n=0;
+    cin>>n;
+    while(n)
+    {
+        string s;
+        cin>>s;
+        if(Judge(s))
+        {
+            cout<<"YES"<<endl;
+        }
+        else
+        {
+            cout<<"NO"<<endl;
+        }
+        n--;
+    }
+    return 0;
+}
