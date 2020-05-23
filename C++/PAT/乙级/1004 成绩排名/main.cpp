@@ -22,3 +22,45 @@ Mary EE990830 95
 Mike CS991301
 Joe Math990112
 
+#include<iostream>
+using namespace std;
+#include<string>
+
+typedef struct stu//its the first time to use the struct
+{
+	string name;
+	string numbers;
+	int grade;
+}st;
+
+int main()
+{
+	int num = 0;
+	cin >> num;
+	st minres;
+	st maxres;
+	minres.grade = 100;
+	maxres.grade = 1;
+	while (num)
+	{
+		st s;
+		
+		cin >> s.name >> s.numbers >> s.grade;
+		
+		if (s.grade < minres.grade)
+		{
+			minres = s;
+		}
+		if (s.grade > maxres.grade)
+		{
+			maxres = s;
+		}
+		num--;
+	}
+	//输出最高分
+	cout << maxres.name << " " << maxres.numbers  << endl;
+	//输出最低分
+	cout << minres.name << " " << minres.numbers << endl;
+	system("pause");
+	return 0;
+}
