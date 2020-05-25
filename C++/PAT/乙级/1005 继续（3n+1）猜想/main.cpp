@@ -17,3 +17,72 @@
 3 5 6 7 8 11
 输出样例：
 7 6
+
+
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+
+vector<int> fun(vector<int>& v)
+{
+	vector<int> count(v);//用来删除元素的数组
+	for (int i = 0; i < v.size(); i++)
+	{
+		int temp = v[i];
+		while (temp != 1)
+		{
+			//偶数
+			if (temp % 2 == 0)
+			{
+				temp = temp / 2;
+			}
+			else
+			{
+				temp = (3 * temp + 1) / 2;
+			}
+			vector<int>::iterator it = find(v.begin(), v.end(), temp);
+      //在count中删除这个元素
+			if (it != v.end())
+			{
+				vector<int>::iterator it1 = count.begin();
+				while (it1 != count.end())
+				{
+					if (*it1 == *it)
+					{
+						it1 = count.erase(it1);
+						break;
+					}
+					else
+					{
+						it1++;
+					}
+				}
+			}
+		}
+	}
+	
+	return count;
+}
+int main()
+{
+	int num = 0;
+	cin >> num;
+	vector<int> v(num);
+	vector<int> res;
+	for (int i = 0; i < v.size(); i++)
+	{
+		cin >> v[i];
+	}
+	res = fun(v);
+	sort(res.begin(), res.end());
+	for (int j = res.size() - 1; j >= 0; j--)
+	{
+		cout << res[j];
+		if (j != 0)
+		{
+			cout << " ";
+		}
+	}
+	return 0;
+}
