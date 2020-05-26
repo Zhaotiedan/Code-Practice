@@ -14,3 +14,57 @@ BBSSS1234
 23
 输出样例 2：
 SS123
+
+
+#include<iostream>
+using namespace std;
+#include<string>
+
+int main()
+{
+    string s;
+    cin>>s;
+    if(s.size()==3)//3位
+    {
+        int bai=s[0]-'0';
+        int shi=s[1]-'0';
+        int ge=s[2]-'0';
+        while(bai)
+        {
+            cout<<"B";
+            bai--;
+        }
+        while(shi)
+        {
+            cout<<"S";
+            shi--;
+        }
+        for(int i=1;ge;ge--,i++)
+        {
+            cout<<i;
+        }
+    }
+    else if(s.size()==2)//2位
+    {
+        int shi=s[0]-'0';
+        int ge=s[1]-'0';
+        while(shi)
+        {
+            cout<<"S";
+            shi--;
+        }
+        for(int i=1;ge;ge--,i++)
+        {
+            cout<<i;
+        }
+    }
+    else if(s.size()==1)
+    {
+        int ge=s[0]-'0';
+        for(int i=1;ge;ge--,i++)
+        {
+            cout<<i;
+        }
+    }
+    return 0;
+}
