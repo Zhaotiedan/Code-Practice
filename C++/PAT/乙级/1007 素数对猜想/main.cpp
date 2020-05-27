@@ -14,3 +14,47 @@
 输出样例:
 4
 
+  #include<iostream>
+using namespace std;
+#include<vector>
+#include<math.h>
+
+bool IsPrime(int temp)
+{
+	if (temp == 2)
+	{
+		return true;
+	}
+	for (int i = 2; i <= sqrt(temp); i++)
+	{
+		if (temp%i == 0)
+		{
+			return false;
+		}
+	}
+	return true;
+}
+int main()
+{
+	int num = 0;
+	cin >> num;
+	vector<int> v;//存放N以内的素数
+	int temp = 2;//当前的素数
+	int count = 0;//满足条件的素数对的个数
+	for (int i = 0; temp <= num; i++,temp++)
+	{
+		if (IsPrime(temp))
+		{
+			v.push_back(temp);
+		}
+	}
+	for (int i = 1; i < v.size(); i++)
+	{
+		if (v[i] - v[i - 1] == 2)
+		{
+			count++;
+		}
+	}
+	cout << count;
+	return 0;
+}
