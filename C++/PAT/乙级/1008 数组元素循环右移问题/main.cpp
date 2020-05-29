@@ -12,3 +12,38 @@
 1 2 3 4 5 6
 输出样例:
 5 6 1 2 3 4
+  
+  
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<algorithm>
+
+int main()
+{
+    int number,k=0;
+    cin>>number;
+    cin>>k;
+    vector<int> v(number);
+    for(int i=0;i<v.size();i++)
+    {
+        cin>>v[i];
+    }
+    //注意当k大于数组长度时，数组移动情况和k%6是一样的，因为每移动6次就会回到原点
+    while(k>=v.size())
+    {
+        k=k%v.size();
+    }
+    reverse(v.begin(),v.end());//先整体逆置
+    reverse(v.begin(),v.begin()+k);//再逆置前k端
+    reverse(v.begin()+k,v.end());//逆置后半段
+    for(int i=0;i<v.size();i++)
+    {
+        cout<<v[i];
+        if(i!=v.size()-1)
+        {
+            cout<<" ";
+        }
+    }
+    return 0;
+}
