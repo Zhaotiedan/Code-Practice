@@ -10,3 +10,32 @@
 Hello World Here I Come
 输出样例：
 Come I Here World Hello
+
+#include<iostream>
+using namespace std;
+#include<string>
+#include<algorithm>
+
+int main()
+{
+	string s;
+	getline(cin, s);
+	reverse(s.begin(), s.end());
+	int i = 0;
+	int k = 0;//逆置起始位置相对于最开始begin的偏移位数
+	while (i<s.size())
+	{
+		while ((s[i]!= ' ') && (i!=s.size()))
+		{
+			i++;
+		}
+		reverse(s.begin() + k, s.begin() + i );
+		if (s[i] == ' ')
+		{
+			i++;//当找到一个空格时，要指向下一个不为‘ ’的字符
+			k = i;
+		}
+	}
+	cout << s;
+	return 0;
+}
