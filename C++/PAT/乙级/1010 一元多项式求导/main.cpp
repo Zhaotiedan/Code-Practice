@@ -10,3 +10,37 @@
 3 4 -5 2 6 1 -2 0
 输出样例:
 12 3 -10 1 6 0
+
+#include<iostream>
+using namespace std;
+#include<vector>
+
+#define MAX 100
+
+int main()
+{
+    int a=0;
+    int b=0;
+    int flag=1;//代表是否位0
+    while(cin>>a>>b)
+    {
+        if(b==0)
+        {
+            break;
+        }
+        if(flag==0)//代表上一个是非0
+        {
+            cout<<" ";
+        }
+        else
+        {
+            flag=0;
+        }
+        cout<<a*b<<" "<<b-1;
+    }
+    if(flag)
+    {
+        cout<<"0 0";
+    }
+    return 0;
+}
