@@ -27,3 +27,117 @@ A5 = 被 5 除后余 4 的数字中最大数字。
 输出样例 2：
 
 N 11 2 N 9
+  
+  
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<iomanip>
+
+int sum=1;//-1的标志
+int temp=0;//算a4时每一次的总值
+int count=0;//算a4时每次满足条件的数字数量
+int flag=0;//判断a2是否存在的标志
+
+int main()
+{
+    int a1=0,a2=0,a3=0,a5=0;
+    float a4=0;
+    int num=0;//测试点个数
+    cin>>num;
+    vector<int> v(num);
+    
+    //输入测试用例
+    for(int i=0;i<v.size();i++)
+    {
+        cin>>v[i];
+    }
+    
+    //遍历数组
+    for(int i=0;i<v.size();i++)
+    {
+        //能被5整除的，所有偶数的和 a1
+        if(v[i]%5==0)
+        {
+            if(v[i]%2==0)
+            {
+                a1+=v[i];
+            }
+        }
+        //被 5 除后余 1 的数字按给出顺序进行交错求和 a2
+        else if(v[i]%5==1)
+        {
+            flag=1;
+            a2+=sum*v[i];
+            sum=-sum;
+        }
+        //被5除后余2的数字个数 a3
+        else if(v[i]%5==2)
+        {
+            a3++;
+        }
+        //被5除后余3 的平均数
+        else if(v[i]%5==3)
+        {
+            count++;
+            temp+=v[i];
+            a4=temp*1.0/count;
+        }
+        //被5除后余4 的最大数字
+        else if(v[i]%5==4)
+        {
+            if(a5<v[i])
+            {
+                a5=v[i];
+            }
+        }
+    }
+    
+    //输出
+    if(a1)
+    {
+        cout<<a1<<" ";
+    }
+    else
+    {
+        cout<<"N"<<" ";
+    }
+    
+    if(flag)
+    {
+        cout<<a2<<" ";
+    }
+    else
+    {
+        cout<<"N"<<" ";
+    }
+    
+    if(a3)
+    {
+        cout<<a3<<" ";
+    }
+    else
+    {
+        cout<<"N"<<" ";
+    }
+    
+    if(a4)
+    {
+       cout<<setiosflags(ios::fixed)<<setprecision(1)<<a4<<" ";
+    }
+    else
+    {
+        cout<<"N"<<" ";
+    }
+    
+    if(a5)
+    {
+        cout<<a5;
+    }
+    else
+    {
+        cout<<"N";
+    }
+    
+    return 0;
+}
