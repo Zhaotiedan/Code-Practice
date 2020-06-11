@@ -19,7 +19,7 @@
 97 101 103
 
   
-  #include<iostream>
+ #include<iostream>
 using namespace std;
 #include<math.h>
 #include<vector>
@@ -51,7 +51,8 @@ int main()
     cin>>m>>n;
     vector<int> v(n);
     int num=1;//当前数字
-
+  
+  //往数组中打印直到第n个素数
     for(int i=0;i<v.size();i++)
     {
         while(!IfPrime(num))//不是素数
