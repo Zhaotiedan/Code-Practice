@@ -36,6 +36,8 @@ public:
                 }
                 char temp=st.top();//获取栈顶的左括号
                 st.pop();//注意一定要出栈
+                
+                //不合法的三种情况
                 if(s[i]==')')
                 {
                     if(temp!='(')
