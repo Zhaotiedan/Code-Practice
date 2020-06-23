@@ -39,8 +39,10 @@ public:
         F[1]=1;
         for(int i=2;i<=n;i++)
         {
+            //转换方程
             F[i]=F[i-1]+F[i-2];
         }
+        //返回值
         return F[n];
     }
 };
