@@ -49,3 +49,46 @@
 10000014 66 60
 10000008 75 79
 10000001 64 90
+  
+  
+  
+#include<iostream>
+using namespace std;
+#include<vector>
+#include <fstream> 
+
+typedef struct Student
+{
+	int number;
+	int caiScore;
+	int deScore;
+}st;
+
+int main()
+{
+	int N = 0, L = 0, H = 0;
+	cin >> N >> L >> H;
+	vector<st> v(N);
+	ifstream in("data.txt", ios::in);
+	if (!in.is_open())
+	{
+		cout << "open error!" << endl;
+		exit(0);
+	}
+	int i = 0;
+	while(!in.eof() && i < N)
+	{
+		in >> v[i].number >> v[i].caiScore >> v[i].deScore;
+		i++;
+	}
+
+
+	/*for (int i = 0; i < N; i++)
+	{
+		cout << "number" << v[i].number << " " << v[i].caiScore << " " << v[i].deScore << endl;
+	}*/
+
+	in.close();
+	system("pause");
+	return 0;
+}
