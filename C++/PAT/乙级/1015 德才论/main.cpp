@@ -56,13 +56,36 @@
 using namespace std;
 #include<vector>
 #include <fstream> 
+#include<algorithm>
 
 typedef struct Student
 {
 	int number;
-	int caiScore;
 	int deScore;
+	int caiScore;
 }st;
+
+bool compare(st s1, st s2)
+{
+	//总分相同,德分降序排列
+	if (s1.caiScore + s1.deScore == s2.caiScore + s2.deScore)
+	{
+		//德分相同
+		if (s1.deScore == s2.deScore)
+		{
+			return s1.number < s2.number;
+		}
+		else
+		{
+			return s1.deScore > s2.deScore;
+		}
+	}
+	else
+	{
+		return s1.caiScore + s1.deScore > s2.caiScore + s2.deScore;
+	}
+
+}
 
 int main()
 {
@@ -78,15 +101,64 @@ int main()
 	int i = 0;
 	while(!in.eof() && i < N)
 	{
-		in >> v[i].number >> v[i].caiScore >> v[i].deScore;
+		in >> v[i].number >> v[i].deScore >> v[i].caiScore;
 		i++;
 	}
 
-
-	/*for (int i = 0; i < N; i++)
+	int  M = 0;//达到最低分数线的考生人数
+	vector<st> v1;//德才全尽
+	vector<st> v2;//德胜才
+	vector<st> v3;//才德兼亡但德胜才 
+	vector<st> v4;//其他达到最低线 L
+	for (int i = 0; i < N; i++)
 	{
-		cout << "number" << v[i].number << " " << v[i].caiScore << " " << v[i].deScore << endl;
-	}*/
+		if ((v[i].caiScore >= L) && (v[i].deScore >= L))
+		{
+			M++;
+			if ((v[i].caiScore >= H) && (v[i].deScore >= H))//德才全尽
+			{
+				v1.push_back(v[i]);
+			}
+			else if ((v[i].caiScore < H) && (v[i].deScore >= H))//德胜才
+			{
+				v2.push_back(v[i]);
+			}
+			else if ((v[i].caiScore < H) && (v[i].deScore < H)&&(v[i].deScore>v[i].caiScore))//才德兼亡但德胜才 
+			{
+				v3.push_back(v[i]);
+			}
+			else //其他达到最低线 L
+			{
+				v4.push_back(v[i]);
+			}
+		}
+	}
+	cout << M << endl;
+	sort(v1.begin(), v1.end(), compare);
+	sort(v2.begin(), v2.end(), compare);
+	sort(v3.begin(), v3.end(), compare);
+	sort(v4.begin(), v4.end(), compare);
+	for (int i = 0; i < v1.size(); i++)
+	{
+		//cout << "v1";
+		cout << v1[i].number << " " << v1[i].deScore << " " << v1[i].caiScore << endl;
+	}
+	for (int i = 0; i < v2.size(); i++)
+	{
+		//cout << "v2";
+		cout << v2[i].number << " " << v2[i].deScore << " " << v2[i].caiScore << endl;
+	}
+	for (int i = 0; i < v3.size(); i++)
+	{
+		//cout << "v3";
+		cout << v3[i].number << " " << v3[i].deScore << " " << v3[i].caiScore << endl;
+	}
+
+	for (int i = 0; i < v4.size(); i++)
+	{
+		//cout << "v4";
+		cout << v4[i].number << " " << v4[i].deScore << " " << v4[i].caiScore << endl;
+	}
 
 	in.close();
 	system("pause");
