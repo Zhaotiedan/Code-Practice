@@ -18,3 +18,33 @@
 输出样例 2：
 0
 
+#include<iostream>
+using namespace std;
+#include<string>
+
+int main()
+{
+	string s1;
+	int num1 = 0;
+	string s2;
+	int num2 = 0;
+	int res1 = 0, res2 = 0;
+	cin >> s1 >> num1 >> s2 >> num2;
+	for (int i = 0; i < s1.size(); i++)
+	{
+		if (s1[i] - '0' == num1)
+		{
+			res1 = res1 * 10 + num1;
+		}
+	}
+	for (int j = 0; j < s2.size(); j++)
+	{
+		if (s2[j] - '0' == num2)
+		{
+			res2 = res2 * 10 + num2;
+		}
+	}
+	cout << res1 + res2;
+	system("pause");
+	return 0;
+}
