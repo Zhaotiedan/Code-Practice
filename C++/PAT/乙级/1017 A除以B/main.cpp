@@ -11,4 +11,10 @@
 输出样例：
 17636684150141093474 3
 
-#include<stdio.h>
+#include<iostream>
+using namespace std;
+
+int main()
+{
+  
+}
