@@ -11,6 +11,9 @@
 输出样例：
 17636684150141093474 3
 
+	
+	
+//本代码牛客通过100%，pat 18分（满分20）
 #include<iostream>
 using namespace std;
 #include<string>
@@ -33,7 +36,7 @@ int main()
 		{
 			temp = exnum * 10 + nextexnum;  
 			res = temp / B;
-			exnum = temp % B;//5
+			exnum = temp % B;
 			i++;
 		}
 		else
