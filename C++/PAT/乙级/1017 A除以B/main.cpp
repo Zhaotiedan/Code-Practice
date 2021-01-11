@@ -13,8 +13,39 @@
 
 #include<iostream>
 using namespace std;
+#include<string>
 
 int main()
 {
-  
+	string A;
+	int B = 0;
+	string Q;//商
+	int R = 0;//余数
+	cin >> A >> B;
+	int exnum = A[0] - '0';//字符转换过来的数字  
+	int i = 1;
+	while (i < A.size())
+	{
+		int nextexnum = A[i] - '0'; //指向下一个字符
+		int temp = 0;//小除数
+		int res = 0;//小商
+		if (exnum < B)
+		{
+			temp = exnum * 10 + nextexnum;  
+			res = temp / B;
+			exnum = temp % B;//5
+			i++;
+		}
+		else
+		{
+			res = exnum / B;
+			exnum = exnum % B;
+		}
+		Q += res + '0';
+		R = exnum;
+	}
+	cout << Q<<" " << R;
+
+	system("pause");
+	return 0;
 }
