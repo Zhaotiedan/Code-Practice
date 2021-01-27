@@ -29,3 +29,208 @@ J J
 5 3 2
 2 3 5
 B B
+
+
+#include<iostream>
+using namespace std;
+#include<vector>
+#include<fstream>
+
+
+typedef struct people
+{
+	char jia;//甲的手势
+	char yi;//乙的手势
+}pe;
+
+
+int main()
+{
+	int num = 0;//次数
+	cin >> num;
+
+	//读取num次游戏 甲乙的手势
+	vector<pe> v(num);
+  
+  //文件读取数据
+	ifstream in("data1018.txt", ios::in);
+	if (!in.is_open())
+	{
+		cout << "open error!" << endl;
+		exit(0);
+	}
+	int i = 0;
+	while (!in.eof() && i < num)
+	{
+		in >> v[i].jia >> v[i].yi;
+		i++;
+	}
+  
+  /*
+  实际PAT判题中不用文件输入，可以这样输入
+   for (int i = 0; i < num; i++)
+    {
+        cin >> v[i].jia >> v[i].yi;
+    }
+   */ 
+
+  
+	//测试文件数据是否读入v数组
+	/*for (int i = 0; i < num; i++)
+	{
+		cout << v[i].jia << " " << v[i].yi << endl;
+	}*/
+
+	int v1 = 0, l1 = 0, p1 = 0;//甲的胜，负，平的次数记录
+	int C_time1 = 0, J_time1 = 0, B_time1 = 0;//记录甲获胜次数的手势次数
+	int v2 = 0, l2 = 0, p2 = 0;//乙的胜，负，平的次数记录
+	int C_time2 = 0, J_time2 = 0, B_time2 = 0;//记录乙获胜次数的手势次数
+
+	for (int i = 0; i < num; i++)
+	{
+		//1.甲是锤头
+		if (v[i].jia == 'C')
+		{
+			if (v[i].yi == 'J')//乙是剪刀，甲胜乙负
+			{
+				v1++;
+				l2++;
+				C_time1++;
+			}
+			else if (v[i].yi == 'B')//乙是布，乙胜甲负
+			{
+				v2++;
+				l1++;
+				B_time2++;
+			}
+			else//乙是锤头，平手
+			{
+				p1++;
+				p2++;
+			}
+		}
+
+		//2.甲是剪刀
+		else if (v[i].jia == 'J')
+		{
+			if (v[i].yi == 'B')//乙是布，甲胜乙负
+			{
+				v1++;
+				l2++;
+				J_time1++;
+			}
+			else if (v[i].yi == 'C')//乙是锤头，乙胜甲负
+			{
+				v2++;
+				l1++;
+				C_time2++;
+			}
+			else//乙是剪刀，平手
+			{
+				p1++;
+				p2++;
+			}
+		}
+
+		//3.甲是布
+		else
+		{
+			if (v[i].yi == 'C')//乙是锤头，甲胜乙负
+			{
+				v1++;
+				l2++;
+				B_time1++;
+			}
+			else if (v[i].yi == 'J')//乙是剪刀，乙胜甲负
+			{
+				v2++;
+				l1++;
+				J_time2++;
+			}
+			else//乙是布，平手
+			{
+				p1++;
+				p2++;
+			}
+		}
+	}
+
+	//输出
+	cout << v1 << " " << p1 << " " << l1 << endl;//甲的胜平负
+	cout << v2 << " " << p2 << " " << l2 << endl;//乙的胜平负
+
+
+//甲
+	if ((B_time1 > C_time1 || B_time1 == C_time1) && (B_time1 > J_time1 || B_time1 == J_time1))
+	{
+		cout << "B" << " ";
+	}
+	//2.锤头>or=布；锤头>or等于剪刀
+	else if ((C_time1 > B_time1 || C_time1 == B_time1) && (C_time1 > J_time1 || C_time1 == J_time1))
+	{
+		if (C_time1 == B_time1)
+		{
+			cout << "B" << " ";
+		}
+		else
+		{
+			cout << "C" << " ";
+		}
+	}
+	//3.剪刀>or=锤头，剪刀>or=布
+	else if ((J_time1 > C_time1 || J_time1 == C_time1) && (J_time1 > B_time1 || J_time1 == B_time1))
+	{
+		if (J_time1 == B_time1)
+		{
+			cout << "B" << " ";
+		}
+		else if (J_time1 == C_time1)
+		{
+			cout << "C" << " ";
+		}
+		else
+		{
+			cout << "J" << " ";
+		}
+	}
+
+//乙
+	//1.布>or=锤头；布>or=剪刀
+	if ((B_time2 > C_time2 || B_time2 == C_time2) &&( B_time2 > J_time2|| B_time2== J_time2))
+	{
+		cout << "B" ;
+	}
+	//2.锤头>or=布；锤头>or等于剪刀
+	else if ((C_time2 > B_time2 || C_time2 == B_time2) && (C_time2 > J_time2 || C_time2 == J_time2))
+	{
+	    if (C_time2 == B_time2)
+		{
+			cout << "B" ;
+		}
+		else
+		{
+			cout << "C" ;
+		}
+	}
+	//3.剪刀>or=锤头，剪刀>or=布
+	else if ((J_time2 > C_time2 || J_time2 == C_time2) && (J_time2 > B_time2 || J_time2 == B_time2))
+	{
+		if (J_time2 == B_time2)
+		{
+			cout << "B" ;
+		}
+		else if (J_time2 == C_time2)
+		{
+			cout << "C" ;
+		}
+		else
+		{
+			cout << "J" ;
+		}
+	}
+
+
+	system("pause");
+	return 0;
+}
+
