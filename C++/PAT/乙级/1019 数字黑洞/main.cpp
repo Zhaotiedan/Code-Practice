@@ -27,3 +27,69 @@
 2222
 输出样例 2：
 2222 - 2222 = 0000
+
+  
+//牛客通过100%，PTA有一个2分测试用例过不了 
+#include<iostream>
+using namespace std;
+#include<sstream>
+#include<string>
+#include<algorithm>
+
+//得到对应字符串函数
+void getString(string& s, string& s1, string& s2,int N)
+{
+	s = to_string(N);
+
+	//输入数字未满4位时
+	while (s.size() < 4)
+	{
+		s += '0';
+	}
+	s2 = s;
+	sort(s2.begin(), s2.end());
+	s1 = s2;
+	reverse(s1.begin(), s1.end());
+}
+
+int main()
+{
+	int N = 0;
+	cin >> N;
+	
+	//1.得到非递增排序s1，非递减排序s2
+	string s, s1, s2;//s--N转换的字符串；s1--s递减；s2--s递增
+	s = to_string(N);
+	
+	getString(s, s1, s2, N);
+
+
+	//2.s1和s2分别转换为数字后进行相减
+	if(s1 != s2)
+	{
+		int num1 = 0, num2 = 0;
+		int res = 0;
+		while (res != 6174)
+		{
+			num1 = stoi(s1);
+			num2 = stoi(s2);
+			res = num1 - num2;
+			cout << s1 << " - " << s2 << " = " << res << endl;
+			getString(s, s1, s2, res);
+		}
+	}
+
+	else
+	{
+		cout << s1 << " - " << s2 << " = " << "0000" << endl;
+	}
+	
+
+	//测试用例
+	/*cout << "s:" << s << endl;
+	cout << "s1:" << s1 << endl;
+	cout << "s2:" << s2 << endl;
+	*/
+	system("pause");
+	return 0;
+}
