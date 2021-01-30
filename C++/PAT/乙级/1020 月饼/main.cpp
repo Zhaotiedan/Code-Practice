@@ -16,3 +16,32 @@
 75 72 45
 输出样例：
 94.50
+
+#include<iostream>
+using namespace std;
+#include<vector>
+
+
+int main()
+{
+	int number = 0;//月饼种类数
+	int need = 0;//市场需求量
+	cin >> number >> need;
+	vector<int> store(number);//月饼库存量
+	vector<int> price(number);//月饼总售价
+	float get;//总收益
+
+	for (int i = 0; i < store.size(); i++)
+	{
+		cin >> store[i];
+	}
+	for (int i = 0; i < price.size(); i++)
+	{
+		cin >> price[i];
+	}
+	
+
+
+	system("pause");
+	return 0;
+}
