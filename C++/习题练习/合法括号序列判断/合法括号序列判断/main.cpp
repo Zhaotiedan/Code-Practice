@@ -17,6 +17,7 @@
 
 
 //以下代码：牛客测试用例全部通过，但是还存在bug，比如 )()( ,())( 等
+//4.12 bug已解决
 
 #define _CRT_SECURE_NO_WARNINGS 1
 
@@ -36,6 +37,13 @@ public:
 			{
 				return false;
 			}
+			
+			//避免含)(，但'('和')'的个数依然是偶数的情况
+			if (*it == ')'&&*(++it) == '(')
+			{
+				return false;
+			}
+			
 			it++;
 		}
 		
