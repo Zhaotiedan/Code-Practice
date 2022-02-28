@@ -37,4 +37,29 @@ for(i=1;i<=5;)//结果是无限循环
 i++;
 
 5.break和continue的区别
-
+break：结束整个循环过程，不再判断执行循环的条件是否成立
+continue：只结束本次循环，而不是终止整个循环。并且只能在循环语句中使用（ for、while 和 do…while）除此之外 continue 不能在任何语句中使用。
+eg：
+int main(void)
+{
+    int val; 
+    printf("请输入您想去的楼层:");
+    while (1)
+    {
+        scanf("%d", &val);
+        switch (val)
+        {
+        case 1:
+            printf("1层开!\n");
+            break;  //跳出switch
+        case 2:
+            printf("2层开!\n");
+            break;  //跳出switch
+        default:
+            printf("该层不存在, 请重新输入:");
+            continue;  //结束本次while循环
+        }
+        break;  //跳出while
+    }
+    return 0;
+}
