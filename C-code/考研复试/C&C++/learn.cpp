@@ -63,3 +63,13 @@ int main(void)
     }
     return 0;
 }
+
+
+
+6.c++中，class和struct的区别:
+        a.成员访问权限->class的成员访问权限为private,而struct的成员访问权限为public
+        b.默认的继承方式->class的默认继承方式为private,而struct的默认继承方式为public
+struct在C和C++之间的区别
+        a.c中，struct是用户自定义数据类型，而c++中，struct是抽象数据类型，支持成员定义函数；
+        b.c中的struct是没有权限设置的，但是在c++中，给strcut添加了权限设置，增加了访问权限；
+        c.c中的struct只是变量的聚合体，可以封装数据，但是不可以隐藏，不可以定义函数成员；但是C++中的struct可以定义函数成员
