@@ -42,7 +42,22 @@ int  main()
 		for (j = 3; j <= 19; j += 4)
 			m++;
 	printf("%d\n", m);
-
+	
+	int y = 9;
+	for (; y > 0; y--)
+	{
+		if (y % 3 == 0)
+		{
+			printf("%3d", --y);
+			//continue;
+		}
+	}
+	
+	int i;
+	int x[4][4] = { 1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16 };
+	for (i = 0; i < 4; i++) 
+		printf("%3d", x[i][3 - i]);
+	
 	system("pause");
 	return 0;
 }
