@@ -83,11 +83,12 @@ class Solution {
 public:
     void PrintList(ListNode* head,vector<int>& v)
     {
-        if(head==nullptr)
+        if(head==nullptr)//说明找到了最后一个节点，需要退出
         {
             return;
         }
-        PrintList(head->next,v);
+        PrintList(head->next,v);//未找到最后一个节点时，一直递归
+        //找到了最后一个节点，return出来执行insert，然后一直执行insert，直到插入所有节点值
         v.insert(v.end(),head->val);
     }
     vector<int> printListFromTailToHead(ListNode* head) {
